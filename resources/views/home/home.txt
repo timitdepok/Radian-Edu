@@ -884,7 +884,3 @@
         </div>
     </footer>
     <!-- footer section end -->
-
-    <script src="{{asset('/js/script.js')}}"></script>ipt>
-    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-    @endsection
