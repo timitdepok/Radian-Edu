@@ -396,6 +396,6 @@
 <!-- footer section end -->
 
 
-<script src="{{asset('/js/surabaya.js')}}"></script>ipt>
+<script src="{{asset('/js/surabaya.js')}}"></script>
 
  @endsection

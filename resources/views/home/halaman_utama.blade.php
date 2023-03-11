@@ -11,21 +11,7 @@
                     <span class="lg:text-base text-xs font-medium border border-secondary bg-secondary px-4 py-2 pt-2 self-center text-center text-dark rounded-lg ml-7 mb-3 lg:mb-0"><a href="daftarguru.html">Temukan Guru</a></span>
                     <span class="lg:text-base text-xs font-medium border border-secondary bg-secondary lg:px-4 py-2 text-center text-dark rounded-lg ml-4 mr-2 lg:mr-0 mb-3 lg:mb-0"><a href="registrasi.html">Daftar Sebagai Guru</a></span>
                 </div>
-                <div class="pt-4 block absolute text-right right-4">
-            @auth
-                <a href="{{ route('profile') }}" class="flex flex-row items-center">
-                    <p class="text-black text-base font-semibold mr-2">{{ auth()->user()->nama }}</p>
-                    <div style="background-image: url({{ asset('storage/' . auth()->user()->foto) }})" class="bg-cover bg-top w-[40px] h-[40px] mr-0 8x75:mr-7 overflow-hidden items-center justify-center rounded-full"></div>
-                </a>
-            @endauth
-            @guest
-                <button class="text-primary text-sm font-semibold text-center px-4 py-2">
-                    <a href="{{ route('registrasi') }}">Daftar</a> </button>
-                <button class="text-white font-semibold text-sm border border-black bg-primary px-4 py-2 rounded-lg ml-4 justify-items-end">
-                    <a href="{{ route('login') }}">Masuk</a>
-                </button>
-            @endguest
-        </div>
+
                 
         </div>
         <!-- navbar 1 section end -->
@@ -126,16 +112,23 @@
                                     <li class="group mx-auto self-center">
                                         <a href="news.html" class=" text-sm font-medium text-white mr-28">News</a>
                                     </li>
-                                    <li class="group mx-auto self-center">
-                                        <button class="text-white text-sm font-semibold text-center px-4 py-2 mr-8">
-                                            <a href="registrasi.html">Daftar</a> </button>
-                                    </li>
-                                    <li class="group mx-auto self-center">
-                                        <button class="text-white font-semibold text-sm border border-white px-4 py-2 rounded-lg ml-4 justify-items-end">
-                                            <a href="login.html">Masuk</a>
-                                        </button>
-                                    </li>
+                                    <div class="mt-1.5 self-center block absolute text-right right-4">
+                                        @auth
+                                            <a href="{{ route('profile') }}" class="flex flex-row items-center">
+                                                <p class="text-black text-base font-semibold mr-2">{{ auth()->user()->nama }}</p>
+                                                <div style="background-image: url({{ asset('storage/' . auth()->user()->foto) }})" class="bg-cover bg-top w-[40px] h-[40px] mr-0 8x75:mr-7 overflow-hidden items-center justify-center rounded-full"></div>
+                                            </a>
+                                        @endauth
+                                        @guest
+                                            <button class="text-white border border-white rounded-lg text-sm font-semibold text-center px-4 py-2">
+                                                <a href="{{ route('registrasi') }}">Daftar</a> </button>
+                                            <button class="text-dark font-semibold text-sm border border-black bg-second px-4 py-2 rounded-lg ml-4 justify-items-end">
+                                                <a href="{{ route('login') }}">Masuk</a>
+                                            </button>
+                                        @endguest
+                                    </div>
                                 </ul>
+                                
                             </nav>
                         </div>
                         
@@ -162,7 +155,7 @@
                     <h1 class="font-bold text-dark text-3xl mt-1 ">SIAPKAN DIRI BERSAMA YANG AHLI</h1>
                     <p class="font-medium text-dark text-lg mt-6 mb-10">Les Private & Bimbel pengajar, metode dan garansi terbaik guna masa depan yang Cemerlang dan Mulia</p>
                     <div class="w-full grid grid-cols-1 lg:grid-cols-2">
-                            <a href="#" class="text-base font-semibold text-white border-black bg-primary w-[166px] py-3 px-8 rounded-md mr-7">Read More</a>
+                            <a href="#" class="text-base font-semibold text-white border-black bg-primary w-[166px] py-3 px-8 rounded-md mr-4">Read More</a>
                             <a href="#" class="text-base font-semibold text-black border-2 border-black w-[167px] py-3 px-6 rounded-md lg:mt-0 mt-3">Konsultasi >></a>
                     </div>
                     

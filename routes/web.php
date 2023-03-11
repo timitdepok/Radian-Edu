@@ -14,6 +14,7 @@ use App\Http\Controllers\WhatsAppController;
 use App\Http\Controllers\WhattsAppController;
 use App\Http\Controllers\ArealayananController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\NewsController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -95,3 +96,17 @@ Route::get("/jabodetabek", [ArealayananController::class, "jabodetabek"])->name(
 Route::get("/bandung", [ArealayananController::class, "bandung"])->name("bandung");
 Route::get("/jogja", [ArealayananController::class, "jogja"])->name("jogja");
 Route::get("/surabaya", [ArealayananController::class, "surabaya"])->name("surabaya");
+
+// PRODUCT
+Route::get("/supercamp", [ProductController::class, "supercamp"])->name("supercamp");
+Route::get("/privat", [ProductController::class, "privat"])->name("privat");
+
+// TINGKATAN
+Route::get("/sd", [TingkatanController::class, "tingkatansd"])->name("tingkatansd");
+Route::get("/smp", [TingkatanController::class, "tingkatansmp"])->name("tingkatansmp");
+Route::get("/sma", [TingkatanController::class, "tingkatansma"])->name("tingkatansma");
+Route::get("/mahasiswa", [TingkatanController::class, "tingkatanmhs"])->name("tingkatanmhs");
+
+// NEWS
+Route::get("/news", [NewsController::class, "news"])->name("berita");
+Route::get("/newsdetails", [NewsController::class, "newsdetails"])->name("berita");
