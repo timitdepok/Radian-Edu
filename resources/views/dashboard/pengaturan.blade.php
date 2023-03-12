@@ -25,7 +25,7 @@
         </a>
 
         {{-- mata pelajaran  --}}
-        <div class="w-80 border-r-4 border-l-4 border-primarySD h-fit p-6 bg-white rounded-md flex flex-col items-center justify-center">
+        <a href="{{ route('mata.pelajaran') }}" class="w-80 border-r-4 border-l-4 border-primarySD h-fit p-6 bg-white rounded-md flex flex-col items-center justify-center">
             <div class="w-80 flex flex-col justify-center items-center">
                 <div class="w-fit mb-[18px]">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-[100px] h-[100px] fill-primarySD">
@@ -34,7 +34,7 @@
                 </div>
                 <p class="text-2xl text-primarySD font-semibold w-fit">Mata Pelajaran</p>
             </div>
-        </div>
+        </a>
 
     </div>
 </div>

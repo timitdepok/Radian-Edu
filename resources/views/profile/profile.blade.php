@@ -33,6 +33,22 @@
             </div>
         </div>
 
+        @if(!$user->is_micro_teaching_complete)
+            <div class="w-full p-6 rounded-md bg-yellow-100 border border-yellow-400 mb-6">
+                <p class="text-base">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi consequuntur fugit, similique corporis atque numquam? Distinctio, asperiores dolore inventore accusantium nihil ipsa molestiae et 
+                    corporis fuga odio iure aperiam, eligendi earum a autem suscipit corrupti alias perspiciatis, quibusdam quod. Velit nihil, natus fugiat, sit minus at quos impedit voluptatum consequuntur expedita 
+                    labore voluptates eos dicta aliquid quo optio! Est, a!
+                </p>
+                <div class="w-full flex justify-end mt-4">
+                    <form action="{{ route('micro.teaching') }}" method="post" class="inline-block w-fit">
+                        @csrf
+                        <input type="submit" name="submit" value="Tes Micro Teaching" class="py-3 px-5 bg-yellow-400 font-medium text-white rounded-md">
+                    </form>
+                </div>
+            </div>
+        @endif
+
         {{-- Profil guru  --}}
         <h1 class="text-[32px] mb-4 font-semibold text-black">Profil Guru</h1>
         <hr class="h-[1px] bg-primaryInp w-full mb-[22px]">
@@ -157,6 +173,14 @@
 
         {{-- logout --}}
         <div class="w-full flex justify-end">
+            @role('admin')
+                <a href="{{ route('dashboard') }}" class="mr-4 justify-center rounded-md px-4 py-2 bg-primary flex flex-row max-w-[200px] max-h-[50px] items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-[35px] h-[35px] fill-white mr-4">
+                        <path fill-rule="evenodd" d="M9.293 2.293a1 1 0 011.414 0l7 7A1 1 0 0117 11h-1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-3a1 1 0 00-1-1H9a1 1 0 00-1 1v3a1 1 0 01-1 1H5a1 1 0 01-1-1v-6H3a1 1 0 01-.707-1.707l7-7z" clip-rule="evenodd" />
+                    </svg>
+                    <span class="text-white text-base font-semibold">Dashboard</span>
+                </a>
+            @endrole
             <form action="{{ route('logout') }}" class="w-fit" method="post">
                 @csrf
                 <button type="submit" class="justify-center rounded-md px-4 py-2 bg-primarySD flex flex-row max-w-[200px] max-h-[50px] items-center">

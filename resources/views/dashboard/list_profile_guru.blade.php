@@ -87,17 +87,14 @@
                 <input type="hidden" name="user_id" id="user_id">
                 <label for="micro_teaching" class="block mb-2 text-base font-semibold text-gray-900">Edit Status</label>
                 <div class="block relative">
-                    <div class="rounded-r-md absolute bg-white border-t border-r border-b @error('kegiatan_mengajar') border-primarySD @else border-primaryInp @enderror pr-4 flex items-center justify-center right-0 h-full">
+                    <div class="rounded-r-md absolute bg-white border-t border-r border-b border-primaryInp pr-4 flex items-center justify-center right-0 h-full">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
                         </svg>                  
                     </div>
-                    <select name="micro_teaching" id="micro_teaching" class="appearance-none h-12 text-sm px-4 w-full outline-none @error('micro_teaching') border-primarySD @else border-primaryInp @enderror  border rounded-md" required>
+                    <select name="micro_teaching" id="micro_teaching" class="appearance-none h-12 text-sm px-4 w-full outline-none border-primaryInp border rounded-md" required>
                     </select>
                 </div>
-                @error("micro_teaching")
-                    <p class="text-sm font-normal mt-1 text-primarySD">{{ $message }}</p>
-                @enderror
             </div>
         </div>
     <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
@@ -165,7 +162,7 @@
 
             $.ajax({
                 url : "{{ route('edit.micro.teaching') }}",
-                type : "POST",
+                type : "PUT",
                 data : {
                     user_id : user_id,
                     micro_teaching : micro_teaching

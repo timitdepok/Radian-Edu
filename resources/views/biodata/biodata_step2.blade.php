@@ -227,7 +227,7 @@
                 <select name="provinsi" id="provinsi" class="appearance-none h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none @error('provinsi') border-primarySD @else border-primaryInp @enderror border rounded-md" required>
                   <option value="" style="display: none;"></option>
                   @foreach ($provinsi as $row)
-                    <option @if(old("provinsi")) selected @endif value="{{ $row->name }}">{{ $row->name }}</option>
+                    <option @if(old("provinsi") == $row->name) selected @endif value="{{ $row->name }}">{{ $row->name }}</option>
                   @endforeach
                 </select>
               </div>

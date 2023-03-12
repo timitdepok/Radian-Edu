@@ -5,13 +5,28 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Price;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
+use Exception;
 
 class DashboardController extends Controller
 {
 
-    // funsi untuk menampilkan tampilan dashboard paling awal
+    // untuk melakukan pengaman, jadi hanya admin yang bisa menjalankan fungsi2 dibawah ini
+    protected $userPolicy;
+    public function __construct(User $user){
+        $this->userPolicy = $user;
+        $this->middleware(function($request, $next){
+            if(!Auth::user()->hasRole("admin")){
+                throw new AuthorizationException("Unauthorized");
+            }
+            return $next($request); 
+        });
+    }
+
+    // menampilkan page dashboard
     public function index(Request $request){
         
         $user = auth()->user();
@@ -44,7 +59,7 @@ class DashboardController extends Controller
         ]);
     }
 
-    // menampilkan data list profile guru 
+    // menampilkan page dashboard list profile guru 
     public function list_profile_guru(Request $request){
 
         $user = auth()->user();
@@ -53,7 +68,7 @@ class DashboardController extends Controller
             $search = $request->search;
         }
 
-        $guru = User::searchUser($search)->where("is_profile_complete", true)->paginate(10)
+        $guru = User::latest()->searchUser($search)->where("is_profile_complete", true)->paginate(20)
                 ->withQueryString(request("search"));
 
         return view("dashboard.list_profile_guru",[
@@ -65,7 +80,7 @@ class DashboardController extends Controller
         ]);
     }
 
-    // menampilkan biodata guru
+    // menampilkan page biodata guru
     public function biodataGuru($key){
         try {
 
@@ -86,7 +101,7 @@ class DashboardController extends Controller
 
             abort(404);
 
-        } catch (\Throwable $th) {
+        } catch (\Exception $e) {
             abort(404);
         }
     }
@@ -110,24 +125,27 @@ class DashboardController extends Controller
 
         try {
 
-            $user = User::findOrFail($request->user_id)->where("is_profile_complete", true)
+            $user = User::where("id", $request->user_id)->where("is_profile_complete", true)
                     ->whereHas("roles", function($query){
                         $query->where("name", "user");
                     })->first();
 
-            $user->update([
-                "is_micro_teaching_complete" => $request->micro_teaching
-            ]);
+            if($user){
+                $user->update([
+                    "is_micro_teaching_complete" => $request->micro_teaching
+                ]);
+                
+                return response()->json([
+                    'success' => true,
+                    'icon' => 'success',
+                    'title' => 'Success',
+                    'message' => 'Data Berhasil diubah!'
+                ]);
+            }
 
-            return response()->json([
-                'success' => true,
-                'icon' => 'success',
-                'title' => 'Success',
-                'message' => 'Data Berhasil diubah!'
-            ]);
+            throw new Exception("Terjadi kesalahan. Data gagal untuk diubah!");
 
-
-        } catch (\Throwable $th) {
+        } catch (\Exception $e) {
             return response()->json([
                 'success' => true,
                 'icon' => 'error',
@@ -137,7 +155,7 @@ class DashboardController extends Controller
         }
     }
 
-    // menampilkan dashboard data guru
+    // menampilkan page dashboard data guru
     public function data_guru(Request $request){
         
         $user = auth()->user();
@@ -146,7 +164,7 @@ class DashboardController extends Controller
             $search = $request->search;
         }
 
-        $guru = User::searchUser($search)->where("is_profile_complete", true)->paginate(10)
+        $guru = User::latest()->searchUser($search)->where("is_profile_complete", true)->paginate(20)
                 ->withQueryString(request("search"));
 
         return view("dashboard.data_guru",[
@@ -178,24 +196,27 @@ class DashboardController extends Controller
 
         try {
 
-            $user = User::findOrFail($request->user_id)->where("is_profile_complete", true)
+            $user = User::where("id", $request->user_id)->where("is_profile_complete", true)
                     ->whereHas("roles", function($query){
                         $query->where("name", "user");
                     })->first();
 
-            $user->update([
-                "harga" => $request->harga
-            ]);
+            if($user){
+                $user->update([
+                    "harga" => $request->harga
+                ]);
+                
+                return response()->json([
+                    'success' => true,
+                    'icon' => 'success',
+                    'title' => 'Success',
+                    'message' => 'Data Berhasil diubah!'
+                ]);
+            }
 
-            return response()->json([
-                'success' => true,
-                'icon' => 'success',
-                'title' => 'Success',
-                'message' => 'Data Berhasil diubah!'
-            ]);
+            throw new Exception("Terjadi kesalahan. Data gagal untuk diubah!");
 
-
-        } catch (\Throwable $th) {
+        } catch (\Exception $e) {
             return response()->json([
                 'success' => true,
                 'icon' => 'error',
@@ -205,7 +226,7 @@ class DashboardController extends Controller
         }
     }
 
-    // untuk menampilkan user access
+    // untuk menampilkan page dashboard user access
     public function user_access(Request $request){
         $user = auth()->user();
         $search = "";
@@ -213,7 +234,7 @@ class DashboardController extends Controller
             $search = $request->search;
         }
 
-        $guru = User::with(["roles"])->searchUser($search)->where("is_profile_complete", true)->paginate(10)
+        $guru = User::with(["roles"])->latest()->searchUser($search)->where("is_profile_complete", true)->paginate(20)
                 ->withQueryString(request("search"));
 
         return view("dashboard.user_access",[
@@ -244,24 +265,27 @@ class DashboardController extends Controller
 
         try {
 
-            $user = User::findOrFail($request->user_id)->where("is_profile_complete", true)
+            $user = User::where("id", $request->user_id)->where("is_profile_complete", true)
                     ->whereHas("roles", function($query){
                         $query->where("name", "user");
                     })->first();
 
-            $user->update([
-                "top_star" => $request->top_star
-            ]);
+            if($user){
+                $user->update([
+                    "top_star" => $request->top_star
+                ]);
+                
+                return response()->json([
+                    'success' => true,
+                    'icon' => 'success',
+                    'title' => 'Success',
+                    'message' => 'Data Berhasil diubah!'
+                ]);
+            }
 
-            return response()->json([
-                'success' => true,
-                'icon' => 'success',
-                'title' => 'Success',
-                'message' => 'Data Berhasil diubah!'
-            ]);
+            throw new Exception("Terjadi kesalahan. Data gagal untuk diubah!");
 
-
-        } catch (\Throwable $th) {
+        } catch (\Exception $e) {
             return response()->json([
                 'success' => true,
                 'icon' => 'error',
@@ -286,19 +310,23 @@ class DashboardController extends Controller
         }
 
         try {
-            $user = User::findOrFail($request->user_id)->where("is_profile_complete", true)
+            $user = User::where("id", $request->user_id)->where("is_profile_complete", true)
                     ->whereHas("roles", function($query){
                         $query->where("name", "user");
                     })->first();
 
-            return response()->json([
-                "micro_teaching" => $user->is_micro_teaching_complete,
-                "top_star" => $user->top_star,
-                "harga" => $user->harga,
-                "status" => "success"
-            ]);
+            if($user){
+                return response()->json([
+                    "micro_teaching" => $user->is_micro_teaching_complete,
+                    "top_star" => $user->top_star,
+                    "harga" => $user->harga,
+                    "status" => "success"
+                ]);
+            }
+
+            throw new Exception("Terjadi kesalahan. Data gagal untuk diubah!");            
     
-        } catch (\Throwable $th) {
+        } catch (\Exception $e) {
             return response()->json([
                 "data" => "error",
                 "status" => "failed"
@@ -324,24 +352,28 @@ class DashboardController extends Controller
 
         try {
             
-            $user = User::findOrFail("id", $request->user_id)->whereHas("roles", function($query){
+            $user = User::where("id", $request->user_id)->whereHas("roles", function($query){
                         $query->where("name", "user");
                     })->first();
-            
+
+            if($user){
                 $user->delete();
                 if($user->foto && $user->cv){
                     Storage::delete($user->foto);
                     Storage::delete($user->cv);
                 }
-    
+                
                 return response()->json([
                     'success' => true,
                     'icon' => 'success',
                     'title' => 'Success',
                     'message' => 'Data Berhasil dihapus!'
-                ]);   
+                ]);
+            }
 
-        } catch (\Throwable $th) {
+            throw new Exception("Terjadi kesalahan. Data gagal untuk diubah!");
+    
+        } catch (\Exception $e) {
             return response()->json([
                 'success' => true,
                 'icon' => 'error',
@@ -351,6 +383,7 @@ class DashboardController extends Controller
         }
     }
 
+    // menampilkan page dashboard setting
     public function pengaturan(Request $request){
         $user = auth()->user();
         $search = "";
@@ -358,7 +391,7 @@ class DashboardController extends Controller
             $search = $request->search;
         }
 
-        $guru = User::with(["roles"])->searchUser($search)->where("is_profile_complete", true)->paginate(10)
+        $guru = User::with(["roles"])->latest()->searchUser($search)->where("is_profile_complete", true)->paginate(20)
                 ->withQueryString(request("search"));
 
         return view("dashboard.pengaturan",[

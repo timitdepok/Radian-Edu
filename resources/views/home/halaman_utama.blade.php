@@ -524,18 +524,19 @@
                                  <h1 class="text-xl font-medium text-black mb-2">{{ $row->nama }}</h1>
                                  
                                  {{-- melakukan pemeriksaan jika data bernilai null  --}}
-                                 @isset($row->minat_mengajar)
+                                 {{-- {{  }}
+                                 @if($row->minat_mengajar == null)
                                     @php
-                                        $minat_mengajar = $row->minat_mengajar->first()->mata_pelajaran->mata_pelajaran; 
+                                        $minat_mengajar = ""; 
                                     @endphp
                                  @else
                                     @php
-                                        $minat_mengajar = "Mapel"; 
+                                        $minat_mengajar = ; 
                                     @endphp
-                                 @endisset
+                                 @endif --}}
                                  {{-- ---------  --}}
 
-                                 <h5 class="text-lg font-normal text-black mb-0">{{ ucwords(strtolower($minat_mengajar)) }} - {{ ucwords(strtolower($row->kabupaten)) }}</h5>
+                                 <h5 class="text-lg font-normal text-black mb-0">{{ $row->minat_mengajar->first()->mata_pelajaran->mata_pelajaran ?? "Mata pelajaran" }} - {{ ucwords(strtolower($row->kabupaten)) }}</h5>
                                  <h5 class="text-lg font-normal text-black mb-3">{{ $row->universitas }}</h5>
                              </div>
                          </div>
@@ -543,7 +544,7 @@
                          <div class="absolute z-0 inset-0 bg-primaryYellow opacity-0 group-hover:opacity-100 transition-all"></div>
                          <div class="group-hover:-translate-y-3 group-hover:bottom-0 transition-all absolute button-0 left-0 text-black p-4 justify-center content-center">
                              <h4 class="font-medium mb-1 text-xl text-center opacity-80">Angelina</h4>
-                             <h3 class="font-normal mb-0 text-lg text-center">{{ ucwords(strtolower($minat_mengajar)) }} - {{ ucwords(strtolower($row->kabupaten)) }}</h3>
+                             <h3 class="font-normal mb-0 text-lg text-center">{{ $row->minat_mengajar->first()->mata_pelajaran->mata_pelajaran ?? "" }} - {{ ucwords(strtolower($row->kabupaten)) }}</h3>
                              <h3 class="font-normal mb-3 text-lg text-center">{{ $row->universitas }}</h3>
                              <div class="justify-center mx-12">
                                  

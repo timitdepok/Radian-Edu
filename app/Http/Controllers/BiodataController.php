@@ -28,13 +28,13 @@ class BiodataController extends Controller
 
         // foto
         "foto.required" => "Kolom ini tidak boleh kosong.",
-        "foto.max" => "Ukuran file terlalu besar. Maksimum ukuran file 2 MB..",
+        "foto.max" => "Ukuran file terlalu besar. Maksimum ukuran file 2 MB.",
         "foto.file" => "Data yang dimasukkan harus berupa file.",
         "foto.mimes" => "File yang dimasukkan harus memiliki format png,jpeg,jpg.",
 
         // cv
         "cv.required" => "Kolom ini tidak boleh kosong.",
-        "cv.max" => "Ukuran file terlalu besar. Maksimum ukuran file 2 MB..",
+        "cv.max" => "Ukuran file terlalu besar. Maksimum ukuran file 2 MB.",
         "cv.file" => "Data yang dimasukkan harus berupa file.",
         "cv.mimes" => "File yang dimasukkan harus memiliki format pdf.",
 

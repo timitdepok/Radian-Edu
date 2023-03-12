@@ -263,7 +263,7 @@ class ProfileController extends Controller
         $data_hapus_minat_mengajar = [];
         if($request->hapus_minat_mengajar){
             foreach($request->hapus_minat_mengajar as $row){
-                if (InterestTeaching::where("user_id")->where("id", $row)->get()) {
+                if (InterestTeaching::where("user_id", $user->id)->where("id", $row)->first()) {
                     $data_hapus_minat_mengajar[] = $row;
                 }
             }
@@ -292,7 +292,7 @@ class ProfileController extends Controller
         $data_hapus_domisili_mengajar = [];
         if($request->hapus_domisili_mengajar){
             foreach($request->hapus_domisili_mengajar as $row){
-                if (TeachingDomicile::where("user_id")->where("id", $row)->get()) {
+                if (TeachingDomicile::where("user_id", $user->id)->where("id", $row)->firts()) {
                     $data_hapus_domisili_mengajar[] = $row;
                 }
             }
@@ -368,7 +368,7 @@ class ProfileController extends Controller
             $data_user["foto"] = $request->file("update_foto")->store("Images");
         }
 
-        // simpan seluru data 
+        // simpan seluruh data 
         $all_data = [
             "user" => $data_user,
             "update_pengalaman" => $data_update_pengalaman,
