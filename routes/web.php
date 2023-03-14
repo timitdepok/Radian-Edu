@@ -5,14 +5,16 @@ use App\Http\Controllers\BiodataController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\experimentController;
 use App\Http\Controllers\HalamanUtamaController;
+use App\Http\Controllers\HargaController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\MataPelajaranController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\TingkatanController;
+use App\Http\Controllers\UserRegistrasiController;
 use App\Http\Controllers\WhatsAppController;
-use App\Http\Controllers\WhattsAppController;
+use App\Http\Controllers\KontakController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -92,6 +94,18 @@ Route::middleware(["auth", "is.profile.complete:yes", "role:admin"])->group(func
     Route::put("dashboard/setting/mata-pelajaran/edit-mata-pelajaran", [MataPelajaranController::class, "update"])->name("edit.mata.pelajaran");
     Route::post("dashboard/setting/mata-pelajaran/remove-mata-pelajaran", [MataPelajaranController::class, "delete"])->name("remove.mata.pelajaran");
     
+    // user registrasi
+    Route::get("dashboard/setting/user-registrasi", [UserRegistrasiController::class, "user_registrasi"])->name("user.registrasi");
+    Route::post("dashboard/setting/remove-user-registrasi", [UserRegistrasiController::class, "delete"])->name("remove.user.registrasi");
+
+    // kontak
+    Route::get("dashboard/setting/kontak", [KontakController::class, "kontak"])->name("kontak");
+    Route::post("dashboard/setting/kontak", [KontakController::class, "updateOrCreate"])->name("kontak.save");
+
+    // kontak
+    Route::get("dashboard/setting/harga", [HargaController::class, "harga"])->name("harga");
+    Route::post("dashboard/setting/harga", [HargaController::class, "updateOrCreate"])->name("harga.save");
+
 });
 
 // page halaman utama dan detail tutor
@@ -99,6 +113,5 @@ Route::get("/", [HalamanUtamaController::class, "halaman_utama"])->name("home");
 Route::get("/daftar/guru", [HalamanUtamaController::class, "daftar_guru"])->name("daftar.guru");
 Route::get("/guru/{key}", [HalamanUtamaController::class, "detail_guru"])->name("detail.guru");
 Route::post("/pesan/guru", [WhatsAppController::class, "pesan_guru"])->name("pesan.guru");
-
 
 

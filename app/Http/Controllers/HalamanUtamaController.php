@@ -29,7 +29,7 @@ class HalamanUtamaController extends Controller
         return view("home.halaman_utama", [
             "title" => "Radian Edu",
             "guru" => $guru,
-            "keuntungan" => $result->keuntungan,
+            "keuntungan" => $result["keuntungan"],
         ]);
     }
 
@@ -55,7 +55,7 @@ class HalamanUtamaController extends Controller
         return view("home.daftar_guru", [
             "title" => "Radian Edu",
             "guru" => $guru,
-            "keuntungan" => $result->keuntungan,
+            "keuntungan" => $result["keuntungan"],
             "domisili" => $request->domisili,
             "mata_pelajaran" => $request->mata_pelajaran,
         ]);
@@ -87,7 +87,7 @@ class HalamanUtamaController extends Controller
                 return view("home.detail_guru", [
                     "title" => "Radian Edu",
                     "guru" => $guru,
-                    "keuntungan" => $result->keuntungan,
+                    "keuntungan" => $result["keuntungan"],
                 ]);
             }
             abort(404);

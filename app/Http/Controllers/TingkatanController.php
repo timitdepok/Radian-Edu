@@ -25,7 +25,7 @@ class TingkatanController extends Controller
         });
     }
 
-    // menampilkan page tingkatan
+    // menampilkan page serta data tingkatan  
     public function tingkatan(Request $request){
 
         $user = auth()->user();

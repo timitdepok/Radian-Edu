@@ -29,7 +29,7 @@ class LoginController extends Controller
         }
  
         return back()->withErrors([
-            'email' => 'Akun yang dimasukan tidak terdaftar!',
+            'email' => 'Akun yang dimasukkan tidak terdaftar!',
         ])->onlyInput('email');
 
     }
