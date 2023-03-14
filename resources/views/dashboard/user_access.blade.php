@@ -87,11 +87,11 @@
     <span class="hidden sm:inline-block sm:align-middle sm:h-screen"></span>&#8203;
     <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full" role="dialog" aria-modal="true" aria-labelledby="modal-headline">
         <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-            <h3 class="text-2xl leading-6 font-semibold mb-2" id="modal-headline">Edit Status</h3>
+            <h3 class="text-2xl leading-6 font-semibold mb-2" id="modal-headline">Edit Top Star</h3>
             <p class="text-bodyText">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est iusto minima iure quisquam, eos quasi hic quod porro, quis eveniet veniam fugiat quo itaque.</p> 
             <div class="mt-4">
                 <input type="hidden" name="user_id" id="user_id">
-                <label for="top_star" class="block mb-2 text-base font-semibold text-gray-900">Edit Status</label>
+                <label for="top_star" class="block mb-2 text-base font-semibold text-gray-900">Top Star</label>
                 <div class="block relative">
                     <div class="rounded-r-md absolute bg-white border-t border-r border-b border-primaryInp pr-4 flex items-center justify-center right-0 h-full">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">

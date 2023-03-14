@@ -514,35 +514,26 @@
             
 
             <div class="flex flex-wrap">
-                {{-- menampilkan data tutor (yang sudah microteaching) --}}
+                {{-- menampilkan data tutor (yang sudah micro teaching) --}}
                 @isset ($guru)
                     @foreach ($guru as $row)
                     <div class="w-full px-4 mb-10 lg:w-1/4">
                         <div class="bg-white card rounded-2xl overflow-hidden relative group w-[253px] h-[348px]">
+                        @if ($row->top_star)
+                            <div class="px-4 py-2 bg-primary rounded-md absolute top-0 right-0 z-10 mr-2 mt-2">
+                                <span class="text-xs text-white font-medium">Top Star</span>
+                            </div> 
+                        @endif
                          <div class="h-[348px] transition-all transform bg-cover bg-top" style="background-image: url({{ asset('storage/'. $row->foto) }});">
                              <div class="bg-primaryYellow h-[98px] rounded-2xl absolute inset-x-0 bottom-0 text-center">
                                  <h1 class="text-xl font-medium text-black mb-2">{{ $row->nama }}</h1>
-                                 
-                                 {{-- melakukan pemeriksaan jika data bernilai null  --}}
-                                 {{-- {{  }}
-                                 @if($row->minat_mengajar == null)
-                                    @php
-                                        $minat_mengajar = ""; 
-                                    @endphp
-                                 @else
-                                    @php
-                                        $minat_mengajar = ; 
-                                    @endphp
-                                 @endif --}}
-                                 {{-- ---------  --}}
-
                                  <h5 class="text-lg font-normal text-black mb-0">{{ $row->minat_mengajar->first()->mata_pelajaran->mata_pelajaran ?? "Mata pelajaran" }} - {{ ucwords(strtolower($row->kabupaten)) }}</h5>
                                  <h5 class="text-lg font-normal text-black mb-3">{{ $row->universitas }}</h5>
                              </div>
                          </div>
                          <div class="absolute bottom-0 left-0 w-full"></div>
-                         <div class="absolute z-0 inset-0 bg-primaryYellow opacity-0 group-hover:opacity-100 transition-all"></div>
-                         <div class="group-hover:-translate-y-3 group-hover:bottom-0 transition-all absolute button-0 left-0 text-black p-4 justify-center content-center">
+                         <div class="absolute z-0 inset-0 bg-primaryYellow opacity-0 group-hover:z-20 group-hover:opacity-100 transition-all"></div>
+                         <div class="group-hover:-translate-y-3 group-hover:bottom-0 transition-all group-hover:z-20 absolute button-0 left-0 text-black p-4 justify-center content-center">
                              <h4 class="font-medium mb-1 text-xl text-center opacity-80">Angelina</h4>
                              <h3 class="font-normal mb-0 text-lg text-center">{{ $row->minat_mengajar->first()->mata_pelajaran->mata_pelajaran ?? "" }} - {{ ucwords(strtolower($row->kabupaten)) }}</h3>
                              <h3 class="font-normal mb-3 text-lg text-center">{{ $row->universitas }}</h3>
@@ -799,6 +790,6 @@
     </footer>
     <!-- footer section end -->
 
-    {{-- <script src="/js/sscript.js"></script> --}}
+    <script src="{{ asset('/js/dashboard.js') }}"></script>
 
 @endsection

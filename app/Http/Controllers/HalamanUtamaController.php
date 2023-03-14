@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 
 class HalamanUtamaController extends Controller
 {
+    // untuk menampilkan page halaman utama
     public function halaman_utama(){
         
         if($harga = Price::first()){
@@ -21,8 +22,9 @@ class HalamanUtamaController extends Controller
             ];
         }
 
-        $guru = User::latest()->CariGuru([""])->where("is_profile_complete", true)->where("is_micro_teaching_complete", true)->paginate(8)
-        ->withQueryString(request("domisili"), request("mata_pelajaran"));
+        $guru = User::latest()->CariGuru([""])->where("is_profile_complete", true)
+                ->where("is_micro_teaching_complete", true)
+                ->where("top_star", true)->paginate(8);
                 
         return view("home.halaman_utama", [
             "title" => "Radian Edu",
@@ -31,6 +33,7 @@ class HalamanUtamaController extends Controller
         ]);
     }
 
+    // untuk menampilkan daftar guru 
     public function daftar_guru(Request $request){
 
         if($harga = Price::first()){
@@ -58,6 +61,7 @@ class HalamanUtamaController extends Controller
         ]);
     }
 
+    // untuk menampilkan detail guru 
     public function detail_guru($key){
         try {
 

@@ -86,7 +86,7 @@ class DashboardController extends Controller
 
             $key = decrypt($key);
             $guru = User::with(["domisili_mengajar.kecamatan", "minat_mengajar.mata_pelajaran.tingkatan", "kegiatan", "pengalaman"])
-                    ->findOrFail($key)->where("is_profile_complete", true)
+                    ->where("id", $key)->where("is_profile_complete", true)
                     ->whereHas("roles", function($query){
                         $query->where("name", "user");
                     })->first();
