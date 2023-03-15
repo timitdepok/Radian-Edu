@@ -47,45 +47,17 @@ class TingkatanController extends Controller
 
     }
 
-<<<<<<< HEAD
-    // TINGKAT SEKOLAH DASAR
-    public function tingkatansd(){
-        return view("tingkatan.tingkatansd", [
-            "title" => "Sekolah Dasar | Radian Edu"
-        ]);
-    }
-
-    // TINGKAT SEKOLAH MENENGAH PERTAMA
-    public function tingkatansmp(){
-        return view("tingkatan.tingkatansmp", [
-            "title" => "Sekolah Menengah Pertama | Radian Edu"
-        ]);
-    }
-
-    // TINGKAT SEKOLAH MENENGAH ATAS
-    public function tingkatansma(){
-        return view("tingkatan.tingkatansma", [
-            "title" => "Sekolah Menengah Atas | Radian Edu"
-        ]);
-    }
-
-    // TINGKAT MAHASISWA
-    public function tingkatanmhs(){
-        return view("tingkatan.tingkatanmhs", [
-            "title" => "Mahasiswa | Radian Edu"
-        ]);
-    }
-=======
     // fungsi untuk menyimpan data tingkatan 
     public function store(Request $request){
 
         $message = [
             "tingkatan.required" => "Kolom ini tidak boleh kosong.",
-            "tingkatan.max" => "Data yang dimasukkan terlalu banyak."
+            "tingkatan.max" => "Data yang dimasukkan terlalu banyak.",
+	    "tingkatan.unique" => "Data sudah terdaftar."
         ];
 
         $validate = $request->validate([
-            "tingkatan" => "required|max:255"
+            "tingkatan" => "required|max:255|unique:educational_levels,tingkatan"
         ], $message);
 
         try {
@@ -143,7 +115,7 @@ class TingkatanController extends Controller
 
         $validate = Validator::make($request->all(),[
             "tingkatan_id" => "required|numeric",
-            "tingkatan" => "required|max:255"
+            "tingkatan" => "required|max:255|unique:educational_levels,tingkatan,".$request->tingkatan_id
         ]);
 
         if($validate->fails()){
@@ -227,5 +199,4 @@ class TingkatanController extends Controller
         }
     }
     
->>>>>>> 0304267b6fa167c4c76ac245c3e2515097e77618
 }

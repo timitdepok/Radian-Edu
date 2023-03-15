@@ -3,7 +3,6 @@
 use App\Http\Controllers\ApiController;
 use App\Http\Controllers\BiodataController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\experimentController;
 use App\Http\Controllers\HalamanUtamaController;
 use App\Http\Controllers\HargaController;
 use App\Http\Controllers\LoginController;
@@ -14,14 +13,11 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\TingkatanController;
 use App\Http\Controllers\UserRegistrasiController;
 use App\Http\Controllers\WhatsAppController;
-<<<<<<< HEAD
-use App\Http\Controllers\WhattsAppController;
 use App\Http\Controllers\ArealayananController;
+use App\Http\Controllers\HalamanTingkatanController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\NewsController;
-=======
 use App\Http\Controllers\KontakController;
->>>>>>> 0304267b6fa167c4c76ac245c3e2515097e77618
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -109,7 +105,7 @@ Route::middleware(["auth", "is.profile.complete:yes", "role:admin"])->group(func
     Route::get("dashboard/setting/kontak", [KontakController::class, "kontak"])->name("kontak");
     Route::post("dashboard/setting/kontak", [KontakController::class, "updateOrCreate"])->name("kontak.save");
 
-    // kontak
+    // harga
     Route::get("dashboard/setting/harga", [HargaController::class, "harga"])->name("harga");
     Route::post("dashboard/setting/harga", [HargaController::class, "updateOrCreate"])->name("harga.save");
 
@@ -127,19 +123,17 @@ Route::get("/bandung", [ArealayananController::class, "bandung"])->name("bandung
 Route::get("/jogja", [ArealayananController::class, "jogja"])->name("jogja");
 Route::get("/surabaya", [ArealayananController::class, "surabaya"])->name("surabaya");
 
-<<<<<<< HEAD
 // PRODUCT
 Route::get("/supercamp", [ProductController::class, "supercamp"])->name("supercamp");
 Route::get("/privat", [ProductController::class, "privat"])->name("privat");
 
 // TINGKATAN
-Route::get("/sd", [TingkatanController::class, "tingkatansd"])->name("tingkatansd");
-Route::get("/smp", [TingkatanController::class, "tingkatansmp"])->name("tingkatansmp");
-Route::get("/sma", [TingkatanController::class, "tingkatansma"])->name("tingkatansma");
-Route::get("/mahasiswa", [TingkatanController::class, "tingkatanmhs"])->name("tingkatanmhs");
+Route::get("/sd", [HalamanTingkatanController::class, "tingkatansd"])->name("tingkatansd");
+Route::get("/smp", [HalamanTingkatanController::class, "tingkatansmp"])->name("tingkatansmp");
+Route::get("/sma", [HalamanTingkatanController::class, "tingkatansma"])->name("tingkatansma");
+Route::get("/mahasiswa", [HalamanTingkatanController::class, "tingkatanmhs"])->name("tingkatanmhs");
 
 // NEWS
 Route::get("/news", [NewsController::class, "news"])->name("berita");
-Route::get("/newsdetails", [NewsController::class, "newsdetails"])->name("berita");
-=======
->>>>>>> 0304267b6fa167c4c76ac245c3e2515097e77618
+Route::get("/newsdetails", [NewsController::class, "newsdetails"])->name("detail.berita");
+
