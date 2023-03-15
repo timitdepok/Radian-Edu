@@ -5,16 +5,23 @@ use App\Http\Controllers\BiodataController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\experimentController;
 use App\Http\Controllers\HalamanUtamaController;
+use App\Http\Controllers\HargaController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\MataPelajaranController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\TingkatanController;
+use App\Http\Controllers\UserRegistrasiController;
 use App\Http\Controllers\WhatsAppController;
+<<<<<<< HEAD
 use App\Http\Controllers\WhattsAppController;
 use App\Http\Controllers\ArealayananController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\NewsController;
+=======
+use App\Http\Controllers\KontakController;
+>>>>>>> 0304267b6fa167c4c76ac245c3e2515097e77618
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -51,7 +58,7 @@ Route::get("/biodata/step2", [BiodataController::class, "biodata_step2"])->middl
 Route::post("/biodata/step2", [BiodataController::class, "biodata_create2"])->middleware("auth")->name("biodata.create");
 Route::get("/biodata/step3/{key}", [BiodataController::class, "biodata_step3"])->middleware(["auth", "is.profile.complete:yes"])->name("biodata.step3");
 
-Route::middleware(["auth", "is.profile.complete:yes"])->group(function(){
+Route::middleware(["auth", "is.profile.complete:yes", "role:admin,user"])->group(function(){
    
     // route unmengirim pesan (siap micro teaching)
     Route::post("/micro_teaching", [WhatsAppController::class, "micro_teaching"])->name("micro.teaching");
@@ -67,22 +74,45 @@ Route::middleware(["auth", "is.profile.complete:yes", "role:admin"])->group(func
    
     // dashboard 
     Route::get("/dashboard", [DashboardController::class, "index"])->name("dashboard");
-    Route::get("/dashboard/list/profile/guru", [DashboardController::class, "list_profile_guru"])->name("list.profile.guru");
-    Route::get("/dashboard/data/guru", [DashboardController::class, "data_guru"])->name("data.guru");
-    Route::get("/dashboard/data/guru", [DashboardController::class, "data_guru"])->name("data.guru");
-    Route::get("/dashboard/user/access", [DashboardController::class, "user_access"])->name("user.access");
+    Route::get("/dashboard/list-profile-guru", [DashboardController::class, "list_profile_guru"])->name("list.profile.guru");
+    Route::get("/dashboard/data-guru", [DashboardController::class, "data_guru"])->name("data.guru");
+    Route::get("/dashboard/user-access", [DashboardController::class, "user_access"])->name("user.access");
     Route::get("/dashboard/setting", [DashboardController::class, "pengaturan"])->name("pengaturan");
-    
-    Route::get("dashboard/setting/tingkatan", [TingkatanController::class, "tingkatan"])->name("tingkatan");
 
     // fungsi yang di gunakan pada dashboard
-    Route::get("/dashboard/biodata/guru/{key}", [DashboardController::class, "biodataGuru"])->name("biodata.guru");
-    Route::post("/dashboard/edit/microTeaching", [DashboardController::class, "edit_micro_teaching"])->name("edit.micro.teaching");
-    Route::post("/dashboard/edit/topStar", [DashboardController::class, "edit_top_star"])->name("edit.top.star");
-    Route::post("/dashboard/edit/harga", [DashboardController::class, "edit_harga"])->name("edit.harga");
-    Route::post("/dashboard/get/user", [DashboardController::class, "getUser"])->name("get.user");
-    Route::post("/dashboard/remove/user", [DashboardController::class, "remove_user"])->name("remove.user");
+    Route::get("/dashboard/biodata-guru/{key}", [DashboardController::class, "biodataGuru"])->name("biodata.guru");
+    Route::put("/dashboard/edit-microTeaching", [DashboardController::class, "edit_micro_teaching"])->name("edit.micro.teaching");
+    Route::put("/dashboard/edit-topStar", [DashboardController::class, "edit_top_star"])->name("edit.top.star");
+    Route::put("/dashboard/edit-harga", [DashboardController::class, "edit_harga"])->name("edit.harga");
+    Route::post("/dashboard/get-user", [DashboardController::class, "getUser"])->name("get.user");
+    Route::post("/dashboard/remove-user", [DashboardController::class, "remove_user"])->name("remove.user");
+
+    // tingkatan
+    Route::get("dashboard/setting/tingkatan", [TingkatanController::class, "tingkatan"])->name("tingkatan");
+    Route::post("dashboard/setting/tingkatan", [TingkatanController::class, "store"])->name("tambah.tingkatan");
+    Route::post("dashboard/setting/tingkatan/get-tingkatan", [TingkatanController::class, "getTingkatan"])->name("get.tingkatan");
+    Route::put("dashboard/setting/tingkatan/edit-tingkatan", [TingkatanController::class, "update"])->name("edit.tingkatan");
+    Route::post("dashboard/setting/tingkatan/remove-tingkatan", [TingkatanController::class, "delete"])->name("remove.tingkatan");
+
+    // mata pelajaran
+    Route::get("dashboard/setting/mata-pelajaran", [MataPelajaranController::class, "mata_pelajaran"])->name("mata.pelajaran");
+    Route::post("dashboard/setting/mata-pelajaran", [MataPelajaranController::class, "store"])->name("tambah.mata.pelajaran");
+    Route::post("dashboard/setting/mata-pelajaran/get-mata-pelajaran", [MataPelajaranController::class, "getMataPelajaran"])->name("get.mata.pelajaran");
+    Route::put("dashboard/setting/mata-pelajaran/edit-mata-pelajaran", [MataPelajaranController::class, "update"])->name("edit.mata.pelajaran");
+    Route::post("dashboard/setting/mata-pelajaran/remove-mata-pelajaran", [MataPelajaranController::class, "delete"])->name("remove.mata.pelajaran");
     
+    // user registrasi
+    Route::get("dashboard/setting/user-registrasi", [UserRegistrasiController::class, "user_registrasi"])->name("user.registrasi");
+    Route::post("dashboard/setting/remove-user-registrasi", [UserRegistrasiController::class, "delete"])->name("remove.user.registrasi");
+
+    // kontak
+    Route::get("dashboard/setting/kontak", [KontakController::class, "kontak"])->name("kontak");
+    Route::post("dashboard/setting/kontak", [KontakController::class, "updateOrCreate"])->name("kontak.save");
+
+    // kontak
+    Route::get("dashboard/setting/harga", [HargaController::class, "harga"])->name("harga");
+    Route::post("dashboard/setting/harga", [HargaController::class, "updateOrCreate"])->name("harga.save");
+
 });
 
 // page halaman utama dan detail tutor
@@ -97,6 +127,7 @@ Route::get("/bandung", [ArealayananController::class, "bandung"])->name("bandung
 Route::get("/jogja", [ArealayananController::class, "jogja"])->name("jogja");
 Route::get("/surabaya", [ArealayananController::class, "surabaya"])->name("surabaya");
 
+<<<<<<< HEAD
 // PRODUCT
 Route::get("/supercamp", [ProductController::class, "supercamp"])->name("supercamp");
 Route::get("/privat", [ProductController::class, "privat"])->name("privat");
@@ -110,3 +141,5 @@ Route::get("/mahasiswa", [TingkatanController::class, "tingkatanmhs"])->name("ti
 // NEWS
 Route::get("/news", [NewsController::class, "news"])->name("berita");
 Route::get("/newsdetails", [NewsController::class, "newsdetails"])->name("berita");
+=======
+>>>>>>> 0304267b6fa167c4c76ac245c3e2515097e77618

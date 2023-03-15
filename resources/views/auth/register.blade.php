@@ -75,7 +75,7 @@
                                 <label for="Phone Number" class="text-base font-normal text-black">No. Telephone </label>
                             </div>
                             <div class="mt-2 relative text-body focus-within:text-black">
-                                <input type="tel" pattern="[0]{1}[8]{1}[0-8]{1}[0-9]{3}[0-9]{3}[0-9]{3}" name="no_telepon" id="Phone Number" placeholder="Masukan Nomor WhatsApp" class="block w-full p-4 text-black transition-all duration-200 border border-body rounded-md focus:outline-none focus:border-blue-600 focus: bg-white caret-blue-600 @error('no_telepon') border-red-400 @else border-gray-300 @enderror" value="{{ old('no_telepon') }}" required>
+                                <input type="tel" pattern="[0]{1}[8]{1}[0-9]{8,11}" name="no_telepon" id="Phone Number" placeholder="Masukan Nomor WhatsApp" class="block w-full p-4 text-black transition-all duration-200 border border-body rounded-md focus:outline-none focus:border-blue-600 focus: bg-white caret-blue-600 @error('no_telepon') border-red-400 @else border-gray-300 @enderror" value="{{ old('no_telepon') }}" required>
 
                                 {{-- untuk menampilkan error  --}}
                                 @error('no_telepon')

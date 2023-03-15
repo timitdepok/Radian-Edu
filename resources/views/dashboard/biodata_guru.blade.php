@@ -236,8 +236,8 @@
             {{-- logout --}}
             <div class="w-full flex justify-end">
                 <div class="w-fit">
-                    <a href="{{ route('list.profile.guru') }}" class="justify-center rounded-md px-4 py-2 bg-white border-primary border-[3px] flex flex-row max-w-[200px] max-h-[50px] items-center">
-                        <span class="text-primary text-base font-semibold h-[35px] flex items-center">Kembali</span>
+                    <a href="{{ route('list.profile.guru') }}" class="justify-center rounded-md px-4 py-2 bg-primary flex flex-row max-w-[200px] max-h-[50px] items-center">
+                        <span class="text-white text-base font-semibold h-[35px] flex items-center">Kembali</span>
                     </a>
                 </div>
             </div>

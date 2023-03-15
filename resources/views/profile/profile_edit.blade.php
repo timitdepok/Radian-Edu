@@ -40,7 +40,7 @@
 
                 <div class="mb-4">
                     <p class="text-xl font-medium mb-[22px] text-black">Nomor Telepon</p>
-                    <input type="text" name="no_telepon" id="no_telepon" class="h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none @error('no_telepon') border-primarySD @else border-primaryInp @enderror border rounded-md" pattern="[0]{1}[8]{1}[0-9]{9,10}" value="{{ old('no_telepon') ? old('no_telepon') : $user->no_telepon }}" >
+                    <input type="text" name="no_telepon" id="no_telepon" class="h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none @error('no_telepon') border-primarySD @else border-primaryInp @enderror border rounded-md" pattern="[0]{1}[8]{1}[0-9]{8,11}" value="{{ old('no_telepon') ? old('no_telepon') : $user->no_telepon }}" >
                     @error("no_telepon")
                       <p class="text-sm font-normal mt-1 text-primarySD">{{ $message }}</p>
                     @enderror

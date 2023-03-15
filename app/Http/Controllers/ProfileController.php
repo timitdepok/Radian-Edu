@@ -30,6 +30,8 @@ class ProfileController extends Controller
         // no_telepon
         "no_telepon.required" => "Kolom ini tidak boleh kosong.",
         "no_telepon.numeric" => "Data harus berupa angka.",
+        "no_telepon.digits_between" => "Masukkan nomor min 10 digit dan max 13 digit.",
+        "no_telepon.unique" => "Nomor HP sudah terdaftar.",
 
         // dari_pendidikan
         "dari_pendidikan.required" => "Kolom ini tidak boleh kosong.",
@@ -210,7 +212,7 @@ class ProfileController extends Controller
         $data = [
             "update_foto" => "max:2024|file|mimes:png,jpeg,jpg",
             "nama" => "required|max:255",
-            "no_telepon" => "required|numeric",
+            "no_telepon" => "required|numeric|digits_between:10,13|unique:users,no_telepon,".$user->id,
             "kegiatan_mengajar" => "required|max:255",
             "deskripsi_diri" => "required",
 
@@ -263,7 +265,7 @@ class ProfileController extends Controller
         $data_hapus_minat_mengajar = [];
         if($request->hapus_minat_mengajar){
             foreach($request->hapus_minat_mengajar as $row){
-                if (InterestTeaching::where("user_id")->where("id", $row)->get()) {
+                if (InterestTeaching::where("user_id", $user->id)->where("id", $row)->first()) {
                     $data_hapus_minat_mengajar[] = $row;
                 }
             }
@@ -292,7 +294,7 @@ class ProfileController extends Controller
         $data_hapus_domisili_mengajar = [];
         if($request->hapus_domisili_mengajar){
             foreach($request->hapus_domisili_mengajar as $row){
-                if (TeachingDomicile::where("user_id")->where("id", $row)->get()) {
+                if (TeachingDomicile::where("user_id", $user->id)->where("id", $row)->firts()) {
                     $data_hapus_domisili_mengajar[] = $row;
                 }
             }
@@ -368,7 +370,7 @@ class ProfileController extends Controller
             $data_user["foto"] = $request->file("update_foto")->store("Images");
         }
 
-        // simpan seluru data 
+        // simpan seluruh data 
         $all_data = [
             "user" => $data_user,
             "update_pengalaman" => $data_update_pengalaman,

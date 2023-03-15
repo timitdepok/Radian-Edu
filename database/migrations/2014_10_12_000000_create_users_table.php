@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('nama');
             $table->string('password');
-            $table->string('no_telepon', 30);
-            $table->string('email', 100);
+            $table->string('no_telepon', 30)->unique();
+            $table->string('email', 100)->unique();
             $table->text('foto')->nullable();
             $table->text('cv')->nullable();
             $table->enum('jenis_kelamin', ['Pria', 'Wanita'])->nullable();

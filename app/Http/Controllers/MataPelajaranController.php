@@ -2,15 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Validator;
 use App\Models\EducationalLevel;
+use App\Models\Subjects;
 use Illuminate\Http\Request;
+use Exception;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Auth\Access\AuthorizationException;
 use App\Models\User;
-use Exception;
 
-class TingkatanController extends Controller
+
+class MataPelajaranController extends Controller
 {
 
     // untuk melakukan pengaman, jadi hanya admin yang bisa menjalankan fungsi2 dibawah ini
@@ -25,8 +28,8 @@ class TingkatanController extends Controller
         });
     }
 
-    // menampilkan page serta data tingkatan  
-    public function tingkatan(Request $request){
+    // menampilkan page mata pelajaran
+    public function mata_pelajaran(Request $request){
 
         $user = auth()->user();
         $search = "";
@@ -34,80 +37,69 @@ class TingkatanController extends Controller
             $search = $request->search;
         }
 
-        $tingkatan = EducationalLevel::where("tingkatan", "like", "%" . $search . "%")->orderBy('tingkatan', 'asc')->paginate(10)
+        $tingkatan = EducationalLevel::all();
+        $mata_pelajaran = Subjects::cariMapel($search)->orderBy("tingkatan_id", "asc")->paginate(10)
                     ->withQueryString(request("search"));
 
-        return view("dashboard.tingkatan",[
+        return view("dashboard.mata_pelajaran",[
             "title" => "Radian Edu",
             "user" => $user,
             "sidebar" => "setting",
+            "mata_pelajaran" => $mata_pelajaran,
             "tingkatan" => $tingkatan,
             "search" => $search            
         ]);
 
     }
 
-<<<<<<< HEAD
-    // TINGKAT SEKOLAH DASAR
-    public function tingkatansd(){
-        return view("tingkatan.tingkatansd", [
-            "title" => "Sekolah Dasar | Radian Edu"
-        ]);
-    }
-
-    // TINGKAT SEKOLAH MENENGAH PERTAMA
-    public function tingkatansmp(){
-        return view("tingkatan.tingkatansmp", [
-            "title" => "Sekolah Menengah Pertama | Radian Edu"
-        ]);
-    }
-
-    // TINGKAT SEKOLAH MENENGAH ATAS
-    public function tingkatansma(){
-        return view("tingkatan.tingkatansma", [
-            "title" => "Sekolah Menengah Atas | Radian Edu"
-        ]);
-    }
-
-    // TINGKAT MAHASISWA
-    public function tingkatanmhs(){
-        return view("tingkatan.tingkatanmhs", [
-            "title" => "Mahasiswa | Radian Edu"
-        ]);
-    }
-=======
-    // fungsi untuk menyimpan data tingkatan 
+    // fungsi untuk menyimpan data mata pelajaran 
     public function store(Request $request){
 
+        $check = Subjects::where("tingkatan_id", $request->tingkatan)->where("mata_pelajaran", $request->mata_pelajaran)->first();
+        if($check){
+            $data = [
+                "tingkatan" => "required|numeric|exists:educational_levels,id",
+                "mata_pelajaran" => "required|max:255|unique:subjects,mata_pelajaran"
+            ];
+        }else{
+            $data = [
+                "tingkatan" => "required|numeric|exists:educational_levels,id",
+                "mata_pelajaran" => "required|max:255"
+            ];
+        }
+
         $message = [
+            "mata_pelajaran.required" => "Kolom ini tidak boleh kosong.",
+            "mata_pelajaran.max" => "Data yang dimasukkan terlalu banyak.",
+            "mata_pelajaran.unique" => "Data yang dimasukkan sudah terdaftar.",
+
             "tingkatan.required" => "Kolom ini tidak boleh kosong.",
-            "tingkatan.max" => "Data yang dimasukkan terlalu banyak."
+            "tingkatan.exists" => "Data tidak terdaftar.",
         ];
 
-        $validate = $request->validate([
-            "tingkatan" => "required|max:255"
-        ], $message);
+        $validate = $request->validate($data, $message);
 
         try {
             
-            EducationalLevel::create([
-                "tingkatan" => $request->tingkatan
+            Subjects::create([
+                "tingkatan_id" => $request->tingkatan,
+                "mata_pelajaran" => $request->mata_pelajaran
             ]);
 
-            return redirect()->route("tingkatan")->with("success", "Data tingkatan berhasil ditambahkan.");
+            return redirect()->route("mata.pelajaran")->with("success", "Data mata pelajaran berhasil ditambahkan.");
 
         } catch (\Exception $e) {
 
-            return redirect()->route("tingkatan")->with("failed", "Data tingkatan gagal ditambahkan.");
+            return redirect()->route("mata.pelajaran")->with("failed", "Data mata pelajaran gagal ditambahkan.");
 
         }
     }
 
-    // mengambil data tingkatan menggunakan ajax
-    public function getTingkatan(Request $request){
+    // mengambil data mata pelajaran menggunakan ajax
+    public function getMataPelajaran(Request $request){
 
         $validate = Validator::make($request->all(),[
-            "tingkatan_id" => "required|numeric"
+            "mata_pelajaran_id" => "required|numeric"
         ]);
 
         if($validate->fails()){
@@ -119,11 +111,13 @@ class TingkatanController extends Controller
 
         try {
 
-            $tingkatan = EducationalLevel::where("id", $request->tingkatan_id)->first();
-            
-            if($tingkatan){
+            $mata_pelajaran = Subjects::where("id", $request->mata_pelajaran_id)->first();
+            $tingkatan = EducationalLevel::all();
+
+            if($mata_pelajaran){
                 return response()->json([
-                    "tingkatan" => $tingkatan->tingkatan,
+                    "mata_pelajaran" => $mata_pelajaran,
+                    "tingkatan" => $tingkatan,
                     "status" => "success"
                 ]);
             }
@@ -138,30 +132,32 @@ class TingkatanController extends Controller
         }
     }
 
-    // melakukan update/edit tingkatan menggunakan ajax
+    // melakukan update/edit mata pelajaran menggunakan ajax
     public function update(Request $request){
 
         $validate = Validator::make($request->all(),[
-            "tingkatan_id" => "required|numeric",
-            "tingkatan" => "required|max:255"
+            "mata_pelajaran_id" => "required|numeric",
+            "tingkatan_id" => "required|numeric|exists:educational_levels,id",
+            "mata_pelajaran" => "required|max:255"
         ]);
 
-        if($validate->fails()){
-            return response()->json([
-                'success' => true,
-                'icon' => 'error',
-                'title' => 'Error',
-                'message' => "Terjadi kesalahan. Data gagal diubah."
-            ]);
-        }
+        // if($validate->fails()){
+        //     return response()->json([
+        //         'success' => true,
+        //         'icon' => 'error',
+        //         'title' => 'Error',
+        //         'message' => "Terjadi kesalahan. Data gagal diubah."
+        //     ]);
+        // }
 
         try {
 
-            $tingkatan = EducationalLevel::where("id", $request->tingkatan_id)->first();
+            $mata_pelajaran = Subjects::where("id", $request->mata_pelajaran_id)->first();
 
-            if($tingkatan){
-                $tingkatan->update([
-                    "tingkatan" => $request->tingkatan
+            if($mata_pelajaran){
+                $mata_pelajaran->update([
+                    "tingkatan_id" => $request->tingkatan_id,
+                    "mata_pelajaran" => $request->mata_pelajaran
                 ]);
 
                 return response()->json([
@@ -179,17 +175,17 @@ class TingkatanController extends Controller
                 'success' => true,
                 'icon' => 'error',
                 'title' => 'Error',
-                'message' => 'Terjadi kesalahan. Data gagal untuk diubah!'
+                'message' => ''.$e
             ]);
         }
 
     }
 
-    // melakukan hapus data tingkatan dengan ajax
+    // melakukan hapus data mata pelajaran dengan ajax
     public function delete(Request $request){
 
         $validate = Validator::make($request->all(),[
-            "tingkatan_id" => "required|numeric"
+            "mata_pelajaran_id" => "required|numeric"
         ]);
 
         if($validate->fails()){
@@ -203,10 +199,10 @@ class TingkatanController extends Controller
 
         try {
             
-            $tingkatan = EducationalLevel::where("id", $request->tingkatan_id)->first();
+            $mata_pelajaran = Subjects::where("id", $request->mata_pelajaran_id)->first();
             
-            if($tingkatan){
-                $tingkatan->delete();
+            if($mata_pelajaran){
+                $mata_pelajaran->delete();
                 return response()->json([
                     'success' => true,
                     'icon' => 'success',
@@ -226,6 +222,4 @@ class TingkatanController extends Controller
             ]);
         }
     }
-    
->>>>>>> 0304267b6fa167c4c76ac245c3e2515097e77618
 }

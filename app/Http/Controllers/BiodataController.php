@@ -28,13 +28,13 @@ class BiodataController extends Controller
 
         // foto
         "foto.required" => "Kolom ini tidak boleh kosong.",
-        "foto.max" => "Ukuran file terlalu besar. Maksimum ukuran file 2 MB..",
+        "foto.max" => "Ukuran file terlalu besar. Maksimum ukuran file 2 MB.",
         "foto.file" => "Data yang dimasukkan harus berupa file.",
         "foto.mimes" => "File yang dimasukkan harus memiliki format png,jpeg,jpg.",
 
         // cv
         "cv.required" => "Kolom ini tidak boleh kosong.",
-        "cv.max" => "Ukuran file terlalu besar. Maksimum ukuran file 2 MB..",
+        "cv.max" => "Ukuran file terlalu besar. Maksimum ukuran file 2 MB.",
         "cv.file" => "Data yang dimasukkan harus berupa file.",
         "cv.mimes" => "File yang dimasukkan harus memiliki format pdf.",
 
@@ -45,7 +45,9 @@ class BiodataController extends Controller
         // no_telepon
         "no_telepon.required" => "Kolom ini tidak boleh kosong.",
         "no_telepon.numeric" => "Data harus berupa angka.",
-        
+        "no_telepon.digits_between" => "Masukkan nomor min 10 digit dan max 13 digit.",
+        "no_telepon.unique" => "Nomor HP sudah terdaftar.",
+
         // jenis_kelamin
         "jenis_kelamin.required" => "Kolom ini tidak boleh kosong.",
         "jenis_kelamin.max" => "Data yang dimasukkan terlalu banyak.",
@@ -244,8 +246,8 @@ class BiodataController extends Controller
             $harga = $cek_harga;
         }else{
             $harga = [
-                "max_harga" => 0,
-                "min_harga" => 9999999,
+                "min_harga" => 0,
+                "max_harga" => 9999999,
                 "keuntungan" => 10
             ];
         }
@@ -265,7 +267,7 @@ class BiodataController extends Controller
             "foto" => "required|max:2024|file|mimes:png,jpeg,jpg",
             "cv" => "required|max:2024|file|mimes:pdf",
             "nama" => "required|max:255",
-            "no_telepon" => "required|numeric",
+            "no_telepon" => "required|numeric|digits_between:10,13|unique:users,no_telepon,".$user->id,
             "jenis_kelamin" => "required|max:255",
             "tanggal_lahir" => "required|date",
             "dari_pendidikan" => "required|date",
