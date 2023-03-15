@@ -25,7 +25,7 @@ class HalamanUtamaController extends Controller
         ->withQueryString(request("domisili"), request("mata_pelajaran"));
                 
         return view("home.halaman_utama", [
-            "title" => "Radian Edu",
+            "title" => "Radian Edu Solution",
             "guru" => $guru,
             "keuntungan" => $result->keuntungan,
         ]);
