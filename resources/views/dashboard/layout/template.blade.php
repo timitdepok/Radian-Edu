@@ -46,13 +46,13 @@
 
                     <form action="" method="GET" class="">
                         <div class="mt-12 search w-full h-[54px] bg-light-gray rounded-lg flex flex-row items-center tall:hidden">
-                            <div class="h-full w-auto flex items-centers text-secondary">
+                            <div class="h-full w-auto flex items-centers text-secondaryGray">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28" fill="currentColor" class="w-7 h-7 ml-[14px] mr-4 my-auto block">
                                     <path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 100 13.5 6.75 6.75 0 000-13.5zM2.25 10.5a8.25 8.25 0 1114.59 5.28l4.69 4.69a.75.75 0 11-1.06 1.06l-4.69-4.69A8.25 8.25 0 012.25 10.5z" clip-rule="evenodd" />
                                 </svg>
                             </div>
                             <div class="h-[22px] w-[2px] mr-1 bg-blue-400"></div>
-                            <input type="text" name="search" class="h-full w-full rounded-lg bg-light-gray focus:bg-light-gray placeholder:text-secondary outline-none text-base font-medium pr-4" placeholder="Search" value="{{ $search ? $search : '' }}">
+                            <input type="text" name="search" class="h-full w-full rounded-lg bg-light-gray focus:bg-light-gray placeholder:text-secondaryGrey outline-none text-base font-medium pr-4" placeholder="Search" value="{{ $search ? $search : '' }}">
                         </div>
                     </form>
 

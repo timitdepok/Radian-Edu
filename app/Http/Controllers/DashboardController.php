@@ -51,7 +51,7 @@ class DashboardController extends Controller
         ];
 
         return view("dashboard.index",[
-            "title" => "Radian Edu",
+            "title" => "Radian Edu Solution",
             "sidebar" => "dashboard",
             "user" => $user,
             "guru" => $guru,
@@ -72,7 +72,7 @@ class DashboardController extends Controller
                 ->withQueryString(request("search"));
 
         return view("dashboard.list_profile_guru",[
-            "title" => "Radian Edu",
+            "title" => "Radian Edu Solution",
             "sidebar" => "list-profile-guru",
             "user" => $user,
             "guru" => $guru,
@@ -94,7 +94,7 @@ class DashboardController extends Controller
             if($guru){
 
                 return view("dashboard.biodata_guru", [
-                    "title" => "Radian Edu",
+                    "title" => "Radian Edu Solution",
                     "guru" => $guru
                 ]);
             }
@@ -168,7 +168,7 @@ class DashboardController extends Controller
                 ->withQueryString(request("search"));
 
         return view("dashboard.data_guru",[
-            "title" => "Radian Edu",
+            "title" => "Radian Edu Solution",
             "sidebar" => "data-guru",
             "user" => $user,
             "guru" => $guru,
@@ -238,7 +238,7 @@ class DashboardController extends Controller
                 ->withQueryString(request("search"));
 
         return view("dashboard.user_access",[
-            "title" => "Radian Edu",
+            "title" => "Radian Edu Solution",
             "sidebar" => "user-access",
             "user" => $user,
             "guru" => $guru,
@@ -395,7 +395,7 @@ class DashboardController extends Controller
                 ->withQueryString(request("search"));
 
         return view("dashboard.pengaturan",[
-            "title" => "Radian Edu",
+            "title" => "Radian Edu Solution",
             "sidebar" => "setting",
             "user" => $user,
             "search" => $search

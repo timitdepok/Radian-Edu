@@ -18,6 +18,7 @@ use App\Http\Controllers\HalamanTingkatanController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\KontakController;
+use App\Http\Controllers\ForgotPasswordController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -38,6 +39,12 @@ Route::post("/login", [LoginController::class, "authentication"])->name("authent
 Route::get("/registrasi", [RegisterController::class, "form_registrasi"])->middleware("guest")->name("registrasi");
 Route::post("/registrasi", [RegisterController::class, "create_user"])->name("create.user");
 Route::post("/logout", LogoutController::class)->name("logout");
+
+// lupa password
+Route::get("/lupa-password", [ForgotPasswordController::class, "index"])->name("lupa.password");
+Route::post("/lupa-password", [ForgotPasswordController::class, "sendResetLinkEmail"])->name("send.link");
+Route::get("/reset-password/{token}", [ForgotPasswordController::class, "reset_password"])->name("password.reset");
+Route::post("/reset-password", [ForgotPasswordController::class, "update_password"])->name("update.password");
 
 // route API internal (digunakan untuk multiple select pada form biodata)
 Route::post("/getkabupaten", [ApiController::class, "getkabupaten"])->name("get.kabupaten");

@@ -63,10 +63,6 @@ class BiodataController extends Controller
         // sampai_pendidikan
         "sampai_pendidikan.required" => "Kolom ini tidak boleh kosong.",
         "sampai_pendidikan.date" => "Data yang dimasukkan harus berupa tanggal.",
-        
-        // universitas 
-        "universitas.required" => "Kolom ini tidak boleh kosong.",
-        "universitas.max" => "Data yang dimasukkan terlalu banyak.",
 
         // deskripsi_pendidikan
         "deskripsi_pendidikan.required" => "Kolom ini tidak boleh kosong.",
@@ -201,7 +197,7 @@ class BiodataController extends Controller
         $this->authorize("is_profile_complete_no", $user);
 
         return view("biodata.biodata_step1",[
-            "title" => "Radian Edu"
+            "title" => "Radian Edu Solution"
         ]);
     }
 
@@ -230,7 +226,7 @@ class BiodataController extends Controller
         ];
 
         return view("biodata.biodata_step2",[
-            "title" => "Radian Edu",
+            "title" => "Radian Edu Solution",
             "user" => $user,
             "provinsi" => Province::all(),
             "tingkatan" => EducationalLevel::all(),
@@ -272,7 +268,6 @@ class BiodataController extends Controller
             "tanggal_lahir" => "required|date",
             "dari_pendidikan" => "required|date",
             "sampai_pendidikan" => "required|date",
-            "universitas" => "required|max:255",
             "deskripsi_pendidikan" => "required",
             "asal_ptn" => "required|max:255",
             "jurusan" => "required|max:255",
@@ -366,9 +361,8 @@ class BiodataController extends Controller
             "jenis_kelamin" => $request->jenis_kelamin,
             "dari_pendidikan" => $request->dari_pendidikan,
             "sampai_pendidikan" => $request->sampai_pendidikan,
-            "universitas" => $request->universitas,
-            "deskripsi_pendidikan" => $request->deskripsi_pendidikan,
             "asal_ptn" => $request->asal_ptn,
+            "deskripsi_pendidikan" => $request->deskripsi_pendidikan,
             "jurusan" => $request->jurusan,
             "ipk" => $request->ipk,
             "provinsi" => $request->provinsi,
@@ -462,7 +456,7 @@ class BiodataController extends Controller
             }
 
             return view("biodata.biodata_step3",[
-                "title" => "Radian Edu"
+                "title" => "Radian Edu Solution"
             ]);
 
         } catch (\Throwable $th) {

@@ -37,7 +37,7 @@
                 {{-- mata pelajaran --}}
                 <div class="mt-4 mb-4">
                     <label for="mata_pelajaran" class="block mb-2 text-base font-semibold text-gray-900">Mata pelajaran</label>
-                    <input type="text" name="mata_pelajaran" id="mata_pelajaran" class="h-12 text-sm px-4 w-full outline-none @error('mata_pelajaran') border-primarySD @else border-primaryInp @enderror border rounded-md" placeholder="Masukan mata pelajaran" value="{{ old('mata_pelajaran') }}" required>
+                    <input type="text" name="mata_pelajaran" id="mata_pelajaran" class="h-12 text-sm px-4 w-full outline-none @error('mata_pelajaran') border-primarySD @else border-primaryInp @enderror border rounded-md" placeholder="Masukkan mata pelajaran" value="{{ old('mata_pelajaran') }}" required>
                     @error("mata_pelajaran")
                       <p class="text-sm font-normal mt-1 text-primarySD">{{ $message }}</p>
                     @enderror

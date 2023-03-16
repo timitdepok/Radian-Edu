@@ -42,8 +42,8 @@ class ProfileController extends Controller
         "sampai_pendidikan.date" => "Data yang dimasukkan harus berupa tanggal.",
         
         // universitas 
-        "universitas.required" => "Kolom ini tidak boleh kosong.",
-        "universitas.max" => "Data yang dimasukkan terlalu banyak.",
+        "asal_ptn.required" => "Kolom ini tidak boleh kosong.",
+        "asal_ptn.max" => "Data yang dimasukkan terlalu banyak.",
 
         // deskripsi_pendidikan
         "deskripsi_pendidikan.required" => "Kolom ini tidak boleh kosong.",
@@ -94,7 +94,7 @@ class ProfileController extends Controller
         $this->authorize("is_profile_complete_yes", $user);
 
         return view("profile.profile", [
-            "title" => "Radian Edu",
+            "title" => "Radian Edu Solution",
             "user" => $user
         ]);
 
@@ -114,7 +114,7 @@ class ProfileController extends Controller
         
         if ($mata_pelajaran && $domisili) {
             return view("profile.profile_edit", [
-                "title" => "Radian Edu",
+                "title" => "Radian Edu Solution",
                 "user" => $user,
                 "mata_pelajaran" => $mata_pelajaran,
                 "domisili" => $domisili
@@ -218,7 +218,7 @@ class ProfileController extends Controller
 
             "dari_pendidikan" => "required|date",
             "sampai_pendidikan" => "required|date",
-            "universitas" => "required|max:255",
+            "asal_ptn" => "required|max:255",
             "deskripsi_pendidikan" => "required",
 
             "id_pengalaman.*" => "required|numeric",
@@ -359,7 +359,7 @@ class ProfileController extends Controller
             "no_telepon" => $request->no_telepon,
             "dari_pendidikan" => $request->dari_pendidikan,
             "sampai_pendidikan" => $request->sampai_pendidikan,
-            "universitas" => $request->universitas,
+            "asal_ptn" => $request->universitas,
             "deskripsi_pendidikan" => $request->deskripsi_pendidikan,
             "deskripsi_diri" => $request->deskripsi_diri,
             "kegiatan_mengajar" => $request->kegiatan_mengajar,

@@ -159,11 +159,11 @@
                 </div>
             </div>
             
-            {{-- nama univeristas --}}
+            {{-- asal ptn  --}}
             <div class="mb-4">
-                <label for="universitas" class="block mb-2 text-base font-semibold text-gray-900 after:content-['*'] after:text-red-600 after:ml-1 after:text-sm">Universitas</label>
-                <input type="text" name="universitas" id="universitas" class="h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none @error('universitas') border-primarySD @else border-primaryInp @enderror border rounded-md" value="{{ old('universitas') }}" required>
-                @error("universitas")
+                <label for="asal_ptn" class="block mb-2 text-base font-semibold text-gray-900 after:content-['*'] after:text-red-600 after:ml-1 after:text-sm">Asal PTN</label>
+                <input type="text" name="asal_ptn" id="asal_ptn" class="h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none @error('asal_ptn') border-primarySD @else border-primaryInp @enderror border rounded-md" value="{{ old('asal_ptn') }}" required>
+                @error("asal_ptn")
                   <p class="text-sm font-normal mt-1 text-primarySD">{{ $message }}</p>
                 @enderror
             </div>
@@ -175,15 +175,6 @@
                 @error("deskripsi_pendidikan")
                   <p class="text-sm font-normal mt-1 text-primarySD">{{ $message }}</p>
                 @enderror
-            </div>
-            
-            {{-- asal ptn  --}}
-            <div class="mb-4">
-              <label for="asal_ptn" class="block mb-2 text-base font-semibold text-gray-900 after:content-['*'] after:text-red-600 after:ml-1 after:text-sm">Asal PTN</label>
-              <input type="text" name="asal_ptn" id="asal_ptn" class="h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none @error('asal_ptn') border-primarySD @else border-primaryInp @enderror border rounded-md" value="{{ old('asal_ptn') }}" required>
-              @error("asal_ptn")
-                <p class="text-sm font-normal mt-1 text-primarySD">{{ $message }}</p>
-              @enderror
             </div>
             
             {{-- jurusan --}}

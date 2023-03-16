@@ -53,7 +53,7 @@ class HalamanUtamaController extends Controller
         ->withQueryString(request("domisili"), request("mata_pelajaran"));
 
         return view("home.daftar_guru", [
-            "title" => "Radian Edu",
+            "title" => "Radian Edu Solution",
             "guru" => $guru,
             "keuntungan" => $result["keuntungan"],
             "domisili" => $request->domisili,
@@ -85,7 +85,7 @@ class HalamanUtamaController extends Controller
                 }
 
                 return view("home.detail_guru", [
-                    "title" => "Radian Edu",
+                    "title" => "Radian Edu Solution",
                     "guru" => $guru,
                     "keuntungan" => $result["keuntungan"],
                 ]);

@@ -73,7 +73,7 @@
         <h1 class="text-[32px] mb-4 font-semibold text-black">Pendidikan</h1>
         <hr class="h-[1px] bg-primaryInp w-full mb-[22px]">
         <div class="flex flex-wrap notebook:flex-nowrap justify-between mb-[90px]">
-            <div class="flex-grow notebook:max-w-[48%]"></div>
+            <div class="flex-grow notebook:max-w-[48%] hidden sm:block"></div>
             <div class="flex-grow notebook:max-w-[48%]">
                 <div class="flex flex-row w-full">
                     <div class="mr-0 sm:mr-5">
@@ -89,7 +89,7 @@
                         </div>
         
                         <h1 class="text-[32px] font-bold mb-1 text-black">
-                            {{ $user->universitas }}
+                            {{ $user->asal_ptn }}
                         </h1>
         
                         <p class="text-base text-bodyText">
@@ -104,7 +104,7 @@
         <h1 class="text-[32px] mb-4 font-semibold text-black">Pengalaman</h1>
         <hr class="h-[1px] bg-primaryInp w-full mb-[22px]">
         <div class="flex flex-wrap notebook:flex-nowrap justify-between mb-[90px]">
-            <div class="flex-grow notebook:max-w-[48%]"></div>
+            <div class="flex-grow notebook:max-w-[48%] hidden sm:block"></div>
             <div class="flex-grow notebook:max-w-[48%]">
                 @if($user->pengalaman)
                     @foreach ($user->pengalaman as $row)

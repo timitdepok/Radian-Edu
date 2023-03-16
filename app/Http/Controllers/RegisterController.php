@@ -27,14 +27,14 @@ class RegisterController extends Controller
         "no_telepon.unique" => "Nomor HP sudah terdaftar.",
 
         "password.required" => "Kolom password tidak boleh kosong.",
-        "password.min" => "Masukkan minimal 6 karakter.",
+        "password.min" => "Password minimal harus terdiri dari 6 min karakter.",
         "password.max" => "Karakter yang di inputkan terlalu banyak."
     ];
 
     // fungsi yang digunakan untuk menampilkan form registrasi
     public function form_registrasi(){
         return view("auth.register", [
-            "title" => "Radian Edu"
+            "title" => "Radian Edu Solution"
         ]);
     }
 

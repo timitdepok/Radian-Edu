@@ -10,7 +10,7 @@ class LoginController extends Controller
     // fungsi yang digunakan untuk menampilkan form login
     public function form_login(){
         return view("auth.login", [
-            "title" => "Radian Edu"
+            "title" => "Radian Edu Solution"
         ]);
     }
 
@@ -29,7 +29,7 @@ class LoginController extends Controller
         }
  
         return back()->withErrors([
-            'email' => 'Akun yang dimasukkan tidak terdaftar!',
+            'email' => 'Email atau password yang dimasukkan salah. Mohon coba lagi.',
         ])->onlyInput('email');
 
     }
