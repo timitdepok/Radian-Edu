@@ -17,6 +17,7 @@ class WhatsAppController extends Controller
         // jumlah sesi
         "jumlah_sesi.required" => "Kolom ini tidak boleh kosong.",
         "jumlah_sesi.numeric" => "Data harus berupa angka.",
+        "jumlah_sesi.min" => "Masukkan jumlah sesi minimal 1 sesi.",
 
         // ajukan tanggal 
         "ajukan_tanggal.required" => "Kolom ini tidak boleh kosong.",
@@ -73,7 +74,7 @@ class WhatsAppController extends Controller
 
         $validate = $request->validate([
             "nama" => "required|max:255",
-            "jumlah_sesi" => "required|numeric",
+            "jumlah_sesi" => "required|numeric|min:1",
             "ajukan_tanggal" => "required|date",
             "mata_pelajaran" => "required|max:255",
             "nama_guru" => "required|max:255",

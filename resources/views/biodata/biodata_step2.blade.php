@@ -114,7 +114,7 @@
             {{-- no_telepon --}}
             <div class="mb-4">
               <label for="no_telepon" class="block mb-2 text-base font-semibold text-gray-900 after:content-['*'] after:text-red-600 after:ml-1 after:text-sm">Nomor Telepon</label>
-              <input type="text" name="no_telepon" id="no_telepon" class="h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none @error('no_telepon') border-primarySD @else border-primaryInp @enderror border rounded-md" pattern="[0]{1}[8]{1}[0-9]{9,10}" value="{{ old('no_telepon') ? old('no_telepon') : $user->no_telepon }}" required>
+              <input type="text" name="no_telepon" id="no_telepon" class="h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none @error('no_telepon') border-primarySD @else border-primaryInp @enderror border rounded-md" pattern="[0]{1}[8]{1}[0-9]{8,11}" value="{{ old('no_telepon') ? old('no_telepon') : $user->no_telepon }}" required>
               @error("no_telepon")
                 <p class="text-sm font-normal mt-1 text-primarySD">{{ $message }}</p>
               @enderror
@@ -159,11 +159,11 @@
                 </div>
             </div>
             
-            {{-- nama univeristas --}}
+            {{-- asal ptn  --}}
             <div class="mb-4">
-                <label for="universitas" class="block mb-2 text-base font-semibold text-gray-900 after:content-['*'] after:text-red-600 after:ml-1 after:text-sm">Universitas</label>
-                <input type="text" name="universitas" id="universitas" class="h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none @error('universitas') border-primarySD @else border-primaryInp @enderror border rounded-md" value="{{ old('universitas') }}" required>
-                @error("universitas")
+                <label for="asal_ptn" class="block mb-2 text-base font-semibold text-gray-900 after:content-['*'] after:text-red-600 after:ml-1 after:text-sm">Asal PTN</label>
+                <input type="text" name="asal_ptn" id="asal_ptn" class="h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none @error('asal_ptn') border-primarySD @else border-primaryInp @enderror border rounded-md" value="{{ old('asal_ptn') }}" required>
+                @error("asal_ptn")
                   <p class="text-sm font-normal mt-1 text-primarySD">{{ $message }}</p>
                 @enderror
             </div>
@@ -175,15 +175,6 @@
                 @error("deskripsi_pendidikan")
                   <p class="text-sm font-normal mt-1 text-primarySD">{{ $message }}</p>
                 @enderror
-            </div>
-            
-            {{-- asal ptn  --}}
-            <div class="mb-4">
-              <label for="asal_ptn" class="block mb-2 text-base font-semibold text-gray-900 after:content-['*'] after:text-red-600 after:ml-1 after:text-sm">Asal PTN</label>
-              <input type="text" name="asal_ptn" id="asal_ptn" class="h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none @error('asal_ptn') border-primarySD @else border-primaryInp @enderror border rounded-md" value="{{ old('asal_ptn') }}" required>
-              @error("asal_ptn")
-                <p class="text-sm font-normal mt-1 text-primarySD">{{ $message }}</p>
-              @enderror
             </div>
             
             {{-- jurusan --}}
@@ -227,7 +218,7 @@
                 <select name="provinsi" id="provinsi" class="appearance-none h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none @error('provinsi') border-primarySD @else border-primaryInp @enderror border rounded-md" required>
                   <option value="" style="display: none;"></option>
                   @foreach ($provinsi as $row)
-                    <option @if(old("provinsi")) selected @endif value="{{ $row->name }}">{{ $row->name }}</option>
+                    <option @if(old("provinsi") == $row->name) selected @endif value="{{ $row->name }}">{{ $row->name }}</option>
                   @endforeach
                 </select>
               </div>

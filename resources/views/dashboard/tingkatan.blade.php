@@ -8,10 +8,11 @@
             <div class="p-4 bg-primary rounded-t-md">
                 <h2 class="text-xl font-semibold text-white">Tambah tingkatan</h2>
             </div>
-            <div class="mb-0 p-4">
+            <form action="{{ route('tambah.tingkatan') }}" method="POST" class="mb-0 p-4">
+                @csrf
                 <div class="mb-4">
                     <label for="tingkatan" class="block mb-2 text-base font-semibold text-gray-900">Tingkatan</label>
-                    <input type="text" name="tingkatan" id="tingkatan" class="h-12 text-sm px-4 w-full outline-none @error('tingkatan') border-primarySD @else border-primaryInp @enderror border rounded-md" placeholder="Masukan tingkatan pendidikan" value="{{ old('tingkatan') }}">
+                    <input type="text" name="tingkatan" id="tingkatan" class="h-12 text-sm px-4 w-full outline-none @error('tingkatan') border-primarySD @else border-primaryInp @enderror border rounded-md" placeholder="Masukkan tingkatan pendidikan" value="{{ old('tingkatan') }}" required>
                     @error("tingkatan")
                       <p class="text-sm font-normal mt-1 text-primarySD">{{ $message }}</p>
                     @enderror
@@ -19,7 +20,7 @@
                 <div class="w-full flex justify-end">
                     <button type="submit" id="save" class="py-4 px-6 text-white bg-primary font-semibold rounded-md text-sm text-center">Tambah</button>
                 </div>
-            </div>
+            </form>
         </div>
         <div class="relative overflow-x-auto rounded-md">
             <table class="w-full text-sm text-left text-black rounded-t-sm">
@@ -49,15 +50,15 @@
                             </td>
                             <td class="px-6 py-4">
                                 <div class="w-fit flex flex-row items-center">
-                                    <div class="edit-user w-fit cursor-pointer">
-                                        <input type="hidden" name="edit-id" class="input-edit-user" value="{{ $row->id }}" readonly>
+                                    <div class="edit-tingkatan w-fit cursor-pointer">
+                                        <input type="hidden" name="edit-id" class="input-edit-tingkatan" value="{{ $row->id }}" readonly>
                                         <span class=" text-primary">Edit</span>
                                     </div>
                                     <div class="w-fit mr-1 ml-1">
                                         <span>|</span>
                                     </div>
-                                    <div class="remove-user w-fit cursor-pointer">
-                                        <input type="hidden" name="remove-id" class="input-remove-user" value="{{ $row->id }}" readonly>
+                                    <div class="remove-tingkatan w-fit cursor-pointer">
+                                        <input type="hidden" name="remove-id" class="input-remove-tingkatan" value="{{ $row->id }}" readonly>
                                         <span class=" text-primarySD">Hapus</span>
                                     </div>
                                 </div>
@@ -72,10 +73,6 @@
             {{ $tingkatan->links() }}
         </div>
     </div>
-
-    
-
-
 </div>
 
 <!-- Pop-up modal -->
@@ -87,23 +84,12 @@
     <span class="hidden sm:inline-block sm:align-middle sm:h-screen"></span>&#8203;
     <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full" role="dialog" aria-modal="true" aria-labelledby="modal-headline">
         <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-            <h3 class="text-2xl leading-6 font-semibold mb-2" id="modal-headline">Edit Status</h3>
+            <h3 class="text-2xl leading-6 font-semibold mb-2" id="modal-headline">Edit Tingkatan</h3>
             <p class="text-bodyText">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est iusto minima iure quisquam, eos quasi hic quod porro, quis eveniet veniam fugiat quo itaque.</p> 
             <div class="mt-4">
-                <input type="hidden" name="user_id" id="user_id">
-                <label for="top_star" class="block mb-2 text-base font-semibold text-gray-900">Edit Status</label>
-                <div class="block relative">
-                    <div class="rounded-r-md absolute bg-white border-t border-r border-b @error('kegiatan_mengajar') border-primarySD @else border-primaryInp @enderror pr-4 flex items-center justify-center right-0 h-full">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
-                        </svg>                  
-                    </div>
-                    <select name="top_star" id="top_star" class="appearance-none h-12 text-sm px-4 w-full outline-none @error('top_star') border-primarySD @else border-primaryInp @enderror  border rounded-md" required>
-                    </select>
-                </div>
-                @error("top_star")
-                    <p class="text-sm font-normal mt-1 text-primarySD">{{ $message }}</p>
-                @enderror
+                <input type="hidden" name="tingkatan_id" id="tingkatan_id">
+                <label for="edit-tingkatan" class="block mb-2 text-base font-semibold text-gray-900">Tingkatan</label>
+                <input type="text" name="tingkatan" id="edit-tingkatan" class="h-12 text-sm px-4 w-full outline-none border-primaryInp border rounded-md" value="" required>
             </div>
         </div>
     <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
@@ -111,9 +97,20 @@
     <button type="button"  id="btn-cancel" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-6 py-3 bg-white text-base font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">Cancel</button>
 </div>
 </div>
+@endsection
 
-
+@section('javascript')
 <script>
+
+    // menampilkan pesan success saat brhasil menambahkan data
+    @if(Session::has('success'))
+        toastr.success("{{ Session::get('success') }}")
+    @endif
+
+    // menampilkan pesan failed saat gagal menambahkan data
+    @if(Session::has('failed'))
+        toastr.error("{{ Session::get('failed') }}")
+    @endif
 
     $(document).ready(function () { 
 
@@ -122,29 +119,19 @@
         });
 
         // menampilkan pop up modal
-        $(".edit-user").on("click", function () {
-            let user_id = $(this).find(".input-edit-user").val();
+        $(".edit-tingkatan").on("click", function () {
+            let tingkatan_id = $(this).find(".input-edit-tingkatan").val();
             $.ajax({
-                url : "{{ route('get.user') }}",
+                url : "{{ route('get.tingkatan') }}",
                 type : "POST",
-                data : {user_id : user_id},
+                data : {tingkatan_id : tingkatan_id},
                 success: function(response) {
                     
                     if (response.status == "success" ) {
                         $("#modal-edit-tingkatan").removeClass("hidden");
-                        $("#user_id").val(user_id);
+                        $("#tingkatan_id").val(tingkatan_id);
+                        $("#edit-tingkatan").val(response.tingkatan);
 
-                        if (response.top_star) {
-                            $("#top_star").html(`
-                                <option selected value="1">Top Star</option>
-                                <option value="0">Non Top Star</option>
-                            `);
-                        }else{
-                            $("#top_star").html(`
-                                <option value="1">Top Star</option>
-                                <option selected value="0">Non Top Star</option>
-                            `);
-                        }
                     }else{
                         swal({
                             icon: `error`,
@@ -166,15 +153,15 @@
         // untuk mengupdate data 
         $("#btn-update").on("click", function() {
             let parentElement = $(this).closest("#modal-edit-tingkatan");
-            let user_id = parentElement.find("#user_id").val();
-            let top_star = parentElement.find("#top_star").val();
-
+            let tingkatan_id = parentElement.find("#tingkatan_id").val();
+            let tingkatan = parentElement.find("#edit-tingkatan").val();
             $.ajax({
-                url : "{{ route('edit.top.star') }}",
-                type : "POST",
+
+                url : "{{ route('edit.tingkatan') }}",
+                type : "PUT",
                 data : {
-                    user_id : user_id,
-                    top_star : top_star
+                    tingkatan_id : tingkatan_id,
+                    tingkatan : tingkatan
                 },
                 success: function(response) {
                     $('#modal-edit-tingkatan').addClass('hidden');
@@ -188,7 +175,7 @@
                         location.reload();
                     });
                 },
-                error:function(){
+                error:function(err){
                     swal({
                         icon: `error`,
                         title: `404 Not Found`,
@@ -205,10 +192,10 @@
         });
 
 
-        // menghapus user
-        $(".remove-user").on("click", function () {
-            let user_id = $(this).find(".input-remove-user").val();
-            console.log(user_id);
+        // menghapus tingkatan
+        $(".remove-tingkatan").on("click", function () {
+            let tingkatan_id = $(this).find(".input-remove-tingkatan").val();
+            console.log(tingkatan_id);
 
             new swal({
                 title: "Anda yakin?",
@@ -221,8 +208,8 @@
                 if (willDelete) {
                     $.ajax({
                         method : "POST",
-                        data : {user_id : user_id},
-                        url : "{{ route('remove.user') }}",
+                        data : {tingkatan_id : tingkatan_id},
+                        url : "{{ route('remove.tingkatan') }}",
                         success:function(response){ 
                             swal({icon: `${response.icon}`,title: `${response.title}`,text: `${response.message}`,})
                             .then((willDelete) => {

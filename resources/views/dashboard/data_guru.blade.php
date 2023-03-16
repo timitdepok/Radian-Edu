@@ -85,15 +85,12 @@
     <span class="hidden sm:inline-block sm:align-middle sm:h-screen"></span>&#8203;
     <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full" role="dialog" aria-modal="true" aria-labelledby="modal-headline">
         <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-            <h3 class="text-2xl leading-6 font-semibold mb-2" id="modal-headline">Edit Status</h3>
+            <h3 class="text-2xl leading-6 font-semibold mb-2" id="modal-headline">Edit Harga</h3>
             <p class="text-bodyText">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est iusto minima iure quisquam, eos quasi hic quod porro, quis eveniet veniam fugiat quo itaque.</p> 
             <div class="mt-4">
                 <input type="hidden" name="user_id" id="user_id">
                 <label for="harga" class="block mb-2 text-base font-semibold text-gray-900">Harga</label>
-                <input type="number" name="harga" id="harga" class="h-12 text-sm px-4 w-full outline-none @error('harga') border-primarySD @else border-primaryInp @enderror border rounded-md" value="{{ old('harga') }}" required>
-                @error("harga")
-                  <p class="text-sm font-normal mt-1 text-primarySD">{{ $message }}</p>
-                @enderror
+                <input type="number" name="harga" id="harga" class="h-12 text-sm px-4 w-full outline-none border-primaryInp border rounded-md" value="{{ old('harga') }}" required>
             </div>
         </div>
     <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
@@ -101,8 +98,9 @@
     <button type="button"  id="btn-cancel" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-6 py-3 bg-white text-base font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">Cancel</button>
 </div>
 </div>
+@endsection
 
-
+@section('javascript')
 <script>
 
     $(document).ready(function () { 
@@ -151,7 +149,7 @@
 
             $.ajax({
                 url : "{{ route('edit.harga') }}",
-                type : "POST",
+                type : "PUT",
                 data : {
                     user_id : user_id,
                     harga : harga

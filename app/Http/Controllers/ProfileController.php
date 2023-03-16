@@ -30,6 +30,8 @@ class ProfileController extends Controller
         // no_telepon
         "no_telepon.required" => "Kolom ini tidak boleh kosong.",
         "no_telepon.numeric" => "Data harus berupa angka.",
+        "no_telepon.digits_between" => "Masukkan nomor min 10 digit dan max 13 digit.",
+        "no_telepon.unique" => "Nomor HP sudah terdaftar.",
 
         // dari_pendidikan
         "dari_pendidikan.required" => "Kolom ini tidak boleh kosong.",
@@ -40,8 +42,8 @@ class ProfileController extends Controller
         "sampai_pendidikan.date" => "Data yang dimasukkan harus berupa tanggal.",
         
         // universitas 
-        "universitas.required" => "Kolom ini tidak boleh kosong.",
-        "universitas.max" => "Data yang dimasukkan terlalu banyak.",
+        "asal_ptn.required" => "Kolom ini tidak boleh kosong.",
+        "asal_ptn.max" => "Data yang dimasukkan terlalu banyak.",
 
         // deskripsi_pendidikan
         "deskripsi_pendidikan.required" => "Kolom ini tidak boleh kosong.",
@@ -92,7 +94,7 @@ class ProfileController extends Controller
         $this->authorize("is_profile_complete_yes", $user);
 
         return view("profile.profile", [
-            "title" => "Radian Edu",
+            "title" => "Radian Edu Solution",
             "user" => $user
         ]);
 
@@ -112,7 +114,7 @@ class ProfileController extends Controller
         
         if ($mata_pelajaran && $domisili) {
             return view("profile.profile_edit", [
-                "title" => "Radian Edu",
+                "title" => "Radian Edu Solution",
                 "user" => $user,
                 "mata_pelajaran" => $mata_pelajaran,
                 "domisili" => $domisili
@@ -210,13 +212,13 @@ class ProfileController extends Controller
         $data = [
             "update_foto" => "max:2024|file|mimes:png,jpeg,jpg",
             "nama" => "required|max:255",
-            "no_telepon" => "required|numeric",
+            "no_telepon" => "required|numeric|digits_between:10,13|unique:users,no_telepon,".$user->id,
             "kegiatan_mengajar" => "required|max:255",
             "deskripsi_diri" => "required",
 
             "dari_pendidikan" => "required|date",
             "sampai_pendidikan" => "required|date",
-            "universitas" => "required|max:255",
+            "asal_ptn" => "required|max:255",
             "deskripsi_pendidikan" => "required",
 
             "id_pengalaman.*" => "required|numeric",
@@ -263,7 +265,7 @@ class ProfileController extends Controller
         $data_hapus_minat_mengajar = [];
         if($request->hapus_minat_mengajar){
             foreach($request->hapus_minat_mengajar as $row){
-                if (InterestTeaching::where("user_id")->where("id", $row)->get()) {
+                if (InterestTeaching::where("user_id", $user->id)->where("id", $row)->first()) {
                     $data_hapus_minat_mengajar[] = $row;
                 }
             }
@@ -292,7 +294,7 @@ class ProfileController extends Controller
         $data_hapus_domisili_mengajar = [];
         if($request->hapus_domisili_mengajar){
             foreach($request->hapus_domisili_mengajar as $row){
-                if (TeachingDomicile::where("user_id")->where("id", $row)->get()) {
+                if (TeachingDomicile::where("user_id", $user->id)->where("id", $row)->firts()) {
                     $data_hapus_domisili_mengajar[] = $row;
                 }
             }
@@ -357,7 +359,7 @@ class ProfileController extends Controller
             "no_telepon" => $request->no_telepon,
             "dari_pendidikan" => $request->dari_pendidikan,
             "sampai_pendidikan" => $request->sampai_pendidikan,
-            "universitas" => $request->universitas,
+            "asal_ptn" => $request->universitas,
             "deskripsi_pendidikan" => $request->deskripsi_pendidikan,
             "deskripsi_diri" => $request->deskripsi_diri,
             "kegiatan_mengajar" => $request->kegiatan_mengajar,
@@ -368,7 +370,7 @@ class ProfileController extends Controller
             $data_user["foto"] = $request->file("update_foto")->store("Images");
         }
 
-        // simpan seluru data 
+        // simpan seluruh data 
         $all_data = [
             "user" => $data_user,
             "update_pengalaman" => $data_update_pengalaman,

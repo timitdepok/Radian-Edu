@@ -2,310 +2,219 @@
 @section('content')
 
 <!-- navbar section start -->
-<header class="bg-white absolute top-0 left-0 w-full flex items-center z-10">
-    <div class="container">
-        <div class="flex items-center justify-between relative">
-            <div class="px-4">
-                <a href="#" class="py-6">
+<div class="w-full text-gray-700 bg-white dark-mode:text-gray-200 dark-mode:bg-gray-800">
+        <div x-data="{ open: false }" class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
+            <div class="flex flex-row items-center justify-between p-4">
+                <a href="#">
                     <img src="img/logo.png" alt="">
                 </a>
-            </div>
-
-            <div class="flex items-center px-4">
-                <button id="hamburger" name="hamburger" type="button"
-            class="block absolute right-4 lg:hidden">
-                <span class="hamburger-line transition duration-300
-                ease-in-out origin-top-left "></span>
-                <span class="hamburger-line transition duration-300
-                ease-in-out"></span>
-                <span class="hamburger-line transition duration-300
-                ease-in-out origin-bottom-left"></span>
+                <button class="rounded-lg md:hidden focus:outline-none focus:shadow-outline" @click="open = !open">
+                    <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+                        <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                        <path x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                    </svg>
                 </button>
-
-            <nav id="nav-menu" class="hidden absolute py-5 bg-white
-                shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block
-                lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none">
-                <ul class="block lg:flex">
-                    <li class="group">
-                        <a href="home.html" class="text-base text-body font-medium py-2 mx-8 flex group-hover:text-jogja">Home</a>
-                    </li>
-                    <li class="group">
-                        <a href="#alumni" class="text-base text-body font-medium py-2 mx-8 flex group-hover:text-jogja">Alumni</a>
-                    </li>
-                    <li class="group">
-                        <a href="#testi" class="text-base text-body font-medium py-2 mx-8 flex group-hover:text-jogja">Testimoni</a>
-                    </li>
-                    <li class="group">
-                        <a href="#unggul" class="text-base text-body font-medium py-2 mx-8 flex group-hover:text-jogja">Keunggulan</a>
-                    </li>
-                    <li class="group">
-                        <a href="#program" class="text-base text-body font-medium py-2 mx-8 flex group-hover:text-jogja">Program</a>
-                    </li>
-                    <li class="group">
-                        <a href="#daftar" class="text-base text-body font-medium py-2 mx-8 flex group-hover:text-jogja">Daftar</a>
-                    </li>
-                    <li class="group">
-                        <button class="text-base text-jogja font-medium py-2 px-3 mx-8 border bg-hero rounded-lg">Hubungi Kami</button>
-                    </li>
-                </ul>
-            </nav>
             </div>
+            <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow hidden pb-4 md:pb-0 md:flex md:justify-end md:flex-row">
+                <a class="px-4 py-2 mt-2 text-sm font-semibold md:mt-0 md:ml-4 hover:text-bandung text-body focus:outline-none focus:shadow-outline" href="{{ route('home') }}">Home</a>
+                <a class="px-4 py-2 mt-2 text-sm font-semibold md:mt-0 md:ml-4 hover:text-bandung text-body focus:outline-none focus:shadow-outline" href="#alumni">Alumni</a>
+                <a class="px-4 py-2 mt-2 text-sm font-semibold md:mt-0 md:ml-4 hover:text-bandung text-body focus:outline-none focus:shadow-outline" href="#testi">Testimoni</a>
+                <a class="px-4 py-2 mt-2 text-sm font-semibold md:mt-0 md:ml-4 hover:text-bandung text-body focus:outline-none focus:shadow-outline" href="#unggul">Keunggulan</a>
+                <a class="px-4 py-2 mt-2 text-sm font-semibold md:mt-0 md:ml-4 hover:text-bandung text-body focus:outline-none focus:shadow-outline" href="#program">Program</a>
+                <a class="px-4 py-2 mt-2 text-sm font-semibold md:mt-0 md:ml-4 hover:text-bandung text-body focus:outline-none focus:shadow-outline" href="#daftar">Daftar</a>
+                <a class="px-4 py-2 mt-2 text-sm font-semibold md:mt-0 md:ml-4 w-[136px] h-[38px] border text-bandung bg-hero rounded-lg">Hubungi Kami</a>
+            </nav>
         </div>
-    </div>
-</header>
+</div>
 <!-- navbar section end -->
 
 <!-- hero section start -->
 <section id="#" class="pt-16 pb-12">
-    <div class="container">
-        <div class="pl-9 overflow-hidden bg-hero rounded-3xl">
-            <div class="grid items-center grid-cols-1 gap-y-2 lg:grid-cols-2">
-                <div class="pl-9 max-w-3xl">
-                    <h1 class="text-5xl font-semibold text-bandung mb-6">BEST PARTNER FOR ACCELERATING YOUR GROWTH</h1>
-                    <p class="text-base font-normal text-body mb-16">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem quis amet velit eget sed.</p>
-                    <a href="#" class="text-base font-semibold text-white bg-bandung px-4 py-3 rounded-lg mb-28 mr-6">Mulai Belajar</a>
-                    <a href="#" class="text-base font-semibold text-bandung border border-bandung px-4 py-3 rounded-lg mb-28">Hubungi Kami</a>
-                </div>
-                <div class="relative p-0">
-                    <img src="img/hero-jabodetabek.png" alt="" class="relative w-full h-full lg:right-0">
+        <div class="container">
+            <div class="lg:pl-9 overflow-hidden bg-hero rounded-3xl">
+                <div class="grid items-center grid-cols-1 gap-y-2 lg:grid-cols-2">
+                    <div class="lg:pl-9 px-2 max-w-3xl lg:mt-0 mt-3">
+                        <h1 class="lg:text-5xl text-3xl font-semibold text-bandung mb-6">BEST PARTNER FOR ACCELERATING YOUR GROWTH</h1>
+                        <p class="text-base font-normal text-body lg:mb-16 mb-3 max-w-[482px]">Radian siap membantu kamu untuk terus mengembangkan diri dan meraih kesuksesan.</p>
+                        <div class="flex px-2">
+                            <a href="https://wa.me/+6281779007135?text=Halo%20radian%20%0A%0ANama%20%3A%20%0AAsal%20Kota%20%3A%20%0ASekolah%20dan%20Kelas%20%3A%20%0AOrang%20Tua%20%2F%20Siswa%20%3F%20%3A%0ASaya%20mengetahui%20program%20ini%20melalui%20website%20privatgaransi.radianedu.com%20" class="lg:text-base text-sm font-semibold text-white bg-bandung rounded-lg py-3 px-2 lg:mt-14 text-center lg:mb-0 mb-2 mr-6 w-[151px] h-[48px]">Mulai Belajar</a>
+                            <a href="https://wa.me/+6281779007135?text=Halo%20radian%20%0A%0ANama%20%3A%20%0AAsal%20Kota%20%3A%20%0ASekolah%20dan%20Kelas%20%3A%20%0AOrang%20Tua%20%2F%20Siswa%20%3F%20%3A%0ASaya%20mengetahui%20program%20ini%20melalui%20website%20privatgaransi.radianedu.com%20" class="lg:text-base text-sm font-semibold text-bandung border border-bandung py-3 px-2 rounded-lg lg:mt-14 text-center w-[151px] h-[48px]">Hubungi Kami</a>
+                        </div>
+                    </div>
+                    <div class="relative p-0">
+                        <img src="img/hero-jabodetabek.png" alt="" class="relative w-full h-full lg:right-0">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 <!-- hero section end -->
 
 <!-- alumni section start -->
-<section id="#" class="pt-16 pb-12">
-    <div class="container">
-        <div class="flex flex-wrap">
-            <div class="w-full px-4 lg:w-1/2">
-                <div class="grid grid-cols-1 gap-2 lg:grid-cols-2">
-                    <img src="img/al-jabodetabek1.png" alt="" class="mr-12">
-                    <img src="img/al-jabodetabek2.png" alt="">
-                </div>
-            </div>
-            <div class="w-full px-4 lg:w-1/2">
-                <h5 class="text-base font-semibold text-bandung mb-1">Alumni Radian</h5>
-                <h1 class="text-4xl font-semibold text-black mb-3">Popular Alumni Radian</h1>
-                <p class="text-base font-normal text-body mb-8">Seiring waktu berjalan, radian telah menghantarkan banyak siswa/i dalam meraih mimpi</p>
-                <div class="flex flex-wrap">
-                    <div class="w-full px-2 lg:w-1/3">
-                        <h1 class="text-xl font-semibold text-black mb-1">120+</h1>
-                        <p class="text-base font-normal text-body mb-10">Pelajar Privat</p>
-                    </div>
-                    <div class="w-full px-2 lg:w-1/3">
-                        <h1 class="text-xl font-semibold text-black mb-1">560+</h1>
-                        <p class="text-base font-normal text-body mb-10">Pelajar Les</p>
-                    </div>
-                    <div class="w-full px-2 lg:w-1/3">
-                        <h1 class="text-xl font-semibold text-black mb-1">135K+</h1>
-                        <p class="text-base font-normal text-body mb-10">Berhasil Masuk PTN</p>
+<section id="alumni" class="pt-16 pb-12">
+        <div class="container">
+            <div class="flex flex-wrap">
+                <div class="w-full px-4 lg:w-1/2">
+                    <div class="grid grid-cols-1 gap-2 lg:grid-cols-2">
+                        <img src="img/al-jabodetabek1.png" alt="" class="mr-12">
+                        <img src="img/al-jabodetabek2.png" alt="">
                     </div>
                 </div>
-                <a href="#" class="text-lg font-medium text-white bg-bandung px-6 py-4 mr-7 rounded-lg">Pilih Program</a>
-                <a href="#" class="text-lg font-medium text-body px-6 py-4">View More</a>
+                <div class="w-full px-4 lg:w-1/2">
+                    <h5 class="text-base font-semibold text-bandung mb-1">Alumni Radian</h5>
+                    <h1 class="text-4xl font-semibold text-black mb-3">Popular Alumni Radian</h1>
+                    <p class="text-base font-normal text-body mb-8">Seiring waktu berjalan, radian telah menghantarkan banyak siswa/i dalam meraih mimpi</p>
+                    <div class="flex flex-wrap">
+                        <div class="w-full px-2 lg:w-1/3">
+                            <h1 class="text-xl font-semibold text-black mb-1">120+</h1>
+                            <p class="text-base font-normal text-body mb-10">Pelajar Privat</p>
+                        </div>
+                        <div class="w-full px-2 lg:w-1/3">
+                            <h1 class="text-xl font-semibold text-black mb-1">560+</h1>
+                            <p class="text-base font-normal text-body mb-10">Pelajar Les</p>
+                        </div>
+                        <div class="w-full px-2 lg:w-1/3">
+                            <h1 class="text-xl font-semibold text-black mb-1">135K+</h1>
+                            <p class="text-base font-normal text-body mb-10">Berhasil Masuk PTN</p>
+                        </div>
+                    </div>
+                    <div class="flex px-2">
+                        <a href="#program" class="lg:text-base text-sm font-semibold text-white bg-bandung rounded-lg py-3 px-2 lg:mt-14 text-center lg:mb-0 mb-2 mr-6 w-[151px] h-[48px]">Pilih Program</a>
+                        <a href="#testi" class="lg:text-base text-sm font-semibold text-body py-3 px-2 lg:mt-14 text-center">View More</a>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 <!-- alumni section end -->
 
 <!-- testimoni section start -->
-<section id="#" class="pt-16">
-    <div class="container">
-        <div class="flex flex-wrap">
-            <div class="w-full px-2 lg:w-1/3">
-                <h1 class="text-5xl font-semibold text-black mb-16">Apa Kata Mereka Tentang Radian</h1>
-            </div>
-            <div class="w-full px-2 lg:w-1/3">
-                <p class="text-lg font-normal text-body mb-16">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra quis elementum, nisl feugiat. Augue arcu euis</p>
-            </div>
-            <div class="w-full px-2 lg:w-1/3">
-                <div class="w-full text-right">
-                    <button onclick="before()" class="p-3 rounded-full bg-slate-100 border border-gray-100 shadow-lg mr-5">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-primary">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
-                          </svg>                              
-                    </button>
-
-                    <button onclick="after()" class="p-3 rounded-full bg-slate-100 border border-gray-100 shadow-lg mr-5">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-primary">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                          </svg>                              
-                    </button>
+<section id="testi" class="pt-16">
+        <div class="container">
+            <div class="flex flex-wrap">
+                <div class="w-full px-2 lg:w-1/3">
+                    <h1 class="text-5xl font-semibold text-black mb-16">Apa Kata Mereka Tentang Radian</h1>
                 </div>
-            </div>
-        </div>
-        <div class="flex">
-            <div id="slidercarousel" class="w-full overflow-hidden">
-                <ul id="slids" class="flex w-full">
-                    <li class="mr-3">
-                        <div class="bg-white border border-body rounded-2xl mb-10 mt-7">
-                            <div class="flex items-center justify-center h-auto">
-                                <div class="rounded-full w-12 h-12 bg-slate-200 flex justify-center items-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary" viewBox="0 0 20 20" fill="currentColor">
-                                        <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
-                                      </svg>
-                                </div>
-                        </div>
-                        <div class="py-8 px-6">
-                            <h3 class="mb-1 font-normal text-xl text-black text-center">David Gillroy</h3>
-                            <h4 class="mb-6 font-normal text-lg text-body text-center">Universitas Sriwijaya</h4>
-                            <p class="mb-9 font-normal text-lg text-body text-center">"Nowadays, isn't great uncommon to see lenders rapidly adopting a new digital lending strategy to make most popular streamline the web process</p>
-                        </div>
+                <div class="w-full px-2 lg:w-1/3">
+                    <p class="text-lg font-normal text-body mb-16"></p>
+                </div>
+                <div class="w-full px-2 lg:w-1/3">
+                    <div class="w-full text-right">
+                        <button onclick="after()" class="p-3 rounded-full bg-slate-100 border border-gray-100 shadow-lg mr-5">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-primary">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+                              </svg>                              
+                        </button>
+
+                        <button onclick="before()" class="p-3 rounded-full bg-slate-100 border border-gray-100 shadow-lg mr-5">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-primary">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                              </svg>                              
+                        </button>
                     </div>
-                    </li>
-
-                    <li class="mr-3">
-                        <div class="bg-white border border-body rounded-2xl mb-10 mt-7">
-                            <div class="flex items-center justify-center h-auto">
-                                <div class="rounded-full w-12 h-12 bg-slate-200 flex justify-center items-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary" viewBox="0 0 20 20" fill="currentColor">
-                                        <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="py-8 px-6">
-                                <h3 class=" mb-1 font-normal text-xl text-black text-center">Diana Mehdi</h3>
-                                <h4 class="mb-6 font-normal text-lg text-body text-center">Universitas Indonesia</h4>
-                                <p class="mb-9 font-normal text-lg text-body text-center">"Nowadays, isn't great uncommon to see lenders rapidly asopting a new digital lending strategy to make most popular streamline the web process."</p>
-                            </div> 
-                        </div>
-                    </li>
-
-                    <li class="mr-3">
-                        <div class="bg-white border border-body rounded-2xl mb-10 mt-7">
-                            <div class="flex items-center justify-center h-auto">
-                                <div class="rounded-full w-12 h-12 bg-slate-100 flex justify-center items-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary" viewBox="0 0 20 20" fill="currentColor">
-                                        <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="py-8 px-6">
-                                <h3 class="mb-1 font-normal text-xl text-black text-center">David Gillroy</h3>
-                                <h4 class="mb-6 font-normal text-lg text-body text-center">Universitas Sriwijaya</h4>
-                                <p class="mb-9 font-normal text-lg text-body text-center">"Nowadays, isn't great uncommon to see lenders rapidly asopting a new digital lending strategy to make most popular streamline the web process."</p>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- testimoni section end -->
-
-<!-- keunggulan section start -->
-<section id="#" class="pt-16 pb-12">
-    <div class="container">
-        <div class="flex flex-wrap">
-            <div class="w-full px-4 lg:w-1/2">
-                <h1 class="text-4xl font-semibold text-black mb-6">Kenapa Harus Di Radian?</h1>
-                <p class="text-lg font-normal text-body mb-14">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra quis elementum, nisl feugiat. Augue arcu euis</p>
-                <div class="flex flex-wrap px-3">
-                    <h1 class="text-xl font-semibold text-black mb-1">Super Teacher</h1>
-                    <p class="text-base font-normal text-body mb-9">Guru terbaik, pintar, komunikatif serta sopan sehingga memberikan peningkatan super terhadap siswa. dan bisa tukar guru jika siswa merasa tidak cocok</p>
-                    <h1 class="text-xl font-semibold text-black mb-1">Garansi Uang Kembali</h1>
-                    <p class="text-base font-normal text-body mb-9">Memberikan solusi serta rencana yang mengikuti level siswa sekarang dan ditingkatkan sehingga mencapai target yang diinginkan.</p>
-                    <h1 class="text-xl font-semibold text-black mb-1">Edu Record</h1>
-                    <p class="text-base font-normal text-body mb-9">Kami mengupas tuntas hingga kami mendapatkan gambaran yang lengkap tentang kondisi siswa terbaru agar siswa mencapai targetnya.</p>
                 </div>
             </div>
-            <div class="w-full px-4 lg:w-1/2">
-                <img src="img/unggul-jabodetabek.png" alt="" class="max-w-full lg:right-0">
-            </div>
-        </div>
-    </div>
-</section>
-<!-- keunggulan section end -->
+            <div class="flex">
+                <div id="slidercarousel" class="w-full overflow-hidden">
+                    <ul id="slids" class="flex w-full">
+                        <li class="mr-3">
+                            <div class="bg-white border border-body rounded-2xl mb-10">
+                                <div class="flex items-center justify-center h-auto mt-7">
+                                    <div class="rounded-full w-12 h-12 bg-slate-200 flex justify-center items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                                          </svg>
+                                    </div>
+                            </div>
+                            <div class="py-8 px-6">
+                                <h3 class="mb-1 font-normal text-xl text-black text-center">Dion</h3>
+                                <h4 class="mb-6 font-normal text-lg text-body text-center">ITB - Teknologi Industri</h4>
+                                <p class="mb-9 font-normal text-lg text-body text-center">"Les privat di Radian sangat membantu saya dalam mempersiapkan ujian masuk PTN. Saya merasa lebih siap dan percaya diri ketika menghadapi ujian masuk, dan akhirnya berhasil diterima di perguruan tinggi pilihan saya."</p>
+                            </div>
+                        </div>
+                        </li>
 
-<!-- program section start -->
-<section id="#" class="pt-16 pb-12 bg-slate-100">
-    <div class="container">
-        <div class="flex flex-wrap">
-            <div class="w-full self-center px-4 lg:w-1/2">
-                <h5 class="text-lg font-semibold text-primary mb-2">PROGRAM</h5>
-                <h1 class="text-5xl font-semibold text-black mb-4">Program Radian Edu</h1>
-                <p class="text-lg font-normal text-body max-w-5xl">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra quis elementum, nisl feugiat. Augue arcu euis</p>
-            </div>
-            <div class="w-full lg:w-1/2">
-                <div class="w-full overflow-hidden grid grid-cols-1 bg-slate-100 overflow-x-scroll gap-1">
-                    <ul class="flex">
-                        <li>
-                            <div class="bg-white rounded-3xl shadow-lg mb-10 w-[255px] h-[420px] mr-6">
-                                <div class="h-[210px]" style="background-image: url(img/program1.png);">
-                                    <div class="pt-8 pl-7">
-                                        <button class="bg-primary rounded-lg shadow-md px-3 py-2 text-white text-sm font-semibold self-center flex flex-wrap">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-white">
-                                                <path fill-rule="evenodd" d="M14.615 1.595a.75.75 0 01.359.852L12.982 9.75h7.268a.75.75 0 01.548 1.262l-10.5 11.25a.75.75 0 01-1.272-.71l1.992-7.302H3.75a.75.75 0 01-.548-1.262l10.5-11.25a.75.75 0 01.913-.143z" clip-rule="evenodd" />
-                                            </svg>
-                                            HEADLINE
-                                        </button>
+                        <li class="mr-3">
+                            <div class="bg-white border border-body rounded-2xl mb-10">
+                                <div class="flex items-center justify-center h-auto mt-7">
+                                    <div class="rounded-full w-12 h-12 bg-slate-200 flex justify-center items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                                        </svg>
                                     </div>
                                 </div>
                                 <div class="py-8 px-6">
-                                    <h3 class="mb-3 text-xl font-medium text-black">
-                                        Program Private
-                                    </h3>
-                                    <p class="text-lg font-normal text-text mb-6">pelajari program les privat untuk para siswa/i SD, SMP & SMA</p>
+                                    <h3 class=" mb-1 font-normal text-xl text-black text-center">Raisa</h3>
+                                    <h4 class="mb-6 font-normal text-lg text-body text-center">UNPAD - Psikolog</h4>
+                                    <p class="mb-9 font-normal text-lg text-body text-center">"Saya sangat senang bisa bergabung dengan Radian karena memiliki guru yang berkualitas dan fasilitas lengkap. Latihan soalnya juga sangat update sehingga membantu saya menghadapi ujian UTBK”</p>
+                                </div> 
+                            </div>
+                        </li>
+
+                        <li class="mr-3">
+                            <div class="bg-white border border-body rounded-2xl mb-10">
+                                <div class="flex items-center justify-center h-auto mt-7">
+                                    <div class="rounded-full w-12 h-12 bg-slate-100 flex justify-center items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="py-8 px-6">
+                                    <h3 class="mb-1 font-normal text-xl text-black text-center">Nahreza</h3>
+                                    <h4 class="mb-6 font-normal text-lg text-body text-center">UNPAD - Humas</h4>
+                                    <p class="mb-9 font-normal text-lg text-body text-center">"Saya sangat berterima kasih kepada Radian yang telah membantu saya dalam persiapan ujian masuk perguruan tinggi negeri hingga saya berhasil lolos masuk UNPAD.”</p>
                                 </div>
                             </div>
                         </li>
-                        <li>
-                            <div class="bg-white rounded-3xl shadow-lg mb-10 w-[255px] h-[420px] mr-6">
-                                <div class="h-[210px]" style="background-image: url(img/program2.png);">
-                                    <div class="pt-8 pl-7">
-                                        <button class="bg-primary rounded-lg shadow-md px-3 py-2 text-white text-sm font-semibold self-center flex flex-wrap">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-white">
-                                                <path fill-rule="evenodd" d="M14.615 1.595a.75.75 0 01.359.852L12.982 9.75h7.268a.75.75 0 01.548 1.262l-10.5 11.25a.75.75 0 01-1.272-.71l1.992-7.302H3.75a.75.75 0 01-.548-1.262l10.5-11.25a.75.75 0 01.913-.143z" clip-rule="evenodd" />
-                                            </svg>
-                                            HEADLINE
-                                        </button>
+
+                        <li class="mr-3">
+                            <div class="bg-white border border-body rounded-2xl mb-10">
+                                <div class="flex items-center justify-center h-auto mt-7">
+                                    <div class="rounded-full w-12 h-12 bg-slate-100 flex justify-center items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                                        </svg>
                                     </div>
                                 </div>
                                 <div class="py-8 px-6">
-                                    <h3 class="mb-3 text-xl font-medium text-black">
-                                        Program Supercamp
-                                    </h3>
-                                    <p class="text-lg font-normal text-text mb-6">pelajari program les privte untuk para siswa/i SD, SMP & SMA</p>
+                                    <h3 class="mb-1 font-normal text-xl text-black text-center">Ratu</h3>
+                                    <h4 class="mb-6 font-normal text-lg text-body text-center">UNPAD - Perpustakaan dan Sains</h4>
+                                    <p class="mb-9 font-normal text-lg text-body text-center">Belajar di Radian seru banget, materi pelajarannya mudah di mengerti, latihan soalnya banyak dan update jadi saya terlatih untuk mengerjakan berbagai macam soal UTBK”</p>
                                 </div>
                             </div>
                         </li>
-                        <li>
-                            <div class="bg-white rounded-3xl shadow-lg mb-10 w-[255px] h-[420px] mr-6">
-                                <div class="h-[210px]" style="background-image: url(img/program3.png);">
-                                    <div class="pt-8 pl-7">
-                                        <button class="bg-primary rounded-lg shadow-md px-3 py-2 text-white text-sm font-semibold self-center flex flex-wrap">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-white">
-                                                <path fill-rule="evenodd" d="M14.615 1.595a.75.75 0 01.359.852L12.982 9.75h7.268a.75.75 0 01.548 1.262l-10.5 11.25a.75.75 0 01-1.272-.71l1.992-7.302H3.75a.75.75 0 01-.548-1.262l10.5-11.25a.75.75 0 01.913-.143z" clip-rule="evenodd" />
-                                            </svg>
-                                            HEADLINE
-                                        </button>
+
+                        <li class="mr-3">
+                            <div class="bg-white border border-body rounded-2xl mb-10">
+                                <div class="flex items-center justify-center h-auto mt-7">
+                                    <div class="rounded-full w-12 h-12 bg-slate-100 flex justify-center items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                                        </svg>
                                     </div>
                                 </div>
                                 <div class="py-8 px-6">
-                                    <h3 class="mb-3 text-xl font-medium text-black">Program Class</h3>
-                                    <p class="text-lg font-normal text-text mb-6">pelajari program les Private untuk para siswa/i SD, SMP, SMA</p>
+                                    <h3 class="mb-1 font-normal text-xl text-black text-center">Putri</h3>
+                                    <h4 class="mb-6 font-normal text-lg text-body text-center">UNPAD - Akuntansi</h4>
+                                    <p class="mb-9 font-normal text-lg text-body text-center">"Guru privat disini sangat efektif dalam membantu saya memahami materi pelajaran untuk persiapan ujian. Terimakasih Radian”</p>
                                 </div>
                             </div>
                         </li>
-                        <li>
-                            <div class="bg-white rounded-3xl shadow-lg mb-10 w-[255px] h-[420px] mr-6">
-                                <div class="h-[210px]" style="background-image: url(img/program1.png);">
-                                    <div class="pt-8 pl-7">
-                                        <button class="bg-primary rounded-lg shadow-md px-3 py-2 text-white text-sm font-semibold self-center flex flex-wrap">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-white">
-                                                <path fill-rule="evenodd" d="M14.615 1.595a.75.75 0 01.359.852L12.982 9.75h7.268a.75.75 0 01.548 1.262l-10.5 11.25a.75.75 0 01-1.272-.71l1.992-7.302H3.75a.75.75 0 01-.548-1.262l10.5-11.25a.75.75 0 01.913-.143z" clip-rule="evenodd" />
-                                            </svg>
-                                            HEADLINE
-                                        </button>
+
+                        <li class="mr-3">
+                            <div class="bg-white border border-body rounded-2xl mb-10">
+                                <div class="flex items-center justify-center h-auto mt-7">
+                                    <div class="rounded-full w-12 h-12 bg-slate-100 flex justify-center items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                                        </svg>
                                     </div>
                                 </div>
                                 <div class="py-8 px-6">
-                                    <h3 class="mb-3 text-xl font-medium text-black">Program Private</h3>
-                                    <p class="text-lg font-normal text-text mb-6">pelajari program les private untuk para siswa/i SD, SMP, SMA</p>
+                                    <h3 class="mb-1 font-normal text-xl text-black text-center">Ikhsan</h3>
+                                    <h4 class="mb-6 font-normal text-lg text-body text-center">UNPAD - HI</h4>
+                                    <p class="mb-9 font-normal text-lg text-body text-center">“Radian sangat membantu saya meningkatkan nilai disekolah. Saya sangat senang dengan system belajar mengajar disini. Terimakasih Radian."</p>
                                 </div>
                             </div>
                         </li>
@@ -313,19 +222,159 @@
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+<!-- testimoni section end -->
+
+<!-- keunggulan section start -->
+<section id="unggul" class="pt-16 pb-12">
+        <div class="container">
+            <div class="flex flex-wrap">
+                <div class="w-full px-4 lg:w-1/2">
+                    <h1 class="text-4xl font-semibold text-black mb-6">Kenapa Harus Di Radian?</h1>
+                    <p class="text-lg font-normal text-body mb-14">"Radian memberikan layanan pelanggan yang baik, dengan mengutamakan kepuasan pelanggan dan memastikan siswa mendapatkan pengalaman pembelajaran terbaik."</p>
+                    <div class="flex flex-wrap px-3">
+                        <h1 class="text-xl font-semibold text-black mb-1">Super Teacher</h1>
+                        <p class="text-base font-normal text-body mb-9">Guru terbaik, pintar, komunikatif serta sopan sehingga memberikan peningkatan super terhadap siswa. dan bisa tukar guru jika siswa merasa tidak cocok</p>
+                        <h1 class="text-xl font-semibold text-black mb-1">Garansi Uang Kembali</h1>
+                        <p class="text-base font-normal text-body mb-9">Memberikan solusi serta rencana yang mengikuti level siswa sekarang dan ditingkatkan sehingga mencapai target yang diinginkan.</p>
+                        <h1 class="text-xl font-semibold text-black mb-1">Edu Record</h1>
+                        <p class="text-base font-normal text-body mb-9">Kami mengupas tuntas hingga kami mendapatkan gambaran yang lengkap tentang kondisi siswa terbaru agar siswa mencapai targetnya.</p>
+                    </div>
+                </div>
+                <div class="w-full px-4 lg:w-1/2">
+                    <img src="img/unggul-jabodetabek.png" alt="" class="max-w-full lg:right-0">
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- keunggulan section end -->
+
+<!-- program section start -->
+<section id="program" class="pt-16 pb-12 bg-slate-100">
+        <div class="container">
+            <div class="flex flex-wrap">
+                <div class="w-full self-center px-4 lg:w-1/2">
+                    <h5 class="text-lg font-semibold text-bandung mb-2">PROGRAM</h5>
+                    <h1 class="lg:text-5xl text-3xl font-semibold text-black mb-4 max-w-[355px]">Program Radian Edu</h1>
+                    <p class="text-lg font-normal text-body max-w-[321px] lg:mb-0 mb-3">Ayo pilih program terbaik sesuai dengan kebutuhanmu. </p>
+                </div>
+                <div class="w-full lg:w-1/2">
+                    <div class="w-full overflow-hidden grid grid-cols-1 bg-slate-100 overflow-x-scroll gap-1">
+                        <ul class="flex">
+                            <li>
+                                <div class="bg-white rounded-3xl shadow-lg mb-10 w-[255px] h-[420px] mr-6">
+                                    <div class="h-[210px]" style="background-image: url(img/program1.png);">
+                                        <div class="pt-8 pl-7">
+                                            <button class="bg-bandung rounded-lg shadow-md px-3 py-2 text-white text-sm font-semibold self-center flex flex-wrap">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-white">
+                                                    <path fill-rule="evenodd" d="M14.615 1.595a.75.75 0 01.359.852L12.982 9.75h7.268a.75.75 0 01.548 1.262l-10.5 11.25a.75.75 0 01-1.272-.71l1.992-7.302H3.75a.75.75 0 01-.548-1.262l10.5-11.25a.75.75 0 01.913-.143z" clip-rule="evenodd" />
+                                                </svg>
+                                                HEADLINE
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="py-8 px-6">
+                                        <h3 class="mb-3 text-xl font-medium text-black">
+                                            Program Private
+                                        </h3>
+                                        <p class="text-lg font-normal text-text mb-6">pelajari program les privat untuk para siswa/i SD, SMP & SMA</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="bg-white rounded-3xl shadow-lg mb-10 w-[255px] h-[420px] mr-6">
+                                    <div class="h-[210px]" style="background-image: url(img/program2.png);">
+                                        <div class="pt-8 pl-7">
+                                            <button class="bg-bandung rounded-lg shadow-md px-3 py-2 text-white text-sm font-semibold self-center flex flex-wrap">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-white">
+                                                    <path fill-rule="evenodd" d="M14.615 1.595a.75.75 0 01.359.852L12.982 9.75h7.268a.75.75 0 01.548 1.262l-10.5 11.25a.75.75 0 01-1.272-.71l1.992-7.302H3.75a.75.75 0 01-.548-1.262l10.5-11.25a.75.75 0 01.913-.143z" clip-rule="evenodd" />
+                                                </svg>
+                                                HEADLINE
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="py-8 px-6">
+                                        <h3 class="mb-3 text-xl font-medium text-black">
+                                            Program Supercamp
+                                        </h3>
+                                        <p class="text-lg font-normal text-text mb-6">pelajari program les privte untuk para siswa/i SD, SMP & SMA</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="bg-white rounded-3xl shadow-lg mb-10 w-[255px] h-[420px] mr-6">
+                                    <div class="h-[210px]" style="background-image: url(img/program3.png);">
+                                        <div class="pt-8 pl-7">
+                                            <button class="bg-bandung rounded-lg shadow-md px-3 py-2 text-white text-sm font-semibold self-center flex flex-wrap">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-white">
+                                                    <path fill-rule="evenodd" d="M14.615 1.595a.75.75 0 01.359.852L12.982 9.75h7.268a.75.75 0 01.548 1.262l-10.5 11.25a.75.75 0 01-1.272-.71l1.992-7.302H3.75a.75.75 0 01-.548-1.262l10.5-11.25a.75.75 0 01.913-.143z" clip-rule="evenodd" />
+                                                </svg>
+                                                HEADLINE
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="py-8 px-6">
+                                        <h3 class="mb-3 text-xl font-medium text-black">Program Class</h3>
+                                        <p class="text-lg font-normal text-text mb-6">pelajari program les Private untuk para siswa/i SD, SMP, SMA</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="bg-white rounded-3xl shadow-lg mb-10 w-[255px] h-[420px] mr-6">
+                                    <div class="h-[210px]" style="background-image: url(img/program1.png);">
+                                        <div class="pt-8 pl-7">
+                                            <button class="bg-bandung rounded-lg shadow-md px-3 py-2 text-white text-sm font-semibold self-center flex flex-wrap">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-white">
+                                                    <path fill-rule="evenodd" d="M14.615 1.595a.75.75 0 01.359.852L12.982 9.75h7.268a.75.75 0 01.548 1.262l-10.5 11.25a.75.75 0 01-1.272-.71l1.992-7.302H3.75a.75.75 0 01-.548-1.262l10.5-11.25a.75.75 0 01.913-.143z" clip-rule="evenodd" />
+                                                </svg>
+                                                HEADLINE
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="py-8 px-6">
+                                        <h3 class="mb-3 text-xl font-medium text-black">Program Private</h3>
+                                        <p class="text-lg font-normal text-text mb-6">pelajari program les private untuk para siswa/i SD, SMP, SMA</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 <!-- program section end -->
 
 <!-- daftar section start -->
-<section id="#" class="container h-[527px] w-[1290px] pt-0 mb-12 mx-auto" style="background-size: cover; background-image: url(img/daftar-jabodetabek.png);">
-    <div class="self-center text-center pt-32">
-        <h5 class="text-base font-semibold text-bandung mb-6">New User</h5>
-        <h1 class="text-4xl font-semibold text-black mb-3 max-w-3xl mx-80">Tunggu apalagi segera dapatkan Diskon Up To 30% sampai Tanggal 30 September 2022.</h1>
-        <p class="text-base font-normal text-body mb-8">Syarat dan Ketentuan berlaku</p>
-        <a href="#" class="text-base font-semibold text-black bg-bandung mb-16 px-4 py-3">Daftar Segera</a>
-    </div>
-</section>
+<section id="daftar" class="pt-16 lg:pb-16 mb-40">
+        <div class="container">
+            <div class="bg-ctaarea lg:w-[1240px] lg:h-[435px] w-[280px] h-[335px] rounded-b-lg rounded-tl-3xl rounded-tr-lg relative mx-auto self-center">
+                <div class="flex">
+                        <img src="img/shape-left.png" alt="" class="left-0 w-[273px] h-[435px] hidden sm:block rounded-tl-3xl rounded-bl-lg">
+                        <div class="absolute -top-10 -right-10 flex">
+                            <img src="img/icon-love.png" alt="" class="w-[100px] h-[100px]">
+                        </div>
+                        
+                    
+                    <div class="flex flex-wrap mx-auto self-center text-center">
+                        <div class="w-full">
+                            <h5 class="text-base font-semibold text-bandung lg:mb-6 mb-2 lg:mt-0 mt-4">New User</h5>
+                            <h1 class="lg:text-4xl text-xl font-semibold text-black mb-3 lg:max-w-2xl">Tunggu apalagi segera dapatkan Diskon Up To 30% sampai Tanggal 30 September 2022</h1>
+                            <p class="text-base font-normal text-body mb-8">Syarat dan Ketentuan berlaku</p>
+                            <a href="#" class="text-base font-semibold text-black bg-bandung px-4 py-3 rounded-lg lg:mb-16 mb-3">Daftar Segera</a>
+                        </div>
+                    </div>
+                        <img src="img/shape-rigth.png" alt="" class="justify-end items-end text-right right-0 w-[263px] h-[435px] hidden sm:block rounded-tr-lg rounded-bl-lg">
+                        
+                        <div class="absolute lg:-bottom-20 -bottom-32 flex">
+                            <img src="img/chat.png" alt="" class="lg:w-[250px] lg:h-[192] w-[219px] h-[157px]">
+                        </div>
+                    
+                </div>
+               
+            </div>
+        </div>
+    </section>
 <!-- daftar section end -->
 
 <!-- footer section start -->
@@ -399,6 +448,7 @@
 </footer>
 <!-- footer section end -->
 
-<script src="{{asset('/js/bandung.js')}}"></script>ipt>
+<script src="{{asset('/js/bandung.js')}}"></script>
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 
  @endsection

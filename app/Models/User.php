@@ -121,7 +121,7 @@ class User extends Authenticatable
 
         // cari user
         $query->when($search ?? false, function($query, $search){
-            return $query->where("nama", "like", "%" . $search . "%")->orWhere("email", "like", "%" . $search . "%");
+            return $query->where("nama", "like", "%" . $search . "%");
         });
 
         // hanya yang memiliki role user saja

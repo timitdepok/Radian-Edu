@@ -4,29 +4,40 @@
  <!-- navbar section start -->
     <header>
         <!-- navbar 1 section -->
-        <div class="bg-transparent top-0 left-0 w-full flex items-center z-10">
-                <div class="px-4 mb-4 flex pt-4">
-                    <img src="img/logo-radian 1.png" alt="" class="mx-4 lg:ml-[148px] my-2 h-[36px]">
+        <div class="container bg-transparent top-0 left-0 w-full flex justify-between items-center z-10">
+            <div class="flex items-center w-fit">
+                <div class="px-3 flex">
+                    <img src="img/logo-radian 1.png" alt="" class="mx-4 my-2 h-[36px]">
                 </div>
-                <div class="lg:px-4 flex py-4">
+                <div class="lg:px-4 flex py-3">
                     <span class="lg:text-base text-xs font-medium border border-secondary bg-secondary px-4 py-2 pt-2 self-center text-center text-dark rounded-lg ml-7 mb-3 lg:mb-0"><a href="daftarguru.html">Temukan Guru</a></span>
                     <span class="lg:text-base text-xs font-medium border border-secondary bg-secondary lg:px-4 py-2 text-center text-dark rounded-lg ml-4 mr-2 lg:mr-0 mb-3 lg:mb-0"><a href="registrasi.html">Daftar Sebagai Guru</a></span>
                 </div>
-                
+            </div>
+            @auth
+                <div class="w-fit flex justify-end">
+                    <a href="{{ route('profile') }}" class="flex flex-row items-center">
+                        <h1 class="text-sm mr-2 hidden sm:block">{{ auth()->user()->nama }}</h1>
+                        <div class="bg-cover bg-top w-[40px] h-[40px] overflow-hidden justify-center rounded-full">
+                            <img src="{{ asset('storage/' . auth()->user()->foto) }}" class="h-full w-full object-cover" alt="">
+                        </div>
+                    </a>
+                </div>
+            @endauth
         </div>
         <!-- navbar 1 section end -->
             <!-- navbar 2 section start -->
-                <div class="w-full text-white bg-primary">
+                <div class="w-full text-white bg-primary flex flex-row justify-between">
                     <div x-data="{ open: false }" class="flex flex-col max-w-screen-[1340px] pl-2 mr-0 md:items-center md:justify-between md:flex-row md:pl-6 lg:pl-8">
                         <div class="flex flex-row items-center justify-between pl-4 py-4">
-                            <button class="rounded-lg md:hidden focus:outline-none focus:shadow-outline" @click="open = !open">
+                            <button class="rounded-lg md:hidden focus:outline-none focus:shadow-outline" @click.away="open = !open">
                                 <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
                                     <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
                                     <path x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
                                 </svg>
                             </button>
                         </div>
-                <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow hidden pb-4 md:pb-0 md:flex md:justify-end md:flex-row lg:self-center">
+                <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow hidden pb-4 md:pb-0 md:flex md:justify-end md:flex-row lg:self-center md:items-center">
                     <a class="px-4 py-4 text-sm font-semibold text-white border-b border-white md:mt-0 hover:text-gray-900 focus:text-gray-900 focus:outline-none lg:mr-10 lg:self-center" href="#">Home</a>
                     <div @click.away="open = false" class="relative lg:self-center" x-data="{ open: false }">
                         <button @click="open = !open" class="flex flex-row items-center w-full px-4 py-4 lg:my-4 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg md:w-auto md:inline md:ml-4 hover:text-gray-900 focus:text-gray-900 focus:outline-none focus:shadow-outline lg:mr-10 lg:self-center">
@@ -124,13 +135,18 @@
                     
                     <a class="px-4 py-4 mt-2 text-sm font-semibold text-white md:mt-0 hover:text-gray-900 focus:text-gray-900 focus:outline-none lg:mr-10 lg:self-center" href="#testi">Testimoni</a>
                     <a class="px-4 py-4 mt-2 text-sm font-semibold text-white md:mt-0 hover:text-gray-900 focus:text-gray-900 focus:outline-none lg:mr-16 lg:self-center" href="/news">News</a>
-                        <a class="text-white text-sm font-semibold hover:text-gray-900 focus:text-gray-900 focus:outline-none px-4 py-4 lg:mr-3 lg:ml-44 lg:self-center lg:text-right lg:right-0" href="/registrasi">Daftar</a>
-                        <a class="text-white font-semibold text-sm border border-white lg:px-4 lg:py-2 py-2 lg:mt-5 mt-2 text-center rounded-lg justify-items-end w-[94px] h-[40px] lg:mr-3 lg:right-0" href="/login">Masuk</a>
+                    @guest
+                        <div class="min-w-[100px] lg:ml-44">
+                            <a class="text-white text-sm font-semibold hover:text-gray-900 focus:text-gray-900 focus:outline-none px-4 py-4 lg:mr-3 lg:self-center lg:text-right lg:right-0" href="/registrasi">Daftar</a>
+                            <a class="text-white font-semibold text-sm border border-white lg:px-4 lg:py-2 py-2 lg:mt-5 mt-2 text-center rounded-lg justify-items-end w-[94px] h-[40px] lg:mr-3 lg:right-0" href="/login">Masuk</a>   
+                        </div>
+                    @endguest
                    
                 </nav>
             </div>
         </div>
         <!-- navbar 2 section end -->
+    </header>
 <!-- navbar section end -->
 
 
@@ -165,48 +181,48 @@
 
  <!-- promo section start -->
  <section id="promo" class="pt-16 pb-36 bg-slate-100">
-    <div class="container">
-        <div class="flex flex-wrap">
-            <div class="w-full px-4 mb-10 lg:w-1/2">
-                <h4 class="font-bold uppercase text-primary text-lg mb-3">Top Promo</h4>
-                <h2 class="font-bold text-dark text-3xl mb-5 max-w-md">PROMO YANG SEDANG BERLANGSUNG</h2>
-            </div>
-            <div class="w-full px-4 mb-10 lg:w-1/2">
-                <div class="w-full text-right">
-                    <button onclick="next()" class="p-3 rounded-full bg-white border border-gray-100 shadow-lg mr-5">
-                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15m0 0l6.75 6.75M4.5 12l6.75-6.75" />
-                    </svg>                
-                    </button>
-                    <button onclick="prev()" class="p-3 rounded-full bg-white border border-gray-100 shadow-lg mr-5">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
-                          </svg>
-                    </button>
+        <div class="container">
+            <div class="flex flex-wrap">
+                <div class="w-full px-4 mb-10 lg:w-1/2">
+                    <h4 class="font-bold uppercase text-primary text-lg mb-3">Top Promo</h4>
+                    <h2 class="font-bold text-dark text-3xl mb-5 max-w-md">PROMO YANG SEDANG BERLANGSUNG</h2>
                 </div>
-               
+                <div class="w-full px-4 mb-10 lg:w-1/2">
+                    <div class="w-full text-right">
+                        <button onclick="next()" class="p-3 rounded-full bg-white border border-gray-100 shadow-lg mr-5">
+                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15m0 0l6.75 6.75M4.5 12l6.75-6.75" />
+                        </svg>                
+                        </button>
+                        <button onclick="prev()" class="p-3 rounded-full bg-white border border-gray-100 shadow-lg mr-5">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                              </svg>
+                        </button>
+                    </div>
+                   
+                </div>
+            </div>
+            <div class="flex">
+                <div id="slidercontainer" class="w-full overflow-hidden">
+                    <ul id="slider" class="flex w-full">
+                        <li>
+                            <img src="img/Webbanner 1.png" alt="" class="h-auto w-full mr-5">
+                        </li>
+                        <li>
+                            <img src="img/Webbanner 2.png" alt="" class="h-auto w-full mr-5">
+                        </li>
+                        <li>
+                            <img src="img/Webbanner 1.png" alt="" class="h-auto w-full mr-5">
+                        </li>
+                        <li>
+                            <img src="img/Webbanner 2.png" alt="" class="h-auto w-full mr-5">
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
-        <div class="flex">
-            <div id="slidercontainer" class="w-full overflow-hidden">
-                <ul id="slider" class="flex w-full">
-                    <li>
-                        <img src="img/Webbanner 1.png" alt="" class="h-auto w-full mr-5">
-                    </li>
-                    <li>
-                        <img src="img/Webbanner 2.png" alt="" class="h-auto w-full mr-5">
-                    </li>
-                    <li>
-                        <img src="img/Webbanner 1.png" alt="" class="h-auto w-full mr-5">
-                    </li>
-                    <li>
-                        <img src="img/Webbanner 2.png" alt="" class="h-auto w-full mr-5">
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
 <!-- promo section end -->
 
     <!--tentang radian section start  -->
@@ -532,37 +548,29 @@
             
 
             <div class="flex flex-wrap">
-                {{-- menampilkan data tutor (yang sudah microteaching) --}}
+                {{-- menampilkan data tutor (yang sudah micro teaching) --}}
                 @isset ($guru)
                     @foreach ($guru as $row)
                     <div class="w-full px-4 mb-10 lg:w-1/4">
                         <div class="bg-white card rounded-2xl overflow-hidden relative group w-[253px] h-[348px]">
+                        @if ($row->top_star)
+                            <div class="px-4 py-2 bg-primary rounded-md absolute top-0 right-0 z-10 mr-2 mt-2">
+                                <span class="text-xs text-white font-medium">Top Star</span>
+                            </div> 
+                        @endif
                          <div class="h-[348px] transition-all transform bg-cover bg-top" style="background-image: url({{ asset('storage/'. $row->foto) }});">
                              <div class="bg-primaryYellow h-[98px] rounded-2xl absolute inset-x-0 bottom-0 text-center">
                                  <h1 class="text-xl font-medium text-black mb-2">{{ $row->nama }}</h1>
-                                 
-                                 {{-- melakukan pemeriksaan jika data bernilai null  --}}
-                                 @isset($row->minat_mengajar)
-                                    @php
-                                        $minat_mengajar = $row->minat_mengajar->first()->mata_pelajaran->mata_pelajaran; 
-                                    @endphp
-                                 @else
-                                    @php
-                                        $minat_mengajar = "Mapel"; 
-                                    @endphp
-                                 @endisset
-                                 {{-- ---------  --}}
-
-                                 <h5 class="text-lg font-normal text-black mb-0">{{ ucwords(strtolower($minat_mengajar)) }} - {{ ucwords(strtolower($row->kabupaten)) }}</h5>
-                                 <h5 class="text-lg font-normal text-black mb-3">{{ $row->universitas }}</h5>
+                                 <h5 class="text-lg font-normal text-black mb-0">{{ $row->minat_mengajar->first()->mata_pelajaran->mata_pelajaran ?? "Mata pelajaran" }} - {{ $row->kabupaten ? ucwords(strtolower($row->kabupaten)) : "Domisili" }}</h5>
+                                 <h5 class="text-lg font-normal text-black mb-3">{{ $row->asal_ptn }}</h5>
                              </div>
                          </div>
                          <div class="absolute bottom-0 left-0 w-full"></div>
-                         <div class="absolute z-0 inset-0 bg-primaryYellow opacity-0 group-hover:opacity-100 transition-all"></div>
-                         <div class="group-hover:-translate-y-3 group-hover:bottom-0 transition-all absolute button-0 left-0 text-black p-4 justify-center content-center">
+                         <div class="absolute z-0 inset-0 bg-primaryYellow opacity-0 group-hover:z-20 group-hover:opacity-100 transition-all"></div>
+                         <div class="group-hover:-translate-y-3 group-hover:bottom-0 transition-all group-hover:z-20 absolute button-0 left-0 text-black p-4 justify-center content-center">
                              <h4 class="font-medium mb-1 text-xl text-center opacity-80">Angelina</h4>
-                             <h3 class="font-normal mb-0 text-lg text-center">{{ ucwords(strtolower($minat_mengajar)) }} - {{ ucwords(strtolower($row->kabupaten)) }}</h3>
-                             <h3 class="font-normal mb-3 text-lg text-center">{{ $row->universitas }}</h3>
+                             <h3 class="font-normal mb-0 text-lg text-center">{{ $row->minat_mengajar->first()->mata_pelajaran->mata_pelajaran ?? "" }} - {{ $row->kabupaten ? ucwords(strtolower($row->kabupaten)) : "Domisili" }}</h3>
+                             <h3 class="font-normal mb-3 text-lg text-center">{{ $row->asal_ptn }}</h3>
                              <div class="justify-center mx-12">
                                  
                                     {{-- menampilkan keuntungan  --}}
@@ -602,13 +610,13 @@
                 </div>
                 <div class="w-full px-4 mb-10 lg:w-1/3">
                     <div class="w-full text-right">
-                        <button onclick="before()" class="p-3 rounded-full bg-slate-100 border border-gray-100 shadow-lg mr-5">
+                        <button onclick="after()" class="p-3 rounded-full bg-slate-100 border border-gray-100 shadow-lg mr-5">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-primary">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
                               </svg>                              
                         </button>
 
-                        <button onclick="after()" class="p-3 rounded-full bg-slate-100 border border-gray-100 shadow-lg mr-5">
+                        <button onclick="before()" class="p-3 rounded-full bg-slate-100 border border-gray-100 shadow-lg mr-5">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-primary">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                               </svg>                              
@@ -777,7 +785,7 @@
     <!-- teacher section start -->
     <section id="teacher" class="pb-20">
         <div class="container">
-            <div class="px-4 mx-auto overflow-hidden bg-section rounded-3xl sm:px-6 lg:px-8">
+            <div class="pl-4 mx-auto overflow-hidden bg-section rounded-3xl sm:pl-6 lg:pl-8">
                 <div class="2xl:pl-24">
                     <div class="grid items-center grid-cols-1 gap-y-12 lg:grid-cols-2 lg:gap-x-8 2xl:gap-x-20">
                         <div class="lg:order-1 order-2">
@@ -867,6 +875,8 @@
     </footer>
     <!-- footer section end -->
 
-    <script src="{{asset('/js/script.js')}}"></script>ipt>
+    <script src="{{asset('js/script.js')}}"></script>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     @endsection
+    
+

@@ -22,19 +22,19 @@ class RegisterController extends Controller
         "email.email" => "Email tidak valid.",
 
         "no_telepon.required" => "Kolom nomor telepon tidak boleh kosong.",
-        "no_telepon.min" => "Masukan nomor minimal 10 angka.",
+        "no_telepon.digits_between" => "Masukkan nomor min 10 digit max 13 digit.",
         "no_telepon.numeric" => "Data yang di inpuntkan tidak valid.",
         "no_telepon.unique" => "Nomor HP sudah terdaftar.",
 
         "password.required" => "Kolom password tidak boleh kosong.",
-        "password.min" => "Masukan minimal 6 karakter.",
+        "password.min" => "Password minimal harus terdiri dari 6 min karakter.",
         "password.max" => "Karakter yang di inputkan terlalu banyak."
     ];
 
     // fungsi yang digunakan untuk menampilkan form registrasi
     public function form_registrasi(){
         return view("auth.register", [
-            "title" => "Radian Edu"
+            "title" => "Radian Edu Solution"
         ]);
     }
 
@@ -65,7 +65,7 @@ class RegisterController extends Controller
         $validate = $request->validate([
             "nama" => "required|max:255",
             "email" => "required|max:100|unique:users|email",
-            "no_telepon" => "required|min:11|numeric|unique:users",
+            "no_telepon" => "required|digits_between:10,13|numeric|unique:users",
             "password" => "required|min:6|max:255"
         ], $this->massage);
 

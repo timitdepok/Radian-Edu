@@ -29,7 +29,7 @@ module.exports = {
         "light_blue" : "#f2f5ff",
         "primaryYellow" : "#ffb200",
         "footer" : "#F8FAFC",
-        "secondary" : "#767676",
+        "secondaryGray" : "#767676",
         "active" : "#ffd677",
         "light-gray" : "#d3d1d8",
         "primaryYellow" : "#ffb200",

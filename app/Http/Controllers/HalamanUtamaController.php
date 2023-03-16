@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 
 class HalamanUtamaController extends Controller
 {
+    // untuk menampilkan page halaman utama
     public function halaman_utama(){
         
         if($harga = Price::first()){
@@ -21,16 +22,18 @@ class HalamanUtamaController extends Controller
             ];
         }
 
-        $guru = User::latest()->CariGuru([""])->where("is_profile_complete", true)->where("is_micro_teaching_complete", true)->paginate(8)
-        ->withQueryString(request("domisili"), request("mata_pelajaran"));
+        $guru = User::latest()->CariGuru([""])->where("is_profile_complete", true)
+                ->where("is_micro_teaching_complete", true)
+                ->where("top_star", true)->paginate(8);
                 
         return view("home.halaman_utama", [
             "title" => "Radian Edu Solution",
             "guru" => $guru,
-            "keuntungan" => $result->keuntungan,
+            "keuntungan" => $result["keuntungan"],
         ]);
     }
 
+    // untuk menampilkan daftar guru 
     public function daftar_guru(Request $request){
 
         if($harga = Price::first()){
@@ -50,20 +53,21 @@ class HalamanUtamaController extends Controller
         ->withQueryString(request("domisili"), request("mata_pelajaran"));
 
         return view("home.daftar_guru", [
-            "title" => "Radian Edu",
+            "title" => "Radian Edu Solution",
             "guru" => $guru,
-            "keuntungan" => $result->keuntungan,
+            "keuntungan" => $result["keuntungan"],
             "domisili" => $request->domisili,
             "mata_pelajaran" => $request->mata_pelajaran,
         ]);
     }
 
+    // untuk menampilkan detail guru 
     public function detail_guru($key){
         try {
 
             $key = decrypt($key);
             $guru = User::with(["domisili_mengajar.kecamatan", "minat_mengajar.mata_pelajaran.tingkatan"])
-                    ->findOrFail($key)->where("is_profile_complete", true)
+                    ->where("id", $key)->where("is_profile_complete", true)
                     ->whereHas("roles", function($query){
                         $query->where("name", "user");
                     })->first();
@@ -81,9 +85,9 @@ class HalamanUtamaController extends Controller
                 }
 
                 return view("home.detail_guru", [
-                    "title" => "Radian Edu",
+                    "title" => "Radian Edu Solution",
                     "guru" => $guru,
-                    "keuntungan" => $result->keuntungan,
+                    "keuntungan" => $result["keuntungan"],
                 ]);
             }
             abort(404);

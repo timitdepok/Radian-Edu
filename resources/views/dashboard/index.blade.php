@@ -4,7 +4,7 @@
 <div class="px-4 py-7 sm:px-12">
     <div class="w-full mb-12">
         <h1 class="text-3xl font-semibold mb-2">
-            Selamat Siang 👋
+            Selamat Datang 👋
         </h1>
         <p class="text-2xl font-medium text-bodyText">
             {{ $user->nama }}

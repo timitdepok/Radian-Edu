@@ -44,7 +44,7 @@
                                 {{  ucwords(strtolower($row->roles->first()->name)) }}
                             </td>
                             <td class="px-6 py-4">
-                                {{ $row->is_top_star_complete ? 'Aktif' : 'Tidak Aktif' }}
+                                {{ $row->is_micro_teaching_complete ? 'Aktif' : 'Tidak Aktif' }}
                             </td>
                             <td class="px-6 py-4">
                                 {{ $row->top_star ? 'Top Star' : '-' }}
@@ -87,13 +87,13 @@
     <span class="hidden sm:inline-block sm:align-middle sm:h-screen"></span>&#8203;
     <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full" role="dialog" aria-modal="true" aria-labelledby="modal-headline">
         <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-            <h3 class="text-2xl leading-6 font-semibold mb-2" id="modal-headline">Edit Status</h3>
+            <h3 class="text-2xl leading-6 font-semibold mb-2" id="modal-headline">Edit Top Star</h3>
             <p class="text-bodyText">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est iusto minima iure quisquam, eos quasi hic quod porro, quis eveniet veniam fugiat quo itaque.</p> 
             <div class="mt-4">
                 <input type="hidden" name="user_id" id="user_id">
-                <label for="top_star" class="block mb-2 text-base font-semibold text-gray-900">Edit Status</label>
+                <label for="top_star" class="block mb-2 text-base font-semibold text-gray-900">Top Star</label>
                 <div class="block relative">
-                    <div class="rounded-r-md absolute bg-white border-t border-r border-b @error('kegiatan_mengajar') border-primarySD @else border-primaryInp @enderror pr-4 flex items-center justify-center right-0 h-full">
+                    <div class="rounded-r-md absolute bg-white border-t border-r border-b border-primaryInp pr-4 flex items-center justify-center right-0 h-full">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
                         </svg>                  
@@ -101,9 +101,6 @@
                     <select name="top_star" id="top_star" class="appearance-none h-12 text-sm px-4 w-full outline-none @error('top_star') border-primarySD @else border-primaryInp @enderror  border rounded-md" required>
                     </select>
                 </div>
-                @error("top_star")
-                    <p class="text-sm font-normal mt-1 text-primarySD">{{ $message }}</p>
-                @enderror
             </div>
         </div>
     <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
@@ -111,8 +108,9 @@
     <button type="button"  id="btn-cancel" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-6 py-3 bg-white text-base font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">Cancel</button>
 </div>
 </div>
+@endsection
 
-
+@section('javascript')
 <script>
 
     $(document).ready(function () { 
@@ -171,7 +169,7 @@
 
             $.ajax({
                 url : "{{ route('edit.top.star') }}",
-                type : "POST",
+                type : "PUT",
                 data : {
                     user_id : user_id,
                     top_star : top_star
