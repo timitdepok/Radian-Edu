@@ -42,7 +42,7 @@ class MataPelajaranController extends Controller
                     ->withQueryString(request("search"));
 
         return view("dashboard.mata_pelajaran",[
-            "title" => "Radian Edu",
+            "title" => "Radian Edu Solution",
             "user" => $user,
             "sidebar" => "setting",
             "mata_pelajaran" => $mata_pelajaran,

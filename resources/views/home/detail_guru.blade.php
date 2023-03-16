@@ -16,7 +16,7 @@
                 <div class="image w-44 h-52 rounded-md mr-4 bg-cover bg-top" style="background-image: url({{ asset('storage/' . $guru->foto) }})"></div>
                 <div class="w-fit flex flex-col h-full">
                     <h1 class="mt-4 8x75:mt-0 text-4xl 8x75:max-w-[500px] overflow-hidden 8x75:max-h-[80px] font-semibold text-black text-center 8x75:text-left 8x75:text-white mb-3">{{ $guru->nama }}</h1>
-                    <p class="font-medium text-xl text-black text-center 8x75:text-left 8x75:text-white mb-3">Tutor {{ $guru->jurusan }} Lulusan {{ $guru->universitas }} </p>
+                    <p class="font-medium text-xl text-black text-center 8x75:text-left 8x75:text-white mb-3">Tutor Lulusan {{ $guru->jurusan }} {{ $guru->asal_ptn }} </p>
                     <p class="font-medium text-black text-center 8x75:text-left 8x75:text-white mb-3">{{ $guru->kegiatan_mengajar }}</p>
                     
                     {{-- kabupaten  --}}

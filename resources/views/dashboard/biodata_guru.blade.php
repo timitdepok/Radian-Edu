@@ -79,26 +79,6 @@
             <h1 class="text-[32px] mb-4 font-semibold text-black">Pendidikan</h1>
             <hr class="h-[1px] bg-primaryInp w-full mb-[22px]">
             <div class="flex flex-wrap notebook:flex-nowrap justify-between mb-[90px]">
-                {{-- <div class="flex-grow notebook:max-w-[48%]">
-                    <div class="mb-4">
-                        <p class="text-xl font-medium mb-[22px] text-black">Asal PTN</p>
-                        <p class="text-base mb-[22px] text-bodyText">
-                            {{ $guru->asal_ptn }}
-                        </p>
-                    </div>
-                    <div class="mb-4">
-                        <p class="text-xl font-medium mb-[22px] text-black">Jurusan</p>
-                        <p class="text-base mb-[22px] text-bodyText">
-                            {{ $guru->jurusan }}
-                        </p>
-                    </div>
-                    <div class="mb-4">
-                        <p class="text-xl font-medium mb-[22px] text-black">IPK</p>
-                        <p class="text-base mb-[22px] text-bodyText">
-                            {{ $guru->ipk }}
-                        </p>
-                    </div>
-                </div> --}}
                 <div class="flex-grow notebook:max-w-full">
                     <div class="flex flex-row w-full">
                         <div class="mr-0 sm:mr-5">
@@ -114,7 +94,7 @@
                             </div>
             
                             <h1 class="text-[32px] font-bold mb-1 text-black">
-                                {{ $guru->universitas }}
+                                {{ $guru->asal_ptn }}
                             </h1>
             
                             <p class="text-base text-bodyText">

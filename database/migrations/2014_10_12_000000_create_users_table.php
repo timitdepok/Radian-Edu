@@ -25,9 +25,8 @@ return new class extends Migration
             $table->date('tanggal_lahir')->nullable();
             $table->date('dari_pendidikan')->nullable();
             $table->date('sampai_pendidikan')->nullable();
-            $table->string('universitas')->nullable();
-            $table->text('deskripsi_pendidikan')->nullable();
             $table->string('asal_ptn')->nullable();
+            $table->text('deskripsi_pendidikan')->nullable();
             $table->string('jurusan')->nullable();
             $table->float('ipk')->nullable();
             $table->string('provinsi')->nullable();

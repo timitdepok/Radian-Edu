@@ -108,7 +108,7 @@
                             </div>
             
                             <div class="w-[48%]">
-                                <label for="sampai" class="block mb-2 text-base font-semibold text-gray-900">Sampai</label>
+                                <label for="sampai_pendidikan" class="block mb-2 text-base font-semibold text-gray-900">Sampai</label>
                                 <input type="date" name="sampai_pendidikan" id="sampai_pendidikan" class="h-12 text-sm px-4 w-full outline-none @error('sampai_pendidikan') border-primarySD @else border-primaryInp @enderror border rounded-md" value="{{ old('sampai_pendidikan') ? old('sampai_pendidikan') : $user->sampai_pendidikan }}" >
                                 @error("sampai_pendidikan")
                                   <p class="text-sm font-normal mt-1 text-primarySD">{{ $message }}</p>
@@ -118,9 +118,9 @@
                         
                         {{-- nama univeristas --}}
                         <div class="mb-4">
-                            <label for="universitas" class="block mb-2 text-base font-semibold text-gray-900">Universitas</label>
-                            <input type="text" name="universitas" id="universitas" class="h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none @error('universitas') border-primarySD @else border-primaryInp @enderror border rounded-md" value="{{ old('universitas') ? old('universitas') : $user->universitas  }}" >
-                            @error("universitas")
+                            <label for="asal_ptn" class="block mb-2 text-base font-semibold text-gray-900">Asal PTN</label>
+                            <input type="text" name="asal_ptn" id="asal_ptn" class="h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none @error('asal_ptn') border-primarySD @else border-primaryInp @enderror border rounded-md" value="{{ old('asal_ptn') ? old('asal_ptn') : $user->asal_ptn  }}" >
+                            @error("asal_ptn")
                               <p class="text-sm font-normal mt-1 text-primarySD">{{ $message }}</p>
                             @enderror
                         </div>

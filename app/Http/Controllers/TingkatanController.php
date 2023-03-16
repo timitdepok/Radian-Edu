@@ -38,7 +38,7 @@ class TingkatanController extends Controller
                     ->withQueryString(request("search"));
 
         return view("dashboard.tingkatan",[
-            "title" => "Radian Edu",
+            "title" => "Radian Edu Solution",
             "user" => $user,
             "sidebar" => "setting",
             "tingkatan" => $tingkatan,
