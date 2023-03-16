@@ -131,6 +131,7 @@
             </div>
         </div>
         <!-- navbar 2 section end -->
+    </header>
 <!-- navbar section end -->
 
 
@@ -165,48 +166,48 @@
 
  <!-- promo section start -->
  <section id="promo" class="pt-16 pb-36 bg-slate-100">
-    <div class="container">
-        <div class="flex flex-wrap">
-            <div class="w-full px-4 mb-10 lg:w-1/2">
-                <h4 class="font-bold uppercase text-primary text-lg mb-3">Top Promo</h4>
-                <h2 class="font-bold text-dark text-3xl mb-5 max-w-md">PROMO YANG SEDANG BERLANGSUNG</h2>
-            </div>
-            <div class="w-full px-4 mb-10 lg:w-1/2">
-                <div class="w-full text-right">
-                    <button onclick="next()" class="p-3 rounded-full bg-white border border-gray-100 shadow-lg mr-5">
-                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15m0 0l6.75 6.75M4.5 12l6.75-6.75" />
-                    </svg>                
-                    </button>
-                    <button onclick="prev()" class="p-3 rounded-full bg-white border border-gray-100 shadow-lg mr-5">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
-                          </svg>
-                    </button>
+        <div class="container">
+            <div class="flex flex-wrap">
+                <div class="w-full px-4 mb-10 lg:w-1/2">
+                    <h4 class="font-bold uppercase text-primary text-lg mb-3">Top Promo</h4>
+                    <h2 class="font-bold text-dark text-3xl mb-5 max-w-md">PROMO YANG SEDANG BERLANGSUNG</h2>
                 </div>
-               
+                <div class="w-full px-4 mb-10 lg:w-1/2">
+                    <div class="w-full text-right">
+                        <button onclick="next()" class="p-3 rounded-full bg-white border border-gray-100 shadow-lg mr-5">
+                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15m0 0l6.75 6.75M4.5 12l6.75-6.75" />
+                        </svg>                
+                        </button>
+                        <button onclick="prev()" class="p-3 rounded-full bg-white border border-gray-100 shadow-lg mr-5">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                              </svg>
+                        </button>
+                    </div>
+                   
+                </div>
+            </div>
+            <div class="flex">
+                <div id="slidercontainer" class="w-full overflow-hidden">
+                    <ul id="slider" class="flex w-full">
+                        <li>
+                            <img src="img/Webbanner 1.png" alt="" class="h-auto w-full mr-5">
+                        </li>
+                        <li>
+                            <img src="img/Webbanner 2.png" alt="" class="h-auto w-full mr-5">
+                        </li>
+                        <li>
+                            <img src="img/Webbanner 1.png" alt="" class="h-auto w-full mr-5">
+                        </li>
+                        <li>
+                            <img src="img/Webbanner 2.png" alt="" class="h-auto w-full mr-5">
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
-        <div class="flex">
-            <div id="slidercontainer" class="w-full overflow-hidden">
-                <ul id="slider" class="flex w-full">
-                    <li>
-                        <img src="img/Webbanner 1.png" alt="" class="h-auto w-full mr-5">
-                    </li>
-                    <li>
-                        <img src="img/Webbanner 2.png" alt="" class="h-auto w-full mr-5">
-                    </li>
-                    <li>
-                        <img src="img/Webbanner 1.png" alt="" class="h-auto w-full mr-5">
-                    </li>
-                    <li>
-                        <img src="img/Webbanner 2.png" alt="" class="h-auto w-full mr-5">
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
 <!-- promo section end -->
 
     <!--tentang radian section start  -->
@@ -594,13 +595,13 @@
                 </div>
                 <div class="w-full px-4 mb-10 lg:w-1/3">
                     <div class="w-full text-right">
-                        <button onclick="before()" class="p-3 rounded-full bg-slate-100 border border-gray-100 shadow-lg mr-5">
+                        <button onclick="after()" class="p-3 rounded-full bg-slate-100 border border-gray-100 shadow-lg mr-5">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-primary">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
                               </svg>                              
                         </button>
 
-                        <button onclick="after()" class="p-3 rounded-full bg-slate-100 border border-gray-100 shadow-lg mr-5">
+                        <button onclick="before()" class="p-3 rounded-full bg-slate-100 border border-gray-100 shadow-lg mr-5">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-primary">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                               </svg>                              
@@ -769,7 +770,7 @@
     <!-- teacher section start -->
     <section id="teacher" class="pb-20">
         <div class="container">
-            <div class="px-4 mx-auto overflow-hidden bg-section rounded-3xl sm:px-6 lg:px-8">
+            <div class="pl-4 mx-auto overflow-hidden bg-section rounded-3xl sm:pl-6 lg:pl-8">
                 <div class="2xl:pl-24">
                     <div class="grid items-center grid-cols-1 gap-y-12 lg:grid-cols-2 lg:gap-x-8 2xl:gap-x-20">
                         <div class="lg:order-1 order-2">
@@ -859,7 +860,7 @@
     </footer>
     <!-- footer section end -->
 
-    <script src="{{asset('/js/script.js')}}"></script>ipt>
+    <script src="{{asset('js/script.js')}}"></script>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     @endsection
     
