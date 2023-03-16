@@ -2,53 +2,29 @@
 @section('content')
 
 <!-- navbar section start -->
-<header class="bg-white absolute top-0 left-0 w-full flex items-center z-10">
-    <div class="container">
-        <div class="flex items-center justify-between relative">
-            <div class="px-4">
-                <a href="home.html" class="py-6">
+<div class="w-full text-gray-700 bg-white dark-mode:text-gray-200 dark-mode:bg-gray-800">
+        <div x-data="{ open: false }" class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
+            <div class="flex flex-row items-center justify-between p-4">
+                <a href="#">
                     <img src="img/logo.png" alt="">
                 </a>
-            </div>
-
-            <div class="flex items-center px-4">
-                <button id="hamburger" name="hamburger" type="button"
-                class="block absolute right-4 lg:hidden">
-                    <span class="hamburger-line transition duration-300
-                    ease-in-out origin-top-left "></span>
-                    <span class="hamburger-line transition duration-300
-                    ease-in-out"></span>
-                    <span class="hamburger-line transition duration-300
-                    ease-in-out origin-bottom-left"></span>
+                <button class="rounded-lg md:hidden focus:outline-none focus:shadow-outline" @click="open = !open">
+                    <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+                        <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                        <path x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                    </svg>
                 </button>
-
-                <nav id="nav-menu" class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none">
-                    <ul class="block lg:flex">
-                        <li class="group">
-                            <a href="home.html" class="text-base text-body font-medium py-2 mx-8 flex group-hover:text-primary">Home</a>
-                        </li>
-                        <li class="group">
-                            <a href="#dokter" class="text-base text-body font-medium py-2 mx-8 flex group-hover:text-primary">Kedokteran</a>
-                        </li>
-                        <li class="group">
-                            <a href="#dinas" class="text-base text-body font-medium py-2 mx-8 flex group-hover:text-primary">Kedinasan</a>
-                        </li>
-                        <li class="group">
-                            <a href="#ptn" class="text-base text-body font-medium py-2 mx-8 flex group-hover:text-primary">PTN Favorit</a>
-                        </li>
-                        <li class="group">
-                            <a href="#promo" class="text-base text-body font-medium py-2 mx-8 flex group-hover:text-primary">Promo</a>
-                        </li>
-                        <li class="group">
-                            <a href="https://wa.me/+6281779007135?text=Halo%20radian%20%0A%0ANama%20%3A%20%0AAsal%20Kota%20%3A%20%0ASekolah%20dan%20Kelas%20%3A%20%0AOrang%20Tua%20%2F%20Siswa%20%3F%20%3A%0ASaya%20mengetahui%20program%20ini%20melalui%20website%20privatgaransi.radianedu.com%20" class="text-base text-body font-medium py-2 px-3 mx-8 border bg-primary rounded-lg">KONSULTASI</a>
-                        </li>
-                    </ul>
-                </nav>
             </div>
+            <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow hidden pb-4 md:pb-0 md:flex md:justify-end md:flex-row">
+                <a class="px-4 py-2 mt-2 text-sm font-semibold md:mt-0 md:ml-4 hover:text-primary text-body focus:outline-none focus:shadow-outline" href="{{ route('home') }}">Home</a>
+                <a class="px-4 py-2 mt-2 text-sm font-semibold md:mt-0 md:ml-4 hover:text-primary text-body focus:outline-none focus:shadow-outline" href="#alumni">Kedokteran</a>
+                <a class="px-4 py-2 mt-2 text-sm font-semibold md:mt-0 md:ml-4 hover:text-primary text-body focus:outline-none focus:shadow-outline" href="#testi">Kedinasan</a>
+                <a class="px-4 py-2 mt-2 text-sm font-semibold md:mt-0 md:ml-4 hover:text-primary text-body focus:outline-none focus:shadow-outline" href="#unggul">PTN Favorit</a>
+                <a class="px-4 py-2 mt-2 text-sm font-semibold md:mt-0 md:ml-4 hover:text-primary text-body focus:outline-none focus:shadow-outline" href="#program">Promo</a>
+                <a class="px-4 py-2 mt-2 text-sm font-semibold md:mt-0 md:ml-4 w-[136px] h-[38px] border text-white bg-primary rounded-lg">KONSULTASI</a>
+            </nav>
         </div>
-        
-    </div>
-</header>
+</div>
 <!-- navbar section end -->
 
 <!-- hero section start -->
@@ -501,13 +477,13 @@
             </div>
             <div class="w-full px-4 mb-10 lg:w-1/3">
                 <div class="w-full text-right">
-                    <button onclick="before()" class="p-3 rounded-full bg-slate-100 border border-gray-100 shadow-lg mr-5">
+                    <button onclick="after()" class="p-3 rounded-full bg-slate-100 border border-gray-100 shadow-lg mr-5">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-primary">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
                           </svg>                              
                     </button>
 
-                    <button onclick="after()" class="p-3 rounded-full bg-slate-100 border border-gray-100 shadow-lg mr-5">
+                    <button onclick="before()" class="p-3 rounded-full bg-slate-100 border border-gray-100 shadow-lg mr-5">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-primary">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                           </svg>                              
@@ -743,6 +719,7 @@
 </footer>
 <!-- footer section end -->
 
-<script src="{{asset('/js/privat.js')}}"></script>ipt>
+<script src="{{asset('/js/privat.js')}}"></script>
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 
  @endsection
