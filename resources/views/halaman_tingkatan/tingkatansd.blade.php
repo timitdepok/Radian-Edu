@@ -1,4 +1,4 @@
-@extends('tingkatan.layout.template')
+@extends('halaman_tingkatan.layout.template')
 @section('content')
 
  <!-- naavbar section start -->
