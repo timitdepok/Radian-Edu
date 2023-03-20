@@ -44,7 +44,7 @@ Route::post("/logout", LogoutController::class)->name("logout");
 Route::get("/lupa-password", [ForgotPasswordController::class, "index"])->middleware("guest")->name("lupa.password");
 Route::post("/lupa-password", [ForgotPasswordController::class, "sendResetLinkEmail"])->middleware("guest")->name("send.link");
 Route::get("/reset-password/{token}", [ForgotPasswordController::class, "reset_password"])->middleware("guest")->name("password.reset");
-Route::post("/reset-password", [ForgotPasswordController::class, "update_password"])->middleware("guest")->name("update.password");
+Route::post("/reset-password/{token}", [ForgotPasswordController::class, "update_password"])->middleware("guest")->name("update.password");
 
 // route API internal (digunakan untuk multiple select pada form biodata)
 Route::post("/getkabupaten", [ApiController::class, "getkabupaten"])->name("get.kabupaten");

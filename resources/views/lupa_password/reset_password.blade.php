@@ -10,7 +10,7 @@
             </svg> 
             <p class="text-sm font-semibold">Radian Edu Solution</p>
         </div>
-        <form action="{{ route('update.password') }}" method="post" class="w-full mb-4">
+        <form action="{{ route('update.password', [$token]) }}" method="post" class="w-full mb-4">
             @csrf
             <div class="w-fit mb-6">
                 <h1 class="text-2xl font-semibold mb-2">Buat Password Baru</h1>

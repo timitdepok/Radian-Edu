@@ -103,11 +103,7 @@
                          <div class="bg-primaryYellow h-[98px] rounded-2xl absolute inset-x-0 bottom-0 text-center">
                              <h1 class="text-xl font-medium text-black mb-2">{{ $row->nama }}</h1>
                              <h5 class="text-lg font-normal text-black mb-0">{{ $row->minat_mengajar->first()->mata_pelajaran->mata_pelajaran ?? "Mata pelajaran" }} - {{ $row->kabupaten ? ucwords(strtolower($row->kabupaten)) : "Domisili" }}</h5>
-<<<<<<< HEAD
-                             <h5 class="text-lg font-normal text-black mb-3">{{ $row->universitas }}</h5>
-=======
                              <h5 class="text-lg font-normal text-black mb-3">{{ $row->asal_ptn }}</h5>
->>>>>>> lupa_password
                          </div>
                      </div>
                      <div class="absolute bottom-0 left-0 w-full"></div>
@@ -115,11 +111,7 @@
                      <div class="group-hover:-translate-y-3 group-hover:bottom-0 transition-all group-hover:z-20 absolute button-0 left-0 text-black p-4 justify-center content-center">
                          <h4 class="font-medium mb-1 text-xl text-center opacity-80">Angelina</h4>
                          <h3 class="font-normal mb-0 text-lg text-center">{{ $row->minat_mengajar->first()->mata_pelajaran->mata_pelajaran ?? "" }} - {{ $row->kabupaten ? ucwords(strtolower($row->kabupaten)) : "Domisili" }}</h3>
-<<<<<<< HEAD
-                         <h3 class="font-normal mb-3 text-lg text-center">{{ $row->universitas }}</h3>
-=======
                          <h3 class="font-normal mb-3 text-lg text-center">{{ $row->asal_ptn }}</h3>
->>>>>>> lupa_password
                          <div class="justify-center mx-12">
                              
                                 {{-- menampilkan keuntungan  --}}

@@ -51,7 +51,7 @@ class ForgotPasswordController extends Controller
         ]);
     }
 
-    public function update_password(Request $request){
+    public function update_password(Request $request, $token){
         $request->validate([
             'token' => 'required',
             'email' => 'required|email',
