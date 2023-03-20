@@ -8,14 +8,14 @@ class HalamanTingkatanController extends Controller
 {
     // TINGKAT SEKOLAH DASAR
     public function tingkatansd(){
-        return view("tingkatan.tingkatansd", [
+        return view("halaman_tingkatan.tingkatansd", [
             "title" => "Sekolah Dasar | Radian Edu"
         ]);
     }
 
     // TINGKAT SEKOLAH MENENGAH PERTAMA
     public function tingkatansmp(){
-        return view("tingkatan.tingkatansmp", [
+        return view("halaman_tingkatan.tingkatansmp", [
             "title" => "Sekolah Menengah Pertama | Radian Edu"
         ]);
     }
@@ -29,7 +29,7 @@ class HalamanTingkatanController extends Controller
 
     // TINGKAT MAHASISWA
     public function tingkatanmhs(){
-        return view("tingkatan.tingkatanmhs", [
+        return view("halaman_tingkatan.tingkatanmhs", [
             "title" => "Mahasiswa | Radian Edu"
         ]);
     }
