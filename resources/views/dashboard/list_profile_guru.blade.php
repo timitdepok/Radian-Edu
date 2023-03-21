@@ -41,7 +41,7 @@
                                 {{ $row->email }}
                             </td>
                             <td class="px-6 py-4">
-                                {{ $row->is_micro_teaching_complete ? 'Aktif' : 'Tidak Aktif' }}
+                                {{ $row->tes_tulis ? 'Aktif' : 'Tidak Aktif' }}
                             </td>
                             <td class="px-6 py-4">
                                 <div class="w-fit flex flex-row items-center">
@@ -85,14 +85,14 @@
             <p class="text-bodyText">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est iusto minima iure quisquam, eos quasi hic quod porro, quis eveniet veniam fugiat quo itaque.</p> 
             <div class="mt-4">
                 <input type="hidden" name="user_id" id="user_id">
-                <label for="micro_teaching" class="block mb-2 text-base font-semibold text-gray-900">Edit Status</label>
+                <label for="tes_tulis" class="block mb-2 text-base font-semibold text-gray-900">Edit Status</label>
                 <div class="block relative">
                     <div class="rounded-r-md absolute bg-white border-t border-r border-b border-primaryInp pr-4 flex items-center justify-center right-0 h-full">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
                         </svg>                  
                     </div>
-                    <select name="micro_teaching" id="micro_teaching" class="appearance-none h-12 text-sm px-4 w-full outline-none border-primaryInp border rounded-md" required>
+                    <select name="tes_tulis" id="tes_tulis" class="appearance-none h-12 text-sm px-4 w-full outline-none border-primaryInp border rounded-md bg-white" required>
                     </select>
                 </div>
             </div>
@@ -126,13 +126,13 @@
                         $("#modal-edit-user").removeClass("hidden");
                         $("#user_id").val(user_id);
 
-                        if (response.micro_teaching) {
-                            $("#micro_teaching").html(`
+                        if (response.tes_tulis) {
+                            $("#tes_tulis").html(`
                                 <option selected value="1">Aktif</option>
                                 <option value="0">Tidak Aktif</option>
                             `);
                         }else{
-                            $("#micro_teaching").html(`
+                            $("#tes_tulis").html(`
                                 <option value="1">Aktif</option>
                                 <option selected value="0">Tidak Aktif</option>
                             `);
@@ -159,14 +159,14 @@
         $("#btn-update").on("click", function() {
             let parentElement = $(this).closest("#modal-edit-user");
             let user_id = parentElement.find("#user_id").val();
-            let micro_teaching = parentElement.find("#micro_teaching").val();
+            let tes_tulis = parentElement.find("#tes_tulis").val();
 
             $.ajax({
-                url : "{{ route('edit.micro.teaching') }}",
+                url : "{{ route('edit.tes.tulis') }}",
                 type : "PUT",
                 data : {
                     user_id : user_id,
-                    micro_teaching : micro_teaching
+                    tes_tulis : tes_tulis
                 },
                 success: function(response) {
                     $('#modal-edit-user').addClass('hidden');

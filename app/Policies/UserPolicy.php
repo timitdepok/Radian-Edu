@@ -27,8 +27,8 @@ class UserPolicy
         return $user->is_profile_complete;
     }
 
-    public function micro_teaching_no_complete(User $user){
-        return !$user->is_micro_teaching_complete;
+    public function tes_tulis_no_complete(User $user){
+        return !$user->tes_tulis;
     }
 
 }

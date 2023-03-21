@@ -15,9 +15,9 @@
             Selesai
         </a>
 
-        <form action="{{ route('micro.teaching') }}" method="post">
+        <form action="{{ route('tes.tulis') }}" method="post">
             @csrf
-            <input type="submit" name="submit" value="Tes Micro Teaching" class="mt-4 py-4 px-6 bg-green-500 font-medium text-white rounded-md">
+            <input type="submit" name="submit" value="Tes Tulis" class="mt-4 py-4 px-6 bg-green-500 font-medium text-white rounded-md">
         </form>
     </div>
 </section>

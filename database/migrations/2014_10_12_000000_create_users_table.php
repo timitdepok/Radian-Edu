@@ -38,7 +38,7 @@ return new class extends Migration
             $table->enum('kegiatan_mengajar', ['Online', 'Offline', 'Online dan Offline'])->nullable();
             $table->unsignedBigInteger('harga')->nullable();
             $table->boolean('status')->default(1);
-            $table->boolean('is_micro_teaching_complete')->default(0);
+            $table->boolean('tes_tulis')->default(0);
             $table->boolean('top_star')->default(0);
             $table->boolean('is_profile_complete')->default(0);
             $table->timestamp('email_verified_at')->nullable();

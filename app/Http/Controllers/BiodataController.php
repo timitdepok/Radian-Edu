@@ -445,7 +445,7 @@ class BiodataController extends Controller
     public function biodata_step3($key){
         $user = auth()->user();
         $this->authorize("is_profile_complete_yes", $user);
-        $this->authorize("micro_teaching_no_complete", $user);
+        $this->authorize("tes_tulis_no_complete", $user);
 
         try {
 

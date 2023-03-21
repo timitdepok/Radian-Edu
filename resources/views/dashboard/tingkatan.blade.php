@@ -12,7 +12,7 @@
                 @csrf
                 <div class="mb-4">
                     <label for="tingkatan" class="block mb-2 text-base font-semibold text-gray-900">Tingkatan</label>
-                    <input type="text" name="tingkatan" id="tingkatan" class="h-12 text-sm px-4 w-full outline-none @error('tingkatan') border-primarySD @else border-primaryInp @enderror border rounded-md" placeholder="Masukkan tingkatan pendidikan" value="{{ old('tingkatan') }}" required>
+                    <input type="text" name="tingkatan" id="tingkatan" class="h-12 text-sm px-4 w-full outline-none @error('tingkatan') border-primarySD @else border-primaryInp @enderror border rounded-md bg-white" placeholder="Masukkan tingkatan pendidikan" value="{{ old('tingkatan') }}" required>
                     @error("tingkatan")
                       <p class="text-sm font-normal mt-1 text-primarySD">{{ $message }}</p>
                     @enderror
@@ -89,7 +89,7 @@
             <div class="mt-4">
                 <input type="hidden" name="tingkatan_id" id="tingkatan_id">
                 <label for="edit-tingkatan" class="block mb-2 text-base font-semibold text-gray-900">Tingkatan</label>
-                <input type="text" name="tingkatan" id="edit-tingkatan" class="h-12 text-sm px-4 w-full outline-none border-primaryInp border rounded-md" value="" required>
+                <input type="text" name="tingkatan" id="edit-tingkatan" class="h-12 text-sm px-4 w-full outline-none border-primaryInp border rounded-md bg-white" value="" required>
             </div>
         </div>
     <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">

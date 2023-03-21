@@ -90,7 +90,7 @@
             <div class="mt-4">
                 <input type="hidden" name="user_id" id="user_id">
                 <label for="harga" class="block mb-2 text-base font-semibold text-gray-900">Harga</label>
-                <input type="number" name="harga" id="harga" class="h-12 text-sm px-4 w-full outline-none border-primaryInp border rounded-md" value="{{ old('harga') }}" required>
+                <input type="number" name="harga" id="harga" class="h-12 text-sm px-4 w-full outline-none border-primaryInp border rounded-md bg-white" value="{{ old('harga') }}" required>
             </div>
         </div>
     <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">

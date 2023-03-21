@@ -15,21 +15,21 @@
                 @csrf
                 <div class="mb-4">
                     <label for="kontak_micro_teaching" class="block mb-2 text-base font-semibold text-gray-900">Kontak Micro Teaching</label>
-                    <input type="text" name="kontak_micro_teaching" id="kontak_micro_teaching" class="h-12 text-sm px-4 w-full outline-none @error('kontak_micro_teaching') border-primarySD @else border-primaryInp @enderror border rounded-md" placeholder="Masukan kontak micro teaching" pattern="[0]{1}[8]{1}[0-9]{8,11}" value="{{ $kontak->kontak_micro_teaching ?? "" }}" required>
+                    <input type="text" name="kontak_micro_teaching" id="kontak_micro_teaching" class="h-12 text-sm px-4 w-full outline-none @error('kontak_micro_teaching') border-primarySD @else border-primaryInp @enderror border rounded-md bg-white" placeholder="Masukan kontak micro teaching" pattern="[0]{1}[8]{1}[0-9]{8,11}" value="{{ $kontak->kontak_micro_teaching ?? "" }}" required>
                     @error("kontak_micro_teaching")
                         <p class="text-sm font-normal mt-1 text-primarySD">{{ $message }}</p>
                     @enderror
                 </div>
                 <div class="mb-4">
                     <label for="kontak_pesan_guru" class="block mb-2 text-base font-semibold text-gray-900">Kontak Pesan Guru</label>
-                    <input type="text" name="kontak_pesan_guru" id="kontak_pesan_guru" class="h-12 text-sm px-4 w-full outline-none @error('kontak_pesan_guru') border-primarySD @else border-primaryInp @enderror border rounded-md" placeholder="Masukan kontak pesan guru" pattern="[0]{1}[8]{1}[0-9]{8,11}" value="{{ $kontak->kontak_pesan_guru ?? "" }}" required>
+                    <input type="text" name="kontak_pesan_guru" id="kontak_pesan_guru" class="h-12 text-sm px-4 w-full outline-none @error('kontak_pesan_guru') border-primarySD @else border-primaryInp @enderror border rounded-md bg-white" placeholder="Masukan kontak pesan guru" pattern="[0]{1}[8]{1}[0-9]{8,11}" value="{{ $kontak->kontak_pesan_guru ?? "" }}" required>
                     @error("kontak_pesan_guru")
                         <p class="text-sm font-normal mt-1 text-primarySD">{{ $message }}</p>
                     @enderror
                 </div>
                 <div class="mb-6">
                     <label for="email" class="block mb-2 text-base font-semibold text-gray-900">Email</label>
-                    <input type="email" name="email" id="email" class="h-12 text-sm px-4 w-full outline-none @error('email') border-primarySD @else border-primaryInp @enderror border rounded-md" placeholder="Masukan email" value="{{ $kontak->email ?? "" }}" required>
+                    <input type="email" name="email" id="email" class="h-12 text-sm px-4 w-full outline-none @error('email') border-primarySD @else border-primaryInp @enderror border rounded-md bg-white" placeholder="Masukan email" value="{{ $kontak->email ?? "" }}" required>
                     @error("email")
                         <p class="text-sm font-normal mt-1 text-primarySD">{{ $message }}</p>
                     @enderror

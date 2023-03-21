@@ -23,7 +23,7 @@ class HalamanUtamaController extends Controller
         }
 
         $guru = User::latest()->CariGuru([""])->where("is_profile_complete", true)
-                ->where("is_micro_teaching_complete", true)
+                ->where("tes_tulis", true)
                 ->where("top_star", true)->paginate(8);
                 
         return view("home.halaman_utama", [

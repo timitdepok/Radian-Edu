@@ -44,7 +44,7 @@
                                 {{  ucwords(strtolower($row->roles->first()->name)) }}
                             </td>
                             <td class="px-6 py-4">
-                                {{ $row->is_micro_teaching_complete ? 'Aktif' : 'Tidak Aktif' }}
+                                {{ $row->tes_tulis ? 'Aktif' : 'Tidak Aktif' }}
                             </td>
                             <td class="px-6 py-4">
                                 {{ $row->top_star ? 'Top Star' : '-' }}
@@ -98,7 +98,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
                         </svg>                  
                     </div>
-                    <select name="top_star" id="top_star" class="appearance-none h-12 text-sm px-4 w-full outline-none @error('top_star') border-primarySD @else border-primaryInp @enderror  border rounded-md" required>
+                    <select name="top_star" id="top_star" class="appearance-none h-12 text-sm px-4 w-full outline-none @error('top_star') border-primarySD @else border-primaryInp @enderror border rounded-md bg-white" required>
                     </select>
                 </div>
             </div>

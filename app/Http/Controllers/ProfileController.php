@@ -294,7 +294,7 @@ class ProfileController extends Controller
         $data_hapus_domisili_mengajar = [];
         if($request->hapus_domisili_mengajar){
             foreach($request->hapus_domisili_mengajar as $row){
-                if (TeachingDomicile::where("user_id", $user->id)->where("id", $row)->firts()) {
+                if (TeachingDomicile::where("user_id", $user->id)->where("id", $row)->first()) {
                     $data_hapus_domisili_mengajar[] = $row;
                 }
             }

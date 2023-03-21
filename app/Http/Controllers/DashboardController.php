@@ -35,12 +35,12 @@ class DashboardController extends Controller
             $search = $request->search;
         }
 
-        $guru_aktif = User::where("is_profile_complete", true)->where("is_micro_teaching_complete", true)
+        $guru_aktif = User::where("is_profile_complete", true)->where("tes_tulis", true)
                       ->whereHas("roles", function($query){
                         $query->where("name", "user");
                     })->count();
         
-        $guru_tidak_aktif = User::where("is_micro_teaching_complete", false)
+        $guru_tidak_aktif = User::where("tes_tulis", false)
                                 ->whereHas("roles", function($query){
                                 $query->where("name", "user");
                             })->count();
@@ -107,11 +107,11 @@ class DashboardController extends Controller
     }
 
     // untuk mengedit micro teaching 
-    public function edit_micro_teaching(Request $request){
+    public function edit_tes_tulis(Request $request){
 
         $validate = Validator::make($request->all(),[
             "user_id" => "required|numeric",
-            "micro_teaching" => "required"
+            "tes_tulis" => "required"
         ]);
 
         if($validate->fails()){
@@ -132,7 +132,7 @@ class DashboardController extends Controller
 
             if($user){
                 $user->update([
-                    "is_micro_teaching_complete" => $request->micro_teaching
+                    "tes_tulis" => $request->tes_tulis
                 ]);
                 
                 return response()->json([
@@ -317,7 +317,7 @@ class DashboardController extends Controller
 
             if($user){
                 return response()->json([
-                    "micro_teaching" => $user->is_micro_teaching_complete,
+                    "tes_tulis" => $user->tes_tulis,
                     "top_star" => $user->top_star,
                     "harga" => $user->harga,
                     "status" => "success"

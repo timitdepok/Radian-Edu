@@ -32,7 +32,7 @@
                 {{-- nama --}}
                 <div class="mb-4 notebook:mb-4">
                     <p class="text-xl font-medium mb-[22px] text-black">Nama</p>
-                    <input type="text" name="nama" class="text-sm h-12 px-4 py-4 w-full outline-none @error('nama') border-primarySD @else border-primaryInp @enderror border rounded-md" value="{{ old('nama') ? old('nama') : $user->nama }}" >
+                    <input type="text" name="nama" class="text-sm h-12 px-4 py-4 w-full outline-none @error('nama') border-primarySD @else border-primaryInp @enderror border rounded-md bg-white" value="{{ old('nama') ? old('nama') : $user->nama }}" >
                     @error("nama")
                         <p class="text-sm font-normal mt-1 text-primarySD">{{ $message }}</p>
                     @enderror
@@ -40,7 +40,7 @@
 
                 <div class="mb-4">
                     <p class="text-xl font-medium mb-[22px] text-black">Nomor Telepon</p>
-                    <input type="text" name="no_telepon" id="no_telepon" class="h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none @error('no_telepon') border-primarySD @else border-primaryInp @enderror border rounded-md" pattern="[0]{1}[8]{1}[0-9]{8,11}" value="{{ old('no_telepon') ? old('no_telepon') : $user->no_telepon }}" >
+                    <input type="text" name="no_telepon" id="no_telepon" class="h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none @error('no_telepon') border-primarySD @else border-primaryInp @enderror border rounded-md bg-white" pattern="[0]{1}[8]{1}[0-9]{8,11}" value="{{ old('no_telepon') ? old('no_telepon') : $user->no_telepon }}" >
                     @error("no_telepon")
                       <p class="text-sm font-normal mt-1 text-primarySD">{{ $message }}</p>
                     @enderror
@@ -49,7 +49,7 @@
                 {{-- deskripsi diri --}}
                 <div class="mb-4 notebook:mb-0">
                     <p class="text-xl font-medium mb-[22px] text-black">Deskripsi Guru</p>
-                    <textarea name="deskripsi_diri" id="deskripsi_diri" cols="40" rows="9" class="sm:min-w-[338px] text-sm px-4 py-4 w-full outline-none @error('deskripsi_diri') border-primarySD @else border-primaryInp @enderror border rounded-md" >{{ old('deskripsi_diri') ? old('deskripsi_diri') : $user->deskripsi_diri }}</textarea>
+                    <textarea name="deskripsi_diri" id="deskripsi_diri" cols="40" rows="9" class="sm:min-w-[338px] text-sm px-4 py-4 w-full outline-none @error('deskripsi_diri') border-primarySD @else border-primaryInp @enderror border rounded-md bg-white" >{{ old('deskripsi_diri') ? old('deskripsi_diri') : $user->deskripsi_diri }}</textarea>
                     @error("deskripsi_diri")
                         <p class="text-sm font-normal mt-1 text-primarySD">{{ $message }}</p>
                     @enderror
@@ -67,7 +67,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
                         </svg>                  
                     </div>
-                    <select name="kegiatan_mengajar" id="kgt_mengajar" class="appearance-none h-12 text-sm px-4 w-full outline-none @error('kegiatan_mengajar') border-primarySD @else border-primaryInp @enderror  border rounded-md" >
+                    <select name="kegiatan_mengajar" id="kgt_mengajar" class="appearance-none h-12 text-sm px-4 w-full outline-none @error('kegiatan_mengajar') border-primarySD @else border-primaryInp @enderror  border rounded-md bg-white" >
                         <option style="display: none;" value=""></option>
                         <option @if(old("kegiatan_mengajar") ? old("kegiatan_mengajar") : $user->kegiatan_mengajar == "Online" ) selected @endif value="Online">Online</option>
                         <option @if(old("kegiatan_mengajar") ? old("kegiatan_mengajar") : $user->kegiatan_mengajar == "Offline" ) selected @endif value="Offline">Offline</option>
@@ -101,7 +101,7 @@
                         <div class="mb-4 flex flex-row justify-between">
                             <div class="w-[48%]">
                                 <label for="mulai" class="block mb-2 text-base font-semibold text-gray-900">Dari</label>
-                                <input type="date" name="dari_pendidikan" id="mulai" class="h-12 text-sm px-4 w-full outline-none @error('dari_pendidikan') border-primarySD @else border-primaryInp @enderror border rounded-md" value="{{ old('dari_pendidikan') ? old('dari_pendidikan') : $user->dari_pendidikan }}" >
+                                <input type="date" name="dari_pendidikan" id="mulai" class="h-12 text-sm px-4 w-full outline-none @error('dari_pendidikan') border-primarySD @else border-primaryInp @enderror border rounded-md bg-white" value="{{ old('dari_pendidikan') ? old('dari_pendidikan') : $user->dari_pendidikan }}" >
                                 @error("dari_pendidikan")
                                   <p class="text-sm font-normal mt-1 text-primarySD">{{ $message }}</p>
                                 @enderror
@@ -109,7 +109,7 @@
             
                             <div class="w-[48%]">
                                 <label for="sampai_pendidikan" class="block mb-2 text-base font-semibold text-gray-900">Sampai</label>
-                                <input type="date" name="sampai_pendidikan" id="sampai_pendidikan" class="h-12 text-sm px-4 w-full outline-none @error('sampai_pendidikan') border-primarySD @else border-primaryInp @enderror border rounded-md" value="{{ old('sampai_pendidikan') ? old('sampai_pendidikan') : $user->sampai_pendidikan }}" >
+                                <input type="date" name="sampai_pendidikan" id="sampai_pendidikan" class="h-12 text-sm px-4 w-full outline-none @error('sampai_pendidikan') border-primarySD @else border-primaryInp @enderror border rounded-md bg-white" value="{{ old('sampai_pendidikan') ? old('sampai_pendidikan') : $user->sampai_pendidikan }}" >
                                 @error("sampai_pendidikan")
                                   <p class="text-sm font-normal mt-1 text-primarySD">{{ $message }}</p>
                                 @enderror
@@ -119,7 +119,7 @@
                         {{-- nama univeristas --}}
                         <div class="mb-4">
                             <label for="asal_ptn" class="block mb-2 text-base font-semibold text-gray-900">Asal PTN</label>
-                            <input type="text" name="asal_ptn" id="asal_ptn" class="h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none @error('asal_ptn') border-primarySD @else border-primaryInp @enderror border rounded-md" value="{{ old('asal_ptn') ? old('asal_ptn') : $user->asal_ptn  }}" >
+                            <input type="text" name="asal_ptn" id="asal_ptn" class="h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none @error('asal_ptn') border-primarySD @else border-primaryInp @enderror border rounded-md bg-white" value="{{ old('asal_ptn') ? old('asal_ptn') : $user->asal_ptn  }}" >
                             @error("asal_ptn")
                               <p class="text-sm font-normal mt-1 text-primarySD">{{ $message }}</p>
                             @enderror
@@ -128,7 +128,7 @@
                         {{-- deskripsi mengenai pendidikan --}}
                         <div class="mb-4">
                             <label for="deskripsi" class="block mb-2 text-base font-semibold text-gray-900">Deskripsi</label>
-                            <textarea name="deskripsi_pendidikan" id="deskripsi" cols="40" rows="8" class="sm:min-w-[338px] text-sm px-4 py-4 w-full outline-none @error('deskripsi_pendidikan') border-primarySD @else border-primaryInp @enderror border rounded-md" >{{ old('deskripsi_pendidikan') ? old('deskripsi_pendidikan') : $user->deskripsi_pendidikan }}</textarea>
+                            <textarea name="deskripsi_pendidikan" id="deskripsi" cols="40" rows="8" class="sm:min-w-[338px] text-sm px-4 py-4 w-full outline-none @error('deskripsi_pendidikan') border-primarySD @else border-primaryInp @enderror border rounded-md bg-white" >{{ old('deskripsi_pendidikan') ? old('deskripsi_pendidikan') : $user->deskripsi_pendidikan }}</textarea>
                             @error("deskripsi_pendidikan")
                               <p class="text-sm font-normal mt-1 text-primarySD">{{ $message }}</p>
                             @enderror
@@ -160,7 +160,7 @@
                         <div class="mb-4 flex flex-row justify-between">
                               <div class="w-[48%]">
                                   <label for="dari_pengalaman" class="block mb-2 text-base font-semibold text-gray-900">Dari</label>
-                                  <input type="date" name="dari_pengalaman[]" id="dari_pengalaman" class="h-12 text-sm px-4 w-full outline-none @error('dari_pengalaman.0') border-primarySD @else border-primaryInp @enderror border rounded-md" value="{{ old('dari_pengalaman.0') ? old('dari_pengalaman.0') : $user->pengalaman[0]->dari_pengalaman }}" >
+                                  <input type="date" name="dari_pengalaman[]" id="dari_pengalaman" class="h-12 text-sm px-4 w-full outline-none @error('dari_pengalaman.0') border-primarySD @else border-primaryInp @enderror border rounded-md bg-white" value="{{ old('dari_pengalaman.0') ? old('dari_pengalaman.0') : $user->pengalaman[0]->dari_pengalaman }}" >
                                   @error("dari_pengalaman.0")
                                     <p class="text-sm font-normal mt-1 text-primarySD">{{ $message }}</p>
                                   @enderror
@@ -168,7 +168,7 @@
               
                               <div class="w-[48%]">
                                   <label for="sampai_pengalaman" class="block mb-2 text-base font-semibold text-gray-900">Sampai</label>
-                                  <input type="date" name="sampai_pengalaman[]" id="sampai_pengalaman" class="h-12 text-sm px-4 w-full outline-none @error('sampai_pengalaman.0') border-primarySD @else border-primaryInp @enderror border rounded-md" value="{{ old('sampai_pengalaman.0') ? old('sampai_pengalaman.0') : $user->pengalaman[0]->sampai_pengalaman }}" >
+                                  <input type="date" name="sampai_pengalaman[]" id="sampai_pengalaman" class="h-12 text-sm px-4 w-full outline-none @error('sampai_pengalaman.0') border-primarySD @else border-primaryInp @enderror border rounded-md bg-white" value="{{ old('sampai_pengalaman.0') ? old('sampai_pengalaman.0') : $user->pengalaman[0]->sampai_pengalaman }}" >
                                   @error("sampai_pengalaman.0")
                                     <p class="text-sm font-normal mt-1 text-primarySD">{{ $message }}</p>
                                   @enderror
@@ -178,7 +178,7 @@
                         {{-- nama perusahaan --}}
                         <div class="mb-4">
                           <label for="perusahaan" class="block mb-2 text-base font-semibold text-gray-900">Perusahaan</label>
-                          <input type="text" name="perusahaan[]" id="perusahaan" class="h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none @error('perusahaan.0') border-primarySD @else border-primaryInp @enderror border rounded-md" value="{{ old('perusahaan.0') ? old('perusahaan.0') : $user->pengalaman[0]->perusahaan }}" >
+                          <input type="text" name="perusahaan[]" id="perusahaan" class="h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none @error('perusahaan.0') border-primarySD @else border-primaryInp @enderror border rounded-md bg-white" value="{{ old('perusahaan.0') ? old('perusahaan.0') : $user->pengalaman[0]->perusahaan }}" >
                           @error("perusahaan.0")
                             <p class="text-sm font-normal mt-1 text-primarySD">{{ $message }}</p>
                           @enderror
@@ -187,7 +187,7 @@
                         {{-- deskripsi mengenai perusahaan --}}
                         <div class="mb-0">
                             <label for="deskrips_plg" class="block mb-2 text-base font-semibold text-gray-900">Deskripsi</label>
-                            <textarea name="deskripsi_pengalaman[]" id="deskripsi_plg" cols="40" rows="8" class="sm:min-w-[338px] text-sm px-4 py-4 w-full outline-none @error('deskripsi_pengalaman.0') border-primarySD @else border-primaryInp @enderror border rounded-md" >{{ old('deskripsi_pengalaman.0') ? old('deskripsi_pengalaman.0') : $user->pengalaman[0]->deskripsi_pengalaman }}</textarea>
+                            <textarea name="deskripsi_pengalaman[]" id="deskripsi_plg" cols="40" rows="8" class="sm:min-w-[338px] text-sm px-4 py-4 w-full outline-none @error('deskripsi_pengalaman.0') border-primarySD @else border-primaryInp @enderror border rounded-md bg-white" >{{ old('deskripsi_pengalaman.0') ? old('deskripsi_pengalaman.0') : $user->pengalaman[0]->deskripsi_pengalaman }}</textarea>
                             @error("deskripsi_pengalaman.0")
                               <p class="text-sm font-normal mt-1 text-primarySD">{{ $message }}</p>
                             @enderror
@@ -223,7 +223,7 @@
                                 <div class="elemen-input-pengalaman mb-4 flex flex-row justify-between">
                                     <div class="w-[48%]">
                                         <label for="dari_pengalaman.{{ $i }}" class="block mb-2 text-base font-semibold text-gray-900">Dari</label>
-                                        <input type="date" name="dari_pengalaman[]" id="dari_pengalaman.{{ $i }}" class="h-12 text-sm px-4 w-full outline-none @error("dari_pengalaman.".$i) border-primarySD @else border-primaryInp @enderror border rounded-md" value="{{ old('dari_pengalaman.'.$i) ? old('dari_pengalaman.'.$i) : $row->dari_pengalaman }}" >
+                                        <input type="date" name="dari_pengalaman[]" id="dari_pengalaman.{{ $i }}" class="h-12 text-sm px-4 w-full outline-none @error("dari_pengalaman.".$i) border-primarySD @else border-primaryInp @enderror border rounded-md bg-white" value="{{ old('dari_pengalaman.'.$i) ? old('dari_pengalaman.'.$i) : $row->dari_pengalaman }}" >
                                         @error("dari_pengalaman.".$i)
                                             <p class="text-sm font-normal mt-1 text-primarySD">{{ $message }}</p>
                                         @enderror
@@ -231,7 +231,7 @@
                     
                                     <div class="w-[48%]">
                                         <label for="sampai_pengalaman.{{ $i }}" class="block mb-2 text-base font-semibold text-gray-900">Sampai</label>
-                                        <input type="date" name="sampai_pengalaman[]" id="sampai_pengalaman.{{ $i }}" class="h-12 text-sm px-4 w-full outline-none @error('sampai_pengalaman.'.$i) border-primarySD @else border-primaryInp @enderror border rounded-md" value="{{ old('sampai_pengalaman.'.$i) ? old('sampai_pengalaman.'.$i) : $row->sampai_pengalaman }}" >
+                                        <input type="date" name="sampai_pengalaman[]" id="sampai_pengalaman.{{ $i }}" class="h-12 text-sm px-4 w-full outline-none @error('sampai_pengalaman.'.$i) border-primarySD @else border-primaryInp @enderror border rounded-md bg-white" value="{{ old('sampai_pengalaman.'.$i) ? old('sampai_pengalaman.'.$i) : $row->sampai_pengalaman }}" >
                                         @error("sampai_pengalaman.".$i)
                                             <p class="text-sm font-normal mt-1 text-primarySD">{{ $message }}</p>
                                         @enderror
@@ -241,7 +241,7 @@
                                 {{-- nama perusahaan --}}
                                 <div class="elemen-input-pengalaman mb-4">
                                 <label for="perusahaan.{{ $i }}" class="block mb-2 text-base font-semibold text-gray-900">Perusahaan</label>
-                                <input type="text" name="perusahaan[]" id="perusahaan.{{ $i }}" class="h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none @error('perusahaan.'.$i) border-primarySD @else border-primaryInp @enderror border rounded-md" value="{{ old('perusahaan.'.$i) ? old('perusahaan.'.$i) : $row->perusahaan }}" >
+                                <input type="text" name="perusahaan[]" id="perusahaan.{{ $i }}" class="h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none @error('perusahaan.'.$i) border-primarySD @else border-primaryInp @enderror border rounded-md bg-white" value="{{ old('perusahaan.'.$i) ? old('perusahaan.'.$i) : $row->perusahaan }}" >
                                 @error("perusahaan.".$i)
                                     <p class="text-sm font-normal mt-1 text-primarySD">{{ $message }}</p>
                                 @enderror
@@ -250,7 +250,7 @@
                                 {{-- deskripsi mengenai perusahaan --}}
                                 <div class="elemen-input-pengalaman mb-0">
                                     <label for="deskrips_plg" class="block mb-2 text-base font-semibold text-gray-900">Deskripsi</label>
-                                    <textarea name="deskripsi_pengalaman[]" id="deskripsi_plg" cols="40" rows="8" class="sm:min-w-[338px] text-sm px-4 py-4 w-full outline-none @error('deskripsi_pengalaman.'.$i)) border-primarySD @else border-primaryInp @enderror border rounded-md" >{{ old('deskripsi_pengalaman.'.$i) ? old('deskripsi_pengalaman.'.$i) : $row->deskripsi_pengalaman }}</textarea>
+                                    <textarea name="deskripsi_pengalaman[]" id="deskripsi_plg" cols="40" rows="8" class="sm:min-w-[338px] text-sm px-4 py-4 w-full outline-none @error('deskripsi_pengalaman.'.$i)) border-primarySD @else border-primaryInp @enderror border rounded-md bg-white" >{{ old('deskripsi_pengalaman.'.$i) ? old('deskripsi_pengalaman.'.$i) : $row->deskripsi_pengalaman }}</textarea>
                                     @error("deskripsi_pengalaman.".$i)
                                     <p class="text-sm font-normal mt-1 text-primarySD">{{ $message }}</p>
                                     @enderror
@@ -276,7 +276,7 @@
                             <div class="mb-4 flex flex-row justify-between">
                               <div class="w-[48%]">
                                   <label for="" class="block mb-2 text-base font-semibold text-gray-900">Dari</label>
-                                  <input type="date" name="tambah_dari_pengalaman[]" id="" class="h-12 text-sm px-4 w-full outline-none @error('tambah_dari_pengalaman.'.$i) border-primarySD @else border-primaryInp @enderror border rounded-md" value="{{ old('tambah_dari_pengalaman.'.$i) }}" >
+                                  <input type="date" name="tambah_dari_pengalaman[]" id="" class="h-12 text-sm px-4 w-full outline-none @error('tambah_dari_pengalaman.'.$i) border-primarySD @else border-primaryInp @enderror border rounded-md bg-white" value="{{ old('tambah_dari_pengalaman.'.$i) }}" >
                                   @error("tambah_dari_pengalaman.".$i)
                                     <p class="text-sm font-normal mt-1 text-primarySD">{{ $message }}</p>
                                   @enderror
@@ -284,7 +284,7 @@
               
                               <div class="w-[48%]">
                                   <label for="" class="block mb-2 text-base font-semibold text-gray-900">Sampai</label>
-                                  <input type="date" name="tambah_sampai_pengalaman[]" id="" class="h-12 text-sm px-4 w-full outline-none @error('tambah_sampai_pengalaman.'.$i) border-primarySD @else border-primaryInp @enderror border rounded-md" value="{{ old('tambah_sampai_pengalaman.'.$i) }}" >
+                                  <input type="date" name="tambah_sampai_pengalaman[]" id="" class="h-12 text-sm px-4 w-full outline-none @error('tambah_sampai_pengalaman.'.$i) border-primarySD @else border-primaryInp @enderror border rounded-md bg-white" value="{{ old('tambah_sampai_pengalaman.'.$i) }}" >
                                   @error("tambah_sampai_pengalaman.".$i)
                                     <p class="text-sm font-normal mt-1 text-primarySD">{{ $message }}</p>
                                   @enderror
@@ -294,7 +294,7 @@
                             
                             <div class="mb-4">
                               <label for="" class="block mb-2 text-base font-semibold text-gray-900">Perusahaan</label>
-                              <input type="text" name="tambah_perusahaan[]" id="" class="h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none @error('tambah_perusahaan.'.$i) border-primarySD @else border-primaryInp @enderror border rounded-md" value="{{ old('tambah_perusahaan.'.$i) }}" >
+                              <input type="text" name="tambah_perusahaan[]" id="" class="h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none @error('tambah_perusahaan.'.$i) border-primarySD @else border-primaryInp @enderror border rounded-md bg-white" value="{{ old('tambah_perusahaan.'.$i) }}" >
                               @error("tambah_perusahaan.".$i)
                                 <p class="text-sm font-normal mt-1 text-primarySD">{{ $message }}</p>
                               @enderror
@@ -303,7 +303,7 @@
                             
                             <div class="mb-0">
                                 <label for="" class="block mb-2 text-base font-semibold text-gray-900">Deskripsi</label>
-                                <textarea name="tambah_deskripsi_pengalaman[]" id="" cols="40" rows="8" class="sm:min-w-[338px] text-sm px-4 py-4 w-full outline-none @error('tambah_deskripsi_pengalaman.'.$i)) border-primarySD @else border-primaryInp @enderror border rounded-md" >{{ old('tambah_deskripsi_pengalaman.'.$i) }}</textarea>
+                                <textarea name="tambah_deskripsi_pengalaman[]" id="" cols="40" rows="8" class="sm:min-w-[338px] text-sm px-4 py-4 w-full outline-none @error('tambah_deskripsi_pengalaman.'.$i)) border-primarySD @else border-primaryInp @enderror border rounded-md bg-white" >{{ old('tambah_deskripsi_pengalaman.'.$i) }}</textarea>
                                 @error("tambah_deskripsi_pengalaman.".$i)
                                   <p class="text-sm font-normal mt-1 text-primarySD">{{ $message }}</p>
                                 @enderror
@@ -328,7 +328,7 @@
                         Minat Mengajar
                     </label>
                     <select
-                        class="selectpicker h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none border-primaryInp border rounded-md" style="width: 100%" 
+                        class="selectpicker h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none border-primaryInp border rounded-md bg-white" style="width: 100%" 
                         data-placeholder=""
                         id = "minat_mengajar"
                         data-allow-clear="false"
@@ -585,25 +585,25 @@ $(document).ready(function() {
                 <div class="mb-4 flex flex-row justify-between">
                     <div class="w-[48%]">
                         <label for="" class="block mb-2 text-base font-semibold text-gray-900">Dari</label>
-                        <input type="date" name="tambah_dari_pengalaman[]" id="" class="h-12 text-sm px-4 w-full outline-none border-primaryInp border rounded-md" value="" >
+                        <input type="date" name="tambah_dari_pengalaman[]" id="" class="h-12 text-sm px-4 w-full outline-none border-primaryInp border rounded-md bg-white" value="" >
                     </div>
 
                     <div class="w-[48%]">
                         <label for="" class="block mb-2 text-base font-semibold text-gray-900">Sampai</label>
-                        <input type="date" name="tambah_sampai_pengalaman[]" id="" class="h-12 text-sm px-4 w-full outline-none border-primaryInp border rounded-md" value="" >
+                        <input type="date" name="tambah_sampai_pengalaman[]" id="" class="h-12 text-sm px-4 w-full outline-none border-primaryInp border rounded-md bg-white" value="" >
                     </div>
                 </div>
                 
                 
                 <div class="mb-4">
                     <label for="" class="block mb-2 text-base font-semibold text-gray-900">Perusahaan</label>
-                    <input type="text" name="tambah_perusahaan[]" id="" class="h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none border-primarySD border-primaryInp border rounded-md" value="" >
+                    <input type="text" name="tambah_perusahaan[]" id="" class="h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none border-primarySD border-primaryInp border rounded-md bg-white" value="" >
                 </div>
                 
                 
                 <div class="mb-0">
                     <label for="" class="block mb-2 text-base font-semibold text-gray-900">Deskripsi</label>
-                    <textarea name="tambah_deskripsi_pengalaman[]" id="" cols="40" rows="8" class="sm:min-w-[338px] text-sm px-4 py-4 w-full outline-none border-primarySD border-primaryInp border rounded-md" ></textarea>
+                    <textarea name="tambah_deskripsi_pengalaman[]" id="" cols="40" rows="8" class="sm:min-w-[338px] text-sm px-4 py-4 w-full outline-none border-primarySD border-primaryInp border rounded-md bg-white" ></textarea>
                 </div> 
             </div>`
         );

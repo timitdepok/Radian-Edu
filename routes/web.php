@@ -63,8 +63,8 @@ Route::get("/biodata/step3/{key}", [BiodataController::class, "biodata_step3"])-
 
 Route::middleware(["auth", "is.profile.complete:yes", "role:admin,user"])->group(function(){
    
-    // route unmengirim pesan (siap micro teaching)
-    Route::post("/micro_teaching", [WhatsAppController::class, "micro_teaching"])->name("micro.teaching");
+    // route unmengirim pesan (siap tes tulis)
+    Route::post("/tes_tulis", [WhatsAppController::class, "tes_tulis"])->name("tes.tulis");
 
     // route profile 
     Route::get("/profile", [ProfileController::class, "profile"])->name("profile");
@@ -84,7 +84,7 @@ Route::middleware(["auth", "is.profile.complete:yes", "role:admin"])->group(func
 
     // fungsi yang di gunakan pada dashboard
     Route::get("/dashboard/biodata-guru/{key}", [DashboardController::class, "biodataGuru"])->name("biodata.guru");
-    Route::put("/dashboard/edit-microTeaching", [DashboardController::class, "edit_micro_teaching"])->name("edit.micro.teaching");
+    Route::put("/dashboard/edit-tesTulis", [DashboardController::class, "edit_tes_tulis"])->name("edit.tes.tulis");
     Route::put("/dashboard/edit-topStar", [DashboardController::class, "edit_top_star"])->name("edit.top.star");
     Route::put("/dashboard/edit-harga", [DashboardController::class, "edit_harga"])->name("edit.harga");
     Route::post("/dashboard/get-user", [DashboardController::class, "getUser"])->name("get.user");

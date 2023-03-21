@@ -42,7 +42,7 @@ class User extends Authenticatable
         "deskripsi_diri",
         "kegiatan_mengajar",
         "harga",
-        "is_micro_teaching_complete",
+        "tes_tulis",
         "status",
         "top_star",
         "is_profile_complete"

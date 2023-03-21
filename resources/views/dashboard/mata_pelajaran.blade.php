@@ -20,7 +20,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
                             </svg>                  
                         </div>
-                        <select name="tingkatan" id="tingkatan" class="appearance-none h-12 text-sm px-4 w-full outline-none @error('tingkatan') border-primarySD @else border-primaryInp @enderror  border rounded-md" required>
+                        <select name="tingkatan" id="tingkatan" class="appearance-none h-12 text-sm px-4 w-full outline-none @error('tingkatan') border-primarySD @else border-primaryInp @enderror border rounded-md bg-white" required>
                             <option value="" style="display: none;">Pilih tingkatan pendidikan</option>
                             @if($tingkatan)
                                 @foreach ($tingkatan as $row)
@@ -37,7 +37,7 @@
                 {{-- mata pelajaran --}}
                 <div class="mt-4 mb-4">
                     <label for="mata_pelajaran" class="block mb-2 text-base font-semibold text-gray-900">Mata pelajaran</label>
-                    <input type="text" name="mata_pelajaran" id="mata_pelajaran" class="h-12 text-sm px-4 w-full outline-none @error('mata_pelajaran') border-primarySD @else border-primaryInp @enderror border rounded-md" placeholder="Masukkan mata pelajaran" value="{{ old('mata_pelajaran') }}" required>
+                    <input type="text" name="mata_pelajaran" id="mata_pelajaran" class="h-12 text-sm px-4 w-full outline-none @error('mata_pelajaran') border-primarySD @else border-primaryInp @enderror border rounded-md bg-white" placeholder="Masukkan mata pelajaran" value="{{ old('mata_pelajaran') }}" required>
                     @error("mata_pelajaran")
                       <p class="text-sm font-normal mt-1 text-primarySD">{{ $message }}</p>
                     @enderror
@@ -126,7 +126,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
                         </svg>                  
                     </div>
-                    <select name="tingkatan_id" id="tingkatan_id" class="appearance-none h-12 text-sm px-4 w-full border-primaryInp outline-none border rounded-md" required>
+                    <select name="tingkatan_id" id="tingkatan_id" class="appearance-none h-12 text-sm px-4 w-full border-primaryInp outline-none border rounded-md bg-white" required>
                     </select>
                 </div>
             </div>
@@ -135,7 +135,7 @@
             <div class="mt-4">
                 <input type="hidden" name="mata_pelajaran_id" id="mata-pelajaran-id">
                 <label for="mata-pelajaran" class="block mb-2 text-base font-semibold text-gray-900">Mata pelajaran</label>
-                <input type="text" name="mata_pelajaran" id="mata-pelajaran" class="h-12 text-sm px-4 w-full outline-none border-primaryInp border rounded-md" value="" required>
+                <input type="text" name="mata_pelajaran" id="mata-pelajaran" class="h-12 text-sm px-4 w-full outline-none border-primaryInp border rounded-md bg-white" value="" required>
             </div>
         </div>
     <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">

@@ -29,7 +29,7 @@ class WhatsAppController extends Controller
     ];
 
     // fungsi ini digunakan jika user ingin melakukan micro teaching 
-    public function micro_teaching(Request $request){
+    public function tes_tulis(Request $request){
         
         $user = auth()->user();
 
@@ -37,7 +37,7 @@ class WhatsAppController extends Controller
         $kontak = Contact::first();
 
         $this->authorize("is_profile_complete_yes", $user);
-        $this->authorize("micro_teaching_no_complete", $user);
+        $this->authorize("tes_tulis_no_complete", $user);
 
         if($request->submit){
 

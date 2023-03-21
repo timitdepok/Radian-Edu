@@ -71,7 +71,7 @@
             {{-- nama  --}}
             <div class="mb-4">
               <label for="nama" class="block mb-2 text-base font-semibold text-gray-900 after:content-['*'] after:text-red-600 after:ml-1 after:text-sm">Nama</label>
-              <input type="text" name="nama" id="nama" class="h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none @error('nama') border-primarySD @else border-primaryInp @enderror border rounded-md" value="{{ old('nama') ? old('nama') : $user->nama }}">
+              <input type="text" name="nama" id="nama" class="h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none @error('nama') border-primarySD @else border-primaryInp @enderror border rounded-md bg-white" value="{{ old('nama') ? old('nama') : $user->nama }}">
               @error("nama")
                 <p class="text-sm font-normal mt-1 text-primarySD">{{ $message }}</p>
               @enderror
@@ -80,7 +80,7 @@
             {{-- tanggal lahir --}}
             <div class="mb-4">
               <label for="tanggal_lahir" class="block mb-2 text-base font-semibold text-gray-900 after:content-['*'] after:text-red-600 after:ml-1 after:text-sm">Tanggal Lahir</label>
-              <input type="date" name="tanggal_lahir" id="tanggal_lahir" class="h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none @error('tanggal_lahir') border-primarySD @else border-primaryInp @enderror border rounded-md" value="{{ old('tanggal_lahir') }}" required>
+              <input type="date" name="tanggal_lahir" id="tanggal_lahir" class="h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none @error('tanggal_lahir') border-primarySD @else border-primaryInp @enderror border rounded-md bg-white" value="{{ old('tanggal_lahir') }}" required>
               @error("tanggal_lahir")
                 <p class="text-sm font-normal mt-1 text-primarySD">{{ $message }}</p>
               @enderror
@@ -94,7 +94,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
                   </svg>                  
                 </div>
-                <select name="jenis_kelamin" id="jenis_kelamin" class="appearance-none h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none @error('jenis_kelamin') border-primarySD @else border-primaryInp @enderror border rounded-md" required>
+                <select name="jenis_kelamin" id="jenis_kelamin" class="appearance-none h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none @error('jenis_kelamin') border-primarySD @else border-primaryInp @enderror border rounded-md bg-white" required>
                   <option value="" style="display: none;"></option>
                   <option @if(old("jenis_kelamin") == "Pria") selected @endif value="Pria">Pria</option>
                   <option @if(old("jenis_kelamin") == "Wanita") selected @endif value="Wanita">Wanita</option>
@@ -108,13 +108,13 @@
             {{-- email --}}
             <div class="mb-4">
               <label for="email" class="block mb-2 text-base font-semibold text-gray-900 after:content-['*'] after:text-red-600 after:ml-1 after:text-sm">E-mail</label>
-              <input type="email" name="" id="email" class="h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none border-primaryInp border rounded-md" value="{{ $user->email }}" readonly>
+              <input type="email" name="" id="email" class="h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none border-primaryInp border rounded-md bg-white" value="{{ $user->email }}" readonly>
             </div>
 
             {{-- no_telepon --}}
             <div class="mb-4">
               <label for="no_telepon" class="block mb-2 text-base font-semibold text-gray-900 after:content-['*'] after:text-red-600 after:ml-1 after:text-sm">Nomor Telepon</label>
-              <input type="text" name="no_telepon" id="no_telepon" class="h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none @error('no_telepon') border-primarySD @else border-primaryInp @enderror border rounded-md" pattern="[0]{1}[8]{1}[0-9]{8,11}" value="{{ old('no_telepon') ? old('no_telepon') : $user->no_telepon }}" required>
+              <input type="text" name="no_telepon" id="no_telepon" class="h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none @error('no_telepon') border-primarySD @else border-primaryInp @enderror border rounded-md bg-white" pattern="[0]{1}[8]{1}[0-9]{8,11}" value="{{ old('no_telepon') ? old('no_telepon') : $user->no_telepon }}" required>
               @error("no_telepon")
                 <p class="text-sm font-normal mt-1 text-primarySD">{{ $message }}</p>
               @enderror
@@ -123,7 +123,7 @@
             {{-- deskripsi mengenai diri sendiri --}}
             <div class="mb-4">
                 <label for="deskripsi_diri" class="block mb-2 text-base font-semibold text-gray-900 after:content-['*'] after:text-red-600 after:ml-1 after:text-sm">Deskripsi Diri</label>
-                <textarea name="deskripsi_diri" id="deskripsi_diri" cols="40" rows="5" class="sm:min-w-[338px] text-sm px-4 py-4 w-full outline-none @error('deskripsi_diri') border-primarySD @else border-primaryInp @enderror border rounded-md" required>{{ old('deskripsi_diri') }}</textarea>
+                <textarea name="deskripsi_diri" id="deskripsi_diri" cols="40" rows="5" class="sm:min-w-[338px] text-sm px-4 py-4 w-full outline-none @error('deskripsi_diri') border-primarySD @else border-primaryInp @enderror border rounded-md bg-white" required>{{ old('deskripsi_diri') }}</textarea>
                 @error("deskripsi_diri")
                   <p class="text-sm font-normal mt-1 text-primarySD">{{ $message }}</p>
                 @enderror
@@ -144,7 +144,7 @@
             <div class="mb-4 flex flex-row justify-between">
                 <div class="w-[48%]">
                     <label for="mulai" class="block mb-2 text-base font-semibold text-gray-900 after:content-['*'] after:text-red-600 after:ml-1 after:text-sm">Dari</label>
-                    <input type="date" name="dari_pendidikan" id="mulai" class="h-12 text-sm px-4 w-full outline-none @error('dari_pendidikan') border-primarySD @else border-primaryInp @enderror border rounded-md" value="{{ old('dari_pendidikan') }}" required>
+                    <input type="date" name="dari_pendidikan" id="mulai" class="h-12 text-sm px-4 w-full outline-none @error('dari_pendidikan') border-primarySD @else border-primaryInp @enderror border rounded-md bg-white" value="{{ old('dari_pendidikan') }}" required>
                     @error("dari_pendidikan")
                       <p class="text-sm font-normal mt-1 text-primarySD">{{ $message }}</p>
                     @enderror
@@ -152,7 +152,7 @@
 
                 <div class="w-[48%]">
                     <label for="sampai" class="block mb-2 text-base font-semibold text-gray-900 after:content-['*'] after:text-red-600 after:ml-1 after:text-sm">Sampai</label>
-                    <input type="date" name="sampai_pendidikan" id="sampai_pendidikan" class="h-12 text-sm px-4 w-full outline-none @error('sampai_pendidikan') border-primarySD @else border-primaryInp @enderror border rounded-md" value="{{ old('sampai_pendidikan') }}" required>
+                    <input type="date" name="sampai_pendidikan" id="sampai_pendidikan" class="h-12 text-sm px-4 w-full outline-none @error('sampai_pendidikan') border-primarySD @else border-primaryInp @enderror border rounded-md bg-white" value="{{ old('sampai_pendidikan') }}" required>
                     @error("sampai_pendidikan")
                       <p class="text-sm font-normal mt-1 text-primarySD">{{ $message }}</p>
                     @enderror
@@ -162,7 +162,7 @@
             {{-- asal ptn  --}}
             <div class="mb-4">
                 <label for="asal_ptn" class="block mb-2 text-base font-semibold text-gray-900 after:content-['*'] after:text-red-600 after:ml-1 after:text-sm">Asal PTN</label>
-                <input type="text" name="asal_ptn" id="asal_ptn" class="h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none @error('asal_ptn') border-primarySD @else border-primaryInp @enderror border rounded-md" value="{{ old('asal_ptn') }}" required>
+                <input type="text" name="asal_ptn" id="asal_ptn" class="h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none @error('asal_ptn') border-primarySD @else border-primaryInp @enderror border rounded-md bg-white" value="{{ old('asal_ptn') }}" required>
                 @error("asal_ptn")
                   <p class="text-sm font-normal mt-1 text-primarySD">{{ $message }}</p>
                 @enderror
@@ -171,7 +171,7 @@
             {{-- deskripsi mengenai pendidikan --}}
             <div class="mb-4">
                 <label for="deskripsi" class="block mb-2 text-base font-semibold text-gray-900 after:content-['*'] after:text-red-600 after:ml-1 after:text-sm">Deskripsi</label>
-                <textarea name="deskripsi_pendidikan" id="deskripsi" cols="40" rows="5" class="sm:min-w-[338px] text-sm px-4 py-4 w-full outline-none @error('deskripsi_pendidikan') border-primarySD @else border-primaryInp @enderror border rounded-md" required>{{ old('deskripsi_pendidikan') }}</textarea>
+                <textarea name="deskripsi_pendidikan" id="deskripsi" cols="40" rows="5" class="sm:min-w-[338px] text-sm px-4 py-4 w-full outline-none @error('deskripsi_pendidikan') border-primarySD @else border-primaryInp @enderror border rounded-md bg-white" required>{{ old('deskripsi_pendidikan') }}</textarea>
                 @error("deskripsi_pendidikan")
                   <p class="text-sm font-normal mt-1 text-primarySD">{{ $message }}</p>
                 @enderror
@@ -180,7 +180,7 @@
             {{-- jurusan --}}
             <div class="mb-4">
               <label for="jurusan" class="block mb-2 text-base font-semibold text-gray-900 after:content-['*'] after:text-red-600 after:ml-1 after:text-sm">Jurusan</label>
-              <input type="text" name="jurusan" id="jurusan" class="h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none @error('jurusan') border-primarySD @else border-primaryInp @enderror border rounded-md" value="{{ old('jurusan') }}" required>
+              <input type="text" name="jurusan" id="jurusan" class="h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none @error('jurusan') border-primarySD @else border-primaryInp @enderror border rounded-md bg-white" value="{{ old('jurusan') }}" required>
               @error("jurusan")
                 <p class="text-sm font-normal mt-1 text-primarySD">{{ $message }}</p>
               @enderror
@@ -189,7 +189,7 @@
             {{-- ipk --}}
             <div class="mb-4">
               <label for="ipk" class="block mb-2 text-base font-semibold text-gray-900 after:content-['*'] after:text-red-600 after:ml-1 after:text-sm">IPK</label>
-              <input type="number" step="0.01" name="ipk" id="ipk" class="h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none @error('ipk') border-primarySD @else border-primaryInp @enderror border rounded-md" value="{{ old('ipk') }}" required>
+              <input type="number" step="0.01" name="ipk" id="ipk" class="h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none @error('ipk') border-primarySD @else border-primaryInp @enderror border rounded-md bg-white" value="{{ old('ipk') }}" required>
               @error("ipk")
                 <p class="text-sm font-normal mt-1 text-primarySD">{{ $message }}</p>
               @enderror
@@ -215,7 +215,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
                   </svg>                  
                 </div>
-                <select name="provinsi" id="provinsi" class="appearance-none h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none @error('provinsi') border-primarySD @else border-primaryInp @enderror border rounded-md" required>
+                <select name="provinsi" id="provinsi" class="appearance-none h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none @error('provinsi') border-primarySD @else border-primaryInp @enderror border rounded-md bg-white" required>
                   <option value="" style="display: none;"></option>
                   @foreach ($provinsi as $row)
                     <option @if(old("provinsi") == $row->name) selected @endif value="{{ $row->name }}">{{ $row->name }}</option>
@@ -236,7 +236,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
                   </svg>                  
                 </div>
-                <select name="kabupaten" id="kabupaten" class="appearance-none h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none @error('kabupaten') border-primarySD @else border-primaryInp @enderror border rounded-md" required>
+                <select name="kabupaten" id="kabupaten" class="appearance-none h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none @error('kabupaten') border-primarySD @else border-primaryInp @enderror border rounded-md bg-white" required>
                   @if(old("kabupaten"))
                     <option value="{{ old('kabupaten') }}" selected>{{ old('kabupaten') }}</option>
                   @else
@@ -258,7 +258,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
                   </svg>                  
                 </div>
-                <select name="kecamatan" id="kecamatan" class="appearance-none h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none @error('kecamatan') border-primarySD @else border-primaryInp @enderror border rounded-md" required>
+                <select name="kecamatan" id="kecamatan" class="appearance-none h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none @error('kecamatan') border-primarySD @else border-primaryInp @enderror border rounded-md bg-white" required>
                   @if(old("kecamatan"))
                     <option value="{{ old('kecamatan') }}" selected>{{ old('kecamatan') }}</option>
                   @else
@@ -274,7 +274,7 @@
             {{-- alamat --}}
             <div class="mb-4">
               <label for="alamat" class="block mb-2 text-base font-semibold text-gray-900 after:content-['*'] after:text-red-600 after:ml-1 after:text-sm">Alamat</label>
-              <textarea name="alamat" id="alamat" cols="40" rows="5" class="sm:min-w-[338px] text-sm px-4 py-4 w-full outline-none @error('alamat') border-primarySD @else border-primaryInp @enderror border rounded-md" required>{{ old("alamat") }}</textarea>
+              <textarea name="alamat" id="alamat" cols="40" rows="5" class="sm:min-w-[338px] text-sm px-4 py-4 w-full outline-none @error('alamat') border-primarySD @else border-primaryInp @enderror border rounded-md bg-white" required>{{ old("alamat") }}</textarea>
               @error("alamat")
                 <p class="text-sm font-normal mt-1 text-primarySD">{{ $message }}</p>
               @enderror
@@ -298,7 +298,7 @@
                       <div class="mb-4 flex flex-row justify-between">
                             <div class="w-[48%]">
                                 <label for="dari_pengalaman" class="block mb-2 text-base font-semibold text-gray-900 after:content-['*'] after:text-red-600 after:ml-1 after:text-sm">Dari</label>
-                                <input type="date" name="dari_pengalaman[]" id="dari_pengalaman" class="h-12 text-sm px-4 w-full outline-none @error('dari_pengalaman.0') border-primarySD @else border-primaryInp @enderror border rounded-md" value="{{ old('dari_pengalaman.0') }}" required>
+                                <input type="date" name="dari_pengalaman[]" id="dari_pengalaman" class="h-12 text-sm px-4 w-full outline-none @error('dari_pengalaman.0') border-primarySD @else border-primaryInp @enderror border rounded-md bg-white" value="{{ old('dari_pengalaman.0') }}" required>
                                 @error("dari_pengalaman.0")
                                   <p class="text-sm font-normal mt-1 text-primarySD">{{ $message }}</p>
                                 @enderror
@@ -306,7 +306,7 @@
             
                             <div class="w-[48%]">
                                 <label for="sampai_pengalaman" class="block mb-2 text-base font-semibold text-gray-900 after:content-['*'] after:text-red-600 after:ml-1 after:text-sm">Sampai</label>
-                                <input type="date" name="sampai_pengalaman[]" id="sampai_pengalaman" class="h-12 text-sm px-4 w-full outline-none @error('sampai_pengalaman.0') border-primarySD @else border-primaryInp @enderror border rounded-md" value="{{ old('sampai_pengalaman.0') }}" required>
+                                <input type="date" name="sampai_pengalaman[]" id="sampai_pengalaman" class="h-12 text-sm px-4 w-full outline-none @error('sampai_pengalaman.0') border-primarySD @else border-primaryInp @enderror border rounded-md bg-white" value="{{ old('sampai_pengalaman.0') }}" required>
                                 @error("sampai_pengalaman.0")
                                   <p class="text-sm font-normal mt-1 text-primarySD">{{ $message }}</p>
                                 @enderror
@@ -316,7 +316,7 @@
                       {{-- nama perusahaan --}}
                       <div class="mb-4">
                         <label for="perusahaan" class="block mb-2 text-base font-semibold text-gray-900 after:content-['*'] after:text-red-600 after:ml-1 after:text-sm">Perusahaan</label>
-                        <input type="text" name="perusahaan[]" id="perusahaan" class="h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none @error('perusahaan.0') border-primarySD @else border-primaryInp @enderror border rounded-md" value="{{ old('perusahaan.0') }}" required>
+                        <input type="text" name="perusahaan[]" id="perusahaan" class="h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none @error('perusahaan.0') border-primarySD @else border-primaryInp @enderror border rounded-md bg-white" value="{{ old('perusahaan.0') }}" required>
                         @error("perusahaan.0")
                           <p class="text-sm font-normal mt-1 text-primarySD">{{ $message }}</p>
                         @enderror
@@ -325,7 +325,7 @@
                       {{-- deskripsi mengenai perusahaan --}}
                       <div class="mb-0">
                           <label for="deskrips_plg" class="block mb-2 text-base font-semibold text-gray-900 after:content-['*'] after:text-red-600 after:ml-1 after:text-sm">Deskripsi</label>
-                          <textarea name="deskripsi_pengalaman[]" id="deskripsi_plg" cols="40" rows="5" class="sm:min-w-[338px] text-sm px-4 py-4 w-full outline-none @error('deskripsi_pengalaman.0') border-primarySD @else border-primaryInp @enderror border rounded-md" required>{{ old('deskripsi_pengalaman.0') }}</textarea>
+                          <textarea name="deskripsi_pengalaman[]" id="deskripsi_plg" cols="40" rows="5" class="sm:min-w-[338px] text-sm px-4 py-4 w-full outline-none @error('deskripsi_pengalaman.0') border-primarySD @else border-primaryInp @enderror border rounded-md bg-white" required>{{ old('deskripsi_pengalaman.0') }}</textarea>
                           @error("deskripsi_pengalaman.0")
                             <p class="text-sm font-normal mt-1 text-primarySD">{{ $message }}</p>
                           @enderror
@@ -349,7 +349,7 @@
                           <div class="mb-4 flex flex-row justify-between">
                             <div class="w-[48%]">
                                 <label for="dari_pengalaman.{{ $i }}" class="block mb-2 text-base font-semibold text-gray-900 after:content-['*'] after:text-red-600 after:ml-1 after:text-sm">Dari</label>
-                                <input type="date" name="dari_pengalaman[]" id="dari_pengalaman.{{ $i }}" class="h-12 text-sm px-4 w-full outline-none @error('dari_pengalaman.'.$i) border-primarySD @else border-primaryInp @enderror border rounded-md" value="{{ old('dari_pengalaman.'.$i) }}" required>
+                                <input type="date" name="dari_pengalaman[]" id="dari_pengalaman.{{ $i }}" class="h-12 text-sm px-4 w-full outline-none @error('dari_pengalaman.'.$i) border-primarySD @else border-primaryInp @enderror border rounded-md bg-white" value="{{ old('dari_pengalaman.'.$i) }}" required>
                                 @error("dari_pengalaman.".$i)
                                   <p class="text-sm font-normal mt-1 text-primarySD">{{ $message }}</p>
                                 @enderror
@@ -357,7 +357,7 @@
             
                             <div class="w-[48%]">
                                 <label for="sampai_pengalaman.{{ $i }}" class="block mb-2 text-base font-semibold text-gray-900 after:content-['*'] after:text-red-600 after:ml-1 after:text-sm">Sampai</label>
-                                <input type="date" name="sampai_pengalaman[]" id="sampai_pengalaman.{{ $i }}" class="h-12 text-sm px-4 w-full outline-none @error('sampai_pengalaman.'.$i) border-primarySD @else border-primaryInp @enderror border rounded-md" value="{{ old('sampai_pengalaman.'.$i) }}" required>
+                                <input type="date" name="sampai_pengalaman[]" id="sampai_pengalaman.{{ $i }}" class="h-12 text-sm px-4 w-full outline-none @error('sampai_pengalaman.'.$i) border-primarySD @else border-primaryInp @enderror border rounded-md bg-white" value="{{ old('sampai_pengalaman.'.$i) }}" required>
                                 @error("sampai_pengalaman.".$i)
                                   <p class="text-sm font-normal mt-1 text-primarySD">{{ $message }}</p>
                                 @enderror
@@ -367,7 +367,7 @@
                           {{-- nama perusahaan --}}
                           <div class="mb-4">
                             <label for="perusahaan.{{ $i }}" class="block mb-2 text-base font-semibold text-gray-900 after:content-['*'] after:text-red-600 after:ml-1 after:text-sm">Perusahaan</label>
-                            <input type="text" name="perusahaan[]" id="perusahaan.{{ $i }}" class="h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none @error('perusahaan.'.$i) border-primarySD @else border-primaryInp @enderror border rounded-md" value="{{ old('perusahaan.'.$i) }}" required>
+                            <input type="text" name="perusahaan[]" id="perusahaan.{{ $i }}" class="h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none @error('perusahaan.'.$i) border-primarySD @else border-primaryInp @enderror border rounded-md bg-white" value="{{ old('perusahaan.'.$i) }}" required>
                             @error("perusahaan.".$i)
                               <p class="text-sm font-normal mt-1 text-primarySD">{{ $message }}</p>
                             @enderror
@@ -376,7 +376,7 @@
                           {{-- deskripsi mengenai perusahaan --}}
                           <div class="mb-0">
                               <label for="deskrips_plg" class="block mb-2 text-base font-semibold text-gray-900 after:content-['*'] after:text-red-600 after:ml-1 after:text-sm">Deskripsi</label>
-                              <textarea name="deskripsi_pengalaman[]" id="deskripsi_plg" cols="40" rows="5" class="sm:min-w-[338px] text-sm px-4 py-4 w-full outline-none @error('deskripsi_pengalaman.'.$i)) border-primarySD @else border-primaryInp @enderror border rounded-md" required>{{ old('deskripsi_pengalaman.'.$i) }}</textarea>
+                              <textarea name="deskripsi_pengalaman[]" id="deskripsi_plg" cols="40" rows="5" class="sm:min-w-[338px] text-sm px-4 py-4 w-full outline-none @error('deskripsi_pengalaman.'.$i)) border-primarySD @else border-primaryInp @enderror border rounded-md bg-white" required>{{ old('deskripsi_pengalaman.'.$i) }}</textarea>
                               @error("deskripsi_pengalaman.".$i)
                                 <p class="text-sm font-normal mt-1 text-primarySD">{{ $message }}</p>
                               @enderror
@@ -418,7 +418,7 @@
                       <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
                     </svg>                  
                   </div>
-                  <select name="" id="provinsi_mengajar" class="appearance-none h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none border-primaryInp border rounded-md">
+                  <select name="" id="provinsi_mengajar" class="appearance-none h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none border-primaryInp border rounded-md bg-white">
                     <option style="display: none;" value=""></option>
                     @foreach ($provinsi as $row)
                       <option value="{{ $row->name }}">{{ $row->name }}</option>
@@ -436,7 +436,7 @@
                       <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
                     </svg>                  
                   </div>
-                  <select name="" id="kabupaten_mengajar" class="appearance-none h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none border-primaryInp border rounded-md">
+                  <select name="" id="kabupaten_mengajar" class="appearance-none h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none border-primaryInp border rounded-md bg-white">
                     <option value=""></option>
                   </select>
                 </div>
@@ -451,7 +451,7 @@
                       <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
                     </svg>                  
                   </div>
-                  <select name="" id="kecamatan_mengajar" class="appearance-none h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none border-primaryInp border rounded-md">
+                  <select name="" id="kecamatan_mengajar" class="appearance-none h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none border-primaryInp border rounded-md bg-white">
                     <option value=""></option>
                   </select>
                 </div>
@@ -520,7 +520,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
                   </svg>                  
                 </div>
-                <select name="" id="tingkatan" class="appearance-none h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none border-primaryInp border rounded-md">
+                <select name="" id="tingkatan" class="appearance-none h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none border-primaryInp border rounded-md bg-white">
                     <option style="display: none;" value=""></option>
                     @foreach ($tingkatan as $row)
                       <option value="{{ $row->id }}#-#{{ $row->tingkatan }}">{{ $row->tingkatan }}</option>
@@ -538,7 +538,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
                   </svg>                  
                 </div>
-                <select name="" id="mapel" class="appearance-none h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none border-primaryInp border rounded-md">
+                <select name="" id="mapel" class="appearance-none h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none border-primaryInp border rounded-md bg-white">
                   <option value=""></option>
                 </select>
               </div>
@@ -734,7 +734,7 @@
             {{-- posisi yang dilamar --}}
             <div class="mb-4">
               <label for="posisi_dilamar" class="block mb-2 text-base font-semibold text-gray-900 after:content-['*'] after:text-red-600 after:ml-1 after:text-sm">Posisi yang dilamar</label>
-              <input type="text" name="posisi_dilamar" id="posisi_dilamar" class="h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none @error('posisi_dilamar') border-primarySD @else border-primaryInp @enderror border rounded-md" value="{{ old('posisi_dilamar') }}" required>
+              <input type="text" name="posisi_dilamar" id="posisi_dilamar" class="h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none @error('posisi_dilamar') border-primarySD @else border-primaryInp @enderror border rounded-md bg-white" value="{{ old('posisi_dilamar') }}" required>
               @error("posisi_dilamar")
                 <p class="text-sm font-normal mt-1 text-primarySD">{{ $message }}</p>
               @enderror
@@ -749,7 +749,7 @@
                       <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
                     </svg>                  
                   </div>
-                  <select name="kegiatan_mengajar" id="kgt_mengajar" class="appearance-none h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none @error('kegiatan_mengajar') border-primarySD @else border-primaryInp @enderror  border rounded-md" required>
+                  <select name="kegiatan_mengajar" id="kgt_mengajar" class="appearance-none h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none @error('kegiatan_mengajar') border-primarySD @else border-primaryInp @enderror  border rounded-md bg-white" required>
                     <option style="display: none;" value=""></option>
                     <option @if(old("kegiatan_mengajar") == "Online" ) selected @endif value="Online">Online</option>
                     <option @if(old("kegiatan_mengajar") == "Offline" ) selected @endif value="Offline">Offline</option>
@@ -764,7 +764,7 @@
             {{-- pengajuan harga --}}
             <div class="mb-8">
               <label for="harga" class="block mb-2 text-base font-semibold text-gray-900 after:content-['*'] after:text-red-600 after:ml-1 after:text-sm">Pengajuan Harga</label>
-              <input type="number" name="harga" id="harga" class="h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none @error('harga') border-primarySD @else border-primaryInp @enderror border rounded-md" value="{{ old('harga') }}" required>
+              <input type="number" name="harga" id="harga" class="h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none @error('harga') border-primarySD @else border-primaryInp @enderror border rounded-md bg-white" value="{{ old('harga') }}" required>
               @error("harga")
                 <p class="text-sm font-normal mt-1 text-primarySD">{{ $message }}</p>
               @else
@@ -795,25 +795,25 @@
         <div class="mb-4 flex flex-row justify-between">
                 <div class="w-[48%]">
                     <label for="" class="block mb-2 text-base font-semibold text-gray-900 after:content-['*'] after:text-red-600 after:ml-1 after:text-sm">Dari</label>
-                    <input type="date" name="dari_pengalaman[]" id="dari_pengalaman" class="h-12 text-sm px-4 w-full outline-none border-primaryInp border rounded-md" required>
+                    <input type="date" name="dari_pengalaman[]" id="dari_pengalaman" class="h-12 text-sm px-4 w-full outline-none border-primaryInp border rounded-md bg-white" required>
                 </div>
 
                 <div class="w-[48%]">
                     <label for="" class="block mb-2 text-base font-semibold text-gray-900 after:content-['*'] after:text-red-600 after:ml-1 after:text-sm">Sampai</label>
-                    <input type="date" name="sampai_pengalaman[]" id="sampai_pengalaman" class="h-12 text-sm px-4 w-full outline-none border-primaryInp border rounded-md" required>
+                    <input type="date" name="sampai_pengalaman[]" id="sampai_pengalaman" class="h-12 text-sm px-4 w-full outline-none border-primaryInp border rounded-md bg-white" required>
                 </div>
         </div>
             
         {{-- nama perusahaan --}}
         <div class="mb-4">
             <label for="" class="block mb-2 text-base font-semibold text-gray-900 after:content-['*'] after:text-red-600 after:ml-1 after:text-sm">Perusahaan</label>
-            <input type="text" name="perusahaan[]" id="perusahaan" class="h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none border-primaryInp border rounded-md" required>
+            <input type="text" name="perusahaan[]" id="perusahaan" class="h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none border-primaryInp border rounded-md bg-white" required>
         </div>
         
         {{-- deskripsi mengenai perusahaan --}}
         <div class="mb-0">
             <label for="" class="block mb-2 text-base font-semibold text-gray-900 after:content-['*'] after:text-red-600 after:ml-1 after:text-sm">Deskripsi</label>
-            <textarea name="deskripsi_pengalaman[]" id="deskripsi_plg" cols="40" rows="5" class="sm:min-w-[338px] text-sm px-4 py-4 w-full outline-none border-primaryInp border rounded-md" required></textarea>
+            <textarea name="deskripsi_pengalaman[]" id="deskripsi_plg" cols="40" rows="5" class="sm:min-w-[338px] text-sm px-4 py-4 w-full outline-none border-primaryInp border rounded-md bg-white" required></textarea>
         </div> 
         </div>
     </div>

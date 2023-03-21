@@ -15,21 +15,21 @@
                 @csrf
                 <div class="mb-4">
                     <label for="min_harga" class="block mb-2 text-base font-semibold text-gray-900">Minimal Harga</label>
-                    <input type="number" name="min_harga" id="min_harga" class="h-12 text-sm px-4 w-full outline-none @error('min_harga') border-primarySD @else border-primaryInp @enderror border rounded-md" placeholder="Masukkan minimal harga" value="{{ $harga->min_harga ?? "" }}" required>
+                    <input type="number" name="min_harga" id="min_harga" class="h-12 text-sm px-4 w-full outline-none @error('min_harga') border-primarySD @else border-primaryInp @enderror border rounded-md bg-white" placeholder="Masukkan minimal harga" value="{{ $harga->min_harga ?? "" }}" required>
                     @error("min_harga")
                         <p class="text-sm font-normal mt-1 text-primarySD">{{ $message }}</p>
                     @enderror
                 </div>
                 <div class="mb-4">
                     <label for="max_harga" class="block mb-2 text-base font-semibold text-gray-900">Maksimal Harga</label>
-                    <input type="number" name="max_harga" id="max_harga" class="h-12 text-sm px-4 w-full outline-none @error('max_harga') border-primarySD @else border-primaryInp @enderror border rounded-md" placeholder="Masukan maksimal harga" value="{{ $harga->max_harga ?? "" }}" required>
+                    <input type="number" name="max_harga" id="max_harga" class="h-12 text-sm px-4 w-full outline-none @error('max_harga') border-primarySD @else border-primaryInp @enderror border rounded-md bg-white" placeholder="Masukan maksimal harga" value="{{ $harga->max_harga ?? "" }}" required>
                     @error("max_harga")
                         <p class="text-sm font-normal mt-1 text-primarySD">{{ $message }}</p>
                     @enderror
                 </div>
                 <div class="mb-6">
                     <label for="keuntungan" class="block mb-2 text-base font-semibold text-gray-900">Keuntungan (%)</label>
-                    <input type="number" name="keuntungan" id="keuntungan" class="h-12 text-sm px-4 w-full outline-none @error('keuntungan') border-primarySD @else border-primaryInp @enderror border rounded-md" placeholder="Masukan keuntungan" value="{{ $harga->keuntungan ?? "" }}" required>
+                    <input type="number" name="keuntungan" id="keuntungan" class="h-12 text-sm px-4 w-full outline-none @error('keuntungan') border-primarySD @else border-primaryInp @enderror border rounded-md bg-white" placeholder="Masukan keuntungan" value="{{ $harga->keuntungan ?? "" }}" required>
                     @error("keuntungan")
                         <p class="text-sm font-normal mt-1 text-primarySD">{{ $message }}</p>
                     @enderror

@@ -118,7 +118,7 @@
                 {{-- nama  --}}
                 <div class="mb-9">
                     <label class="block mb-2 text-xl font-medium" for="nama">Nama Lengkap</label>
-                    <input type="text" name="nama" id="nama" class="h-12 sm:min-w-[523px] text-lg px-4 w-full outline-none @error('nama') border-primarySD @else border-primaryInp @enderror border rounded-md" placeholder="Nama lengkap" required>
+                    <input type="text" name="nama" id="nama" class="h-12 sm:min-w-[523px] text-lg px-4 w-full outline-none @error('nama') border-primarySD @else border-primaryInp @enderror border rounded-md bg-white" placeholder="Nama lengkap" required>
                     @error('nama')
                         <p class="text-sm font-normal mt-1 text-primarySD">{{ $message }}</p>  
                     @enderror
@@ -134,7 +134,7 @@
                               <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
                             </svg>                  
                           </div>
-                          <select name="mata_pelajaran" id="mata_pelajaran" class="h-12 sm:min-w-[523px] text-lg px-4 w-full outline-none @error('mata_pelajaran') border-primarySD @else border-primaryInp @enderror border rounded-md" required>
+                          <select name="mata_pelajaran" id="mata_pelajaran" class="h-12 sm:min-w-[523px] text-lg px-4 w-full outline-none @error('mata_pelajaran') border-primarySD @else border-primaryInp @enderror border rounded-md bg-white" required>
                             <option value="" style="display: none;">Pilih mata pelajaran</option>
                             @isset($guru->minat_mengajar)
                                 @foreach ($guru->minat_mengajar as $row)
@@ -155,7 +155,7 @@
                 {{-- jumlah sesi  --}}
                 <div class="mb-9">
                     <label class="block mb-2 text-xl font-medium" for="jumlah_sesi">Jumlah Sesi</label>
-                    <input type="number" name="jumlah_sesi" id="jumlah_sesi" class="h-12 sm:min-w-[523px] text-lg px-4 w-full outline-none @error('jumlah_sesi') border-primarySD @else border-primaryInp @enderror border rounded-md" placeholder="Pilih jumlah sesi" required>
+                    <input type="number" name="jumlah_sesi" id="jumlah_sesi" class="h-12 sm:min-w-[523px] text-lg px-4 w-full outline-none @error('jumlah_sesi') border-primarySD @else border-primaryInp @enderror border rounded-md bg-white" placeholder="Pilih jumlah sesi" required>
                     @error('jumlah_sesi')
                         <p class="text-sm font-normal mt-1 text-primarySD">{{ $message }}</p>
                     @enderror
@@ -164,7 +164,7 @@
                 {{-- pengajuan tanggal  --}}
                 <div class="mb-9">
                     <label class="block mb-2 text-xl font-medium" for="ajukan_tanggal">Ajukan Tanggal</label>
-                    <input type="date" name="ajukan_tanggal" id="ajukan_tanggal" class="h-12 sm:min-w-[523px] text-lg px-4 w-full outline-none @error('ajukan_tanggal') border-primarySD @else border-primaryInp @enderror border rounded-md" required>
+                    <input type="date" name="ajukan_tanggal" id="ajukan_tanggal" class="h-12 sm:min-w-[523px] text-lg px-4 w-full outline-none @error('ajukan_tanggal') border-primarySD @else border-primaryInp @enderror border rounded-md bg-white" required>
                     @error('ajukan_tanggal')
                         <p class="text-sm font-normal mt-1 text-primarySD">{{ $message }}</p>
                     @enderror

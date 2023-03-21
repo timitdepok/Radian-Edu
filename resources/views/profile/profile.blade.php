@@ -33,7 +33,7 @@
             </div>
         </div>
 
-        @if(!$user->is_micro_teaching_complete)
+        @if(!$user->tes_tulis)
             <div class="w-full p-6 rounded-md bg-yellow-100 border border-yellow-400 mb-6">
                 <p class="text-base">
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi consequuntur fugit, similique corporis atque numquam? Distinctio, asperiores dolore inventore accusantium nihil ipsa molestiae et 
@@ -41,9 +41,9 @@
                     labore voluptates eos dicta aliquid quo optio! Est, a!
                 </p>
                 <div class="w-full flex justify-end mt-4">
-                    <form action="{{ route('micro.teaching') }}" method="post" class="inline-block w-fit">
+                    <form action="{{ route('tes.tulis') }}" method="post" class="inline-block w-fit">
                         @csrf
-                        <input type="submit" name="submit" value="Tes Micro Teaching" class="py-3 px-5 bg-yellow-400 font-medium text-white rounded-md">
+                        <input type="submit" name="submit" value="Tes Tulis" class="py-3 px-5 bg-yellow-400 font-medium text-white rounded-md">
                     </form>
                 </div>
             </div>
