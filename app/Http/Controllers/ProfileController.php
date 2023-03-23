@@ -359,7 +359,7 @@ class ProfileController extends Controller
             "no_telepon" => $request->no_telepon,
             "dari_pendidikan" => $request->dari_pendidikan,
             "sampai_pendidikan" => $request->sampai_pendidikan,
-            "asal_ptn" => $request->universitas,
+            "asal_ptn" => $request->asal_ptn,
             "deskripsi_pendidikan" => $request->deskripsi_pendidikan,
             "deskripsi_diri" => $request->deskripsi_diri,
             "kegiatan_mengajar" => $request->kegiatan_mengajar,
