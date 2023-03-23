@@ -43,10 +43,10 @@ class KontakController extends Controller
     public function updateOrCreate(Request $request){
 
         $message = [
-            // kontak_micro_teaching
-            "kontak_micro_teaching.required" => "Kolom ini tidak boleh kosong.",
-            "kontak_micro_teaching.numeric" => "Data harus berupa angka.",
-            "kontak_micro_teaching.digits_between" => "Masukan nomor minimal 10 digit.",
+            // kontak_tes_tulis
+            "kontak_tes_tulis.required" => "Kolom ini tidak boleh kosong.",
+            "kontak_tes_tulis.numeric" => "Data harus berupa angka.",
+            "kontak_tes_tulis.digits_between" => "Masukan nomor minimal 10 digit.",
 
             // kontak_pesan_guru
             "kontak_pesan_guru.required" => "Kolom ini tidak boleh kosong.",
@@ -60,7 +60,7 @@ class KontakController extends Controller
         ];
 
         $validate = $request->validate([
-            "kontak_micro_teaching" => "required|numeric|digits_between:10,13", 
+            "kontak_tes_tulis" => "required|numeric|digits_between:10,13", 
             "kontak_pesan_guru" => "required|numeric|digits_between:10,13", 
             "email" => "required|max:100|email"
         ], $message);
@@ -69,7 +69,7 @@ class KontakController extends Controller
             try {
                 Contact::create([
                     "email" => $request->email,
-                    "kontak_micro_teaching" => $request->kontak_micro_teaching,
+                    "kontak_tes_tulis" => $request->kontak_tes_tulis,
                     "kontak_pesan_guru" => $request->kontak_pesan_guru
                 ]);
 
@@ -82,7 +82,7 @@ class KontakController extends Controller
                 $kontak = Contact::first();
                 Contact::where("id", $kontak->id)->update([
                     "email" => $request->email,
-                    "kontak_micro_teaching" => $request->kontak_micro_teaching,
+                    "kontak_tes_tulis" => $request->kontak_tes_tulis,
                     "kontak_pesan_guru" => $request->kontak_pesan_guru
                 ]);
 

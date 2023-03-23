@@ -11,7 +11,7 @@ class Contact extends Model
 
     protected $fillable = [
         "email",
-        "kontak_micro_teaching",
+        "kontak_tes_tulis",
         "kontak_pesan_guru"
     ];
 }

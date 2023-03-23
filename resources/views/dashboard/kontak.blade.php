@@ -13,10 +13,11 @@
             </div>
             <form action="{{ route('kontak.save') }}" method="POST" class="mb-0 p-4">
                 @csrf
+                
                 <div class="mb-4">
-                    <label for="kontak_micro_teaching" class="block mb-2 text-base font-semibold text-gray-900">Kontak Micro Teaching</label>
-                    <input type="text" name="kontak_micro_teaching" id="kontak_micro_teaching" class="h-12 text-sm px-4 w-full outline-none @error('kontak_micro_teaching') border-primarySD @else border-primaryInp @enderror border rounded-md bg-white" placeholder="Masukan kontak micro teaching" pattern="[0]{1}[8]{1}[0-9]{8,11}" value="{{ $kontak->kontak_micro_teaching ?? "" }}" required>
-                    @error("kontak_micro_teaching")
+                    <label for="kontak_tes_tulis" class="block mb-2 text-base font-semibold text-gray-900">Kontak Tes Tulis</label>
+                    <input type="text" name="kontak_tes_tulis" id="kontak_tes_tulis" class="h-12 text-sm px-4 w-full outline-none @error('kontak_tes_tulis') border-primarySD @else border-primaryInp @enderror border rounded-md bg-white" placeholder="Masukan kontak micro teaching" pattern="[0]{1}[8]{1}[0-9]{8,11}" value="{{ $kontak->kontak_tes_tulis ?? "" }}" required>
+                    @error("kontak_tes_tulis")
                         <p class="text-sm font-normal mt-1 text-primarySD">{{ $message }}</p>
                     @enderror
                 </div>
