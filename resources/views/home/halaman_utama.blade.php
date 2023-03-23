@@ -10,8 +10,8 @@
                     <img src="img/logo-radian 1.png" alt="" class="mx-4 my-2 h-[36px]">
                 </div>
                 <div class="lg:px-4 flex py-3">
-                    <span class="lg:text-base text-xs font-medium border border-secondary bg-secondary px-4 py-2 pt-2 self-center text-center text-dark rounded-lg ml-7 mb-3 lg:mb-0"><a href="daftarguru.html">Temukan Guru</a></span>
-                    <span class="lg:text-base text-xs font-medium border border-secondary bg-secondary lg:px-4 py-2 text-center text-dark rounded-lg ml-4 mr-2 lg:mr-0 mb-3 lg:mb-0"><a href="registrasi.html">Daftar Sebagai Guru</a></span>
+                    <span class="lg:text-base text-xs font-medium border border-secondary bg-secondary px-4 py-2 pt-2 self-center text-center text-dark rounded-lg ml-7 mb-3 lg:mb-0"><a href="/daftar/guru">Temukan Guru</a></span>
+                    <span class="lg:text-base text-xs font-medium border border-secondary bg-secondary lg:px-4 py-2 text-center text-dark rounded-lg ml-4 mr-2 lg:mr-0 mb-3 lg:mb-0"><a href="/registrasi">Daftar Sebagai Guru</a></span>
                 </div>
             </div>
             @auth
@@ -27,127 +27,126 @@
         </div>
         <!-- navbar 1 section end -->
             <!-- navbar 2 section start -->
-                <div class="w-full text-white bg-primary flex flex-row justify-between">
-                    <div x-data="{ open: false }" class="flex flex-col max-w-screen-[1340px] pl-2 mr-0 md:items-center md:justify-between md:flex-row md:pl-6 lg:pl-8">
-                        <div class="flex flex-row items-center justify-between pl-4 py-4">
-                            <button class="rounded-lg md:hidden focus:outline-none focus:shadow-outline" @click.away="open = !open">
-                                <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
-                                    <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
-                                    <path x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-                                </svg>
+            <div class="w-full text-white bg-primary">
+                <div x-data="{ open: false }" class="flex flex-col max-w-screen-[1340px] pl-2 mr-0 md:items-center md:justify-between md:flex-row md:pl-6 lg:pl-8">
+                    <div class="flex flex-row items-center justify-between pl-4 py-4">
+                        <button class="rounded-lg md:hidden focus:outline-none focus:shadow-outline" @click="open = !open">
+                            <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+                                <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                                <path x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                    </div>  
+                    <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow hidden pb-4 md:pb-0 md:flex md:justify-end md:flex-row lg:self-center">
+                        <a class="px-4 py-4 text-sm font-semibold text-white border-b border-white md:mt-0 hover:text-gray-900 focus:text-gray-900 focus:outline-none lg:mr-10 lg:self-center" href="#">Home</a>
+                        <div @click.away="open = false" class="relative lg:self-center" x-data="{ open: false }">
+                            <button @click="open = !open" class="flex flex-row items-center w-full px-4 py-4 lg:my-4 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg md:w-auto md:inline md:ml-4 hover:text-gray-900 focus:text-gray-900 focus:outline-none focus:shadow-outline lg:mr-10 lg:self-center">
+                                <span>Produk</span>
+                                <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1 lg:self-center"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                             </button>
-                        </div>
-                <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow hidden pb-4 md:pb-0 md:flex md:justify-end md:flex-row lg:self-center md:items-center">
-                    <a class="px-4 py-4 text-sm font-semibold text-white border-b border-white md:mt-0 hover:text-gray-900 focus:text-gray-900 focus:outline-none lg:mr-10 lg:self-center" href="#">Home</a>
-                    <div @click.away="open = false" class="relative lg:self-center" x-data="{ open: false }">
-                        <button @click="open = !open" class="flex flex-row items-center w-full px-4 py-4 lg:my-4 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg md:w-auto md:inline md:ml-4 hover:text-gray-900 focus:text-gray-900 focus:outline-none focus:shadow-outline lg:mr-10 lg:self-center">
-                            <span>Produk</span>
-                            <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1 lg:self-center"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                        </button>
-                        <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48 z-30">
-                            <div class="px-4 py-2 bg-white rounded-md shadow dark-mode:bg-gray-700">
-                                <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg text-black md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="{{ url('/supercamp') }}">Supercamp</a>
-                                <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg text-black md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="{{ url('/privat') }}">Les Privat</a>
-                                <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg text-black md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">Privat CPNS</a>
-                                <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg text-black md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="{{ url('/privat') }}">Privat Garansi</a>
-                                <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg text-black md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="{{ url('/supercampkedokteran') }}">Kedokteran</a>
+                            <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48 z-30">
+                                <div class="px-4 py-2 bg-white rounded-md shadow dark-mode:bg-gray-700">
+                                    <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg text-black md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="{{ url('/supercamp') }}">Supercamp</a>
+                                    <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg text-black md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="{{ url('/privat') }}">Les Privat</a>
+                                    <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg text-black md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">Privat CPNS</a>
+                                    <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg text-black md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="{{ url('/privat') }}">Privat Garansi</a>
+                                    <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg text-black md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="{{ url('/supercampkedokteran') }}">Kedokteran</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div @click.away="open = false" class="relative" x-data="{ open: false }">
-                        <button @click="open = !open" class="flex flex-row items-center w-full px-4 py-4 lg:my-4 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg md:w-auto md:inline md:ml-4 hover:text-gray-900 focus:text-gray-900 focus:outline-none focus:shadow-outline lg:mr-10 lg:self-center">
-                            <span>Area Layanan</span>
-                            <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                        </button>
-                        <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48 z-30">
-                            <div class="px-4 py-2 bg-white rounded-md shadow dark-mode:bg-gray-700">
-                                <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg text-black md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="/jabodetabek">Jabodetabek</a>
-                                <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg text-black md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="/jogja">Yogyakarta</a>
-                                <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg text-black md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="/surabaya">Surabaya</a>
-                                <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg text-black md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="/bandung">Bandung</a>
+    
+                        <div @click.away="open = false" class="relative" x-data="{ open: false }">
+                            <button @click="open = !open" class="flex flex-row items-center w-full px-4 py-4 lg:my-4 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg md:w-auto md:inline md:ml-4 hover:text-gray-900 focus:text-gray-900 focus:outline-none focus:shadow-outline lg:mr-10 lg:self-center">
+                                <span>Area Layanan</span>
+                                <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                            </button>
+                            <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48 z-30">
+                                <div class="px-4 py-2 bg-white rounded-md shadow dark-mode:bg-gray-700">
+                                    <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg text-black md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="/jabodetabek">Jabodetabek</a>
+                                    <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg text-black md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="/jogja">Yogyakarta</a>
+                                    <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg text-black md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="/surabaya">Surabaya</a>
+                                    <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg text-black md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="/bandung">Bandung</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div @click.away="open = false" class="relative" x-data="{ open: false }">
-                        <button @click="open = !open" class="flex flex-row items-center w-full px-4 py-4 lg:my-4 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg md:w-auto md:inline md:ml-4 hover:text-gray-900 focus:text-gray-900 focus:outline-none focus:shadow-outline lg:mr-10 lg:self-center">
-                            <span>Tingkatan</span>
-                            <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                        </button>
-                        <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full md:max-w-screen-sm md:w-screen mt-2 origin-top-right z-30">
-                            <div class="px-4 py-2 pb-4 bg-white rounded-md shadow-lg dark-mode:bg-gray-700">
-                              <div class="grid grid-cols-1 gap-4">
-                                <a class="flex flex-row items-start rounded-lg bg-transparent p-2 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="/sd">
-                                  <div class="bg-red-200 text-white rounded-lg p-3">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-sd">
-                                        <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
-                                    </svg>
-                                      
-                                  </div>
-                                  <div class="ml-3">
-                                    <p class="text-base font-bold text-black">Sekolah Dasar</p>
-                                    <p class="text-base font-normal text-body">Program bimbingan belajar dan les privat untuk jenjang SD. </p>
-                                  </div>
-                                </a>
-    
-                                <a class="flex flex-row items-start rounded-lg bg-transparent p-2 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="/smp">
-                                  <div class="bg-green-200 text-white rounded-lg p-3">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-primary">
-                                        <path fill-rule="evenodd" d="M14.615 1.595a.75.75 0 01.359.852L12.982 9.75h7.268a.75.75 0 01.548 1.262l-10.5 11.25a.75.75 0 01-1.272-.71l1.992-7.302H3.75a.75.75 0 01-.548-1.262l10.5-11.25a.75.75 0 01.913-.143z" clip-rule="evenodd" />
-                                    </svg>
-                                  </div>
-                                  <div class="ml-3">
-                                    <p class="text-base font-bold text-black">Sekolah Menengah Pertama</p>
-                                    <p class="text-base font-normal text-body">Program bimbingan belajar dan les privat untuk jenjang SMP. </p>
-                                  </div>
-                                </a>
-    
-                                <a class="flex flex-row items-start rounded-lg bg-transparent p-2 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="/sma">
-                                  <div class="bg-slate-300 text-white rounded-lg p-3">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-dark">
-                                        <path fill-rule="evenodd" d="M12.963 2.286a.75.75 0 00-1.071-.136 9.742 9.742 0 00-3.539 6.177A7.547 7.547 0 016.648 6.61a.75.75 0 00-1.152-.082A9 9 0 1015.68 4.534a7.46 7.46 0 01-2.717-2.248zM15.75 14.25a3.75 3.75 0 11-7.313-1.172c.628.465 1.35.81 2.133 1a5.99 5.99 0 011.925-3.545 3.75 3.75 0 013.255 3.717z" clip-rule="evenodd" />
-                                    </svg>
-                                  </div>
-                                  <div class="ml-3">
-                                    <p class="text-base font-bold text-black">Sekolah Menengah Atas</p>
-                                    <p class="text-base font-normal text-body">Program bimbingan belajar dan les privat untuk jenjang SMA. </p>
-                                  </div>
-                                </a>
-
-                                <a class="flex flex-row items-start rounded-lg bg-transparent p-2 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="sma.html">
-                                    <div class="bg-slate-300 text-white rounded-lg p-3">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-mhs">
-                                            <path d="M11.584 2.376a.75.75 0 01.832 0l9 6a.75.75 0 11-.832 1.248L12 3.901 3.416 9.624a.75.75 0 01-.832-1.248l9-6z" />
-                                            <path fill-rule="evenodd" d="M20.25 10.332v9.918H21a.75.75 0 010 1.5H3a.75.75 0 010-1.5h.75v-9.918a.75.75 0 01.634-.74A49.109 49.109 0 0112 9c2.59 0 5.134.202 7.616.592a.75.75 0 01.634.74zm-7.5 2.418a.75.75 0 00-1.5 0v6.75a.75.75 0 001.5 0v-6.75zm3-.75a.75.75 0 01.75.75v6.75a.75.75 0 01-1.5 0v-6.75a.75.75 0 01.75-.75zM9 12.75a.75.75 0 00-1.5 0v6.75a.75.75 0 001.5 0v-6.75z" clip-rule="evenodd" />
-                                            <path d="M12 7.875a1.125 1.125 0 100-2.25 1.125 1.125 0 000 2.25z" />
-                                          </svg>
+                        <div @click.away="open = false" class="relative" x-data="{ open: false }">
+                            <button @click="open = !open" class="flex flex-row items-center w-full px-4 py-4 lg:my-4 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg md:w-auto md:inline md:ml-4 hover:text-gray-900 focus:text-gray-900 focus:outline-none focus:shadow-outline lg:mr-10 lg:self-center">
+                                <span>Tingkatan</span>
+                                <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                            </button>
+                            <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full md:max-w-screen-sm md:w-screen mt-2 origin-top-right z-30">
+                                <div class="px-4 py-2 pb-4 bg-white rounded-md shadow-lg dark-mode:bg-gray-700">
+                                  <div class="grid grid-cols-1 gap-4">
+                                    <a class="flex flex-row items-start rounded-lg bg-transparent p-2 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="sd.html">
+                                      <div class="bg-red-200 text-white rounded-lg p-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-sd">
+                                            <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
+                                        </svg>
                                           
-                                    </div>
-                                    <div class="ml-3">
-                                      <p class="text-base font-bold text-black">Mahasiswa</p>
-                                      <p class="text-base font-normal text-body">Program bimbingan belajar dan les privat untuk jenjang Mahasiswa. </p>
-                                    </div>
-                                  </a>
-                              </div>
+                                      </div>
+                                      <div class="ml-3">
+                                        <p class="text-base font-bold text-black">Sekolah Dasar</p>
+                                        <p class="text-base font-normal text-body">Program bimbingan belajar dan les privat untuk jenjang SD. </p>
+                                      </div>
+                                    </a>
+        
+                                    <a class="flex flex-row items-start rounded-lg bg-transparent p-2 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="smp.html">
+                                      <div class="bg-green-200 text-white rounded-lg p-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-primary">
+                                            <path fill-rule="evenodd" d="M14.615 1.595a.75.75 0 01.359.852L12.982 9.75h7.268a.75.75 0 01.548 1.262l-10.5 11.25a.75.75 0 01-1.272-.71l1.992-7.302H3.75a.75.75 0 01-.548-1.262l10.5-11.25a.75.75 0 01.913-.143z" clip-rule="evenodd" />
+                                        </svg>
+                                      </div>
+                                      <div class="ml-3">
+                                        <p class="text-base font-bold text-black">Sekolah Menengah Pertama</p>
+                                        <p class="text-base font-normal text-body">Program bimbingan belajar dan les privat untuk jenjang SMP. </p>
+                                      </div>
+                                    </a>
+        
+                                    <a class="flex flex-row items-start rounded-lg bg-transparent p-2 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="sma.html">
+                                      <div class="bg-slate-300 text-white rounded-lg p-3">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-dark">
+                                            <path fill-rule="evenodd" d="M12.963 2.286a.75.75 0 00-1.071-.136 9.742 9.742 0 00-3.539 6.177A7.547 7.547 0 016.648 6.61a.75.75 0 00-1.152-.082A9 9 0 1015.68 4.534a7.46 7.46 0 01-2.717-2.248zM15.75 14.25a3.75 3.75 0 11-7.313-1.172c.628.465 1.35.81 2.133 1a5.99 5.99 0 011.925-3.545 3.75 3.75 0 013.255 3.717z" clip-rule="evenodd" />
+                                        </svg>
+                                      </div>
+                                      <div class="ml-3">
+                                        <p class="text-base font-bold text-black">Sekolah Menengah Atas</p>
+                                        <p class="text-base font-normal text-body">Program bimbingan belajar dan les privat untuk jenjang SMA. </p>
+                                      </div>
+                                    </a>
+    
+                                    <a class="flex flex-row items-start rounded-lg bg-transparent p-2 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="sma.html">
+                                        <div class="bg-slate-300 text-white rounded-lg p-3">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-mhs">
+                                                <path d="M11.584 2.376a.75.75 0 01.832 0l9 6a.75.75 0 11-.832 1.248L12 3.901 3.416 9.624a.75.75 0 01-.832-1.248l9-6z" />
+                                                <path fill-rule="evenodd" d="M20.25 10.332v9.918H21a.75.75 0 010 1.5H3a.75.75 0 010-1.5h.75v-9.918a.75.75 0 01.634-.74A49.109 49.109 0 0112 9c2.59 0 5.134.202 7.616.592a.75.75 0 01.634.74zm-7.5 2.418a.75.75 0 00-1.5 0v6.75a.75.75 0 001.5 0v-6.75zm3-.75a.75.75 0 01.75.75v6.75a.75.75 0 01-1.5 0v-6.75a.75.75 0 01.75-.75zM9 12.75a.75.75 0 00-1.5 0v6.75a.75.75 0 001.5 0v-6.75z" clip-rule="evenodd" />
+                                                <path d="M12 7.875a1.125 1.125 0 100-2.25 1.125 1.125 0 000 2.25z" />
+                                              </svg>
+                                              
+                                        </div>
+                                        <div class="ml-3">
+                                          <p class="text-base font-bold text-black">Mahasiswa</p>
+                                          <p class="text-base font-normal text-body">Program bimbingan belajar dan les privat untuk jenjang Mahasiswa. </p>
+                                        </div>
+                                      </a>
+                                  </div>
+                                </div>
                             </div>
-                        </div>
-                    </div> 
-                    
-                    <a class="px-4 py-4 mt-2 text-sm font-semibold text-white md:mt-0 hover:text-gray-900 focus:text-gray-900 focus:outline-none lg:mr-10 lg:self-center" href="#testi">Testimoni</a>
-                    <a class="px-4 py-4 mt-2 text-sm font-semibold text-white md:mt-0 hover:text-gray-900 focus:text-gray-900 focus:outline-none lg:mr-16 lg:self-center" href="/news">News</a>
-                    @guest
-                        <div class="min-w-[100px] lg:ml-44">
+                        </div> 
+                        
+                        <a class="px-4 py-4 mt-2 text-sm font-semibold text-white md:mt-0 hover:text-gray-900 focus:text-gray-900 focus:outline-none lg:mr-10 lg:self-center" href="#testi">Testimoni</a>
+                        <a class="px-4 py-4 mt-2 text-sm font-semibold text-white md:mt-0 hover:text-gray-900 focus:text-gray-900 focus:outline-none lg:mr-16 lg:self-center" href="/news">News</a>
+                        @guest
+                        <div class="lg:self-center lg:ml-56">
                             <a class="text-white text-sm font-semibold hover:text-gray-900 focus:text-gray-900 focus:outline-none px-4 py-4 lg:mr-3 lg:self-center lg:text-right lg:right-0" href="/registrasi">Daftar</a>
-                            <a class="text-white font-semibold text-sm border border-white lg:px-4 lg:py-2 py-2 lg:mt-5 mt-2 text-center rounded-lg justify-items-end w-[94px] h-[40px] lg:mr-3 lg:right-0" href="/login">Masuk</a>   
+                            <a class="text-white font-semibold text-sm border border-white lg:px-4 lg:py-2 py-2 lg:mt-5 mt-2 text-center rounded-lg justify-items-end w-[94px] h-[40px] lg:mr-3 lg:right-0" href="/login">Masuk</a>
                         </div>
-                    @endguest
-                   
-                </nav>
+                        @endguest
+                    </nav>
+                </div>
             </div>
-        </div>
         <!-- navbar 2 section end -->
-<!-- navbar section end -->
     </header>
+<!-- navbar section end -->
 
 <!-- hero section start -->
     <section id="home" class="pt-0 bg-gradient-to-br from-white via-white to-blue-200">
@@ -266,7 +265,7 @@
         <div class="container">
             <div class="w-full px-4">
                 <div class="max-w-xl mx-auto text-center mb-16">
-                    <h1 class="font-semibold text-dark text-5xl sm:text-5xl lg:text-5xl">
+                    <h1 class="font-semibold text-dark text-2xl lg:text-5xl">
                         Apa Yang Membedakan Radian?
                     </h1>
                     <p class="font-normal text-body text-lg md:text-lg pt-4">
@@ -406,7 +405,7 @@
             <div class="flex flex-wrap">
                 <div class="w-full self-center px-4 lg:w-1/2">
                     <h5 class="text-lg font-semibold text-primary mb-2">PROGRAM</h5>
-                    <h1 class="text-5xl font-semibold text-black mb-4 max-w-[355px]">Program Radian Edu</h1>
+                    <h1 class="lg:text-5xl text-2xl font-semibold text-black mb-4 max-w-[355px]">Program Radian Edu</h1>
                     <p class="text-lg font-normal text-body max-w-xs">Ayo pilih program terbaik sesuai dengan kebutuhanmu.</p>
                 </div>
 
@@ -506,7 +505,7 @@
             <div class="flex flex-wrap">
                 <div class="w-full px-4 mb-10 lg:w-1/2">
                     <h4 class="font-bold uppercase text-primary text-lg">Tutor</h4>
-                    <h2 class="font-bold text-dark text-5xl mb-5 max-w-sm">Rekomendasi Tutor Terbaik</h2>
+                    <h2 class="font-bold text-dark lg:text-5xl text-xl mb-5 max-w-sm">Rekomendasi Tutor Terbaik</h2>
                 </div>
                 
                 <div class="w-full pl-4 pr-0 lg:w-1/2 right-0">
@@ -602,7 +601,7 @@
         <div class="container">
             <div class="flex flex-wrap">
                 <div class="w-full px-4 mb-10 lg:w-1/3">
-                    <h2 class="font-semibold text-black text-5xl mb-14">Apa Kata Mereka Tentang Radian</h2>
+                    <h2 class="font-semibold text-black lg:text-5xl text-2xl mb-14">Apa Kata Mereka Tentang Radian</h2>
                 </div>
                 <div class="w-full px-4 mb-10 lg:w-1/3">
                     <p class="font-normal text-body text-lg mb-14 max-w-md mx-auto flex">Radian telah memberikan banyak impect untuk membantu para pelajar agar mencapai target dan tujuannya.</p>
@@ -627,26 +626,26 @@
             <div class="flex">
                 <div id="slidercarousel" class="w-full overflow-hidden">
                     <ul id="slids" class="flex w-full">
-                        <li>
-                            <div class="group bg-white border border-body rounded-2xl mb-10 mt-7 mr-4 hover:bg-primary group-hover:text-white hover:border-dark">
-                                <div class="flex items-center justify-center h-auto mt-8">
+                        <li class="mr-4">
+                            <div class="group bg-white border border-body h-auto w-[350px] lg:w-full rounded-2xl mb-10 mt-7 hover:bg-primary group-hover:text-white hover:border-dark">
+                                <div class="flex items-center justify-center mt-8">
                                     <div class="rounded-full w-12 h-12 bg-slate-200 flex justify-center items-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary" viewBox="0 0 20 20" fill="currentColor">
                                             <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
                                           </svg>
                                     </div>
+                                </div>
+                                <div class="py-4 px-6">
+                                    <h3 class="mb-1 font-normal text-xl text-black text-center">Novan</h3>
+                                    <h4 class="mb-6 font-normal text-lg text-body text-center group-hover:text-white">UB - FKG</h4>
+                                    <p class="mb-2 font-normal text-lg text-body text-center group-hover:text-white">"Saya sangat bersyukur telah bergabung dengan Radian karena berhasil masuk ke fakultas kedokteran impian saya. Materi yang sulit menjadi lebih mudah dipahami karena cara ngajar yang sistematis dan jelas dari para pengajar yang profesional.”</p>
+                                </div>
                             </div>
-                            <div class="py-4 px-6">
-                                <h3 class="mb-1 font-normal text-xl text-black text-center">Novan</h3>
-                                <h4 class="mb-6 font-normal text-lg text-body text-center group-hover:text-white">UB - FKG</h4>
-                                <p class="mb-9 font-normal text-lg text-body text-center group-hover:text-white">"Saya sangat bersyukur telah bergabung dengan Radian karena berhasil masuk ke fakultas kedokteran impian saya. Materi yang sulit menjadi lebih mudah dipahami karena cara ngajar yang sistematis dan jelas dari para pengajar yang profesional.”</p>
-                            </div>
-                        </div>
                         </li>
 
-                        <li>
-                            <div class="group bg-white border border-body rounded-2xl mb-10 mt-7 mr-4 hover:bg-primary group-hover:text-white hover:border-dark">
-                                <div class="flex items-center justify-center h-auto mt-8">
+                        <li class="mr-4">
+                            <div class="group bg-white border border-body rounded-2xl h-auto w-[350px] lg:w-full mb-10 mt-7 mr-4 hover:bg-primary group-hover:text-white hover:border-dark">
+                                <div class="flex items-center justify-center mt-8">
                                     <div class="rounded-full w-12 h-12 bg-slate-200 flex justify-center items-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary" viewBox="0 0 20 20" fill="currentColor">
                                             <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
@@ -656,14 +655,14 @@
                                 <div class="py-4 px-6">
                                     <h3 class=" mb-1 font-normal text-xl text-black text-center">Ikhsan</h3>
                                     <h4 class="mb-6 font-normal text-lg text-body text-center group-hover:text-white">UNPAD - HI</h4>
-                                    <p class="mb-16 font-normal text-lg text-body text-center group-hover:text-white">“Radian sangat membantu saya meningkatkan nilai disekolah. Saya sangat senang dengan system belajar mengajar disini. Terimakasih Radian sudah membantu saya masuk ke PTN yang saya impikan.”</p>
+                                    <p class="mb-9 font-normal text-lg text-body text-center group-hover:text-white">“Radian sangat membantu saya meningkatkan nilai disekolah. Saya sangat senang dengan system belajar mengajar disini. Terimakasih Radian sudah membantu saya masuk ke PTN yang saya impikan.”</p>
                                 </div> 
                             </div>
                         </li>
 
-                        <li>
-                            <div class="group bg-white border border-body rounded-2xl mb-10 mt-7 mr-4 hover:bg-primary group-hover:text-white hover:border-dark">
-                                <div class="flex items-center justify-center h-auto mt-8">
+                        <li class="mr-4">
+                            <div class="group bg-white border border-body rounded-2xl h-auto w-[350px] lg:w-full mb-10 mt-7 mr-4 hover:bg-primary group-hover:text-white hover:border-dark">
+                                <div class="flex items-center justify-center mt-8">
                                     <div class="rounded-full w-12 h-12 bg-slate-100 flex justify-center items-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary" viewBox="0 0 20 20" fill="currentColor">
                                             <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
@@ -673,14 +672,14 @@
                                 <div class="py-4 px-6">
                                     <h3 class="mb-1 font-normal text-xl text-black text-center">Putri</h3>
                                     <h4 class="mb-6 font-normal text-lg text-body text-center group-hover:text-white">UNPAD - Akuntansi</h4>
-                                    <p class="mb-[93px] font-normal text-lg text-body text-center group-hover:text-white">"Guru privat disini sangat efektif dalam membantu saya memahami materi pelajaran untuk persiapan ujian. Terimakasih Radian”</p>
+                                    <p class="mb-16 font-normal text-lg text-body text-center group-hover:text-white">"Guru privat disini sangat efektif dalam membantu saya memahami materi pelajaran untuk persiapan ujian. Terimakasih Radian”</p>
                                 </div>
                             </div>
                         </li>
 
-                        <li>
-                            <div class="group bg-white border border-body rounded-2xl mb-10 mt-7 mr-4 hover:bg-primary group-hover:text-white hover:border-dark">
-                                <div class="flex items-center justify-center h-auto mt-8">
+                        <li class="mr-4">
+                            <div class="group bg-white border border-body rounded-2xl h-auto w-[350px] lg:w-full mb-10 mt-7 mr-4 hover:bg-primary group-hover:text-white hover:border-dark">
+                                <div class="flex items-center justify-center mt-8">
                                     <div class="rounded-full w-12 h-12 bg-slate-100 flex justify-center items-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary" viewBox="0 0 20 20" fill="currentColor">
                                             <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
@@ -690,14 +689,14 @@
                                 <div class="py-4 px-6">
                                     <h3 class="mb-1 font-normal text-xl text-black text-center">Zefanya</h3>
                                     <h4 class="mb-6 font-normal text-lg text-body text-center group-hover:text-white">UI - Kedokteran</h4>
-                                    <p class="mb-[93px] font-normal text-lg text-body text-center group-hover:text-white">"Guru-guru di Radian memberikan saya harapan dan dukungan besar. Saya mendapatkan banyak strategi dan tips dalam menghadapi ujian UTBK.”</p>
+                                    <p class="mb-16 font-normal text-lg text-body text-center group-hover:text-white">"Guru-guru di Radian memberikan saya harapan dan dukungan besar. Saya mendapatkan banyak strategi dan tips dalam menghadapi ujian UTBK.”</p>
                                 </div>
                             </div>
                         </li>
 
-                        <li>
-                            <div class="group bg-white border border-body rounded-2xl mb-10 mt-7 mr-4 hover:bg-primary group-hover:text-white hover:border-dark">
-                                <div class="flex items-center justify-center h-auto mt-8">
+                        <li class="mr-4">
+                            <div class="group bg-white border border-body rounded-2xl h-auto w-[350px] lg:w-full mb-10 mt-7 mr-4 hover:bg-primary group-hover:text-white hover:border-dark">
+                                <div class="flex items-center justify-center mt-8">
                                     <div class="rounded-full w-12 h-12 bg-slate-100 flex justify-center items-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary" viewBox="0 0 20 20" fill="currentColor">
                                             <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
@@ -707,14 +706,14 @@
                                 <div class="py-4 px-6">
                                     <h3 class="mb-1 font-normal text-xl text-black text-center">Kevin</h3>
                                     <h4 class="mb-6 font-normal text-lg text-body text-center group-hover:text-white">UB - Teknik Industri</h4>
-                                    <p class="mb-[93px] font-normal text-lg text-body text-center group-hover:text-white">"Radian sangat membantu saya dalam mempersiapkan diri untuk ujian masuk kampus impian saya. Terimakasih Radian sudah membantu saya masuk Universitas Brawijaya”</p>
+                                    <p class="mb-16 font-normal text-lg text-body text-center group-hover:text-white">"Radian sangat membantu saya dalam mempersiapkan diri untuk ujian masuk kampus impian saya. Terimakasih Radian sudah membantu saya masuk Universitas Brawijaya”</p>
                                 </div>
                             </div>
                         </li>
 
-                        <li>
-                            <div class="group bg-white border border-body rounded-2xl mb-10 mt-7 mr-4 hover:bg-primary group-hover:text-white hover:border-dark">
-                                <div class="flex items-center justify-center h-auto mt-8">
+                        <li class="mr-4">
+                            <div class="group bg-white border border-body rounded-2xl h-auto w-[350px] lg:w-full mb-10 mt-7 mr-4 hover:bg-primary group-hover:text-white hover:border-dark">
+                                <div class="flex items-center justify-center mt-8">
                                     <div class="rounded-full w-12 h-12 bg-slate-100 flex justify-center items-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary" viewBox="0 0 20 20" fill="currentColor">
                                             <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
@@ -724,7 +723,7 @@
                                 <div class="py-4 px-6">
                                     <h3 class="mb-1 font-normal text-xl text-black text-center">Nadif</h3>
                                     <h4 class="mb-6 font-normal text-lg text-body text-center group-hover:text-white">IPB - Sekolah Bisnis</h4>
-                                    <p class="mb-[93px] font-normal text-lg text-body text-center group-hover:text-white">“Belajar di Radian benar-benar membantu saya dalam memahami soal-soal UTBK. Latihan soalnya banyak sehingga saya dapat berlatih untuk mengerjakan berbagai macam soal”</p>
+                                    <p class="mb-16 font-normal text-lg text-body text-center group-hover:text-white">“Belajar di Radian benar-benar membantu saya dalam memahami soal-soal UTBK. Latihan soalnya banyak sehingga saya dapat berlatih untuk mengerjakan berbagai macam soal”</p>
                                 </div>
                             </div>
                         </li>
@@ -741,7 +740,7 @@
             <div class="flex flex-wrap">
                 <div class="w-full self-center px-4 lg:w-1/2">
                     <h5 class="text-lg font-semibold text-primary md:text-lg mb-2 pt-10">GALLERY</h5>
-                    <h1 class="text-5xl text-dark font-semibold mb-4 max-w-xs">Gallery Radian Edu</h1>
+                    <h1 class="lg:text-5xl text-2xl text-dark font-semibold mb-4 max-w-xs">Gallery Radian Edu</h1>
                     <p class="text-lg font-normal text-body max-w-xs">Sebuah perjalanan Radian untuk menghantarkan para teman-teman dalam menggapai mimpinya.</p>
                 </div>
 
@@ -788,7 +787,7 @@
                 <div class="2xl:pl-24">
                     <div class="grid items-center grid-cols-1 gap-y-12 lg:grid-cols-2 lg:gap-x-8 2xl:gap-x-20">
                         <div class="lg:order-1 order-2">
-                            <h2 class="text-5xl font-semibold leading-tight text-primary sm:text-4xl lg:text-5xl lg:leading-tight">Ingin menjadi Super Teacher di Radian Edu?</h2>
+                            <h2 class="text-2xl font-semibold leading-tight text-primary sm:text-4xl lg:text-5xl lg:leading-tight">Ingin menjadi Super Teacher di Radian Edu?</h2>
                             <p class="mt-4 text-base text-black mb-6">Siap menjadi #Superteacher di Radian Edu Solution untuk membantu mingkatkan kualitas pendidikan di Indonesia!</p>
                             <button class="text-base font-semibold border border-black bg-primary px-4 py-2 text-center text-white rounded-lg mb-16" href="#">Daftar Sebagai Guru >></button>
                         </div>
@@ -874,7 +873,7 @@
     </footer>
     <!-- footer section end -->
 
-    <script src="{{asset('/js/script.js')}}"></script>ipt>
+    <script src="{{asset('/js/script.js')}}"></script>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     @endsection
     
