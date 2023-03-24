@@ -135,7 +135,7 @@
 
 <!-- hero section start -->
 <section id="#" class="pt-16 w-full h-full pb-8" style="background-size: cover; background-image: url(img/bg-news.png);">
-    <a href="news-detail1.html">
+    <a href="/newsdetails">
         <div class="container">
             <div class="w-full self-end px-4">
                 <div class="flex flex-wrap mt-[353px]">

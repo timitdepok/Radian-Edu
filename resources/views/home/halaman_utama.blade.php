@@ -31,10 +31,9 @@
                 <div x-data="{ open: false }" class="flex flex-col max-w-screen-[1340px] pl-2 mr-0 md:items-center md:justify-between md:flex-row md:pl-6 lg:pl-8">
                     <div class="flex flex-row items-center justify-between pl-4 py-4">
                         <button class="rounded-lg md:hidden focus:outline-none focus:shadow-outline" @click="open = !open">
-                            <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
-                                <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
-                                <path x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                              </svg>
                         </button>
                     </div>  
                     <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow hidden pb-4 md:pb-0 md:flex md:justify-end md:flex-row lg:self-center">
@@ -413,81 +412,209 @@
                     <div class="w-full overflow-hidden grid grid-cols-1 bg-slate-100 overflow-x-scroll gap-1">
                         <ul class="flex">
                             <li>
-                                <div class="bg-white rounded-3xl shadow-lg mb-10 w-[255px] h-[371px] mr-6">
-                                    <div class="h-[210px]" style="background-image: url(img/program1.png);">
-                                        <div class="pt-8 pl-7">
-                                            <button class="bg-primary rounded-lg shadow-lg px-3 py-2 text-white text-sm font-semibold self-center flex flex-wrap">
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-white">
-                                                    <path fill-rule="evenodd" d="M14.615 1.595a.75.75 0 01.359.852L12.982 9.75h7.268a.75.75 0 01.548 1.262l-10.5 11.25a.75.75 0 01-1.272-.71l1.992-7.302H3.75a.75.75 0 01-.548-1.262l10.5-11.25a.75.75 0 01.913-.143z" clip-rule="evenodd" />
-                                                </svg>
-                                                HEADLINE</button>
+                                <div class="rounded-xl lg:w-[300px] w-[255px] h-[455px] bg-white shadow-sm mr-6 mb-8">
+                                    <div class="w-full mr-6">
+                                        <div class="h-full w-full rounded-xl object-cover overflow-hidden relative">
+                                            <img src="img/supercamp.png" alt="" class="w-full h-[210px] object-cover">
+                                            <div class="pt-8 pl-7">
+                                                <button class="bg-primary rounded-lg px-3 py-2 text-white text-sm font-semibold self-center absolute top-6 z-20 flex flex-wrap">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-white">
+                                                        <path fill-rule="evenodd" d="M14.615 1.595a.75.75 0 01.359.852L12.982 9.75h7.268a.75.75 0 01.548 1.262l-10.5 11.25a.75.75 0 01-1.272-.71l1.992-7.302H3.75a.75.75 0 01-.548-1.262l10.5-11.25a.75.75 0 01.913-.143z" clip-rule="evenodd" />
+                                                    </svg>
+                                                    HEADLINE 
+                                                </button>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="py-5 px-6">
-                                        <h3 class="mb-3 text-xl font-medium text-black">
-                                            Program Privat
-                                        </h3>
-                                        <p class="text-lg font-normal text-text mb-6">Les Privat bergaransi dengan guru lulusan PTN terbaik.</p>
+                                        <div class="pb-5 px-6">
+                                            <h3 class="mb-3 text-xl font-medium text-black">
+                                                Supercamp
+                                            </h3>
+                                            <p class="text-lg font-normal text-text mb-6">Belajar dengan sistem karantina 30 hari untuk persiapan ujian UTBK, dilengkapi dengan guru dan fasilitas terbaik</p>
+                                        </div>
                                     </div>
                                 </div>
                             </li>
                             <li>
-                                <div class="bg-white rounded-3xl shadow-lg mb-10 w-[255px] h-[371px] mr-6">
-                                    <div class="h-[210px]" style="background-image: url(img/program2.png);">
-                                        <div class="pt-8 pl-7">
-                                            <button class="bg-primary rounded-lg shadow-md px-3 py-2 text-white text-sm font-semibold self-center flex flex-wrap">
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-white">
-                                                    <path fill-rule="evenodd" d="M14.615 1.595a.75.75 0 01.359.852L12.982 9.75h7.268a.75.75 0 01.548 1.262l-10.5 11.25a.75.75 0 01-1.272-.71l1.992-7.302H3.75a.75.75 0 01-.548-1.262l10.5-11.25a.75.75 0 01.913-.143z" clip-rule="evenodd" />
-                                                </svg>
-                                                HEADLINE 
-                                            </button>
+                                <div class="rounded-xl lg:w-[300px] w-[255px] h-[455px] bg-white shadow-sm mr-6 mb-8">
+                                    <div class="w-full mr-6">
+                                        <div class="h-full w-full rounded-xl object-cover overflow-hidden relative">
+                                            <img src="img/privat-rutin.png" alt="" class="w-full h-[210px] object-cover">
+                                            <div class="pt-8 pl-7">
+                                                <button class="bg-primary rounded-lg px-3 py-2 text-white text-sm font-semibold self-center absolute top-6 z-20 flex flex-wrap">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-white">
+                                                        <path fill-rule="evenodd" d="M14.615 1.595a.75.75 0 01.359.852L12.982 9.75h7.268a.75.75 0 01.548 1.262l-10.5 11.25a.75.75 0 01-1.272-.71l1.992-7.302H3.75a.75.75 0 01-.548-1.262l10.5-11.25a.75.75 0 01.913-.143z" clip-rule="evenodd" />
+                                                    </svg>
+                                                    HEADLINE 
+                                                </button>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="py-5 px-6">
-                                        <h3 class="mb-3 text-xl font-medium text-black">
-                                            Supercamp
-                                        </h3>
-                                        <p class="text-lg font-normal text-text mb-6">Bimbingan intensif karantina 30 hari menjelang ujian UTBK.</p>
+                                        <div class="pb-5 px-6">
+                                            <h3 class="mb-3 text-xl font-medium text-black">
+                                                Privat Rutin
+                                            </h3>
+                                            <p class="text-lg font-normal text-text mb-6">Les Privat  esklusif untuk semua jenjang dengan guru terbaik. Cukup dirumah saja, biar guru kami yang datang kerumah anda.</p>
+                                        </div>
                                     </div>
                                 </div>
                             </li>
                             <li>
-                                <div class="bg-white rounded-3xl shadow-lg mb-10 w-[255px] h-[371px] mr-6">
-                                    <div class="h-[210px]" style="background-image: url(img/program3.png);">
-                                        <div class="pt-8 pl-7">
-                                            <button class="bg-primary rounded-lg shadow-md px-3 py-2 text-white text-sm font-semibold self-center flex flex-wrap">
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-white">
-                                                    <path fill-rule="evenodd" d="M14.615 1.595a.75.75 0 01.359.852L12.982 9.75h7.268a.75.75 0 01.548 1.262l-10.5 11.25a.75.75 0 01-1.272-.71l1.992-7.302H3.75a.75.75 0 01-.548-1.262l10.5-11.25a.75.75 0 01.913-.143z" clip-rule="evenodd" />
-                                                </svg>
-                                                HEADLINE
-                                            </button>
+                                <div class="rounded-xl lg:w-[300px] w-[255px] h-[455px] bg-white shadow-sm mr-6 mb-8">
+                                    <div class="w-full mr-6">
+                                        <div class="h-full w-full rounded-xl object-cover overflow-hidden relative">
+                                            <img src="img/privat-garansi.png" alt="" class="w-full h-[210px] object-cover">
+                                            <div class="pt-8 pl-7">
+                                                <button class="bg-primary rounded-lg px-3 py-2 text-white text-sm font-semibold self-center absolute top-6 z-20 flex flex-wrap">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-white">
+                                                        <path fill-rule="evenodd" d="M14.615 1.595a.75.75 0 01.359.852L12.982 9.75h7.268a.75.75 0 01.548 1.262l-10.5 11.25a.75.75 0 01-1.272-.71l1.992-7.302H3.75a.75.75 0 01-.548-1.262l10.5-11.25a.75.75 0 01.913-.143z" clip-rule="evenodd" />
+                                                    </svg>
+                                                    HEADLINE 
+                                                </button>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="py-5 px-6">
-                                        <h3 class="mb-3 text-xl font-medium text-black">
-                                            Program Class
-                                        </h3>
-                                        <p class="text-lg font-normal text-text mb-6">Belajar bersama di kelas dengan guru berpengalaman. </p>
+                                        <div class="pb-5 px-6">
+                                            <h3 class="mb-3 text-xl font-medium text-black">
+                                                Privat Garansi
+                                            </h3>
+                                            <p class="text-lg font-normal text-text mb-6">Privat bergaransi dengan kualitas pengajar terbaik dan berpengalaman di bidangnya. Garansi lolos PTN dan Jurusan Favorit</p>
+                                        </div>
                                     </div>
                                 </div>
                             </li>
                             <li>
-                                <div class="bg-white rounded-3xl shadow-lg mb-10 w-[255px] h-[371px] mr-6">
-                                    <div class="h-[210px]" style="background-image: url(img/program2.png);">
-                                        <div class="pt-8 pl-7">
-                                            <button class="bg-primary rounded-lg shadow-md px-3 py-2 text-white text-sm font-semibold self-center flex flex-wrap">
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-white">
-                                                    <path fill-rule="evenodd" d="M14.615 1.595a.75.75 0 01.359.852L12.982 9.75h7.268a.75.75 0 01.548 1.262l-10.5 11.25a.75.75 0 01-1.272-.71l1.992-7.302H3.75a.75.75 0 01-.548-1.262l10.5-11.25a.75.75 0 01.913-.143z" clip-rule="evenodd" />
-                                                </svg>
-                                                HEADLINE
-                                            </button>
+                                <div class="rounded-xl lg:w-[300px] w-[255px] h-[455px] bg-white shadow-sm mr-6 mb-8">
+                                    <div class="w-full mr-6">
+                                        <div class="h-full w-full rounded-xl object-cover overflow-hidden relative">
+                                            <img src="img/privat-mahasiswa.png" alt="" class="w-full h-[210px] object-cover">
+                                            <div class="pt-8 pl-7">
+                                                <button class="bg-primary rounded-lg px-3 py-2 text-white text-sm font-semibold self-center absolute top-6 z-20 flex flex-wrap">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-white">
+                                                        <path fill-rule="evenodd" d="M14.615 1.595a.75.75 0 01.359.852L12.982 9.75h7.268a.75.75 0 01.548 1.262l-10.5 11.25a.75.75 0 01-1.272-.71l1.992-7.302H3.75a.75.75 0 01-.548-1.262l10.5-11.25a.75.75 0 01.913-.143z" clip-rule="evenodd" />
+                                                    </svg>
+                                                    HEADLINE 
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="pb-5 px-6">
+                                            <h3 class="mb-3 text-xl font-medium text-black">
+                                                Privat Mahasiswa
+                                            </h3>
+                                            <p class="text-lg font-normal text-text mb-6">Les Privat Mahasiswa terpercaya untuk berbagai jurusan. Kami bisa membantu kamu untuk mengatasi berbagai masalah perkuliahan.</p>
                                         </div>
                                     </div>
-                                    <div class="py-5 px-6">
-                                        <h3 class="mb-3 text-xl font-medium text-black">
-                                            Program Privat
-                                        </h3>
-                                        <p class="text-lg font-normal text-text mb-6">Les Privat bergaransi dengan guru lulusan PTN terbaik.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rounded-xl lg:w-[300px] w-[255px] h-[455px] bg-white shadow-sm mr-6 mb-8">
+                                    <div class="w-full mr-6">
+                                        <div class="h-full w-full rounded-xl object-cover overflow-hidden relative">
+                                            <img src="img/privat-cpns.png" alt="" class="w-full h-[210px] object-cover">
+                                            <div class="pt-8 pl-7">
+                                                <button class="bg-primary rounded-lg px-3 py-2 text-white text-sm font-semibold self-center absolute top-6 z-20 flex flex-wrap">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-white">
+                                                        <path fill-rule="evenodd" d="M14.615 1.595a.75.75 0 01.359.852L12.982 9.75h7.268a.75.75 0 01.548 1.262l-10.5 11.25a.75.75 0 01-1.272-.71l1.992-7.302H3.75a.75.75 0 01-.548-1.262l10.5-11.25a.75.75 0 01.913-.143z" clip-rule="evenodd" />
+                                                    </svg>
+                                                    HEADLINE 
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="pb-5 px-6">
+                                            <h3 class="mb-3 text-xl font-medium text-black">
+                                                Privat CPNS
+                                            </h3>
+                                            <p class="text-lg font-normal text-text mb-6">Program Privat untuk persiapan seleksi CPNS, membantu memahami materi dan soal soal tes CPNS</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rounded-xl lg:w-[300px] w-[255px] h-[455px] bg-white shadow-sm mr-6 mb-8">
+                                    <div class="w-full mr-6">
+                                        <div class="h-full w-full rounded-xl object-cover overflow-hidden relative">
+                                            <img src="img/privat-umum.png" alt="" class="w-full h-[210px] object-cover">
+                                            <div class="pt-8 pl-7">
+                                                <button class="bg-primary rounded-lg px-3 py-2 text-white text-sm font-semibold self-center absolute top-6 z-20 flex flex-wrap">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-white">
+                                                        <path fill-rule="evenodd" d="M14.615 1.595a.75.75 0 01.359.852L12.982 9.75h7.268a.75.75 0 01.548 1.262l-10.5 11.25a.75.75 0 01-1.272-.71l1.992-7.302H3.75a.75.75 0 01-.548-1.262l10.5-11.25a.75.75 0 01.913-.143z" clip-rule="evenodd" />
+                                                    </svg>
+                                                    HEADLINE 
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="pb-5 px-6">
+                                            <h3 class="mb-3 text-xl font-medium text-black">
+                                                Privat Umum
+                                            </h3>
+                                            <p class="text-lg font-normal text-text mb-6">Les Privat untuk berbagai macam bidang sesuai dengan kebutuhan kamu.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rounded-xl lg:w-[300px] w-[255px] h-[455px] bg-white shadow-sm mr-6 mb-8">
+                                    <div class="w-full mr-6">
+                                        <div class="h-full w-full rounded-xl object-cover overflow-hidden relative">
+                                            <img src="img/intensif.png" alt="" class="w-full h-[210px] object-cover">
+                                            <div class="pt-8 pl-7">
+                                                <button class="bg-primary rounded-lg px-3 py-2 text-white text-sm font-semibold self-center absolute top-6 z-20 flex flex-wrap">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-white">
+                                                        <path fill-rule="evenodd" d="M14.615 1.595a.75.75 0 01.359.852L12.982 9.75h7.268a.75.75 0 01.548 1.262l-10.5 11.25a.75.75 0 01-1.272-.71l1.992-7.302H3.75a.75.75 0 01-.548-1.262l10.5-11.25a.75.75 0 01.913-.143z" clip-rule="evenodd" />
+                                                    </svg>
+                                                    HEADLINE 
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="pb-5 px-6">
+                                            <h3 class="mb-3 text-xl font-medium text-black">
+                                                Intensif Class 
+                                            </h3>
+                                            <p class="text-lg font-normal text-text mb-6">Belajar Intensif selama 30 hari dengan guru terbaik untuk persiapan UTBK.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rounded-xl lg:w-[300px] w-[255px] h-[455px] bg-white shadow-sm mr-6 mb-8">
+                                    <div class="w-full mr-6">
+                                        <div class="h-full w-full rounded-xl object-cover overflow-hidden relative">
+                                            <img src="img/exclusif.png" alt="" class="w-full h-[210px] object-cover">
+                                            <div class="pt-8 pl-7">
+                                                <button class="bg-primary rounded-lg px-3 py-2 text-white text-sm font-semibold self-center absolute top-6 z-20 flex flex-wrap">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-white">
+                                                        <path fill-rule="evenodd" d="M14.615 1.595a.75.75 0 01.359.852L12.982 9.75h7.268a.75.75 0 01.548 1.262l-10.5 11.25a.75.75 0 01-1.272-.71l1.992-7.302H3.75a.75.75 0 01-.548-1.262l10.5-11.25a.75.75 0 01.913-.143z" clip-rule="evenodd" />
+                                                    </svg>
+                                                    HEADLINE 
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="pb-5 px-6">
+                                            <h3 class="mb-3 text-xl font-medium text-black">
+                                                Exclusif Class  
+                                            </h3>
+                                            <p class="text-lg font-normal text-text mb-6">Belajar bersama dikelas dengan guru terbaik lulusan PTN dan suasana belajar mengajar yang menyenangkan.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="rounded-xl lg:w-[300px] w-[255px] h-[455px] bg-white shadow-sm mr-6 mb-8">
+                                    <div class="w-full mr-6">
+                                        <div class="h-full w-full rounded-xl object-cover overflow-hidden relative">
+                                            <img src="img/bimbel-online.png" alt="" class="w-full h-[210px] object-cover">
+                                            <div class="pt-8 pl-7">
+                                                <button class="bg-primary rounded-lg px-3 py-2 text-white text-sm font-semibold self-center absolute top-6 z-20 flex flex-wrap">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-white">
+                                                        <path fill-rule="evenodd" d="M14.615 1.595a.75.75 0 01.359.852L12.982 9.75h7.268a.75.75 0 01.548 1.262l-10.5 11.25a.75.75 0 01-1.272-.71l1.992-7.302H3.75a.75.75 0 01-.548-1.262l10.5-11.25a.75.75 0 01.913-.143z" clip-rule="evenodd" />
+                                                    </svg>
+                                                    HEADLINE 
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="pb-5 px-6">
+                                            <h3 class="mb-3 text-xl font-medium text-black">
+                                                Bimbel Online
+                                            </h3>
+                                            <p class="text-lg font-normal text-text mb-6">Belajar lebih fleksibel dengan bimbel online karena bisa belajar darimana saja.</p>
+                                        </div>
                                     </div>
                                 </div>
                             </li>
@@ -600,27 +727,13 @@
     <section id="testi" class="pt-16 pb-36">
         <div class="container">
             <div class="flex flex-wrap">
-                <div class="w-full px-4 mb-10 lg:w-1/3">
+                <div class="w-full px-4 mb-10 lg:w-1/2">
                     <h2 class="font-semibold text-black lg:text-5xl text-2xl mb-14">Apa Kata Mereka Tentang Radian</h2>
                 </div>
-                <div class="w-full px-4 mb-10 lg:w-1/3">
+                <div class="w-full px-4 mb-10 lg:w-1/2">
                     <p class="font-normal text-body text-lg mb-14 max-w-md mx-auto flex">Radian telah memberikan banyak impect untuk membantu para pelajar agar mencapai target dan tujuannya.</p>
                 </div>
-                <div class="w-full px-4 mb-10 lg:w-1/3">
-                    <div class="w-full text-right">
-                        <button onclick="before()" class="p-3 rounded-full bg-slate-100 border border-gray-100 shadow-lg mr-5">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-primary">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
-                              </svg>                              
-                        </button>
-
-                        <button onclick="after()" class="p-3 rounded-full bg-slate-100 border border-gray-100 shadow-lg mr-5">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-primary">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                              </svg>                              
-                        </button>
-                    </div>
-                </div>
+                
             </div>
 
             <div class="flex">
@@ -636,8 +749,8 @@
                                     </div>
                                 </div>
                                 <div class="py-4 px-6">
-                                    <h3 class="mb-1 font-normal text-xl text-black text-center">Novan</h3>
-                                    <h4 class="mb-6 font-normal text-lg text-body text-center group-hover:text-white">UB - FKG</h4>
+                                    <h3 class="mb-1 font-normal text-xl text-black text-center">Prana</h3>
+                                    <h4 class="mb-6 font-normal text-lg text-body text-center group-hover:text-white">UI - FK</h4>
                                     <p class="mb-2 font-normal text-lg text-body text-center group-hover:text-white">"Saya sangat bersyukur telah bergabung dengan Radian karena berhasil masuk ke fakultas kedokteran impian saya. Materi yang sulit menjadi lebih mudah dipahami karena cara ngajar yang sistematis dan jelas dari para pengajar yang profesional.”</p>
                                 </div>
                             </div>
@@ -653,8 +766,8 @@
                                     </div>
                                 </div>
                                 <div class="py-4 px-6">
-                                    <h3 class=" mb-1 font-normal text-xl text-black text-center">Ikhsan</h3>
-                                    <h4 class="mb-6 font-normal text-lg text-body text-center group-hover:text-white">UNPAD - HI</h4>
+                                    <h3 class=" mb-1 font-normal text-xl text-black text-center">Adelia</h3>
+                                    <h4 class="mb-6 font-normal text-lg text-body text-center group-hover:text-white">IUP UGM - FKG</h4>
                                     <p class="mb-9 font-normal text-lg text-body text-center group-hover:text-white">“Radian sangat membantu saya meningkatkan nilai disekolah. Saya sangat senang dengan system belajar mengajar disini. Terimakasih Radian sudah membantu saya masuk ke PTN yang saya impikan.”</p>
                                 </div> 
                             </div>
@@ -670,8 +783,8 @@
                                     </div>
                                 </div>
                                 <div class="py-4 px-6">
-                                    <h3 class="mb-1 font-normal text-xl text-black text-center">Putri</h3>
-                                    <h4 class="mb-6 font-normal text-lg text-body text-center group-hover:text-white">UNPAD - Akuntansi</h4>
+                                    <h3 class="mb-1 font-normal text-xl text-black text-center">Mikhi</h3>
+                                    <h4 class="mb-6 font-normal text-lg text-body text-center group-hover:text-white">UI - FKG</h4>
                                     <p class="mb-16 font-normal text-lg text-body text-center group-hover:text-white">"Guru privat disini sangat efektif dalam membantu saya memahami materi pelajaran untuk persiapan ujian. Terimakasih Radian”</p>
                                 </div>
                             </div>
@@ -687,8 +800,8 @@
                                     </div>
                                 </div>
                                 <div class="py-4 px-6">
-                                    <h3 class="mb-1 font-normal text-xl text-black text-center">Zefanya</h3>
-                                    <h4 class="mb-6 font-normal text-lg text-body text-center group-hover:text-white">UI - Kedokteran</h4>
+                                    <h3 class="mb-1 font-normal text-xl text-black text-center">Ajriya</h3>
+                                    <h4 class="mb-6 font-normal text-lg text-body text-center group-hover:text-white">UI - Teknik Komputer</h4>
                                     <p class="mb-16 font-normal text-lg text-body text-center group-hover:text-white">"Guru-guru di Radian memberikan saya harapan dan dukungan besar. Saya mendapatkan banyak strategi dan tips dalam menghadapi ujian UTBK.”</p>
                                 </div>
                             </div>
@@ -704,8 +817,8 @@
                                     </div>
                                 </div>
                                 <div class="py-4 px-6">
-                                    <h3 class="mb-1 font-normal text-xl text-black text-center">Kevin</h3>
-                                    <h4 class="mb-6 font-normal text-lg text-body text-center group-hover:text-white">UB - Teknik Industri</h4>
+                                    <h3 class="mb-1 font-normal text-xl text-black text-center">Raisa</h3>
+                                    <h4 class="mb-6 font-normal text-lg text-body text-center group-hover:text-white">UNPAD - Psikolog</h4>
                                     <p class="mb-16 font-normal text-lg text-body text-center group-hover:text-white">"Radian sangat membantu saya dalam mempersiapkan diri untuk ujian masuk kampus impian saya. Terimakasih Radian sudah membantu saya masuk Universitas Brawijaya”</p>
                                 </div>
                             </div>
@@ -721,13 +834,29 @@
                                     </div>
                                 </div>
                                 <div class="py-4 px-6">
-                                    <h3 class="mb-1 font-normal text-xl text-black text-center">Nadif</h3>
-                                    <h4 class="mb-6 font-normal text-lg text-body text-center group-hover:text-white">IPB - Sekolah Bisnis</h4>
+                                    <h3 class="mb-1 font-normal text-xl text-black text-center">Omar</h3>
+                                    <h4 class="mb-6 font-normal text-lg text-body text-center group-hover:text-white">UGM - computer science</h4>
                                     <p class="mb-16 font-normal text-lg text-body text-center group-hover:text-white">“Belajar di Radian benar-benar membantu saya dalam memahami soal-soal UTBK. Latihan soalnya banyak sehingga saya dapat berlatih untuk mengerjakan berbagai macam soal”</p>
                                 </div>
                             </div>
                         </li>
                     </ul>
+                </div>
+            </div>
+
+            <div class="flex">
+                <div class="w-full text-center">
+                    <button onclick="after()" class="p-3 rounded-full bg-slate-100 border border-gray-100 shadow-lg mr-5">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-primary">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+                          </svg>                              
+                    </button>
+
+                    <button onclick="before()" class="p-3 rounded-full bg-slate-100 border border-gray-100 shadow-lg mr-5">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-primary">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                          </svg>                              
+                    </button>
                 </div>
             </div>
         </div>
@@ -746,18 +875,18 @@
 
                 <div class="w-full self-center px-4 lg:w-1/2">
                     <div class="h-96 grid grid-cols-2 gap-2 bg-slate-100 overflow-y-scroll">
-                        <img src="img/img2.png" alt="" class="w-full h-full">
-                        <img src="img/img1.png" alt="" class="w-full h-full">
-                        <img src="img/img4.png" alt="" class="w-full h-full">
-                        <img src="img/img3.png" alt="" class="w-full h-full">
-                        <img src="img/img6.png" alt="" class="w-full h-full">
-                        <img src="img/img5.png" alt="" class="w-full h-full">
-                        <img src="img/img8.png" alt="" class="w-full h-full">
-                        <img src="img/img7.png" alt="" class="w-full h-full">
-                        <img src="img/img10.png" alt="" class="w-full h-full">
-                        <img src="img/img9.png" alt="" class="w-full h-full">
-                        <img src="img/img12.png" alt="" class="w-full h-full">
-                        <img src="img/img11.png" alt="" class="w-full h-full">
+                        <img src="img/utama-2.png" alt="" class="w-full h-full">
+                        <img src="img/utama-1.png" alt="" class="w-full h-full">
+                        <img src="img/utama-4.png" alt="" class="w-full h-full">
+                        <img src="img/utama-3.png" alt="" class="w-full h-full">
+                        <img src="img/utama-6.png" alt="" class="w-full h-full">
+                        <img src="img/utama-5.png" alt="" class="w-full h-full">
+                        <img src="img/utama-8.png" alt="" class="w-full h-full">
+                        <img src="img/utama-7.png" alt="" class="w-full h-full">
+                        <img src="img/utama-10.png" alt="" class="w-full h-full">
+                        <img src="img/utama-9.png" alt="" class="w-full h-full">
+                        <img src="img/utama-12.png" alt="" class="w-full h-full">
+                        <img src="img/utama-11.png" alt="" class="w-full h-full">
                     </div>
                 </div>
             </div>
