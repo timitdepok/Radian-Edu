@@ -76,7 +76,7 @@
                             <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full md:max-w-screen-sm md:w-screen mt-2 origin-top-right z-30">
                                 <div class="px-4 py-2 pb-4 bg-white rounded-md shadow-lg dark-mode:bg-gray-700">
                                   <div class="grid grid-cols-1 gap-4">
-                                    <a class="flex flex-row items-start rounded-lg bg-transparent p-2 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="sd.html">
+                                    <a class="flex flex-row items-start rounded-lg bg-transparent p-2 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="/sd">
                                       <div class="bg-red-200 text-white rounded-lg p-3">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-sd">
                                             <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
@@ -89,7 +89,7 @@
                                       </div>
                                     </a>
         
-                                    <a class="flex flex-row items-start rounded-lg bg-transparent p-2 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="smp.html">
+                                    <a class="flex flex-row items-start rounded-lg bg-transparent p-2 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="/smp">
                                       <div class="bg-green-200 text-white rounded-lg p-3">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-primary">
                                             <path fill-rule="evenodd" d="M14.615 1.595a.75.75 0 01.359.852L12.982 9.75h7.268a.75.75 0 01.548 1.262l-10.5 11.25a.75.75 0 01-1.272-.71l1.992-7.302H3.75a.75.75 0 01-.548-1.262l10.5-11.25a.75.75 0 01.913-.143z" clip-rule="evenodd" />
@@ -101,7 +101,7 @@
                                       </div>
                                     </a>
         
-                                    <a class="flex flex-row items-start rounded-lg bg-transparent p-2 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="sma.html">
+                                    <a class="flex flex-row items-start rounded-lg bg-transparent p-2 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="/sma">
                                       <div class="bg-slate-300 text-white rounded-lg p-3">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-dark">
                                             <path fill-rule="evenodd" d="M12.963 2.286a.75.75 0 00-1.071-.136 9.742 9.742 0 00-3.539 6.177A7.547 7.547 0 016.648 6.61a.75.75 0 00-1.152-.082A9 9 0 1015.68 4.534a7.46 7.46 0 01-2.717-2.248zM15.75 14.25a3.75 3.75 0 11-7.313-1.172c.628.465 1.35.81 2.133 1a5.99 5.99 0 011.925-3.545 3.75 3.75 0 013.255 3.717z" clip-rule="evenodd" />
@@ -113,7 +113,7 @@
                                       </div>
                                     </a>
     
-                                    <a class="flex flex-row items-start rounded-lg bg-transparent p-2 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="sma.html">
+                                    <a class="flex flex-row items-start rounded-lg bg-transparent p-2 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="/mahasiswa">
                                         <div class="bg-slate-300 text-white rounded-lg p-3">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-mhs">
                                                 <path d="M11.584 2.376a.75.75 0 01.832 0l9 6a.75.75 0 11-.832 1.248L12 3.901 3.416 9.624a.75.75 0 01-.832-1.248l9-6z" />
@@ -429,7 +429,7 @@
                                             <h3 class="mb-3 text-xl font-medium text-black">
                                                 Supercamp
                                             </h3>
-                                            <p class="text-lg font-normal text-text mb-6">Belajar dengan sistem karantina 30 hari untuk persiapan ujian UTBK, dilengkapi dengan guru dan fasilitas terbaik</p>
+                                            <p class="lg:text-lg text-sm font-normal text-text mb-6">Belajar dengan sistem karantina 30 hari untuk persiapan ujian UTBK, dilengkapi dengan guru dan fasilitas terbaik</p>
                                         </div>
                                     </div>
                                 </div>
@@ -452,7 +452,7 @@
                                             <h3 class="mb-3 text-xl font-medium text-black">
                                                 Privat Rutin
                                             </h3>
-                                            <p class="text-lg font-normal text-text mb-6">Les Privat  esklusif untuk semua jenjang dengan guru terbaik. Cukup dirumah saja, biar guru kami yang datang kerumah anda.</p>
+                                            <p class="lg:text-lg text-sm font-normal text-text mb-6">Les Privat  esklusif untuk semua jenjang dengan guru terbaik. Cukup dirumah saja, biar guru kami yang datang kerumah anda.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -475,7 +475,7 @@
                                             <h3 class="mb-3 text-xl font-medium text-black">
                                                 Privat Garansi
                                             </h3>
-                                            <p class="text-lg font-normal text-text mb-6">Privat bergaransi dengan kualitas pengajar terbaik dan berpengalaman di bidangnya. Garansi lolos PTN dan Jurusan Favorit</p>
+                                            <p class="lg:text-lg text-sm font-normal text-text mb-6">Privat bergaransi dengan kualitas pengajar terbaik dan berpengalaman di bidangnya. Garansi lolos PTN dan Jurusan Favorit</p>
                                         </div>
                                     </div>
                                 </div>
@@ -498,7 +498,7 @@
                                             <h3 class="mb-3 text-xl font-medium text-black">
                                                 Privat Mahasiswa
                                             </h3>
-                                            <p class="text-lg font-normal text-text mb-6">Les Privat Mahasiswa terpercaya untuk berbagai jurusan. Kami bisa membantu kamu untuk mengatasi berbagai masalah perkuliahan.</p>
+                                            <p class="lg:text-lg text-sm font-normal text-text mb-6">Les Privat Mahasiswa terpercaya untuk berbagai jurusan. Kami bisa membantu kamu untuk mengatasi berbagai masalah perkuliahan.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -521,7 +521,7 @@
                                             <h3 class="mb-3 text-xl font-medium text-black">
                                                 Privat CPNS
                                             </h3>
-                                            <p class="text-lg font-normal text-text mb-6">Program Privat untuk persiapan seleksi CPNS, membantu memahami materi dan soal soal tes CPNS</p>
+                                            <p class="lg:text-lg text-sm font-normal text-text mb-6">Program Privat untuk persiapan seleksi CPNS, membantu memahami materi dan soal soal tes CPNS</p>
                                         </div>
                                     </div>
                                 </div>
@@ -544,7 +544,7 @@
                                             <h3 class="mb-3 text-xl font-medium text-black">
                                                 Privat Umum
                                             </h3>
-                                            <p class="text-lg font-normal text-text mb-6">Les Privat untuk berbagai macam bidang sesuai dengan kebutuhan kamu.</p>
+                                            <p class="lg:text-lg text-sm font-normal text-text mb-6">Les Privat untuk berbagai macam bidang sesuai dengan kebutuhan kamu.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -567,7 +567,7 @@
                                             <h3 class="mb-3 text-xl font-medium text-black">
                                                 Intensif Class 
                                             </h3>
-                                            <p class="text-lg font-normal text-text mb-6">Belajar Intensif selama 30 hari dengan guru terbaik untuk persiapan UTBK.</p>
+                                            <p class="lg:text-lg text-sm font-normal text-text mb-6">Belajar Intensif selama 30 hari dengan guru terbaik untuk persiapan UTBK.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -590,7 +590,7 @@
                                             <h3 class="mb-3 text-xl font-medium text-black">
                                                 Exclusif Class  
                                             </h3>
-                                            <p class="text-lg font-normal text-text mb-6">Belajar bersama dikelas dengan guru terbaik lulusan PTN dan suasana belajar mengajar yang menyenangkan.</p>
+                                            <p class="lg:text-lg text-sm font-normal text-text mb-6">Belajar bersama dikelas dengan guru terbaik lulusan PTN dan suasana belajar mengajar yang menyenangkan.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -613,7 +613,7 @@
                                             <h3 class="mb-3 text-xl font-medium text-black">
                                                 Bimbel Online
                                             </h3>
-                                            <p class="text-lg font-normal text-text mb-6">Belajar lebih fleksibel dengan bimbel online karena bisa belajar darimana saja.</p>
+                                            <p class="lg:text-lg text-sm font-normal text-text mb-6">Belajar lebih fleksibel dengan bimbel online karena bisa belajar darimana saja.</p>
                                         </div>
                                     </div>
                                 </div>
