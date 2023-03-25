@@ -909,27 +909,27 @@
     </section>
     <!-- belajar section end -->
 
-    <!-- teacher section start -->
+    {{-- ujicoba teacher section start --}}
     <section id="teacher" class="pb-20">
         <div class="container">
-            <div class="px-4 mx-auto overflow-hidden bg-section rounded-3xl sm:px-6 lg:px-8">
+            <div class="mx-auto overflow-hidden bg-section rounded-[40px] lg:pl-8">
                 <div class="2xl:pl-24">
                     <div class="grid items-center grid-cols-1 gap-y-12 lg:grid-cols-2 lg:gap-x-8 2xl:gap-x-20">
-                        <div class="lg:order-1 order-2">
-                            <h2 class="text-2xl font-semibold leading-tight text-primary sm:text-4xl lg:text-5xl lg:leading-tight">Ingin menjadi Super Teacher di Radian Edu?</h2>
-                            <p class="mt-4 text-base text-black mb-6">Siap menjadi #Superteacher di Radian Edu Solution untuk membantu mingkatkan kualitas pendidikan di Indonesia!</p>
-                            <button class="text-base font-semibold border border-black bg-primary px-4 py-2 text-center text-white rounded-lg mb-16" href="#">Daftar Sebagai Guru >></button>
+                        <div class="sm:pl-6 pl-4 lg:mt-0 mt-10">
+                            <h2 class="text-2xl font-semibold leading-tight text-primary sm:text-4xl lg:text-5xl lg:leading-tight">Siap Untuk Memulai Perjalanan Belajarmu?</h2>
+                            <p class="mt-4 text-base text-black mb-6">Jangan tunda lagi, daftar sekarang dan raih kesuksesanmu bersama Radian Edu Solution!</p>
+                            <button class="text-base font-semibold border border-black bg-primary px-4 py-2 text-center text-white rounded-lg lg:mb-16 mb-5" href="#">Siap Untuk Belajar >></button>
                         </div>
         
-                        <div class="relative p-0 bottom-0 self-end lg:order-2 order-1">
-                            <img class="relative w-full h-full" src="img/section_teacher.png" alt="">
+                        <div class="relative p-0 bottom-0 self-end right-0">
+                            <img class="w-full h-full" src="img/cta-siswa.png" alt="">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- teacher section end -->
+    {{-- ujicoba teacher section end --}}
 
     <!-- footer section start -->
     <footer class="bg-footer pt-24 pb-12">
