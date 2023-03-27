@@ -22,7 +22,7 @@ class HalamanTingkatanController extends Controller
 
     // TINGKAT SEKOLAH MENENGAH ATAS
     public function tingkatansma(){
-        return view("tingkatan.tingkatansma", [
+        return view("halaman_tingkatan.tingkatansma", [
             "title" => "Sekolah Menengah Atas | Radian Edu"
         ]);
     }

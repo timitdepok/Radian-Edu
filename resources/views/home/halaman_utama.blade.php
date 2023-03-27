@@ -158,8 +158,8 @@
                     <h1 class="lg:text-6xl text-3xl font-bold text-black mb-[19px] max-w-[645px] mt-1">Radian Edu, Best Partner For The Best Future</h1>
                     <p class="text-lg font-normal text-body max-w-[576px] mt-6 mb-10">Lembaga Privat, Bimbel dan Supercamp Bergaransi dengan Pengajar, Metode serta Teknologi Terbaik Guna Menuju Masa Depan Cemerlang.</p>
                     <div class="flex">
-                        <a href="https://wa.me/+6281779007135?text=Halo%20radian%20%0A%0ANama%20%3A%20%0AAsal%20Kota%20%3A%20%0ASekolah%20dan%20Kelas%20%3A%20%0AOrang%20Tua%20%2F%20Siswa%20%3F%20%3A%0ASaya%20mengetahui%20program%20ini%20melalui%20website%20privatgaransi.radianedu.com%20" class="text-base font-semibold text-white bg-primary rounded-lg py-3 px-2 lg:mt-14 text-center lg:mb-0 mb-2 mr-6 w-[151px] h-[48px]">Read More</a>
-                        <a href="https://wa.me/+6281779007135?text=Halo%20radian%20%0A%0ANama%20%3A%20%0AAsal%20Kota%20%3A%20%0ASekolah%20dan%20Kelas%20%3A%20%0AOrang%20Tua%20%2F%20Siswa%20%3F%20%3A%0ASaya%20mengetahui%20program%20ini%20melalui%20website%20privatgaransi.radianedu.com%20" class="text-base font-semibold text-black border border-black py-3 px-2 rounded-lg lg:mt-14 text-center w-[151px] h-[48px]">KONSULTASI >></a>
+                        <a href="https://wa.me/+6281779007135?text=Halo%20radian%20%0A%0ANama%20%3A%20%0AAsal%20Kota%20%3A%20%0ASekolah%20dan%20Kelas%20%3A%20%0AOrang%20Tua%20%2F%20Siswa%20%3F%20%3A%0ASaya%20mengetahui%20program%20ini%20melalui%20website%20privatgaransi.radianedu.com%20" class="lg:text-base text-sm font-semibold text-white bg-primary rounded-lg py-3 px-2 lg:mt-14 text-center lg:mb-0 mb-2 mr-6 w-[151px] h-[48px]">Read More</a>
+                        <a href="https://wa.me/+6281779007135?text=Halo%20radian%20%0A%0ANama%20%3A%20%0AAsal%20Kota%20%3A%20%0ASekolah%20dan%20Kelas%20%3A%20%0AOrang%20Tua%20%2F%20Siswa%20%3F%20%3A%0ASaya%20mengetahui%20program%20ini%20melalui%20website%20privatgaransi.radianedu.com%20" class="lg:text-base text-sm font-semibold text-black border border-black py-3 px-2 rounded-lg lg:mt-14 text-center w-[151px] h-[48px]">KONSULTASI >></a>
                     </div>
                     
                     
@@ -177,7 +177,7 @@
     <!-- hero section end -->
 
  <!-- promo section start -->
- <section id="promo" class="pt-16 pb-36 bg-slate-100">
+<section id="promo" class="pt-16 pb-36 bg-slate-100">
     <div class="container">
         <div class="flex flex-wrap">
             <div class="w-full px-4 mb-10 lg:w-1/2">
@@ -662,7 +662,7 @@
                             </div>
 
                             <div class="w-full flex px-4 mb-2 ">
-                                <button type="submit" class="text-base font-normal text-white p-4 bg-primary rounded-lg">Cari</button>
+                                <button type="submit" class="text-base font-normal text-white h-[48px] w-[66px] bg-primary rounded-lg">Cari</button>
                             </div>
                         </form>
                         

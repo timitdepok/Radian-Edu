@@ -29,82 +29,75 @@
 <!-- navbar section end -->
 
   <!-- hero section start -->
-  <section id="#" class="pt-16 w-full h-full" style="background-size: cover; background-image: url(img/bg-sd.png);">
+  <section id="#" class="pt-16" style="background-size: cover; background-image: url(img/bg-sd.png);">
     <div class="container">
         <div class="flex flex-wrap">
             <div class="w-full self-center px-4 lg:w-1/2">
-                <div class="bg-second rounded-t-3xl rounded-bl-3xl shadow-lg mb-6 w-[300px] h-[50px] px-6 py-2">
-                    <h3 class="text-xl font-semibold text-black">PROGRAM PTS & PAS</h3>
+              <div class="bg-second rounded-t-3xl rounded-bl-3xl shadow-lg mb-6 w-[282px] h-[46px] px-6 py-2">
+                <h3 class="text-xl font-semibold text-sma">PROGRAM PTS  & PAS </h3>
+              </div>
+              <h1 class="font-bold text-white lg:text-5xl text-2xl mt-4">AYO PERSIAPKAN UJIANMU DENGAN GURU YANG ASIK</h1>
+              <p class="font-normal text-white text-lg mt-4 mb-8">Mempunyai berbagai program dan cara belajar fun accelerative serta educek rutin agar siswa tau perkembangan kemampuan serta cara belajar efektif.</p>
+                <div class="flex px-2">
+                    <a href="https://wa.me/+6288232172459?text=Halo%20radian%20%0A%0ANama%20%3A%20%0AAsal%20Kota%20%3A%20%0ASekolah%20dan%20Kelas%20%3A%20%0AOrang%20Tua%20%2F%20Siswa%20%3F%20%3A%0ASaya%20mengetahui%20program%20ini%20melalui%20website%20mahasiswa%20" class="lg:text-base text-sm font-semibold text-black bg-white px-4 py-3 rounded-lg mr-6">Mulai Belajar</a>
+                    <a href="https://wa.me/+6288232172459?text=Halo%20radian%20%0A%0ANama%20%3A%20%0AAsal%20Kota%20%3A%20%0ASekolah%20dan%20Kelas%20%3A%20%0AOrang%20Tua%20%2F%20Siswa%20%3F%20%3A%0ASaya%20mengetahui%20program%20ini%20melalui%20website%20mahasiswa%20" class="lg:text-base text-sm font-semibold text-white border border-white px-4 py-3 rounded-lg">Hubungi Kami</a>
                 </div>
-                <h1 class="font-bold text-white lg:text-5xl text-3xl mt-4">AYO PERSIAPKAN UJIANMU DENGAN GURU YANG ASIK</h1>
-                <p class="font-normal text-white text-lg mt-4 mb-8">Mempunyai berbagai program dan cara belajar fun accelerativ, educek rutin agar siswa tau perkembangan kemampuan serta cara belajar efektif</p>
-                <a href="#" class="text-base font-semibold text-black bg-second py-3 px-4 rounded-lg mr-6">Mulai Belajar</a>
-                <a href="#" class="text-base font-semibold text-white border border-white px-3 py-4 rounded-lg">Hubungi Kami</a>
             </div>
 
-            <div class="w-full self-center px-4 lg:w-1/2">
+            <div class="w-full self-end px-4 lg:w-1/2">
                 <div class="relative mt-10">
                     <img src="img/sd-hero.png" alt="" class="max-w-full mx-auto lg:right-0">
                 </div>
             </div>
         </div>
     </div>
-    </section>
+  </section>
   <!-- hero section end -->
   
   <!-- alumni section start -->
-  <section id="#" class="pt-16 bg-slate-100 pb-[50px]">
-        <div class="container">
-            <div class="w-full px-4 mb-10">
-                <div class="max-w-xl mx-auto text-center">
-                    <h3 class="font-semibold text-5xl text-sd mb-0 pt-16">ALUMNI RADIAN</h3>
-                    <p class="font-normal text-lg text-black mt-0 mb-8">Beberapa generasi Radian yang berhasil lolos PTN</p>
-                </div>
+  <section id="alumni" class="pt-16 pb-36 bg-slate-100">
+    <div class="container">
+          <div class="w-full px-4 mb-10">
+            <div class="max-w-xl mx-auto text-center">
+                <h3 class="font-semibold lg:text-5xl text-2xl text-sd mb-0 pt-16">ALUMNI RADIAN</h3>
+                <p class="font-normal text-lg text-black mt-0 mb-8">Beberapa generasi Radian yang berhasil lolos PTN</p>
             </div>
-
-            <div class="flex">
-
-              <div id="slidercarousel" class="w-full overflow-hidden">
-                  <ul id="slids" class="flex w-full mr-4">
-                      <li class="mr-3">
-                          <img src="img/sd1.png" alt="" class="h-auto w-full mr-4">
-                      </li>
-                      <li class="mr-3">
-                          <img src="img/sd2.png" alt="" class="h-auto w-full mr-4">
-                      </li>
-                      <li class="mr-3">
-                          <img src="img/sd3.png" alt="" class="h-auto w-full mr-4">
-                      </li>
-                      <li class="mr-3">
-                          <img src="img/sd1.png" alt="" class="h-auto w-full mr-4">
-                      </li>
-                      <li class="mr-3">
-                        <img src="img/sd2.png" alt="" class="h-auto w-full mr-4">
+          </div>
+        <div class="flex">
+            <div id="slidercarousel" class="w-full overflow-hidden">
+                <ul id="slids" class="flex w-full">
+                    <li class="mr-3">
+                        <img src="img/sd1.png" alt="" class="h-auto w-full">
+                    </li>
+                    <li class="mr-3">
+                        <img src="img/sd2.png" alt="" class="h-auto w-full">
                     </li>
                     <li class="mr-3">
                         <img src="img/sd3.png" alt="" class="h-auto w-full">
                     </li>
-                  </ul>
-              </div>
-          </div>
-
-          <div class="flex">
-            <div class="w-full text-center">
-              <button onclick="after()" class="p-3 rounded-full bg-slate-100 border border-gray-100 shadow-lg mr-5">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-sd">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
-                    </svg>                              
-              </button>
-
-              <button onclick="before()" class="p-3 rounded-full bg-slate-100 border border-gray-100 shadow-lg mr-5">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-sd">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                    </svg>                              
-              </button>
-          </div>
-          </div>
+                    <li class="mr-3">
+                        <img src="img/sd1.png" alt="" class="h-auto w-full">
+                    </li>
+                </ul>
+            </div>
         </div>
-    </section>
+
+        <div class="flex">
+          <div class="w-full text-center">
+              <button onclick="after()" class="p-3 rounded-full bg-white border border-gray-100 shadow-lg mr-5">
+               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-sd">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15m0 0l6.75 6.75M4.5 12l6.75-6.75" />
+              </svg>                
+              </button>
+              <button onclick="before()" class="p-3 rounded-full bg-white border border-gray-100 shadow-lg mr-5">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-sd">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                    </svg>
+              </button>
+          </div>
+      </div>
+    </div>
+</section>
   <!-- alumni section end -->
 
   <!-- keunggulan section start -->
@@ -112,7 +105,7 @@
         <div class="container">
             <div class="w-full px-4">
                 <div class="max-w-full mx-auto text-center mb-16">
-                    <h1 class="text-5xl font-semibold text-sd pb-1">APA SAJA KEUNGGULAN RADIAN?</h1>
+                    <h1 class="lg:text-5xl text-2xl font-semibold text-sd pb-1">APA SAJA KEUNGGULAN RADIAN?</h1>
                     <p class="text-lg font-normal text-body pt-1 mb-12">Fasilitas serta pelayanan yang akan kamu dapatkan ketika memilih Radian</p>
                 </div>
             </div>
@@ -182,7 +175,7 @@
       <div class="container">
         <div class="w-full px-4">
           <div class="max-w-full mx-auto text-center mb-16">
-            <h2 class="font-semibold text-5xl mb-1 text-sd">KENAPA HARUS RADIAN?</h2>
+            <h2 class="font-semibold lg:text-5xl text-2xl mb-1 text-sd">KENAPA HARUS RADIAN?</h2>
             <p class="font-normal text-lg text-body mb-14">Fasilitas serta pelayanan yang akan kamu dapatkan ketika memilih Radian</p>
           </div>
         </div>
@@ -258,30 +251,30 @@
     <div class="container">
       <div class="w-full px-4 mb-10">
         <div class="max-w-full mx-auto text-center">
-          <h3 class="font-semibold text-5xl text-sd mb-0 pt-16">SAAT BELAJAR DI RADIAN</h3>
+          <h3 class="font-semibold lg:text-5xl text-2xl text-sd mb-0 pt-16">SAAT BELAJAR DI RADIAN</h3>
           <p class="font-normal text-lg text-body mt-0 mb-8">Apa saja yang mereka rasakan ketika belajar dan ikut program di Radian?</p>
         </div>
       </div>
 
       <div class="flex">
         <div id="sliderContainer" class="w-full overflow-hidden">
-          <ul id="slider" class="flex w-full mr-4">
-              <li class="mr-3">
-                  <img src="img/testisd1.png" alt="" class="h-auto w-full mr-4">
+          <ul id="slider" class="flex w-full">
+              <li>
+                  <img src="img/testisd1.png" alt="" class="h-auto w-full">
               </li>
               <li class="mr-3">
-                  <img src="img/testisd2.png" alt="" class="h-auto w-full mr-4">
+                  <img src="img/testisd2.png" alt="" class="h-auto w-full">
               </li>
               <li class="mr-3">
-                  <img src="img/testisd3.png" alt="" class="h-auto w-full mr-4">
+                  <img src="img/testisd3.png" alt="" class="h-auto w-full">
               </li>
               <li class="mr-3">
-                  <img src="img/testisd1.png" alt="" class="h-auto w-full mr-4">
+                  <img src="img/testisd1.png" alt="" class="h-auto w-full">
               </li>
               <li class="mr-3">
-                <img src="img/testisd2.png" alt="" class="h-auto w-full mr-4">
+                <img src="img/testisd2.png" alt="" class="h-auto w-full">
             </li>
-            <li>
+            <li class="mr-3">
                 <img src="img/testisd3.png" alt="" class="h-auto w-full">
             </li>
           </ul>
@@ -315,7 +308,7 @@
         <div class="w-full px-4 mb-10">
           <div class="max-w-full mx-auto text-center">
             <h5 class="text-base font-semibold text-sd mt-12 mb-1">PROGRAM</h5>
-            <h1 class="text-5xl font-semibold text-black mt-1 mb-2">Pilih Sesinya Sekarang, Yuk</h1>
+            <h1 class="lg:text-5xl text-3xl font-semibold text-black mt-1 mb-2">Pilih Sesinya Sekarang, Yuk</h1>
             <p class="text-lg font-normal text-body mt-2 mb-12">Berbagai macam program yang bisa kamu pilih untuk membantu kamu meningkatkan prestasi</p>
           </div>
         </div>
@@ -379,10 +372,12 @@
               <div class="2xl:pl-24">
                   <div class="grid items-center grid-cols-1 gap-y-12 lg:grid-cols-2 lg:gap-x-8 2xl:gap-x-20">
                       <div class="lg:order-1 order-2">
-                        <h2 class="text-5xl font-bold text-white lg:mt-12 mt-2 mb-2">SEGERA DAFTAR!</h2>
+                        <h2 class="lg:text-5xl text-2xl font-bold text-white lg:mt-12 mt-2 mb-2">SEGERA DAFTAR!</h2>
                         <p class="text-lg font-medium text-white mb-9">Tunggu Apalagi segera dapatkan Diskon Up To 30% sampai tanggal 15 September 2022</p>
-                        <a href="#" class="text-sm font-bold text-white bg-sma py-3 px-8 mr-4 rounded-lg">Daftar Segera</a>
-                        <a href="#" class="text-sm font-bold text-white border border-white py-3 px-8 rounded-lg">Konsultasi</a>
+                        <div class="flex px-2">
+                          <a href="#" class="text-sm font-bold text-white bg-sma py-3 px-8 mr-4 rounded-lg">Daftar Segera</a>
+                          <a href="#" class="text-sm font-bold text-white border border-white py-3 px-8 rounded-lg">Konsultasi</a>
+                        </div>
                       </div>
       
                       <div class="lg:absolute relative right-0 -top-10 lg:order-2 order-1">

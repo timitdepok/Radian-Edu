@@ -36,8 +36,8 @@
                 <h1 class="lg:text-5xl text-2xl font-semibold text-white mb-6">SELAMAT DATANG, DI PROGRAM LES PRIVAT KHUSUS MAHASISWA</h1>
                 <p class="text-base font-normal text-white mb-16 mt-6">Kenali lebih jauh program les privat mahasiswa dari Radian, terbuka untuk semua jurusan, semester dan mata kuliah.</p>
                 <div class="flex px-2">
-                    <a href="https://wa.me/+6288232172459?text=Halo%20radian%20%0A%0ANama%20%3A%20%0AAsal%20Kota%20%3A%20%0ASekolah%20dan%20Kelas%20%3A%20%0AOrang%20Tua%20%2F%20Siswa%20%3F%20%3A%0ASaya%20mengetahui%20program%20ini%20melalui%20website%20mahasiswa%20" class="text-base font-semibold text-black bg-white px-4 py-3 rounded-lg mr-6">Mulai Belajar</a>
-                    <a href="https://wa.me/+6288232172459?text=Halo%20radian%20%0A%0ANama%20%3A%20%0AAsal%20Kota%20%3A%20%0ASekolah%20dan%20Kelas%20%3A%20%0AOrang%20Tua%20%2F%20Siswa%20%3F%20%3A%0ASaya%20mengetahui%20program%20ini%20melalui%20website%20mahasiswa%20" class="text-base font-semibold text-white border border-white px-4 py-3 rounded-lg">Hubungi Kami</a>
+                    <a href="https://wa.me/+6288232172459?text=Halo%20radian%20%0A%0ANama%20%3A%20%0AAsal%20Kota%20%3A%20%0ASekolah%20dan%20Kelas%20%3A%20%0AOrang%20Tua%20%2F%20Siswa%20%3F%20%3A%0ASaya%20mengetahui%20program%20ini%20melalui%20website%20mahasiswa%20" class="lg:text-base text-sm font-semibold text-black bg-white px-4 py-3 rounded-lg mr-6">Mulai Belajar</a>
+                    <a href="https://wa.me/+6288232172459?text=Halo%20radian%20%0A%0ANama%20%3A%20%0AAsal%20Kota%20%3A%20%0ASekolah%20dan%20Kelas%20%3A%20%0AOrang%20Tua%20%2F%20Siswa%20%3F%20%3A%0ASaya%20mengetahui%20program%20ini%20melalui%20website%20mahasiswa%20" class="lg:text-base text-sm font-semibold text-white border border-white px-4 py-3 rounded-lg">Hubungi Kami</a>
                 </div>
             </div>
 
@@ -360,8 +360,11 @@
                     <div class="lg:order-1 order-2">
                       <h2 class="lg:text-5xl text-2xl font-bold text-white lg:mt-12 mt-2 mb-2">SEGERA DAFTAR!</h2>
                       <p class="text-lg font-medium text-white mb-9">Tunggu Apalagi segera dapatkan Diskon Up To 30% sampai tanggal 15 September 2022</p>
-                      <a href="#" class="text-sm font-bold text-white bg-sma py-3 px-8 mr-4 rounded-lg">Daftar Segera</a>
-                      <a href="#" class="text-sm font-bold text-white border border-white py-3 px-8 rounded-lg">Konsultasi</a>
+                      <div class="flex px-2">
+                        <a href="#" class="text-sm font-bold text-white bg-sma py-3 px-8 mr-4 rounded-lg">Daftar Segera</a>
+                        <a href="#" class="text-sm font-bold text-white border border-white py-3 px-8 rounded-lg">Konsultasi</a>
+                      </div>
+                      
                     </div>
     
                     <div class="lg:absolute relative right-0 -top-10 lg:order-2 order-1">
