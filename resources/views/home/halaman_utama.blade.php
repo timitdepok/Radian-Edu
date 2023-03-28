@@ -2,28 +2,31 @@
 @section('content') 
  
  <!-- navbar section start -->
-    <header>
+    <header class="fixed z-50 w-full">
         <!-- navbar 1 section -->
-        <div class="container bg-transparent top-0 left-0 w-full flex justify-between items-center z-10">
-            <div class="flex items-center w-fit">
-                <div class="px-3 flex">
-                    <img src="img/logo-radian 1.png" alt="" class="mx-4 my-2 h-[36px]">
-                </div>
-                <div class="lg:px-4 flex py-3">
-                    <span class="lg:text-base text-xs font-medium border border-secondary bg-secondary px-4 py-2 pt-2 self-center text-center text-dark rounded-lg ml-7 mb-3 lg:mb-0"><a href="/daftar/guru">Temukan Guru</a></span>
-                    <span class="lg:text-base text-xs font-medium border border-secondary bg-secondary lg:px-4 py-2 text-center text-dark rounded-lg ml-4 mr-2 lg:mr-0 mb-3 lg:mb-0"><a href="/registrasi">Daftar Sebagai Guru</a></span>
-                </div>
-            </div>
-            @auth
-            <div class="w-fit flex justify-end">
-                <a href="{{ route('profile') }}" class="flex flex-row items-center">
-                    <h1 class="text-sm mr-2 hidden sm:block">{{ auth()->user()->nama }}</h1>
-                    <div class="bg-cover bg-top w-[40px] h-[40px] overflow-hidden justify-center rounded-full">
-                        <img src="{{ asset('storage/' . auth()->user()->foto) }}" class="h-full w-full object-cover" alt="">
+        <div class="bg-white left-0 w-full flex justify-between items-center">
+            <div class="container">
+                <div class="flex items-center w-fit">
+                    <div class="px-3 flex">
+                        <img src="img/logo-radian 1.png" alt="" class="mx-4 my-2 h-[36px]">
                     </div>
-                </a>
+                    <div class="lg:px-4 flex py-3">
+                        <span class="lg:text-base text-xs font-medium border border-secondary bg-secondary px-4 py-2 pt-2 self-center text-center text-dark rounded-lg ml-7 mb-3 lg:mb-0"><a href="/daftar/guru">Temukan Guru</a></span>
+                        <span class="lg:text-base text-xs font-medium border border-secondary bg-secondary lg:px-4 py-2 text-center text-dark rounded-lg ml-4 mr-2 lg:mr-0 mb-3 lg:mb-0"><a href="/registrasi">Daftar Sebagai Guru</a></span>
+                    </div>
+                </div>
+                @auth
+                <div class="w-fit flex justify-end">
+                    <a href="{{ route('profile') }}" class="flex flex-row items-center">
+                        <h1 class="text-sm mr-2 hidden sm:block">{{ auth()->user()->nama }}</h1>
+                        <div class="bg-cover bg-top w-[40px] h-[40px] overflow-hidden justify-center rounded-full">
+                            <img src="{{ asset('storage/' . auth()->user()->foto) }}" class="h-full w-full object-cover" alt="">
+                        </div>
+                    </a>
+                </div>
+                @endauth
             </div>
-            @endauth
+            
         </div>
         <!-- navbar 1 section end -->
             <!-- navbar 2 section start -->
@@ -148,7 +151,7 @@
 <!-- navbar section end -->
 
 <!-- hero section start -->
-    <section id="home" class="pt-0 bg-gradient-to-br from-white via-white to-blue-200">
+    <section id="home" class="pt-20 bg-gradient-to-br from-white via-white to-blue-200">
         <div class="container">
             <div class="flex flex-wrap">
                 <div class="w-full self-center px-4 lg:order-1 order-2 lg:w-1/2">
@@ -157,7 +160,7 @@
                     </button>
                     <h1 class="lg:text-6xl text-3xl font-bold text-black mb-[19px] max-w-[645px] mt-1">Radian Edu, Best Partner For The Best Future</h1>
                     <p class="text-lg font-normal text-body max-w-[576px] mt-6 mb-10">Lembaga Privat, Bimbel dan Supercamp Bergaransi dengan Pengajar, Metode serta Teknologi Terbaik Guna Menuju Masa Depan Cemerlang.</p>
-                    <div class="flex">
+                    <div class="flex lg:mb-0 mb-3">
                         <a href="https://wa.me/+6281779007135?text=Halo%20radian%20%0A%0ANama%20%3A%20%0AAsal%20Kota%20%3A%20%0ASekolah%20dan%20Kelas%20%3A%20%0AOrang%20Tua%20%2F%20Siswa%20%3F%20%3A%0ASaya%20mengetahui%20program%20ini%20melalui%20website%20privatgaransi.radianedu.com%20" class="lg:text-base text-sm font-semibold text-white bg-primary rounded-lg py-3 px-2 lg:mt-14 text-center lg:mb-0 mb-2 mr-6 w-[151px] h-[48px]">Read More</a>
                         <a href="https://wa.me/+6281779007135?text=Halo%20radian%20%0A%0ANama%20%3A%20%0AAsal%20Kota%20%3A%20%0ASekolah%20dan%20Kelas%20%3A%20%0AOrang%20Tua%20%2F%20Siswa%20%3F%20%3A%0ASaya%20mengetahui%20program%20ini%20melalui%20website%20privatgaransi.radianedu.com%20" class="lg:text-base text-sm font-semibold text-black border border-black py-3 px-2 rounded-lg lg:mt-14 text-center w-[151px] h-[48px]">KONSULTASI >></a>
                     </div>
@@ -186,15 +189,16 @@
             </div>
             <div class="w-full px-4 mb-10 lg:w-1/2">
                 <div class="w-full text-right">
-                    <button onclick="next()" class="p-3 rounded-full bg-white border border-gray-100 shadow-lg mr-5">
-                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15m0 0l6.75 6.75M4.5 12l6.75-6.75" />
-                    </svg>                
+                    <button onclick="next()" class="p-3 rounded-full bg-slate-100 border border-gray-100 shadow-lg mr-5">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-primary">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+                          </svg>                              
                     </button>
-                    <button onclick="prev()" class="p-3 rounded-full bg-white border border-gray-100 shadow-lg mr-5">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
-                          </svg>
+
+                    <button onclick="prev()" class="p-3 rounded-full bg-slate-100 border border-gray-100 shadow-lg mr-5">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-primary">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                          </svg>                              
                     </button>
                 </div>
                
@@ -228,14 +232,14 @@
             <div class="flex flex-wrap">
                 <div class="w-full self-start px-4 lg:w-1/2">
                     <div class="relative mt-10">
-                        <img src="img/flat 1.png" alt="" class="max-w-full mx-auto lg:mt-9 lg:left-0">
+                        <img src="img/ABOUT.png" alt="" class="max-w-full mx-auto lg:mt-9 lg:left-0">
                     </div>
                 </div>
 
                 <div class="w-full self-center px-4 lg:w-1/2">
                     <h5 class="text-lg font-semibold text-primary md:text-lg mb-2 pt-10">ABOUT</h5>
                     <h1 class="font-bold text-dark text-5xl max-w-xs">Tentang Radian Edu</h1>
-                    <p class="font-normal text-body text-lg pt-6">Radian Edu Solution adalah sebuah lembaga yang bergerak dibidang 
+                    <p class="font-normal text-body text-lg pt-6 mb-2">Radian Edu Solution adalah sebuah lembaga yang bergerak dibidang 
                         solusi pendidikan yang mengembangkan teknologi serta metode terbaru dan ter-efektif untuk memastikan siswa/i 
                         atau lembaga partner bisa mencapai target yang diinginkan. Kami memiliki motto kerjasama "Best Partner For Accelerating
                         Your Growth". Untuk itu Radian menjadi solusi dan pilihan yang terbaik bagi pihak sekolah guna membantu mempercepat sekolah 
@@ -403,9 +407,9 @@
         <div class="container">
             <div class="flex flex-wrap">
                 <div class="w-full self-center px-4 lg:w-1/2">
-                    <h5 class="text-lg font-semibold text-primary mb-2">PROGRAM</h5>
-                    <h1 class="lg:text-5xl text-2xl font-semibold text-black mb-4 max-w-[355px]">Program Radian Edu</h1>
-                    <p class="text-lg font-normal text-body max-w-xs">Ayo pilih program terbaik sesuai dengan kebutuhanmu.</p>
+                    <h5 class="text-lg font-semibold text-primary lg:mb-2 mb-0">PROGRAM</h5>
+                    <h1 class="lg:text-5xl text-2xl font-semibold text-black lg:mb-4 mb-2 max-w-[355px]">Program Radian Edu</h1>
+                    <p class="text-lg font-normal text-body max-w-xs lg:mb-0 mb-4">Ayo pilih program terbaik sesuai dengan kebutuhanmu.</p>
                 </div>
 
                 <div class="w-full lg:w-1/2">
@@ -630,9 +634,9 @@
     <section id="tutor" class="pt-16">
         <div class="container">
             <div class="flex flex-wrap">
-                <div class="w-full px-4 mb-10 lg:w-1/2">
+                <div class="w-full px-4 lg:mb-10 lg:w-1/2">
                     <h4 class="font-bold uppercase text-primary text-lg">Tutor</h4>
-                    <h2 class="font-bold text-dark lg:text-5xl text-xl mb-5 max-w-sm">Rekomendasi Tutor Terbaik</h2>
+                    <h2 class="font-bold text-dark lg:text-5xl text-xl lg:mb-5 mb-2 max-w-sm">Rekomendasi Tutor Terbaik</h2>
                 </div>
                 
                 <div class="w-full pl-4 pr-0 lg:w-1/2 right-0">
@@ -727,11 +731,11 @@
     <section id="testi" class="pt-16 pb-36">
         <div class="container">
             <div class="flex flex-wrap">
-                <div class="w-full px-4 mb-10 lg:w-1/2">
-                    <h2 class="font-semibold text-black lg:text-5xl text-2xl mb-14">Apa Kata Mereka Tentang Radian</h2>
+                <div class="w-full px-4 lg:mb-10 lg:w-1/2">
+                    <h2 class="font-semibold text-black lg:text-5xl text-2xl lg:mb-14 mb-2">Apa Kata Mereka Tentang Radian</h2>
                 </div>
-                <div class="w-full px-4 mb-10 lg:w-1/2">
-                    <p class="font-normal text-body text-lg mb-14 max-w-md mx-auto flex">Radian telah memberikan banyak impect untuk membantu para pelajar agar mencapai target dan tujuannya.</p>
+                <div class="w-full px-4 lg:mb-10 mb-4 lg:w-1/2">
+                    <p class="font-normal text-body text-lg lg:mb-14 mb-4 max-w-md mx-auto flex">Radian telah memberikan banyak impect untuk membantu para pelajar agar mencapai target dan tujuannya.</p>
                 </div>
                 
             </div>
@@ -868,9 +872,9 @@
         <div class="container">
             <div class="flex flex-wrap">
                 <div class="w-full self-center px-4 lg:w-1/2">
-                    <h5 class="text-lg font-semibold text-primary md:text-lg mb-2 pt-10">GALLERY</h5>
-                    <h1 class="lg:text-5xl text-2xl text-dark font-semibold mb-4 max-w-xs">Gallery Radian Edu</h1>
-                    <p class="text-lg font-normal text-body max-w-xs">Sebuah perjalanan Radian untuk menghantarkan para teman-teman dalam menggapai mimpinya.</p>
+                    <h5 class="text-lg font-semibold text-primary md:text-lg lg:mb-2 mb-0 pt-10">GALLERY</h5>
+                    <h1 class="lg:text-5xl text-2xl text-dark font-semibold lg:mb-4 mb-2 max-w-xs">Gallery Radian Edu</h1>
+                    <p class="text-lg font-normal text-body lg:mb-0 mb-4 max-w-xs">Sebuah perjalanan Radian untuk menghantarkan para teman-teman dalam menggapai mimpinya.</p>
                 </div>
 
                 <div class="w-full self-center px-4 lg:w-1/2">
