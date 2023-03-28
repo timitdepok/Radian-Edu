@@ -1,29 +1,9 @@
-//hamburger
-const hamburger = document.querySelector('#hamburger');
-const navMenu = document.querySelector('#nav-menu');
-
-hamburger.addEventListener('click', function (){
-    hamburger.classList.toggle('hamburger-active');
-    navMenu.classList.toggle('hidden');
-});
-
-//navbar fixed
-window.onscroll = function() {
-    const header = document.querySelector('header');
-    const fixedNav = header.offsetTop;
-
-    if(window.pageYOffset > fixedNav) {
-        header.classList.add('navbar-fixed');
-    } else{
-        header.classList.remove('navbar-fixed');
-    }
-};
-
 
 //caraousel alumni
 let slidercarousel = document.getElementById('slidercarousel');
 let slids = document.getElementById('slids');
 let card = slids.getElementsByTagName('li');
+
 
 let elementToShow = 2;
 if(document.body.clientWidth<1000){
@@ -88,4 +68,40 @@ function prev(){
 function next() {
     if (+slider.style.marginLeft.slice(0, -3) != 0)
         slider.style.marginLeft = ((+slider.style.marginLeft.slice(0, -3)) + cardsWidth)+'px'
+}
+
+
+// carousel promo
+let slidercontainer = document.getElementById('slidercontainer');
+let slid = document.getElementById('slid');
+let cardss = slid.getElementsByTagName('li');
+
+let elementsToShow = 3;
+if(document.body.clientWidth<1000){
+    elementsToShow = 1;
+}else if(document.body.clientWidth<1500){
+    elementsToShow = 2;
+}
+
+let slidercontainerWidth = slidercontainer.clientWidth;
+
+let cardssWidth = slidercontainerWidth/elemetToShow;
+
+slid.style.width = cardss.length*cardsWidth+'px';
+slid.style.transition='margin';
+slid.style.transitionDuration='1s';
+
+for (let index = 0; index < cardss.length; index++) {
+    const element = cardss[index];
+    element.style.width = cardssWidth+'px';
+}
+
+function right(){
+    if(+slid.style.marginLeft.slice(0, -2) != -cardssWidth * (cardss.length - elemetToShow))
+        slid.style.marginLeft = ((+slid.style.marginLeft.slice(0, -2)) - cardsWidth)+'px'
+}
+
+function left() {
+    if (+slid.style.marginLeft.slice(0, -2) != 0)
+        slid.style.marginLeft = ((+slid.style.marginLeft.slice(0, -2)) + cardssWidth)+'px'
 }

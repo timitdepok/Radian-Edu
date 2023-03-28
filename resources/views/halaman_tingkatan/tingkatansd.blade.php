@@ -33,8 +33,8 @@
     <div class="container">
         <div class="flex flex-wrap">
             <div class="w-full self-center px-4 lg:w-1/2">
-              <div class="bg-second rounded-t-3xl rounded-bl-3xl shadow-lg mb-6 w-[282px] h-[46px] px-6 py-2">
-                <h3 class="text-xl font-semibold text-sma">PROGRAM PTS  & PAS </h3>
+              <div class="bg-second rounded-t-3xl rounded-bl-3xl shadow-lg mb-6 lg:w-[282px] h-[46px] w-auto px-6 py-2">
+                <h3 class="lg:text-xl text-base font-semibold text-sma">PROGRAM PTS  & PAS </h3>
               </div>
               <h1 class="font-bold text-white lg:text-5xl text-2xl mt-4">AYO PERSIAPKAN UJIANMU DENGAN GURU YANG ASIK</h1>
               <p class="font-normal text-white text-lg mt-4 mb-8">Mempunyai berbagai program dan cara belajar fun accelerative serta educek rutin agar siswa tau perkembangan kemampuan serta cara belajar efektif.</p>
@@ -84,90 +84,91 @@
 
         <div class="flex">
           <div class="w-full text-center">
-              <button onclick="after()" class="p-3 rounded-full bg-white border border-gray-100 shadow-lg mr-5">
-               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-sd">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15m0 0l6.75 6.75M4.5 12l6.75-6.75" />
-              </svg>                
-              </button>
-              <button onclick="before()" class="p-3 rounded-full bg-white border border-gray-100 shadow-lg mr-5">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-sd">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
-                    </svg>
-              </button>
-          </div>
+            <button onclick="after()" class="p-3 rounded-full bg-slate-100 border border-gray-100 shadow-lg mr-5">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-primary">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+                  </svg>                              
+            </button>
+
+            <button onclick="before()" class="p-3 rounded-full bg-slate-100 border border-gray-100 shadow-lg mr-5">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-primary">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>                              
+            </button>
+        </div>
       </div>
     </div>
 </section>
   <!-- alumni section end -->
 
   <!-- keunggulan section start -->
-  <section id="#" class="pt-16 pb-12">
-        <div class="container">
-            <div class="w-full px-4">
-                <div class="max-w-full mx-auto text-center mb-16">
-                    <h1 class="lg:text-5xl text-2xl font-semibold text-sd pb-1">APA SAJA KEUNGGULAN RADIAN?</h1>
-                    <p class="text-lg font-normal text-body pt-1 mb-12">Fasilitas serta pelayanan yang akan kamu dapatkan ketika memilih Radian</p>
-                </div>
-            </div>
-
-            <div class="flex flex-wrap">
-
-                <div class="w-full px-4 lg:w-1/2">
-                    <div class="mb-4 relative">
-                        <div class="absolute align-middle rounded-full bg-sd w-12 h-12 flex justify-center items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
-                            </svg>
-                        </div>
-                        <div class="inline-block align-middle pl-6 ml-10">
-                            <h2 class="text-2xl font-semibold text-black mb-2">Garansi Tukar Guru</h2>
-                            <p class="text-base font-normal text-body">Tidak perlu takut merasa tidak nyaman oleh guru yang kami sediakan, karna kami menyediakan garansi tukar guru hingga kamu merasa pas</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="w-full px-4 lg:w-1/2">
-                  <div class="mb-4 relative">
-                    <div class="absolute align-middle rounded-full bg-sd w-12 h-12 flex justify-center items-center">
-                      <ion-icon name="library" class="text-white"></ion-icon>
-                    </div>
-                    <div class="inline-block align-middle pl-6 ml-10">
-                      <h2 class="text-2xl font-semibold text-black mb-2">FREE TRY OUT</h2>
-                      <p class="text-base font-normal text-body">Radian menyediakan Try Out gratis setiap bulannya untuk kamu yang ingin mencoba salah satu program Radian</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="w-full px-4 lg:w-1/2">
-                  <div class="mb-4 relative">
-                    <div class="absolute align-middle rounded-full bg-sd w-12 h-12 flex justify-center items-center">
-                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
-                      </svg>
-                    </div>
-                    <div class="inline-block align-middle pl-6 ml-10">
-                      <h2 class="text-2xl font-semibold text-black mb-2">JADWAL YANG FLEXIBEL </h2>
-                      <p class="text-base font-normal text-body">Jadwal yang flexibel akan membantu siswa membagi waktunya dengan pelajaran di sekolah, dan tidak mengganggu kegiatan di luar sekolah.</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="w-full px-4 lg:w-1/2">
-                  <div class="mb-4 relative">
-                    <div class="absolute align-middle rounded-full bg-sd w-12 h-12 flex justify-center items-center">
-                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" viewBox="0 0 20 20" fill="currentColor">
-                        <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z" />
-                      </svg>
-                    </div>
-                    <div class="inline-block align-middle pl-6 ml-10">
-                      <h2 class="text-2xl font-semibold text-black mb-2">GURU YANG BERPENGALAMAN</h2>
-                      <p class="text-base font-normal text-body">Guru - guru yang ada di radian memiliki pengalaman untuk mengajar kamu, tidak hanya itu loh guru Radian juga lulusan PTN</p>
-                    </div>
-                  </div>
-                </div>
+  <section id="#" class="pt-16">
+    <div class="container">
+        <div class="w-full px-4">
+            <div class="max-w-full mx-auto text-center mb-16">
+                <h1 class="lg:text-5xl text-2xl font-semibold text-sd pb-1">APA SAJA KEUNGGULAN RADIAN?</h1>
+                <p class="text-lg font-normal text-body pt-1 mb-12">Fasilitas serta pelayanan yang akan kamu dapatkan ketika memilih Radian </p>
             </div>
         </div>
-  </section>
+
+        <div class="flex flex-wrap">
+
+            <div class="w-full px-4 lg:w-1/2">
+                <div class="mb-4 relative">
+                    <div class="absolute align-middle rounded-full bg-sd lg:w-12 lg:h-12 w-10 h-10 flex justify-center items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="lg:w-6 lg:h-6 w-4 h-4 text-white">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
+                        </svg>
+                    </div>
+                    <div class="inline-block align-middle pl-6 ml-10">
+                        <h2 class="lg:text-2xl text-xl font-semibold text-black mb-2">GARANSI TUKAR GURU</h2>
+                        <p class="lg:text-base text-sm font-normal text-body">Tidak perlu takut merasa tidak nyaman oleh guru yang kami sediakan, karna kami menyediakan garansi tukar guru hingga kamu merasa pas</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full px-4 lg:w-1/2">
+              <div class="mb-4 relative">
+                <div class="absolute align-middle rounded-full bg-sd lg:w-12 lg:h-12 w-10 h-10 flex justify-center items-center">
+                  <ion-icon name="library" class="text-white"></ion-icon>
+                </div>
+                <div class="inline-block align-middle pl-6 ml-10">
+                  <h2 class="lg:text-2xl text-xl font-semibold text-black mb-2">FREE TRY OUT</h2>
+                  <p class="lg:text-base text-sm font-normal text-body">Radian menyediakan Try out gratis setiap bulannya untuk kamu yang ingin mencoba salah satu program radian </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="w-full px-4 lg:w-1/2">
+              <div class="mb-4 relative">
+                <div class="absolute align-middle rounded-full bg-sd lg:w-12 lg:h-12 w-10 h-10 flex justify-center items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="lg:h-5 lg:w-5 h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                  </svg>
+                </div>
+                <div class="inline-block align-middle pl-6 ml-10">
+                  <h2 class="lg:text-2xl text-xl font-semibold text-black mb-2">JADWAL YANG FLEXIBEL</h2>
+                  <p class="lg:text-base text-sm font-normal text-body">Jadwal yang flexibel akan membantu siswa membagi waktunya dengan pembelajaran di sekolah, dan tidak mengganggu kegiatan di luar sekolah.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="w-full px-4 lg:w-1/2">
+              <div class="mb-4 relative">
+                <div class="absolute align-middle rounded-full bg-sd lg:w-12 lg:h-12 w-10 h-10 flex justify-center items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="lg:h-5 lg:w-5 w-3 h-3 text-white" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z" />
+                  </svg>
+                </div>
+                <div class="inline-block align-middle pl-6 ml-10">
+                  <h2 class="lg:text-2xl text-xl font-semibold text-black mb-2">GURU YANG BERPENGALAMAN</h2>
+                  <p class="lg:text-base text-sm font-normal text-body">Guru-guru yang ada di Radian memiliki pengalaman untuk mengajar kamu, tidak hanya itu loh guru Radian juga lulusan PTN</p>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+</section>
   <!-- keunggulan section end -->
 
   <!-- kelebihan section start -->
@@ -257,7 +258,7 @@
       </div>
 
       <div class="flex">
-        <div id="sliderContainer" class="w-full overflow-hidden">
+        <div id="slidercontainer" class="w-full overflow-hidden">
           <ul id="slider" class="flex w-full">
               <li>
                   <img src="img/testisd1.png" alt="" class="h-auto w-full">
@@ -284,13 +285,13 @@
       <div class="flex">
         <div class="w-full text-center">
           <button onclick="next()" class="p-3 rounded-full bg-slate-100 border border-gray-100 shadow-lg mr-5">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-sd">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-primary">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
                 </svg>                              
           </button>
 
           <button onclick="prev()" class="p-3 rounded-full bg-slate-100 border border-gray-100 shadow-lg mr-5">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-sd">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-primary">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                 </svg>                              
           </button>
@@ -367,26 +368,26 @@
 
   <!-- daftar section start -->
   <section id="daftar" class="pb-20 pt-16">
-      <div class="container">
-          <div class="pl-4 mx-auto bg-gradient-to-r from-orange to-second lg:w-[1227px] lg:h-[306px] h-[700px] rounded-3xl sm:pl-6 lg:pl-8 relative">
-              <div class="2xl:pl-24">
-                  <div class="grid items-center grid-cols-1 gap-y-12 lg:grid-cols-2 lg:gap-x-8 2xl:gap-x-20">
-                      <div class="lg:order-1 order-2">
-                        <h2 class="lg:text-5xl text-2xl font-bold text-white lg:mt-12 mt-2 mb-2">SEGERA DAFTAR!</h2>
-                        <p class="text-lg font-medium text-white mb-9">Tunggu Apalagi segera dapatkan Diskon Up To 30% sampai tanggal 15 September 2022</p>
-                        <div class="flex px-2">
-                          <a href="#" class="text-sm font-bold text-white bg-sma py-3 px-8 mr-4 rounded-lg">Daftar Segera</a>
-                          <a href="#" class="text-sm font-bold text-white border border-white py-3 px-8 rounded-lg">Konsultasi</a>
-                        </div>
+    <div class="container">
+        <div class="pl-4 mx-auto bg-gradient-to-r from-orange to-second lg:w-[1227px] lg:h-[306px] h-[700px] rounded-3xl sm:pl-6 lg:pl-8 relative">
+            <div class="2xl:pl-24">
+                <div class="grid items-center grid-cols-1 gap-y-12 lg:grid-cols-2 lg:gap-x-8 2xl:gap-x-20">
+                    <div class="lg:order-1 order-2">
+                      <h2 class="lg:text-5xl text-2xl font-bold text-white lg:mt-12 mt-2 mb-2">SEGERA DAFTAR!</h2>
+                      <p class="text-lg font-medium text-white mb-9">Tunggu Apalagi segera dapatkan Diskon Up To 30% sampai tanggal 15 September 2022</p>
+                      <div class="flex px-2">
+                        <a href="#" class="text-sm font-bold text-white bg-sma py-3 lg:px-8 px-6 mr-4 rounded-lg">Daftar Segera</a>
+                        <a href="#" class="text-sm font-bold text-white border border-white py-3 lg:px-8 px-6 rounded-lg">Konsultasi</a>
                       </div>
-      
-                      <div class="lg:absolute relative right-0 -top-10 lg:order-2 order-1">
-                          <img class="w-[338px] h-[334px] right-0 text-right" src="img/daftar.png" alt="">
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
+                    </div>
+    
+                    <div class="lg:absolute relative right-0 -top-10 lg:order-2 order-1">
+                        <img class="w-[338px] h-[334px] right-0 text-right" src="img/daftar.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
   </section>
   <!-- daftar section end -->
 
