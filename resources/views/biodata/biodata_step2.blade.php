@@ -35,7 +35,7 @@
         <div class="flex flex-wrap notebook:flex-nowrap justify-between mb-[90px]">
           <div class="w-full notebook:w-fit notebook:mb-0 mb-6 flex flex-col">
             <h1 class="mb-0 notebook:mb-4 text-black font-semibold text-[42px]">Upload File</h1>
-            <p class="font-normal text-bodyText notebook:max-w-[350px] text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p class="font-normal text-bodyText notebook:max-w-[350px] text-lg">Upload File Foto dan CV maximal 2 mb </p>
           </div>
           <div class="flex-grow notebook:max-w-[550px]">
             
@@ -64,7 +64,7 @@
         <div class="flex flex-wrap notebook:flex-nowrap justify-between mb-[90px]">
           <div class="notebook:w-fit notebook:mb-0 mb-6 flex flex-col">
             <h1 class="mb-0 notebook:mb-4 text-black font-semibold text-[42px]">Personal Info</h1>
-            <p class="font-normal text-bodyText w-full notebook:max-w-[350px] text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p class="font-normal text-bodyText w-full notebook:max-w-[350px] text-lg">Personal Info hanya digunakan untuk kepentingan daftar guru/tutor di Radian</p>
           </div>
           <div class="flex-grow notebook:max-w-[550px]">
             
@@ -136,7 +136,7 @@
         <div class="flex flex-wrap notebook:flex-nowrap justify-between mb-[90px]">
           <div class="notebook:w-fit notebook:mb-0 mb-6 flex flex-col">
             <h1 class="mb-0 notebook:mb-4 text-black font-semibold text-[42px]">Education Info</h1>
-            <p class="font-normal text-bodyText w-full notebook:max-w-[350px] text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p class="font-normal text-bodyText w-full notebook:max-w-[350px] text-lg">Education Info dibutuhkan untuk bahan pertimbangan kami terhadap guru/tutor yang mendaftar</p>
           </div>
           <div class="flex-grow notebook:max-w-[550px]">
 
@@ -202,7 +202,7 @@
         <div class="flex flex-wrap notebook:flex-nowrap justify-between mb-[90px]">
           <div class="notebook:w-fit notebook:mb-0 mb-6 flex flex-col">
             <h1 class="mb-0 notebook:mb-4 text-black font-semibold text-[42px]">Domicile Info</h1>
-            <p class="font-normal text-bodyText w-full notebook:max-w-[350px] text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p class="font-normal text-bodyText w-full notebook:max-w-[350px] text-lg">Silahkan diisi berdasarkan kamu tinggal saat ini</p>
           </div>
           <div class="flex-grow notebook:max-w-[550px]">
             
@@ -287,7 +287,7 @@
         <div class="flex flex-wrap notebook:flex-nowrap justify-between mb-[90px]">
             <div class="notebook:w-fit notebook:mb-0 mb-6 flex flex-col">
               <h1 class="mb-0 notebook:mb-4 w-fit notebook:max-w-[350px] text-black font-semibold text-[42px]">Experience</h1>
-              <p class="font-normal text-bodyText w-full notebook:max-w-[350px] text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+              <p class="font-normal text-bodyText w-full notebook:max-w-[350px] text-lg">Pengisian pengalaman bekerja/mengajar dapat diisi lebih dari satu</p>
             </div>
             <div class="flex-grow notebook:max-w-[550px]">
                 <div class="w-full divide-y divide-primaryInp">
@@ -405,7 +405,7 @@
         <div class="flex flex-wrap notebook:flex-nowrap justify-between mb-[90px]">
           <div class="notebook:w-fit notebook:mb-0 mb-6 flex flex-col">
             <h1 class="mb-0 notebook:mb-4 w-fit notebook:max-w-[350px] text-black font-semibold text-[42px]">Domicile Mengajar</h1>
-            <p class="font-normal text-bodyText w-full notebook:max-w-[350px] text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p class="font-normal text-bodyText w-full notebook:max-w-[350px] text-lg">Domicile mengajar digunakan untuk lokasi kamu siap mengajar dan boleh diisi lebih dari satu</p>
           </div>
           <div class="flex-grow notebook:max-w-[550px]">
             
@@ -507,7 +507,7 @@
         <div class="flex flex-wrap notebook:flex-nowrap justify-between mb-[90px]">
           <div class="notebook:w-fit notebook:mb-0 mb-6 flex flex-col">
             <h1 class="mb-0 notebook:mb-4 w-fit notebook:max-w-[350px] text-black font-semibold text-[42px]">Minat Mengajar</h1>
-            <p class="font-normal text-bodyText w-full notebook:max-w-[350px] text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p class="font-normal text-bodyText w-full notebook:max-w-[350px] text-lg">Pengisian minat mengajar dapat diisi lebih dari satu </p>
           </div>
           <div class="flex-grow notebook:max-w-[550px]">
             
@@ -734,7 +734,17 @@
             {{-- posisi yang dilamar --}}
             <div class="mb-4">
               <label for="posisi_dilamar" class="block mb-2 text-base font-semibold text-gray-900 after:content-['*'] after:text-red-600 after:ml-1 after:text-sm">Posisi yang dilamar</label>
-              <input type="text" name="posisi_dilamar" id="posisi_dilamar" class="h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none @error('posisi_dilamar') border-primarySD @else border-primaryInp @enderror border rounded-md bg-white" value="{{ old('posisi_dilamar') }}" required>
+              <div class="block relative">
+                <div class="rounded-r-md absolute bg-white border-t border-r border-b @error('posisi_dilamar') border-primarySD @else border-primaryInp @enderror pr-4 flex items-center justify-center right-0 h-full">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
+                  </svg>                  
+                </div>
+                <select name="posisi_dilamar" id="posisi_dilamar" class="appearance-none h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none @error('posisi_dilamar') border-primarySD @else border-primaryInp @enderror  border rounded-md bg-white" required>
+                  <option style="display: none;" value=""></option>
+                  <option @if(old("posisi_dilamar") == "Tutor" ) selected @endif value="Tutor">Tutor</option>
+                </select>
+              </div>
               @error("posisi_dilamar")
                 <p class="text-sm font-normal mt-1 text-primarySD">{{ $message }}</p>
               @enderror
@@ -821,10 +831,74 @@
 
 </section>
 
-<footer class="w-full h-[222px] bg-black py-10 font-poppins">
-  <h1 class="text-3xl text-white mx-auto w-fit">INI FOOTER</h1>
-</footer>
+<footer id="#" class="bg-footer pt-16 pb-12">
+  <div class="container">
+      <div class="flex flex-wrap">
 
+          <div class="w-full px-4 md:w-1/4">
+              <img src="img/logo.png" alt="" class="mb-4">
+              <p class="text-base font-normal text-text">Jl. Akses UI No. 99, Perkantoran Wisma Kencana Putri</p>
+              <p class="text-base font-normal text-text">Kecamatan Tugu - Cimanggis</p>
+              <p class="text-base font-normal text-text">Kota Depok - 16451.</p>
+          </div>
+
+          <div class="w-full px-4 md:w-1/4">
+              <h3 class="font-semibold text-base text-text mb-6">COMPANY</h3>
+              <ul class="text-black">
+                  <li>
+                      <a href="#" class="inline-block text-base hover:text-primary mb-6">About</a>
+                  </li>
+                  <li>
+                      <a href="#" class="inline-block text-base hover:text-primary mb-6">Supercamp</a>
+                  </li>
+                  <li>
+                      <a href="#" class="inline-block text-base hover:text-primary mb-6">Daftar Tutor</a>
+                  </li>
+                  <li>
+                      <a href="#" class="inline-block text-base hover:text-primary mb-6">Student Registration</a>
+                  </li>
+                  <li>
+                      <a href="#" class="inline-block text-base hover:text-primary mb-6">Cari Tutor</a>
+                  </li>
+              </ul>
+          </div>
+
+          <div class="w-full px-4 md:w-1/4">
+              <h3 class="font-semibold text-base text-text mb-6">HELP</h3>
+              <ul class="text-black">
+                  <li>
+                      <a href="#" class="inline-block text-base hover:text-primary mb-6">Customer Support</a>
+                  </li>
+                  <li>
+                      <a href="#" class="inline-block text-base hover:text-primary mb-6">Delivery Details</a>
+                  </li>
+                  <li>
+                      <a href="#" class="inline-block text-base hover:text-primary mb-6">Terms & Conditions</a>
+                  </li>
+                  <li>
+                      <a href="#" class="inline-block text-base hover:text-primary mb-6">Privacy Policy</a>
+                  </li>
+              </ul>
+          </div>
+
+          <div class="w-full px-4 mb-12 md:w-1/4">
+              <h3 class="font-semibold text-base text-text mb-7">RADIAN NEWS</h3>
+              <div class="w-full mb-8">
+                  <form action="" class="w-full max-w-md">
+                      <div class="relative flex text-text">
+                         <input type="email" name="email" placeholder="Enter Your Email Address" autocomplete="off" aria-label="Enter Your Email Address" class="w-full p-3 font-normal rounded-lg"> 
+                      </div>
+                  </form>
+              </div>
+              <button class="text-base font-semibold border-black bg-primary px-4 py-2 text-center text-white rounded-lg mb-16" href="#">Subscribe Now</button>
+          </div>
+
+          <div class="w-full pt-10 border-t border-text">
+              <p class="font-normal text-sm text-center text-black">© Copyright 2023, All Rights Reserved by Yayasan Radian Solusi Indonesia</p>
+          </div>
+      </div>
+  </div>
+</footer>
 
 {{-- javascript  --}}
 <script>
