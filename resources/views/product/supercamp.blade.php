@@ -218,8 +218,8 @@
     <div class="container">
         <div class="flex flex-wrap">
             <div class="w-full self-center px-4 order-2 lg:order-1 lg:w-1/2">
-                <h5 class="text-lg font-semibold text-primary">PROGRAM UNGGULAN</h5>
-                <h1 class="lg:text-5xl text-2xl font-semibold text-black mt-2">Pelajari Dua Program Unggul di Radian</h1>
+                <h5 class="text-lg font-semibold text-primary lg:mb-0 mb-2">PROGRAM UNGGULAN</h5>
+                <h1 class="lg:text-5xl text-2xl font-semibold text-black mt-2 lg:mb-0 mb-3">Pelajari Dua Program Unggul di Radian</h1>
                 <p class="text-lg font-normal text-body mt-6">Kenali lebih dalam program-program bergaransi Radian Edu Solution. Program tersebut antara lain Privat Garansi dan Camp Garansi. 
                 </p>
                 <div class="flex flex-wrap pt-4">
@@ -476,26 +476,11 @@
 <section id="#" class="pt-16 mb-24">
     <div class="container">
         <div class="flex flex-wrap">
-            <div class="w-full px-4 mb-10 lg:w-1/3">
-                <h2 class="font-semibold text-black lg:text-5xl text-2xl mb-14">Apa Kata Mereka Tentang Radian</h2>
+            <div class="w-full px-4 lg:mb-10 lg:w-1/2">
+                <h2 class="font-semibold text-black lg:text-5xl text-2xl lg:mb-14 mb-4">Apa Kata Mereka Tentang Radian</h2>
             </div>
-            <div class="w-full px-4 mb-10 lg:w-1/3">
+            <div class="w-full px-4 lg:mb-10 lg:w-1/2">
                 <p class="font-normal text-body text-lg mb-14 max-w-md">Radian telah memberikan banyak impect untuk membantu para pelajar agar mencapai target dan tujuannya.</p>
-            </div>
-            <div class="w-full px-4 mb-10 lg:w-1/3">
-                <div class="w-full text-right">
-                    <button onclick="after()" class="p-3 rounded-full bg-slate-100 border border-gray-100 shadow-lg mr-5">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-primary">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
-                          </svg>                              
-                    </button>
-
-                    <button onclick="before()" class="p-3 rounded-full bg-slate-100 border border-gray-100 shadow-lg mr-5">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-primary">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                          </svg>                              
-                    </button>
-                </div>
             </div>
         </div>
 
@@ -589,6 +574,22 @@
                 </ul>
             </div>
         </div>
+
+        <div class="flex">
+            <div class="w-full text-center">
+                <button onclick="after()" class="p-3 rounded-full bg-slate-100 border border-gray-100 shadow-lg mr-5">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-primary">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+                      </svg>                              
+                </button>
+
+                <button onclick="before()" class="p-3 rounded-full bg-slate-100 border border-gray-100 shadow-lg mr-5">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-primary">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                      </svg>                              
+                </button>
+            </div>
+        </div>
     </div>
 </section>
 <!-- testimoni section end -->
@@ -625,10 +626,10 @@
     <div class="container">
         <div class="flex flex-wrap">
             <div class="w-full self-start lg:w-1/2">
-                <h1 class="text-black lg:text-5xl text-2xl font-semibold mt-44 mb-20">Masih Bingung Mulai Belajar Dari Mana?</h1>
+                <h1 class="text-black lg:text-5xl text-2xl font-semibold mt-44 lg:mb-20 mb-4">Masih Bingung Mulai Belajar Dari Mana?</h1>
             </div>
             <div class="w-full lg:text-right lg:w-1/2">
-                <button class="text-base text-white font-medium border bg-primary px-4 py-2 rounded-lg items-center lg:mt-52 mt-5"><a href="https://wa.me/+6281779007135?text=Halo%20radian%20%0A%0ANama%20%3A%20%0AAsal%20Kota%20%3A%20%0ASekolah%20dan%20Kelas%20%3A%20%0AOrang%20Tua%20%2F%20Siswa%20%3F%20%3A%0ASaya%20mengetahui%20program%20ini%20melalui%20website%20supercamp%20">Daftar Sekarang</a></button>
+                <button class="text-base text-white font-medium border bg-primary px-4 py-2 rounded-lg items-center lg:mt-52 mt-5 lg:mb-0 mb-4"><a href="https://wa.me/+6281779007135?text=Halo%20radian%20%0A%0ANama%20%3A%20%0AAsal%20Kota%20%3A%20%0ASekolah%20dan%20Kelas%20%3A%20%0AOrang%20Tua%20%2F%20Siswa%20%3F%20%3A%0ASaya%20mengetahui%20program%20ini%20melalui%20website%20supercamp%20">Daftar Sekarang</a></button>
             </div>
         </div>
     </div>

@@ -472,10 +472,10 @@
 <section id="#" class="pt-16 mb-24">
     <div class="container">
         <div class="flex flex-wrap">
-            <div class="w-full px-4 mb-10 lg:w-1/2">
-                <h2 class="font-semibold text-black lg:text-5xl text-2xl mb-14">Apa Kata Mereka Tentang Radian</h2>
+            <div class="w-full px-4 lg:mb-10 lg:w-1/2">
+                <h2 class="font-semibold text-black lg:text-5xl text-2xl lg:mb-14 mb-4">Apa Kata Mereka Tentang Radian</h2>
             </div>
-            <div class="w-full px-4 mb-10 lg:w-1/2">
+            <div class="w-full px-4 lg:mb-10 lg:w-1/2">
                 <p class="font-normal text-body text-lg mb-14 max-w-md">Radian telah memberikan banyak impect untuk membantu para pelajar agar mencapai target dan tujuannya.</p>
             </div>
         </div>
