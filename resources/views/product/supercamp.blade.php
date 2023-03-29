@@ -38,8 +38,11 @@
                 </button>
                 <h1 class="font-bold text-2xl lg:text-3xl mt-1">Bimbingan Ujian Masuk Perguruan Tinggi Negri & Kedinasan Terbaik di Seluruh Indonesia</h1>
                 <p class="font-normal text-sm lg:text-lg text-text mt-4 mb-5">Bimbingan intensif karantina yang dilaksanakan 30 hari menjelang kegiatan UTBK berlangsung. Kami siap menjadi support sistem utama menghantarkan siswa/i lolos ke PTN impian.</p>
-                <a href="#pro-unggul" class="text-sm font-normal text-white bg-primary py-3 px-8 rounded-lg">Lihat Program</a>
-                <a href="https://wa.me/+6281779007135?text=Halo%20radian%20%0A%0ANama%20%3A%20%0AAsal%20Kota%20%3A%20%0ASekolah%20dan%20Kelas%20%3A%20%0AOrang%20Tua%20%2F%20Siswa%20%3F%20%3A%0ASaya%20mengetahui%20program%20ini%20melalui%20website%20supercamp%20" class="text-sm font-normal text-primary border-2 border-primary/100 py-3 px-8 rounded-lg">Konsultasi</a>
+                <div class="flex px-2">
+                    <a href="#pro-unggul" class="text-sm font-normal text-white bg-primary py-3 lg:px-8 px-4 mr-4 rounded-lg">Lihat Program</a>
+                    <a href="https://wa.me/+6281779007135?text=Halo%20radian%20%0A%0ANama%20%3A%20%0AAsal%20Kota%20%3A%20%0ASekolah%20dan%20Kelas%20%3A%20%0AOrang%20Tua%20%2F%20Siswa%20%3F%20%3A%0ASaya%20mengetahui%20program%20ini%20melalui%20website%20supercamp%20" class="text-sm font-normal text-primary border-2 border-primary/100 py-3 lg:px-8 px-4 rounded-lg">Konsultasi</a>
+                </div>
+                
             </div>
 
             <div class="w-full self-start px-4 lg:w-1/2 lg:order-2 order-1">
@@ -58,7 +61,7 @@
     <div class="container">
        <div class="w-full px-4">
             <div class="max-w-3xl mx-auto text-center items-center mb-16">
-                <h1 class="font-semibold text-5xl max-w-2xl text-black text-center">
+                <h1 class="font-semibold lg:text-5xl text-2xl max-w-2xl text-black text-center">
                     Program Supercamp Garansi Di Radian 
                 </h1>
                 <p class="font-normal text-lg text-sma md:text-lg pt-4">
@@ -134,7 +137,7 @@
 <!-- program section end  -->
 
 <!-- program kedokteran section start -->
-<section id="dokter" class="pt-16">
+<section id="dokter" class="pt-16 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-blue-100 via-white to-white">
     <div class="container">
         <div class="flex flex-wrap">
             <div class="w-full self-start px-4 lg:w-1/2">
@@ -145,13 +148,13 @@
 
             <div class="w-full self-center px-4 lg:w-1/2">
                 <h5 class="text-lg font-semibold text-primary mb-2 pt-10 lg:mt-0 mt-3">PROGRAM</h5>
-                <h1 class="lg:text-5xl text-3xl font-semibold text-black max-w-lg">Program Garansi Kedokteran</h1>
+                <h1 class="lg:text-5xl text-2xl font-semibold text-black max-w-lg">Program Garansi Kedokteran</h1>
                 <p class="text-lg font-normal text-body pt-6 lg:mb-[143px] mb-7">
                     Wujudkan mimpi untuk memasuki Fakultas Kedokteran dengan mengikuti Supercamp Radian Edu Solution. Supercamp membantu siswa/i agar bisa masuk Fakultas Kedokteran Universitas favorit di Indonesia.
                 </p>
                 <div class="flex">
-                    <a href="https://wa.me/+6281779007135?text=Halo%20radian%20%0A%0ANama%20%3A%20%0AAsal%20Kota%20%3A%20%0ASekolah%20dan%20Kelas%20%3A%20%0AOrang%20Tua%20%2F%20Siswa%20%3F%20%3A%0ASaya%20mengetahui%20program%20ini%20melalui%20website%20privatgaransi.radianedu.com%20" class="text-base font-semibold text-white bg-primary rounded-lg py-3 px-2 lg:mt-14 text-center lg:mb-0 mb-2 mr-6 w-[151px] h-[48px]">DAFTAR PRIVAT</a>
-                    <a href="https://wa.me/+6281779007135?text=Halo%20radian%20%0A%0ANama%20%3A%20%0AAsal%20Kota%20%3A%20%0ASekolah%20dan%20Kelas%20%3A%20%0AOrang%20Tua%20%2F%20Siswa%20%3F%20%3A%0ASaya%20mengetahui%20program%20ini%20melalui%20website%20privatgaransi.radianedu.com%20" class="text-base font-semibold text-primary border border-primary py-3 px-2 rounded-lg lg:mt-14 text-center w-[151px] h-[48px]">KONSULTASI</a>
+                    <a href="https://wa.me/+6281779007135?text=Halo%20radian%20%0A%0ANama%20%3A%20%0AAsal%20Kota%20%3A%20%0ASekolah%20dan%20Kelas%20%3A%20%0AOrang%20Tua%20%2F%20Siswa%20%3F%20%3A%0ASaya%20mengetahui%20program%20ini%20melalui%20website%20privatgaransi.radianedu.com%20" class="lg:text-base text-xs font-semibold text-white bg-primary rounded-lg py-3 px-2 lg:mt-14 text-center self-center lg:mb-0 mb-2 mr-6 w-[151px] h-[48px]">DAFTAR PRIVAT</a>
+                    <a href="https://wa.me/+6281779007135?text=Halo%20radian%20%0A%0ANama%20%3A%20%0AAsal%20Kota%20%3A%20%0ASekolah%20dan%20Kelas%20%3A%20%0AOrang%20Tua%20%2F%20Siswa%20%3F%20%3A%0ASaya%20mengetahui%20program%20ini%20melalui%20website%20privatgaransi.radianedu.com%20" class="lg:text-base text-sm font-semibold text-primary border border-primary py-3 px-2 rounded-lg lg:mt-14 text-center w-[151px] h-[48px]">KONSULTASI</a>
                 </div>
             </div>
         </div>
@@ -160,17 +163,17 @@
 <!-- program kedokteran section end -->
 
 <!-- program kedinasan section start -->
-<section id="dinas" class="pt-16">
+<section id="dinas" class="pt-16 bg-gradient-to-tl from-red-100 via-white to-white">
     <div class="container">
         <div class="flex flex-wrap">
             <div class="w-full self-center px-4 order-2 lg:order-1 lg:w-1/2">
                 <h5 class="text-lg font-semibold text-primary mb-2 pt-10 lg:mt-0 mt-3">PROGRAM</h5>
-                <h1 class="lg:text-5xl text-3xl font-semibold text-black max-w-lg">Program Garansi Kedinasan</h1>
+                <h1 class="lg:text-5xl text-2xl font-semibold text-black max-w-lg">Program Garansi Kedinasan</h1>
                 <p class="text-lg font-normal text-body pt-6 lg:mb-[143px] mb-7">
                     Radian Edu Solution menggaransi siswa/i agar bisa masuk ke Sekolah Kedinasan di Indonesia. Dengan berbagai fasilitas yang disediakan, Radian Edu Solution berkomitmen untuk mencerahkan masa depan siswa/i Indonesia.
                 </p>
                 <div class="flex">
-                    <a href="https://wa.me/+6281779007135?text=Halo%20radian%20%0A%0ANama%20%3A%20%0AAsal%20Kota%20%3A%20%0ASekolah%20dan%20Kelas%20%3A%20%0AOrang%20Tua%20%2F%20Siswa%20%3F%20%3A%0ASaya%20mengetahui%20program%20ini%20melalui%20website%20privatgaransi.radianedu.com%20" class="text-base font-semibold text-white bg-primary rounded-lg py-3 px-2 lg:mt-14 text-center lg:mb-0 mb-2 mr-6 w-[151px] h-[48px]">DAFTAR PRIVAT</a>
+                    <a href="https://wa.me/+6281779007135?text=Halo%20radian%20%0A%0ANama%20%3A%20%0AAsal%20Kota%20%3A%20%0ASekolah%20dan%20Kelas%20%3A%20%0AOrang%20Tua%20%2F%20Siswa%20%3F%20%3A%0ASaya%20mengetahui%20program%20ini%20melalui%20website%20privatgaransi.radianedu.com%20" class="lg:text-base text-xs font-semibold text-white bg-primary rounded-lg py-3 px-2 lg:mt-14 text-center lg:mb-0 mb-2 mr-6 w-[151px] h-[48px]">DAFTAR PRIVAT</a>
                     <a href="https://wa.me/+6281779007135?text=Halo%20radian%20%0A%0ANama%20%3A%20%0AAsal%20Kota%20%3A%20%0ASekolah%20dan%20Kelas%20%3A%20%0AOrang%20Tua%20%2F%20Siswa%20%3F%20%3A%0ASaya%20mengetahui%20program%20ini%20melalui%20website%20privatgaransi.radianedu.com%20" class="text-base font-semibold text-primary border border-primary py-3 px-2 rounded-lg lg:mt-14 text-center w-[151px] h-[48px]">KONSULTASI</a>
                 </div>
             </div>
@@ -186,7 +189,7 @@
 <!-- program kedinasan section end -->
 
 <!-- program ptn section start -->
-<section id="ptn" class="pt-16 pb-14">
+<section id="ptn" class="pt-16 pb-14 bg-gradient-to-bl from-red-100 via-white to-blue-100">
     <div class="container">
         <div class="flex flex-wrap">
             <div class="w-full self-start px-4 lg:w-1/2">
@@ -196,12 +199,12 @@
             </div>
             <div class="w-full self-start px-4 lg:w-1/2">
                 <h5 class="text-lg font-semibold text-primary mb-2 pt-10 lg:mt-0 mt-3">PROGRAM</h5>
-                <h1 class="lg:text-5xl text-3xl font-semibold text-black max-w-lg">Program Garansi PTN Favorit</h1>
+                <h1 class="lg:text-5xl text-2xl font-semibold text-black max-w-lg">Program Garansi PTN Favorit</h1>
                 <p class="text-lg font-normal text-body pt-6 lg:mb-[143px] mb-7">
                     Garansi PTN favorit di Radian Edu Solution menjamin siswa/i untuk bisa masuk di PTN favorit di Indonesia, antara lain UI, UGM, ITB, IPB, ITS, UNAIR, UB dll.
                 </p>
                 <div class="flex">
-                    <a href="https://wa.me/+6281779007135?text=Halo%20radian%20%0A%0ANama%20%3A%20%0AAsal%20Kota%20%3A%20%0ASekolah%20dan%20Kelas%20%3A%20%0AOrang%20Tua%20%2F%20Siswa%20%3F%20%3A%0ASaya%20mengetahui%20program%20ini%20melalui%20website%20privatgaransi.radianedu.com%20" class="text-base font-semibold text-white bg-primary rounded-lg py-3 px-2 lg:mt-14 text-center lg:mb-0 mb-2 mr-6 w-[151px] h-[48px]">DAFTAR PRIVAT</a>
+                    <a href="https://wa.me/+6281779007135?text=Halo%20radian%20%0A%0ANama%20%3A%20%0AAsal%20Kota%20%3A%20%0ASekolah%20dan%20Kelas%20%3A%20%0AOrang%20Tua%20%2F%20Siswa%20%3F%20%3A%0ASaya%20mengetahui%20program%20ini%20melalui%20website%20privatgaransi.radianedu.com%20" class="lg:text-base text-xs font-semibold text-white bg-primary rounded-lg py-3 px-2 lg:mt-14 text-center lg:mb-0 mb-2 mr-6 w-[151px] h-[48px]">DAFTAR PRIVAT</a>
                     <a href="https://wa.me/+6281779007135?text=Halo%20radian%20%0A%0ANama%20%3A%20%0AAsal%20Kota%20%3A%20%0ASekolah%20dan%20Kelas%20%3A%20%0AOrang%20Tua%20%2F%20Siswa%20%3F%20%3A%0ASaya%20mengetahui%20program%20ini%20melalui%20website%20privatgaransi.radianedu.com%20" class="text-base font-semibold text-primary border border-primary py-3 px-2 rounded-lg lg:mt-14 text-center w-[151px] h-[48px]">KONSULTASI</a>
                 </div>
             </div>
@@ -216,7 +219,7 @@
         <div class="flex flex-wrap">
             <div class="w-full self-center px-4 order-2 lg:order-1 lg:w-1/2">
                 <h5 class="text-lg font-semibold text-primary">PROGRAM UNGGULAN</h5>
-                <h1 class="lg:text-5xl text-3xl font-semibold text-black mt-2">Pelajari Dua Program Unggul di Radian</h1>
+                <h1 class="lg:text-5xl text-2xl font-semibold text-black mt-2">Pelajari Dua Program Unggul di Radian</h1>
                 <p class="text-lg font-normal text-body mt-6">Kenali lebih dalam program-program bergaransi Radian Edu Solution. Program tersebut antara lain Privat Garansi dan Camp Garansi. 
                 </p>
                 <div class="flex flex-wrap pt-4">
@@ -263,7 +266,7 @@
         <div class="w-full px-4">
             <div class="max-w-3xl mx-auto text-center mb-16">
                 <h5 class="text-lg font-semibold text-primary">KELEBIHAN PRIVAT GARANSI</h5>
-                <h1 class="lg:text-5xl text-3xl font-semibold text-black pt-2">Apa Keunggulan Camp Garansi di Radian?</h1>
+                <h1 class="lg:text-5xl text-2xl font-semibold text-black pt-2">Apa Keunggulan Camp Garansi di Radian?</h1>
                 <p class="text-lg font-normal text-body pt-2">Inilah alasan mengapa kamu harus ikut program Supercamp Garansi di Radian Edu!</p>
             </div>
         </div>
@@ -376,7 +379,7 @@
         <div class="w-full px-4">
             <div class="max-w-3xl mx-auto text-center mb-16">
                 <h5 class="text-lg font-semibold text-primary">PROGRAM UNGGULAN</h5>
-                <h1 class="lg:text-5xl text-3xl font-semibold text-black">Kenali Lebih Dalam Tentang Les Privat di Radian</h1>
+                <h1 class="lg:text-5xl text-2xl font-semibold text-black">Kenali Lebih Dalam Tentang Les Privat di Radian</h1>
             </div>
         </div>
         <div class="relative w-full overflow-hidden">
@@ -458,7 +461,7 @@
 
             <div class="w-full self-center px-4 lg:w-1/2">
                 <h5 class="text-lg font-semibold text-primary pt-10 mb-2">HOT PROMO</h5>
-                <h1 class="lg:text-5xl text-3xl font-semibold text-black max-w-sm">Investasi Program Camp Garansi</h1>
+                <h1 class="lg:text-5xl text-2xl font-semibold text-black max-w-sm">Investasi Program Camp Garansi</h1>
                 <h5 class="text-lg font-semibold text-body">Mulai Dari <span class="text-sd line-through">Rp. 7.500.000</span> </h5>
                 <h1 class="lg:text-5xl text-2xl font-semibold text-black mb-2">Rp. 5.000.000</h1>
                 <p class="text-lg font-normal text-body mb-12">Ikuti supercamp mulai dari 5 juta saja dengan berbagai fasilitas menarik, yang membuat anak bapak/ibu nyaman dalam sesi pembelajaran. tersedia berbagai paket yaitu PASTI, MULIA dan CEMERLANG.</p>
@@ -474,7 +477,7 @@
     <div class="container">
         <div class="flex flex-wrap">
             <div class="w-full px-4 mb-10 lg:w-1/3">
-                <h2 class="font-semibold text-black lg:text-5xl text-3xl mb-14">Apa Kata Mereka Tentang Radian</h2>
+                <h2 class="font-semibold text-black lg:text-5xl text-2xl mb-14">Apa Kata Mereka Tentang Radian</h2>
             </div>
             <div class="w-full px-4 mb-10 lg:w-1/3">
                 <p class="font-normal text-body text-lg mb-14 max-w-md">Radian telah memberikan banyak impect untuk membantu para pelajar agar mencapai target dan tujuannya.</p>
@@ -594,10 +597,10 @@
 <section id="#" class="bg-slate-100">
     <div class="container">
         <div class="flex flex-wrap">
-            <div class="w-full self-start px-4 lg:w-1/2">
+            <div class="w-full self-center px-4 lg:w-1/2">
                 <h5 class="text-lg font-semibold text-primary mt-32">GALLERY</h5>
-                <h1 class="lg:text-5xl text-3xl font-semibold text-black max-w-sm mb-4">Gallery Radian Edu</h1>
-                <p class="text-lg font-normal text-body max-w-xs">Seiring berjalannya waktu Radian Edu Solution telah membantu teman-teman untuk masuk ke PTN impiannya.</p>
+                <h1 class="lg:text-5xl text-2xl font-semibold text-black max-w-sm mb-4">Gallery Radian Edu</h1>
+                <p class="text-lg font-normal text-body max-w-xs mb-5">Seiring berjalannya waktu Radian Edu Solution telah membantu teman-teman untuk masuk ke PTN impiannya.</p>
             </div>
 
             <div class="w-full self-center px-4 lg:w-1/2">
@@ -622,7 +625,7 @@
     <div class="container">
         <div class="flex flex-wrap">
             <div class="w-full self-start lg:w-1/2">
-                <h1 class="text-black lg:text-5xl text-3xl font-semibold mt-44 mb-20">Masih Bingung Mulai Belajar Dari Mana?</h1>
+                <h1 class="text-black lg:text-5xl text-2xl font-semibold mt-44 mb-20">Masih Bingung Mulai Belajar Dari Mana?</h1>
             </div>
             <div class="w-full lg:text-right lg:w-1/2">
                 <button class="text-base text-white font-medium border bg-primary px-4 py-2 rounded-lg items-center lg:mt-52 mt-5"><a href="https://wa.me/+6281779007135?text=Halo%20radian%20%0A%0ANama%20%3A%20%0AAsal%20Kota%20%3A%20%0ASekolah%20dan%20Kelas%20%3A%20%0AOrang%20Tua%20%2F%20Siswa%20%3F%20%3A%0ASaya%20mengetahui%20program%20ini%20melalui%20website%20supercamp%20">Daftar Sekarang</a></button>
