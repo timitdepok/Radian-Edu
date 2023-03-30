@@ -5,7 +5,7 @@
     <div class="w-full">
         <h1 class="text-3xl font-semibold text-black mb-4">Kontak</h1>
         <p class="text-sm text-bodyText mb-8">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus doloribus natus, nemo sapiente, placeat totam repellat, corrupti officiis commodi quam a molestias omnis facilis iste aspernatur voluptas possimus? Eos, temporibus?
+           Silahkan masukan kontak yang bisa dihubungi untuk customer ketika ingin memesan guru ataupun tutor ketika ingin mendaftar menjadi tutor di Radian
         </p>
         <div class="w-full h-fit bg-white mb-6 rounded-md">
             <div class="p-4 bg-primary rounded-t-md">

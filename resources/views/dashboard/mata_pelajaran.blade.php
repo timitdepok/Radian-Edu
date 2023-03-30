@@ -116,7 +116,7 @@
     <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full" role="dialog" aria-modal="true" aria-labelledby="modal-headline">
         <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
             <h3 class="text-2xl leading-6 font-semibold mb-2" id="modal-headline">Edit Mata Pelajaran</h3>
-            <p class="text-bodyText">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est iusto minima iure quisquam, eos quasi hic quod porro, quis eveniet veniam fugiat quo itaque.</p> 
+            <p class="text-bodyText">Melakukan perubahan mata pelajaran akan berdampak pada list mata pelajaran ketika guru mengisi biodata. Klik Update untuk perubahan list mata pelajaran</p> 
             {{-- tingkatan  --}}
             <div class="mt-4">
                 <label for="tingkatan_id" class="block mb-2 text-base font-semibold text-gray-900">Tingkatan</label>

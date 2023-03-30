@@ -12,7 +12,7 @@
             <div class="relative">
                 <div class="w-full max-w-xl xl:w-full xl:mx-auto xl:pr-24 xl:max-w-xl">
                     <h3 class="lg:text-5xl text-2xl font-semibold text-white mb-4">Selamat Datang <br class="hidden xl:block" />Kembali Di Radian.</h3>
-                    <p class="lg:text-lg text-base font-normal text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu quis mauris dignissim volutpat.</p>
+                    <p class="lg:text-lg text-base font-normal text-white">Halaman ini dikhususkan untuk para tutor yang sudah mendaftar di Radian</p>
                 </div>
             </div>
         </div>
