@@ -3,23 +3,26 @@
 
 <section class="min-h-screen font-poppins flex justify-center items-center">
     <div class="container">
-        <img src="img/info.png" alt="" class="w-[510px] h-[337px] mx-auto mt-[118px] mb-16">
+        <img src="{{ asset('/img/info.png') }}" alt="" class="lg:w-[510px] w-auto h-[337px] mx-auto mt-[118px] mb-16">
         <div class="mx-auto">
-            <h1 class="text-2xl font-semibold text-black mb-6 mx-auto text-center max-w-[850px]">
+            <h1 class="lg:text-2xl text-xl font-semibold text-black mb-6 mx-auto text-center max-w-[850px]">
                 Selamat, Anda sudah selangkah lagi menuju Radian. Terimakasih telah berpartisipasi untuk menjadi bagian dari Radian Edu.
             </h1>
-            <p class="text-lg font-normal text-body mb-16 text-center mx-auto max-w-[1120px]">
+            <p class="lg:text-lg text-base font-normal text-body mb-16 text-center mx-auto max-w-[1120px]">
                 Kami berharap Anda telah mengisi data dengan benar, Selanjutnya anda akan melakukan test yang akan di informasikan melalui kontak WhatsApp anda, Anda akan diarahkan ke Dashboard Tutor ketika Anda sudah lulus dalam tahap test. silahkan tekan tombol berikut untuk mempelajari lebih dalam mengenai Radian Edu Solution.
             </p>
         </div>
-        <a href="{{ route('profile') }}" class="py-4 px-6 bg-primary font-medium text-white rounded-md">
-            Selesai
-        </a>
 
-        <form action="{{ route('tes.tulis') }}" method="post">
+
+          <a href="{{ route('profile') }}" class="py-4 px-6 bg-primary font-medium text-white rounded-md mx-auto flex items-center justify-center w-[116px] h-[56px]">
+            Selesai
+          </a>
+
+          <form action="{{ route('tes.tulis') }}" method="post">
             @csrf
-            <input type="submit" name="submit" value="Tes Tulis" class="mt-4 py-4 px-6 bg-green-500 font-medium text-white rounded-md">
-        </form>
+            <input type="submit" name="submit" value="Tes Tulis" class="mt-4 py-4 px-6 bg-green-500 font-medium text-white rounded-md mx-auto flex items-center justify-center w-[116px] h-[56px]">
+          </form>
+        
     </div>
 </section>
 
@@ -29,7 +32,7 @@
       <div class="flex flex-wrap">
 
         <div class="w-full px-4 md:w-1/4">
-          <img src="img/logo.png" alt="" class="mb-4">
+          <img src="{{ asset('/img/logo.png') }}" alt="" class="mb-4">
           <p class="text-base font-normal text-text">Jl. Akses UI No. 99, Perkantoran Wisma Kencana Putri</p>
           <p class="text-base font-normal text-text">Kecamatan Tugu - Ciamnggis</p>
           <p class="text-base font-normal text-text">Kota Depok - 16451.</p>

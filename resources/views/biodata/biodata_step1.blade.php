@@ -33,7 +33,7 @@
             <a class="text-base font-semibold text-white bg-primary px-[51px] py-4 mx-auto rounded-lg mb-10" href="/biodata/step2">Selanjutnya</a>
         </div>
 
-        <img src="img/rules.png" alt="" class="w-[680px] h-[394px] mx-auto items-center text-center mb-9">
+        <img src="{{ asset('/img/rules.png') }}" alt="" class="lg:w-[680px] w-auto lg:h-[394px] mx-auto">
     </div>
 </section>
 
@@ -43,7 +43,7 @@
       <div class="flex flex-wrap">
 
         <div class="w-full px-4 md:w-1/4">
-          <img src="img/logo.png" alt="" class="mb-4">
+          <img src="{{ asset('/img/logo.png') }}" alt="" class="mb-4">
           <p class="text-base font-normal text-text">Jl. Akses UI No. 99, Perkantoran Wisma Kencana Putri</p>
           <p class="text-base font-normal text-text">Kecamatan Tugu - Ciamnggis</p>
           <p class="text-base font-normal text-text">Kota Depok - 16451.</p>

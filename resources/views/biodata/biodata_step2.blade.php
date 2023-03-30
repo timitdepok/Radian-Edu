@@ -773,7 +773,7 @@
             
             {{-- pengajuan harga --}}
             <div class="mb-8">
-              <label for="harga" class="block mb-2 text-base font-semibold text-gray-900 after:content-['*'] after:text-red-600 after:ml-1 after:text-sm">Pengajuan Harga</label>
+              <label for="harga" class="block mb-2 text-base font-semibold text-gray-900 after:content-['*'] after:text-red-600 after:ml-1 after:text-sm">Pengajuan Harga Sementara</label>
               <input type="number" name="harga" id="harga" class="h-12 sm:min-w-[523px] text-sm px-4 w-full outline-none @error('harga') border-primarySD @else border-primaryInp @enderror border rounded-md bg-white" value="{{ old('harga') }}" required>
               @error("harga")
                 <p class="text-sm font-normal mt-1 text-primarySD">{{ $message }}</p>
