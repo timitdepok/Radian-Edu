@@ -133,6 +133,7 @@ Route::get("/surabaya", [ArealayananController::class, "surabaya"])->name("surab
 // PRODUCT
 Route::get("/supercamp", [ProductController::class, "supercamp"])->name("supercamp");
 Route::get("/privat", [ProductController::class, "privat"])->name("privat");
+Route::get("/supercampkedokteran", [ProductController::class, "supercampkedokteran"])->name("supercampkedokteran");
 
 // TINGKATAN
 Route::get("/sd", [HalamanTingkatanController::class, "tingkatansd"])->name("tingkatansd");

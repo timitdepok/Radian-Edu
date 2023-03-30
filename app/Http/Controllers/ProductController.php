@@ -13,10 +13,17 @@ class ProductController extends Controller
         ]);
     }
 
-    // SUPERCAMP
+    // PRIVAT
     public function privat(){
         return view("product.privat", [
             "title" => "PRIVAT BERGARANSI | Radian Edu"
+        ]);
+    }
+
+    // SUPERCAMP KEDOKTERAN
+    public function supercampkedokteran(){
+        return view("product.supercampkedokteran", [
+            "title" => "SUPERCAMP KEDOKTERAN | Radian Edu"
         ]);
     }
 }
