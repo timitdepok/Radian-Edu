@@ -98,7 +98,7 @@ for (let index = 0; index < cardss.length; index++) {
 }
 
 function right(){
-    if(+slid.style.marginLeft.slice(0, -2) != 0)
+    if(+slid.style.marginLeft.slice(0, -2) != -cardssWidth * (cardss.length - elementsToShow))
         slid.style.marginLeft = ((+slid.style.marginLeft.slice(0, -2)) - cardssWidth)+'px'
 }
 

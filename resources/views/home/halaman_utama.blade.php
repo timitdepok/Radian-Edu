@@ -151,21 +151,21 @@
 <!-- hero section start -->
     <section id="home" class="pt-20 bg-gradient-to-br from-white via-white to-blue-200">
         <div class="container">
-            <div class="flex flex-wrap">
+            <div class="flex flex-wrap lg:mt-10">
                 <div class="w-full self-center px-4 lg:order-1 order-2 lg:w-1/2">
                     <button class="border bg-second rounded-full mb-6 py-3 px-8">
                         <h5 class="text-lg font-semibold text-dark md:text-lg">LES PRIVATE & BIMBEL</h5>
                     </button>
                     <h1 class="lg:text-6xl text-3xl font-bold text-black mb-[19px] max-w-[645px] mt-1">Radian Edu, Best Partner For The Best Future</h1>
-                    <p class="text-lg font-normal text-body max-w-[576px] mt-6 mb-10">Lembaga Privat, Bimbel dan Supercamp Bergaransi dengan Pengajar, Metode serta Teknologi Terbaik Guna Menuju Masa Depan Cemerlang.</p>
+                    <p class="text-lg font-normal text-body max-w-[576px] mt-6 mb-4">Lembaga Privat, Bimbel dan Supercamp Bergaransi dengan Pengajar, Metode serta Teknologi Terbaik Guna Menuju Masa Depan Cemerlang.</p>
                     <div class="flex lg:mb-0 mb-3">
                         <a href="https://wa.me/+6281779007135?text=Halo%20radian%20%0A%0ANama%20%3A%20%0AAsal%20Kota%20%3A%20%0ASekolah%20dan%20Kelas%20%3A%20%0AOrang%20Tua%20%2F%20Siswa%20%3F%20%3A%0ASaya%20mengetahui%20program%20ini%20melalui%20website%20privatgaransi.radianedu.com%20" class="lg:text-base text-sm font-semibold text-white bg-primary rounded-lg py-3 px-2 lg:mt-14 text-center lg:mb-0 mb-2 mr-6 w-[151px] h-[48px]">Read More</a>
-                        <a href="https://wa.me/+6281779007135?text=Halo%20radian%20%0A%0ANama%20%3A%20%0AAsal%20Kota%20%3A%20%0ASekolah%20dan%20Kelas%20%3A%20%0AOrang%20Tua%20%2F%20Siswa%20%3F%20%3A%0ASaya%20mengetahui%20program%20ini%20melalui%20website%20privatgaransi.radianedu.com%20" class="lg:text-base text-sm font-semibold text-black border border-black py-3 px-2 rounded-lg lg:mt-14 text-center w-[151px] h-[48px]">KONSULTASI >></a>
+                        <a href="https://wa.me/+6281779007135?text=Halo%20radian%20%0A%0ANama%20%3A%20%0AAsal%20Kota%20%3A%20%0ASekolah%20dan%20Kelas%20%3A%20%0AOrang%20Tua%20%2F%20Siswa%20%3F%20%3A%0ASaya%20mengetahui%20program%20ini%20melalui%20website%20privatgaransi.radianedu.com%20" class="lg:text-base text-sm font-semibold text-black border border-black lg:py-3 py-4 lg:px-2 px-6 rounded-lg lg:mt-14 text-center w-[151px] h-[48px]">KONSULTASI >></a>
                     </div>
                     
                     
                 </div>
-                <div class="w-full self-end px-4 lg:order-2 order-1 lg:w-1/2">
+                <div class="w-full self-end px-4 lg:mt-10 lg:order-2 order-1 lg:w-1/2">
                     <div class="relative mt-10">
                         <img src="img/image-head.png" alt="" class="max-w-full mx-auto lg:mb-0 mb-3 lg:mt-9 lg:right-0">
                     </div>
