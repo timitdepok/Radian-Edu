@@ -60,43 +60,55 @@
 
     <!-- promo section start -->
     <section id="promo" class="pt-16 pb-36 bg-slate-100">
-        <div class="container">
-            <div class="flex">
-                <div id="slidercontainer" class="w-full overflow-hidden">
-                    <ul id="slid" class="flex w-full">
-                        <li>
-                            <img src="img/Webbanner 1.png" alt="" class="h-auto w-full mr-5">
-                        </li>
-                        <li>
-                            <img src="img/Webbanner 2.png" alt="" class="h-auto w-full mr-5">
-                        </li>
-                        <li>
-                            <img src="img/Webbanner 1.png" alt="" class="h-auto w-full mr-5">
-                        </li>
-                        <li>
-                            <img src="img/Webbanner 2.png" alt="" class="h-auto w-full mr-5">
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="flex">
-                <div class="w-full text-center">
-                    <button onclick="left()" class="p-3 rounded-full bg-slate-100 border border-gray-100 shadow-lg mr-5">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-primary">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
-                          </svg>                              
-                    </button>
-
-                    <button onclick="right()" class="p-3 rounded-full bg-slate-100 border border-gray-100 shadow-lg mr-5">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-primary">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                          </svg>                              
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
+      <div class="container">
+          <div class="flex flex-wrap">
+              <div class="w-full px-4 mb-10 lg:w-1/2">
+                  <h4 class="font-bold uppercase text-primary text-lg mb-3">Top Promo</h4>
+                  <h2 class="font-bold text-dark text-3xl mb-5 max-w-md">PROMO YANG SEDANG BERLANGSUNG</h2>
+              </div>
+              <div class="w-full px-4 mb-10 lg:w-1/2">
+                  <div class="w-full text-right">
+                      <button onclick="left()" class="p-3 rounded-full bg-slate-100 border border-gray-100 shadow-lg mr-5">
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-primary">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+                            </svg>                              
+                      </button>
+  
+                      <button onclick="right()" class="p-3 rounded-full bg-slate-100 border border-gray-100 shadow-lg mr-5">
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-primary">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                            </svg>                              
+                      </button>
+                  </div>
+                 
+              </div>
+          </div>
+          <div class="flex">
+              <div id="slidercontainer" class="w-full overflow-hidden">
+                  <ul id="slid" class="flex w-full">
+                      <li>
+                          <img src="img/Webbanner 1.png" alt="" class="h-auto lg:w-[644px]">
+                      </li>
+                      <li>
+                          <img src="img/Webbanner 2.png" alt="" class="h-auto lg:w-[644px]">
+                      </li>
+                      <li>
+                          <img src="img/Webbanner 1.png" alt="" class="h-auto lg:w-[644px]">
+                      </li>
+                      <li>
+                          <img src="img/Webbanner 2.png" alt="" class="h-auto lg:w-[644px]">
+                      </li>
+                      <li>
+                          <img src="img/Webbanner 1.png" alt="" class="h-auto lg:w-[644px]">
+                      </li>
+                      <li>
+                          <img src="img/Webbanner 2.png" alt="" class="h-auto lg:w-[644px]">
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </section>
     <!-- promo section end -->
 
     <!-- alumni section start -->

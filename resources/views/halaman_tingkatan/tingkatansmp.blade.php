@@ -31,30 +31,30 @@
 
 {{-- navbar section end --}}
 
-<!-- hero section start -->
-<section id="#" class="pt-16 w-full h-full" style="background-size:  cover; background-image: url(img/bg-smp.png);">
-    <div class="container">
-        <div class="flex flex-wrap">
-            <div class="w-full self-center px-4 lg:w-1/2">
-                <div class="bg-second rounded-t-3xl rounded-bl-3xl shadow-lg mb-6 lg:w-[282px] h-[46px] w-auto px-6 py-2">
-                    <h3 class="lg:text-xl text-base font-semibold text-sma">PROGRAM PTS  & PAS </h3>
+    <!-- hero section start -->
+    <section id="#" class="pt-16 w-full h-full" style="background-size:  cover; background-image: url(img/bg-smp.png);">
+        <div class="container">
+            <div class="flex flex-wrap">
+                <div class="w-full self-center px-4 lg:w-1/2">
+                    <div class="bg-second rounded-t-3xl rounded-bl-3xl shadow-lg mb-6 lg:w-[282px] h-[46px] w-auto px-6 py-2">
+                        <h3 class="lg:text-xl text-base font-semibold text-sma">PROGRAM PTS  & PAS </h3>
+                    </div>
+                    <h1 class="font-bold text-white lg:text-5xl text-2xl mt-4">AYO PERSIAPKAN UJIANMU DENGAN GURU YANG ASIK</h1>
+                    <p class="font-normal text-white text-lg mt-4 mb-8">Mempunyai berbagai program dan cara belajar fun accelerative serta educek rutin agar siswa tau perkembangan kemampuan serta cara belajar efektif.</p>
+                    <div class="flex px-2">
+                      <a href="#" class="text-base font-semibold text-black bg-second py-3 px-4 rounded-lg mr-6">Mulai Belajar</a>
+                      <a href="#" class="text-base font-semibold text-white border border-white px-3 py-4 rounded-lg">Hubungi Kami</a>
+                    </div>
                 </div>
-                <h1 class="font-bold text-white lg:text-5xl text-2xl mt-4">AYO PERSIAPKAN UJIANMU DENGAN GURU YANG ASIK</h1>
-                <p class="font-normal text-white text-lg mt-4 mb-8">Mempunyai berbagai program dan cara belajar fun accelerative serta educek rutin agar siswa tau perkembangan kemampuan serta cara belajar efektif.</p>
-                <div class="flex px-2">
-                  <a href="#" class="text-base font-semibold text-black bg-second py-3 px-4 rounded-lg mr-6">Mulai Belajar</a>
-                  <a href="#" class="text-base font-semibold text-white border border-white px-3 py-4 rounded-lg">Hubungi Kami</a>
-                </div>
-            </div>
 
-            <div class="w-full self-end px-4 lg:w-1/2">
-                <div class="relative mt-10">
-                    <img src="img/hero-smp.png" alt="" class="max-w-full mx-auto lg:right-0">
+                <div class="w-full self-end px-4 lg:w-1/2">
+                    <div class="relative mt-10">
+                        <img src="img/hero-smp.png" alt="" class="max-w-full mx-auto lg:right-0">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
     <!-- hero section end -->
 
     <!-- alumni section start -->

@@ -67,16 +67,22 @@
             <div id="slidercarousel" class="w-full overflow-hidden">
                 <ul id="slids" class="flex w-full">
                     <li class="mr-3">
-                        <img src="img/sd1.png" alt="" class="h-auto w-full">
+                        <img src="img/sd1.png" alt="" class="lg:h-[482px] lg:w-[482px]">
                     </li>
                     <li class="mr-3">
-                        <img src="img/sd2.png" alt="" class="h-auto w-full">
+                        <img src="img/sd2.png" alt="" class="lg:h-[482px] lg:w-[482px]">
                     </li>
                     <li class="mr-3">
-                        <img src="img/sd3.png" alt="" class="h-auto w-full">
+                        <img src="img/sd3.png" alt="" class="lg:h-[482px] lg:w-[482px]">
                     </li>
                     <li class="mr-3">
-                        <img src="img/sd1.png" alt="" class="h-auto w-full">
+                        <img src="img/sd1.png" alt="" class="lg:h-[482px] lg:w-[482px]">
+                    </li>
+                    <li class="mr-3">
+                      <img src="img/sd2.png" alt="" class="lg:h-[482px] lg:w-[482px]">
+                    </li>
+                    <li class="mr-3">
+                        <img src="img/sd3.png" alt="" class="lg:h-[482px] lg:w-[482px]">
                     </li>
                 </ul>
             </div>
@@ -85,13 +91,13 @@
         <div class="flex">
           <div class="w-full text-center">
             <button onclick="after()" class="p-3 rounded-full bg-slate-100 border border-gray-100 shadow-lg mr-5">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-sd">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
                   </svg>                              
             </button>
 
             <button onclick="before()" class="p-3 rounded-full bg-slate-100 border border-gray-100 shadow-lg mr-5">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-primary">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-sd">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                   </svg>                              
             </button>
@@ -260,23 +266,23 @@
       <div class="flex">
         <div id="slidercontainer" class="w-full overflow-hidden">
           <ul id="slider" class="flex w-full">
-              <li>
-                  <img src="img/testisd1.png" alt="" class="h-auto w-full">
+              <li class="mr-3">
+                  <img src="img/testisd1.png" alt="" class="lg:h-[482px] lg:w-[482px]">
               </li>
               <li class="mr-3">
-                  <img src="img/testisd2.png" alt="" class="h-auto w-full">
+                  <img src="img/testisd2.png" alt="" class="lg:h-[482px] lg:w-[482px]">
               </li>
               <li class="mr-3">
-                  <img src="img/testisd3.png" alt="" class="h-auto w-full">
+                  <img src="img/testisd3.png" alt="" class="lg:h-[482px] lg:w-[482px]">
               </li>
               <li class="mr-3">
-                  <img src="img/testisd1.png" alt="" class="h-auto w-full">
+                  <img src="img/testisd1.png" alt="" class="lg:h-[482px] lg:w-[482px]">
               </li>
               <li class="mr-3">
-                <img src="img/testisd2.png" alt="" class="h-auto w-full">
+                <img src="img/testisd2.png" alt="" class="lg:h-[482px] lg:w-[482px]">
             </li>
             <li class="mr-3">
-                <img src="img/testisd3.png" alt="" class="h-auto w-full">
+                <img src="img/testisd3.png" alt="" class="lg:h-[482px] lg:w-[482px]">
             </li>
           </ul>
       </div>
@@ -285,13 +291,13 @@
       <div class="flex">
         <div class="w-full text-center">
           <button onclick="next()" class="p-3 rounded-full bg-slate-100 border border-gray-100 shadow-lg mr-5">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-primary">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-sd">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
                 </svg>                              
           </button>
 
           <button onclick="prev()" class="p-3 rounded-full bg-slate-100 border border-gray-100 shadow-lg mr-5">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-primary">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-sd">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                 </svg>                              
           </button>

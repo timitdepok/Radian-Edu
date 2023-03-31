@@ -71,23 +71,24 @@ function next() {
 }
 
 
+
 // carousel promo
 let slidercontainer = document.getElementById('slidercontainer');
 let slid = document.getElementById('slid');
-let cardss = slid.getElementsByTagName('li');
+let cardss = slider.getElementsByTagName('li');
 
-let elementsToShow = 3;
+let elementsToShow = 2;
 if(document.body.clientWidth<1000){
     elementsToShow = 1;
 }else if(document.body.clientWidth<1500){
-    elementsToShow = 2;
+    elementsToShow = 3;
 }
 
 let slidercontainerWidth = slidercontainer.clientWidth;
 
-let cardssWidth = slidercontainerWidth/elemetToShow;
+let cardssWidth = slidercontainerWidth/elementsToShow;
 
-slid.style.width = cardss.length*cardsWidth+'px';
+slid.style.width = cardss.length*cardssWidth+'px';
 slid.style.transition='margin';
 slid.style.transitionDuration='1s';
 
@@ -97,11 +98,11 @@ for (let index = 0; index < cardss.length; index++) {
 }
 
 function right(){
-    if(+slid.style.marginLeft.slice(0, -2) != -cardssWidth * (cardss.length - elemetToShow))
-        slid.style.marginLeft = ((+slid.style.marginLeft.slice(0, -2)) - cardsWidth)+'px'
+    if(+slid.style.marginLeft.slice(0, -2) != 0)
+        slid.style.marginLeft = ((+slid.style.marginLeft.slice(0, -2)) - cardssWidth)+'px'
 }
 
 function left() {
-    if (+slid.style.marginLeft.slice(0, -2) != 0)
+    if (+slid.style.marginLeft.slice(0, +2) != 0)
         slid.style.marginLeft = ((+slid.style.marginLeft.slice(0, -2)) + cardssWidth)+'px'
 }

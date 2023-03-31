@@ -24,15 +24,14 @@ for (let index = 0; index < cards.length; index++) {
 }
 
 function prev(){
-    if(+slider.style.marginLeft.slice(0, -3) != -cardsWidth * (cards.length - elementsToShow))
-        slider.style.marginLeft = ((+slider.style.marginLeft.slice(0, -3)) - cardsWidth)+'px'
+    if(+slider.style.marginLeft.slice(0, -2) != -cardsWidth * (cards.length - elementsToShow))
+        slider.style.marginLeft = ((+slider.style.marginLeft.slice(0, -2)) - cardsWidth)+'px'
 }
 
 function next() {
-    if (+slider.style.marginLeft.slice(0, -3) != 0)
-        slider.style.marginLeft = ((+slider.style.marginLeft.slice(0, -3)) + cardsWidth)+'px'
+    if (+slider.style.marginLeft.slice(0, +2) != 0)
+        slider.style.marginLeft = ((+slider.style.marginLeft.slice(0, -2)) + cardsWidth)+'px'
 }
-
 
 
 //caraousel alumni 
@@ -61,11 +60,11 @@ for (let index = 0; index < card.length; index++) {
 }
 
 function before(){
-    if(+slids.style.marginLeft.slice(0, -3) != -cardWidth * (card.length - elementToShow))
-        slids.style.marginLeft = ((+slids.style.marginLeft.slice(0, -3)) - cardWidth)+'px'
+    if(+slids.style.marginLeft.slice(0, -2) != -cardWidth * (card.length - elementToShow))
+        slids.style.marginLeft = ((+slids.style.marginLeft.slice(0, -2)) - cardWidth)+'px'
 }
 
 function after() {
-    if (+slids.style.marginLeft.slice(0, -3) != 0)
-        slids.style.marginLeft = ((+slids.style.marginLeft.slice(0, -3)) + cardWidth)+'px'
+    if (+slids.style.marginLeft.slice(0, +2) != 0)
+        slids.style.marginLeft = ((+slids.style.marginLeft.slice(0, -2)) + cardWidth)+'px'
 }
