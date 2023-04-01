@@ -34,24 +34,24 @@
     <div class="container">
         <div class="mx-auto">
             <h5 class="text-lg font-semibold text-primary mb-2 text-center">DAFTAR TUTOR</h5>
-            <h1 class="text-5xl font-semibold text-black mb-2 text-center">REKOMENDASI TUTOR TERBAIK DAN BERPENGALAMAN PILIHAN RADIAN!</h1>
+            <h1 class="lg:text-5xl text-2xl font-semibold text-black mb-2 text-center">REKOMENDASI TUTOR TERBAIK DAN BERPENGALAMAN PILIHAN RADIAN!</h1>
             <p class="text-lg font-normal text-body mb-[46px] text-center">Ayo tulis tutor yang kamu inginkan, biar kami yang bantu carikan!</p>
             <div class="flex flex-wrap">
                 <form action="{{ route('daftar.guru') }}" method="GET"  class="mx-auto flex items-center justify-center md:max-w-md">
                     <div class="w-full max-w-md items-center justify-center">
                         <div class="relative flex text-text border border-body rounded-lg">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 absolute ml-3 self-center" viewBox="0 0 20 20" fill="currentColor">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="lg:h-5 h-4 lg:w-5 w-4 absolute lg:ml-3 pl-1 self-center" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
                             </svg>
-                            <input type="text" name="mata_pelajaran" placeholder="Mata Pelajaran" autocomplete="off" aria-label="Mata Pelajaran" class="w-full py-3 pl-10 font-normal rounded-lg" value="{{ $mata_pelajaran ? $mata_pelajaran : "" }}">
+                            <input type="text" name="mata_pelajaran" placeholder="Mata Pelajaran" autocomplete="off" aria-label="Mata Pelajaran" class="lg:w-full w-[115px] lg:text-base text-xs py-3 lg:pl-10 pl-4 font-normal rounded-lg" value="{{ $mata_pelajaran ? $mata_pelajaran : "" }}">
                         </div>
                     </div>
                     <div action="" class="w-full max-w-md ml-6 items-center justify-center">
                         <div class="relative flex text-text border border-body rounded-lg">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 absolute ml-3 self-center" viewBox="0 0 20 20" fill="currentColor">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="lg:h-5 h-4 lg:w-5 w-4 absolute lg:ml-3 pl-1 self-center" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
                             </svg>
-                            <input type="text" name="domisili" placeholder="Daerah" autocomplete="off" aria-label="Daerah" class="w-full py-3 pl-10 font-normal rounded-lg" value="{{ $domisili ? $domisili : "" }}">
+                            <input type="text" name="domisili" placeholder="Daerah" autocomplete="off" aria-label="Daerah" class="lg:w-full w-[115px] lg:text-base text-xs py-3 lg:pl-10 pl-4 font-normal rounded-lg" value="{{ $domisili ? $domisili : "" }}">
                         </div>
                     </div>
                     <button class="text-base font-normal text-white p-3 bg-primary rounded-lg ml-9 items-center justify-center" href="#">Cari</button>
@@ -187,6 +187,9 @@
           </div>
     </div>
 </section>
+
+
 <script src="/js/daftarguru.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     
 @endsection
