@@ -160,7 +160,7 @@
                     <p class="text-lg font-normal text-body max-w-[576px] mt-6 mb-4">Lembaga Privat, Bimbel dan Supercamp Bergaransi dengan Pengajar, Metode serta Teknologi Terbaik Guna Menuju Masa Depan Cemerlang.</p>
                     <div class="flex lg:mb-0 mb-3">
                         <a href="https://wa.me/+6281779007135?text=Halo%20radian%20%0A%0ANama%20%3A%20%0AAsal%20Kota%20%3A%20%0ASekolah%20dan%20Kelas%20%3A%20%0AOrang%20Tua%20%2F%20Siswa%20%3F%20%3A%0ASaya%20mengetahui%20program%20ini%20melalui%20website%20privatgaransi.radianedu.com%20" class="lg:text-base text-sm font-semibold text-white bg-primary rounded-lg py-3 px-2 lg:mt-14 text-center lg:mb-0 mb-2 mr-6 w-[151px] h-[48px]">Read More</a>
-                        <a href="https://wa.me/+6281779007135?text=Halo%20radian%20%0A%0ANama%20%3A%20%0AAsal%20Kota%20%3A%20%0ASekolah%20dan%20Kelas%20%3A%20%0AOrang%20Tua%20%2F%20Siswa%20%3F%20%3A%0ASaya%20mengetahui%20program%20ini%20melalui%20website%20privatgaransi.radianedu.com%20" class="lg:text-base text-sm font-semibold text-black border border-black lg:py-3 py-4 lg:px-2 px-6 rounded-lg lg:mt-14 text-center w-[151px] h-[48px]">KONSULTASI >></a>
+                        <a href="https://wa.me/+6281779007135?text=Halo%20radian%20%0A%0ANama%20%3A%20%0AAsal%20Kota%20%3A%20%0ASekolah%20dan%20Kelas%20%3A%20%0AOrang%20Tua%20%2F%20Siswa%20%3F%20%3A%0ASaya%20mengetahui%20program%20ini%20melalui%20website%20privatgaransi.radianedu.com%20" class="lg:text-base text-sm lg:font-semibold font-medium text-black border border-black py-3 lg:px-2 px-1 rounded-lg lg:mt-14 text-center w-[151px] h-[48px]">KONSULTASI >></a>
                     </div>
                     
                     
@@ -640,13 +640,13 @@
                 <div class="w-full pl-4 pr-0 lg:w-1/2 right-0">
                     <h4 class="font-normal text-lg mr-16 text-body mb-3">Ayo tulis tutor semau kamu, biar kami yang bantu carikan!</h4>
                         <form action="{{ route('daftar.guru') }}" method="GET" class="w-full flex flex-row">
-                            <div class="w-full flex px-4 mb-2 ">
+                            <div class="w-full flex lg:px-4 px-2 mb-2 ">
                                 <div class="w-full max-w-lg">
                                     <div class="relative flex text-text border border-body rounded-lg">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 absolute ml-3 self-center" viewBox="0 0 20 20" fill="currentColor">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="lg:h-5 h-4 lg:w-5 w-4 absolute lg:ml-3 pl-1 self-center" viewBox="0 0 20 20" fill="currentColor">
                                             <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
                                           </svg>
-                                        <input type="text" name="mata_pelajaran" placeholder="Mata Pelajaran" autocomplete="off" aria-label="Mata Pelajaran" class="w-full py-3 pl-10 font-normal rounded-lg">
+                                        <input type="text" name="mata_pelajaran" placeholder="Mata Pelajaran" autocomplete="off" aria-label="Mata Pelajaran" class="w-full lg:text-base text-xs py-3 lg:pl-10 pl-4 font-normal rounded-lg">
                                     </div>
                                 </div>
                             </div>
@@ -658,7 +658,7 @@
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                                         </svg>
-                                        <input type="text" name="domisili" placeholder="Mata Pelajaran" autocomplete="off" aria-label="Domisili" class="w-full py-3 pl-10 font-normal rounded-lg">
+                                        <input type="text" name="domisili" placeholder="Domisili" autocomplete="off" aria-label="Domisili" class="w-full py-3 pl-10 font-normal rounded-lg">
                                     </div>
                                 </div>
                             </div>

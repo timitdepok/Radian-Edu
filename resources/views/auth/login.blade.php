@@ -48,7 +48,7 @@
                             </div>
                             <label for="remember" class="ml-2 text-sm font-medium text-gray-900">Remember me</label>
                         </div>
-                        <button type="submit" class="mb-3 text-white bg-primary hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full py-2.5 text-center">Submit</button>
+                        <button type="submit" class="mb-3 text-white bg-primary hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full py-2.5 text-center" href="/profile">Submit</button>
                         <a href="{{ route('registrasi') }}" class="w-full text-sm font-semibold flex justify-center text-primary border border-primary py-2.5 rounded-lg">Register</a>
                     </div>
                 </form>
