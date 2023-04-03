@@ -113,7 +113,7 @@
     <!-- alumni section end  -->
 
     <!-- keunggulan section start -->
-    <section id="#" class="pt-16">
+    <section id="#" class="pt-28 pb-32">
         <div class="container">
             <div class="w-full px-4">
                 <div class="max-w-full mx-auto text-center mb-16">
@@ -125,7 +125,7 @@
             <div class="flex flex-wrap">
 
                 <div class="w-full px-4 lg:w-1/2">
-                    <div class="mb-4 relative">
+                    <div class="mb-12 relative">
                         <div class="absolute align-middle rounded-full bg-primary lg:w-12 lg:h-12 w-10 h-10 flex justify-center items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="lg:w-6 lg:h-6 w-4 h-4 text-white">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
@@ -151,7 +151,7 @@
                 </div>
 
                 <div class="w-full px-4 lg:w-1/2">
-                  <div class="mb-4 relative">
+                  <div class="mb-8 relative">
                     <div class="absolute align-middle rounded-full bg-primary lg:w-12 lg:h-12 w-10 h-10 flex justify-center items-center">
                       <svg xmlns="http://www.w3.org/2000/svg" class="lg:h-5 lg:w-5 h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
                         <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
@@ -183,7 +183,7 @@
     <!-- keunggulan section end  -->
 
     <!-- kelebihan section start -->
-    <section id="#" class="pt-16 bg-slate-100">
+    <section id="#" class="pt-16 bg-slate-100 pb-20">
       <div class="container">
         <div class="w-full px-4">
           <div class="max-w-full mx-auto text-center mb-16">
