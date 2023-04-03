@@ -2,10 +2,11 @@
 @section('content')
 
 <!-- navbar section start -->
-<div class="w-full text-gray-700 bg-white dark-mode:text-gray-200 dark-mode:bg-gray-800">
+<header class="fixed z-50 w-full pb-6">
+    <div class="w-full text-gray-700 bg-white dark-mode:text-gray-200 dark-mode:bg-gray-800">
         <div x-data="{ open: false }" class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
             <div class="flex flex-row items-center justify-between p-4">
-                <a href="#">
+                <a href="{{ route('home') }}">
                     <img src="img/logo.png" alt="">
                 </a>
                 <button class="rounded-lg md:hidden focus:outline-none focus:shadow-outline" @click="open = !open">
@@ -16,7 +17,7 @@
                 </button>
             </div>
             <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow hidden pb-4 md:pb-0 md:flex md:justify-end md:flex-row">
-                <a class="px-4 py-2 mt-2 text-sm font-semibold md:mt-0 md:ml-4 hover:text-primary text-body focus:outline-none focus:shadow-outline" href="{{ route('home') }}">Home</a>
+                <a class="px-4 py-2 mt-2 text-sm font-semibold md:mt-0 md:ml-4 hover:text-primary text-body focus:outline-none focus:shadow-outline" href="#hero">Home</a>
                 <a class="px-4 py-2 mt-2 text-sm font-semibold md:mt-0 md:ml-4 hover:text-primary text-body focus:outline-none focus:shadow-outline" href="#alumni">Kedokteran</a>
                 <a class="px-4 py-2 mt-2 text-sm font-semibold md:mt-0 md:ml-4 hover:text-primary text-body focus:outline-none focus:shadow-outline" href="#testi">Kedinasan</a>
                 <a class="px-4 py-2 mt-2 text-sm font-semibold md:mt-0 md:ml-4 hover:text-primary text-body focus:outline-none focus:shadow-outline" href="#unggul">PTN Favorit</a>
@@ -25,10 +26,12 @@
             </nav>
         </div>
 </div>
+</header>
+
 <!-- navbar section end -->
 
 <!-- hero section start -->
-<section id="#" class="bg-blue-400">
+<section id="hero" class="bg-blue-400">
     <div class="container">
         <div class="flex flex-wrap">
             <div class="w-full self-end px-4 order-2 lg:order-1 lg:w-1/2">
@@ -215,7 +218,7 @@
                     Radian menyediakan program unggulan yaitu privat dan camp garansi. Sesuaikan dengan yang paling cocok untuk dirimu-
                 </p>
                 <div class="flex flex-wrap">
-                    <div class="mb-4 relative">
+                    <div class="mb-4 relative hover:bg-yellow-200 hover:rounded-lg px-4 py-4">
                         <div class="absolute align-middle rounded-md bg-slate-200 w-12 h-12 flex justify-center items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-sd">
                                 <path fill-rule="evenodd" d="M14.615 1.595a.75.75 0 01.359.852L12.982 9.75h7.268a.75.75 0 01.548 1.262l-10.5 11.25a.75.75 0 01-1.272-.71l1.992-7.302H3.75a.75.75 0 01-.548-1.262l10.5-11.25a.75.75 0 01.913-.143z" clip-rule="evenodd" />
@@ -226,7 +229,7 @@
                             <p class="text-lg font-normal text-body">Pembelajaran intensif dengan guru kompeten dan materi belajar yang sesuai serta semangat belajar yang tinggi dari siswa</p>
                         </div>
                     </div>
-                    <div class="mb-4 relative">
+                    <div class="mb-4 relative hover:bg-yellow-200 hover:rounded-lg px-4 py-4">
                         <div class="absolute align-middle rounded-md bg-slate-200 w-12 h-12 flex justify-center items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-sd">
                                 <path fill-rule="evenodd" d="M14.615 1.595a.75.75 0 01.359.852L12.982 9.75h7.268a.75.75 0 01.548 1.262l-10.5 11.25a.75.75 0 01-1.272-.71l1.992-7.302H3.75a.75.75 0 01-.548-1.262l10.5-11.25a.75.75 0 01.913-.143z" clip-rule="evenodd" />
