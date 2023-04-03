@@ -3,10 +3,11 @@
  
  
 <!-- navbar section start -->
-<div class="w-full text-gray-700 bg-white dark-mode:text-gray-200 dark-mode:bg-gray-800">
+<header class="fixed z-50 w-full">
+    <div class="w-full text-gray-700 bg-white dark-mode:text-gray-200 dark-mode:bg-gray-800">
         <div x-data="{ open: false }" class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
             <div class="flex flex-row items-center justify-between p-4">
-                <a href="#">
+                <a href="{{ route('home') }}">
                     <img src="img/logo.png" alt="">
                 </a>
                 <button class="rounded-lg md:hidden focus:outline-none focus:shadow-outline" @click="open = !open">
@@ -17,7 +18,7 @@
                 </button>
             </div>
             <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow hidden pb-4 md:pb-0 md:flex md:justify-end md:flex-row">
-                <a class="px-4 py-2 mt-2 text-sm font-semibold md:mt-0 md:ml-4 hover:text-primary text-body focus:outline-none focus:shadow-outline" href="{{ route('home') }}">Home</a>
+                <a class="px-4 py-2 mt-2 text-sm font-semibold md:mt-0 md:ml-4 hover:text-primary text-body focus:outline-none focus:shadow-outline" href="#hero">Home</a>
                 <a class="px-4 py-2 mt-2 text-sm font-semibold md:mt-0 md:ml-4 hover:text-primary text-body focus:outline-none focus:shadow-outline" href="#alumni">Alumni</a>
                 <a class="px-4 py-2 mt-2 text-sm font-semibold md:mt-0 md:ml-4 hover:text-primary text-body focus:outline-none focus:shadow-outline" href="#testi">Testimoni</a>
                 <a class="px-4 py-2 mt-2 text-sm font-semibold md:mt-0 md:ml-4 hover:text-primary text-body focus:outline-none focus:shadow-outline" href="#unggul">Keunggulan</a>
@@ -26,11 +27,13 @@
                 <a class="px-4 py-2 mt-2 text-sm font-semibold md:mt-0 md:ml-4 w-[136px] h-[38px] border text-primary bg-hero rounded-lg">Hubungi Kami</a>
             </nav>
         </div>
-</div>
+    </div>
+</header>
+
 <!-- navbar section end -->
 
 <!-- hero section start -->
-<section id="#" class="pt-16 pb-12">
+<section id="hero" class="pt-16 pb-12">
     <div class="container">
         <div class="lg:pl-9 overflow-hidden bg-hero rounded-3xl">
             <div class="grid items-center grid-cols-1 gap-y-2 lg:grid-cols-2 lg:order-1 order-2">
@@ -56,9 +59,9 @@
     <div class="container">
         <div class="flex flex-wrap">
             <div class="w-full px-4 lg:w-1/2">
-                <div class="grid grid-cols-1 gap-2 lg:grid-cols-2 hover:border-second px-3 py-3">
-                    <img src="img/al-jabodetabek1.png" alt="" class="mr-12">
-                    <img src="img/al-jabodetabek2.png" alt="">
+                <div class="grid grid-cols-1 gap-2 lg:grid-cols-2">
+                    <img src="img/al-jabodetabek1.png" alt="" class="mr-12 hover:border-4 hover:border-second hover:rounded-3xl px-3 py-3">
+                    <img src="img/al-jabodetabek2.png" alt="" class="hover:border-4 hover:border-second hover:rounded-3xl px-3 py-3">
                 </div>
             </div>
             <div class="w-full px-4 self-center lg:w-1/2">
@@ -104,7 +107,7 @@
             <div id="slidercarousel" class="w-full overflow-hidden">
                 <ul id="slids" class="flex w-full">
                     <li class="mr-3">
-                        <div class="bg-white border border-body rounded-2xl mb-10 mt-7">
+                        <div class="group bg-white border border-body rounded-2xl mb-10 mt-7 hover:bg-primary group-hover:text-white hover:border-dark">
                             <div class="flex items-center justify-center h-auto mt-[30px]">
                                 <div class="rounded-full w-12 h-12 bg-slate-200 flex justify-center items-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary" viewBox="0 0 20 20" fill="currentColor">
@@ -114,14 +117,14 @@
                             </div>
                             <div class="py-8 px-6">
                                 <h3 class="mb-1 font-normal text-xl text-black text-center">Ajriya</h3>
-                                <h4 class="mb-6 font-normal text-lg text-body text-center">UI - Teknik Komputer</h4>
-                                <p class="mb-9 font-normal text-lg text-body text-center">"Terimakasih Radian sudah membantu saya masuk ke PTN dan jurusan yang saya impikan. Guru-guru sangat baik dan cara mengajarnya juga mudah dipahami."</p>
+                                <h4 class="mb-6 font-normal text-lg text-body text-center group-hover:text-white">UI - Teknik Komputer</h4>
+                                <p class="mb-9 font-normal text-lg text-body text-center group-hover:text-white">"Terimakasih Radian sudah membantu saya masuk ke PTN dan jurusan yang saya impikan. Guru-guru sangat baik dan cara mengajarnya juga mudah dipahami."</p>
                             </div>
                         </div>
                     </li>
 
                     <li class="mr-3">
-                        <div class="bg-white border border-body rounded-2xl mb-10 mt-7">
+                        <div class="group bg-white border border-body rounded-2xl mb-10 mt-7 hover:bg-primary group-hover:text-white hover:border-dark">
                             <div class="flex items-center justify-center h-auto mt-[30px]">
                                 <div class="rounded-full w-12 h-12 bg-slate-200 flex justify-center items-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary" viewBox="0 0 20 20" fill="currentColor">
@@ -131,14 +134,14 @@
                             </div>
                             <div class="py-8 px-6">
                                 <h3 class=" mb-1 font-normal text-xl text-black text-center">Zefanya</h3>
-                                <h4 class="mb-6 font-normal text-lg text-body text-center">UI - Kedokteran</h4>
-                                <p class="mb-9 font-normal text-lg text-body text-center">"Guru-guru di Radian memberikan saya harapan dan dukungan besar. Saya mendapatkan banyak strategi dan tips dalam menghadapi ujian UTBK."</p>
+                                <h4 class="mb-6 font-normal text-lg text-body text-center group-hover:text-white">UI - Kedokteran</h4>
+                                <p class="mb-9 font-normal text-lg text-body text-center group-hover:text-white">"Guru-guru di Radian memberikan saya harapan dan dukungan besar. Saya mendapatkan banyak strategi dan tips dalam menghadapi ujian UTBK."</p>
                             </div> 
                         </div>
                     </li>
 
                     <li class="mr-3">
-                        <div class="bg-white border border-body rounded-2xl mb-10 mt-7">
+                        <div class="group bg-white border border-body rounded-2xl mb-10 mt-7 hover:bg-primary group-hover:text-white hover:border-dark">
                             <div class="flex items-center justify-center h-auto mt-[30px]">
                                 <div class="rounded-full w-12 h-12 bg-slate-100 flex justify-center items-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary" viewBox="0 0 20 20" fill="currentColor">
@@ -148,14 +151,14 @@
                             </div>
                             <div class="py-8 px-6">
                                 <h3 class="mb-1 font-normal text-xl text-black text-center">Nadif</h3>
-                                <h4 class="mb-6 font-normal text-lg text-body text-center">IPB - Sekolah Bisnis</h4>
-                                <p class="mb-9 font-normal text-lg text-body text-center">“Belajar di Radian benar-benar membantu saya dalam memahami soal-soal UTBK. Latihan soalnya banyak sehingga saya dapat berlatih untuk mengerjakan berbagai macam soal”</p>
+                                <h4 class="mb-6 font-normal text-lg text-body text-center group-hover:text-white">IPB - Sekolah Bisnis</h4>
+                                <p class="mb-9 font-normal text-lg text-body text-center group-hover:text-white">“Belajar di Radian benar-benar membantu saya dalam memahami soal-soal UTBK. Latihan soalnya banyak sehingga saya dapat berlatih untuk mengerjakan berbagai macam soal”</p>
                             </div>
                         </div>
                     </li>
 
                     <li class="mr-3">
-                        <div class="bg-white border border-body rounded-2xl mb-10 mt-7">
+                        <div class="group bg-white border border-body rounded-2xl mb-10 mt-7 hover:bg-primary group-hover:text-white hover:border-dark">
                             <div class="flex items-center justify-center h-auto mt-[30px]">
                                 <div class="rounded-full w-12 h-12 bg-slate-100 flex justify-center items-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary" viewBox="0 0 20 20" fill="currentColor">
@@ -165,14 +168,14 @@
                             </div>
                             <div class="py-8 px-6">
                                 <h3 class="mb-1 font-normal text-xl text-black text-center">Mikhi</h3>
-                                <h4 class="mb-6 font-normal text-lg text-body text-center">UI - Kedokteran</h4>
-                                <p class="mb-9 font-normal text-lg text-body text-center">“Berkat Radian saya bisa mewujudkan mimpi saya menjadi dokter. Terimakasih Radian sudah membantu saya masuk kedokteran UI”</p>
+                                <h4 class="mb-6 font-normal text-lg text-body text-center group-hover:text-white">UI - Kedokteran</h4>
+                                <p class="mb-9 font-normal text-lg text-body text-center group-hover:text-white">“Berkat Radian saya bisa mewujudkan mimpi saya menjadi dokter. Terimakasih Radian sudah membantu saya masuk kedokteran UI”</p>
                             </div>
                         </div>
                     </li>
 
                     <li class="mr-3">
-                        <div class="bg-white border border-body rounded-2xl mb-10 mt-7">
+                        <div class="group bg-white border border-body rounded-2xl mb-10 mt-7 hover:bg-primary group-hover:text-white hover:border-dark">
                             <div class="flex items-center justify-center h-auto mt-[30px]">
                                 <div class="rounded-full w-12 h-12 bg-slate-100 flex justify-center items-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary" viewBox="0 0 20 20" fill="currentColor">
@@ -182,14 +185,14 @@
                             </div>
                             <div class="py-8 px-6">
                                 <h3 class="mb-1 font-normal text-xl text-black text-center">Inas</h3>
-                                <h4 class="mb-6 font-normal text-lg text-body text-center">UI - Manajemen</h4>
-                                <p class="mb-9 font-normal text-lg text-body text-center">“Fasilitas dan guru di RadIan sangat membantu saya untuk mempelajari soal-soal UTBK. Buat temen-temen yang mau lolos PTN yuk gabung di Radian”</p>
+                                <h4 class="mb-6 font-normal text-lg text-body text-center group-hover:text-white">UI - Manajemen</h4>
+                                <p class="mb-9 font-normal text-lg text-body text-center group-hover:text-white">“Fasilitas dan guru di RadIan sangat membantu saya untuk mempelajari soal-soal UTBK. Buat temen-temen yang mau lolos PTN yuk gabung di Radian”</p>
                             </div>
                         </div>
                     </li>
 
                     <li class="mr-3">
-                        <div class="bg-white border border-body rounded-2xl mb-10 mt-7">
+                        <div class="group bg-white border border-body rounded-2xl mb-10 mt-7 hover:bg-primary group-hover:text-white hover:border-dark">
                             <div class="flex items-center justify-center h-auto mt-[30px]">
                                 <div class="rounded-full w-12 h-12 bg-slate-100 flex justify-center items-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary" viewBox="0 0 20 20" fill="currentColor">
@@ -199,8 +202,8 @@
                             </div>
                             <div class="py-8 px-6">
                                 <h3 class="mb-1 font-normal text-xl text-black text-center">Ratu</h3>
-                                <h4 class="mb-6 font-normal text-lg text-body text-center">UPNVJ - Kedokteran</h4>
-                                <p class="mb-9 font-normal text-lg text-body text-center">‘‘Alhamdulliah dengan bergabung bersama Radian bisa membantu saya untuk masuk jurusan impian saya yaitu Kedokteran di UIN jakarta”</p>
+                                <h4 class="mb-6 font-normal text-lg text-body text-center group-hover:text-white">UPNVJ - Kedokteran</h4>
+                                <p class="mb-9 font-normal text-lg text-body text-center group-hover:text-white">‘‘Alhamdulliah dengan bergabung bersama Radian bisa membantu saya untuk masuk jurusan impian saya yaitu Kedokteran di UIN jakarta”</p>
                             </div>
                         </div>
                     </li>
@@ -235,12 +238,18 @@
                 <h1 class="lg:text-4xl text-2xl font-semibold text-black mb-6">Kenapa Harus Di Radian?</h1>
                 <p class="text-lg font-normal text-body mb-14">"Radian memberikan layanan pelanggan yang baik, dengan mengutamakan kepuasan pelanggan dan memastikan siswa mendapatkan pengalaman pembelajaran terbaik."</p>
                 <div class="flex flex-wrap px-3">
-                    <h2 class="text-xl font-semibold text-black mb-1">Super Teacher</h2>
-                    <p class="text-base font-normal text-body mb-9">Guru terbaik, pintar, komunikatif serta sopan sehingga memberikan peningkatan super terhadap siswa . dan bisa tukar guru jika siswa merasa tidak cocok</p>
-                    <h2 class="text-xl font-semibold text-black mb-1">Garansi Uang Kembali</h2>
-                    <p class="text-base font-normal text-body mb-9">Memberikan solusi serta rencana yang mengikuti level siswa sekarang dan ditingkatkan sehingga mencapai target yang diinginkan</p>
-                    <h2 class="text-xl font-semibold text-black mb-1">Edu Record</h2>
-                    <p class="text-base font-normal text-body">Kami mengupas tuntas hingga kami mendapatkan gambaran yang lengkap tentan kondisi siswa terbaru agar siswa mencapai targetnya.</p>
+                    <div class="hover:bg-yellow-200 hover:rounded-lg px-4 py-4">
+                        <h2 class="text-xl font-semibold text-black mb-1">Super Teacher</h2>
+                        <p class="text-base font-normal text-body">Guru terbaik, pintar, komunikatif serta sopan sehingga memberikan peningkatan super terhadap siswa . dan bisa tukar guru jika siswa merasa tidak cocok</p>
+                    </div>
+                    <div class="hover:bg-yellow-200 hover:rounded-lg px-4 py-4">
+                        <h2 class="text-xl font-semibold text-black mb-1">Garansi Uang Kembali</h2>
+                        <p class="text-base font-normal text-body">Memberikan solusi serta rencana yang mengikuti level siswa sekarang dan ditingkatkan sehingga mencapai target yang diinginkan</p>
+                    </div>
+                    <div class="hover:bg-yellow-200 hover:rounded-lg px-4 py-4">
+                        <h2 class="text-xl font-semibold text-black mb-1">Edu Record</h2>
+                        <p class="text-base font-normal text-body">Kami mengupas tuntas hingga kami mendapatkan gambaran yang lengkap tentan kondisi siswa terbaru agar siswa mencapai targetnya.</p>
+                    </div>
                 </div>
             </div>
             <div class="w-full px-4 lg:w-1/2">

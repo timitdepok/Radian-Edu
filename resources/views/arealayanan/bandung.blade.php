@@ -2,10 +2,11 @@
 @section('content')
 
 <!-- navbar section start -->
-<div class="w-full text-gray-700 bg-white dark-mode:text-gray-200 dark-mode:bg-gray-800">
+<header class="fixed z-50 w-full">
+    <div class="w-full text-gray-700 bg-white dark-mode:text-gray-200 dark-mode:bg-gray-800">
         <div x-data="{ open: false }" class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
             <div class="flex flex-row items-center justify-between p-4">
-                <a href="#">
+                <a href="{{ route('home') }}">
                     <img src="img/logo.png" alt="">
                 </a>
                 <button class="rounded-lg md:hidden focus:outline-none focus:shadow-outline" @click="open = !open">
@@ -16,7 +17,7 @@
                 </button>
             </div>
             <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow hidden pb-4 md:pb-0 md:flex md:justify-end md:flex-row">
-                <a class="px-4 py-2 mt-2 text-sm font-semibold md:mt-0 md:ml-4 hover:text-bandung text-body focus:outline-none focus:shadow-outline" href="{{ route('home') }}">Home</a>
+                <a class="px-4 py-2 mt-2 text-sm font-semibold md:mt-0 md:ml-4 hover:text-bandung text-body focus:outline-none focus:shadow-outline" href="#hero">Home</a>
                 <a class="px-4 py-2 mt-2 text-sm font-semibold md:mt-0 md:ml-4 hover:text-bandung text-body focus:outline-none focus:shadow-outline" href="#alumni">Alumni</a>
                 <a class="px-4 py-2 mt-2 text-sm font-semibold md:mt-0 md:ml-4 hover:text-bandung text-body focus:outline-none focus:shadow-outline" href="#testi">Testimoni</a>
                 <a class="px-4 py-2 mt-2 text-sm font-semibold md:mt-0 md:ml-4 hover:text-bandung text-body focus:outline-none focus:shadow-outline" href="#unggul">Keunggulan</a>
@@ -25,11 +26,12 @@
                 <a class="px-4 py-2 mt-2 text-sm font-semibold md:mt-0 md:ml-4 w-[136px] h-[38px] border text-bandung bg-hero rounded-lg">Hubungi Kami</a>
             </nav>
         </div>
-</div>
+    </div>
+</header>
 <!-- navbar section end -->
 
 <!-- hero section start -->
-<section id="#" class="pt-16 pb-12">
+<section id="hero" class="pt-16 pb-12">
         <div class="container">
             <div class="lg:pl-9 overflow-hidden bg-hero rounded-3xl">
                 <div class="grid items-center grid-cols-1 gap-y-2 lg:grid-cols-2">
@@ -47,7 +49,7 @@
                 </div>
             </div>
         </div>
-    </section>
+</section>
 <!-- hero section end -->
 
 <!-- alumni section start -->
@@ -56,8 +58,8 @@
             <div class="flex flex-wrap">
                 <div class="w-full px-4 lg:w-1/2">
                     <div class="grid grid-cols-1 gap-2 lg:grid-cols-2">
-                        <img src="img/al-jabodetabek1.png" alt="" class="mr-12">
-                        <img src="img/al-jabodetabek2.png" alt="">
+                        <img src="img/al-jabodetabek1.png" alt="" class="mr-12 hover:border-4 hover:border-second hover:rounded-3xl px-3 py-3">
+                        <img src="img/al-jabodetabek2.png" alt="" class="hover:border-4 hover:border-second hover:rounded-3xl px-3 py-3">
                     </div>
                 </div>
                 <div class="w-full px-4 lg:w-1/2">
@@ -85,7 +87,7 @@
                 </div>
             </div>
         </div>
-    </section>
+</section>
 <!-- alumni section end -->
 
 <!-- testimoni section start -->
@@ -103,24 +105,24 @@
                 <div id="slidercarousel" class="w-full overflow-hidden">
                     <ul id="slids" class="flex w-full">
                         <li class="mr-3">
-                            <div class="bg-white border border-body rounded-2xl mb-10">
+                            <div class="group bg-white border border-body rounded-2xl mb-10 hover:bg-primary group-hover:text-white hover:border-dark">
                                 <div class="flex items-center justify-center h-auto mt-7">
                                     <div class="rounded-full w-12 h-12 bg-slate-200 flex justify-center items-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary" viewBox="0 0 20 20" fill="currentColor">
                                             <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
-                                          </svg>
+                                        </svg>
                                     </div>
-                            </div>
-                            <div class="py-8 px-6">
-                                <h3 class="mb-1 font-normal text-xl text-black text-center">Dion</h3>
-                                <h4 class="mb-6 font-normal text-lg text-body text-center">ITB - Teknologi Industri</h4>
-                                <p class="mb-9 font-normal text-lg text-body text-center">"Les privat di Radian sangat membantu saya dalam mempersiapkan ujian masuk PTN. Saya merasa lebih siap dan percaya diri ketika menghadapi ujian masuk, dan akhirnya berhasil diterima di perguruan tinggi pilihan saya."</p>
-                            </div>
+                                </div>
+                                <div class="py-8 px-6">
+                                    <h3 class="mb-1 font-normal text-xl text-black text-center">Dion</h3>
+                                    <h4 class="mb-6 font-normal text-lg text-body text-center group-hover:text-white">ITB - Teknologi Industri</h4>
+                                    <p class="mb-9 font-normal text-lg text-body text-center group-hover:text-white">"Les privat di Radian sangat membantu saya dalam mempersiapkan ujian masuk PTN. Saya merasa lebih siap dan percaya diri ketika menghadapi ujian masuk, dan akhirnya berhasil diterima di perguruan tinggi pilihan saya."</p>
+                                </div>
                         </div>
                         </li>
 
                         <li class="mr-3">
-                            <div class="bg-white border border-body rounded-2xl mb-10">
+                            <div class="group bg-white border border-body rounded-2xl mb-10 hover:bg-primary group-hover:text-white hover:border-dark">
                                 <div class="flex items-center justify-center h-auto mt-7">
                                     <div class="rounded-full w-12 h-12 bg-slate-200 flex justify-center items-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary" viewBox="0 0 20 20" fill="currentColor">
@@ -130,14 +132,14 @@
                                 </div>
                                 <div class="py-8 px-6">
                                     <h3 class=" mb-1 font-normal text-xl text-black text-center">Raisa</h3>
-                                    <h4 class="mb-6 font-normal text-lg text-body text-center">UNPAD - Psikolog</h4>
-                                    <p class="mb-9 font-normal text-lg text-body text-center">"Saya sangat senang bisa bergabung dengan Radian karena memiliki guru yang berkualitas dan fasilitas lengkap. Latihan soalnya juga sangat update sehingga membantu saya menghadapi ujian UTBK”</p>
+                                    <h4 class="mb-6 font-normal text-lg text-body text-center group-hover:text-white">UNPAD - Psikolog</h4>
+                                    <p class="mb-9 font-normal text-lg text-body text-center group-hover:text-white">"Saya sangat senang bisa bergabung dengan Radian karena memiliki guru yang berkualitas dan fasilitas lengkap. Latihan soalnya juga sangat update sehingga membantu saya menghadapi ujian UTBK”</p>
                                 </div> 
                             </div>
                         </li>
 
                         <li class="mr-3">
-                            <div class="bg-white border border-body rounded-2xl mb-10">
+                            <div class="group bg-white border border-body rounded-2xl mb-10 hover:bg-primary group-hover:text-white hover:border-dark">
                                 <div class="flex items-center justify-center h-auto mt-7">
                                     <div class="rounded-full w-12 h-12 bg-slate-100 flex justify-center items-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary" viewBox="0 0 20 20" fill="currentColor">
@@ -147,14 +149,14 @@
                                 </div>
                                 <div class="py-8 px-6">
                                     <h3 class="mb-1 font-normal text-xl text-black text-center">Nahreza</h3>
-                                    <h4 class="mb-6 font-normal text-lg text-body text-center">UNPAD - Humas</h4>
-                                    <p class="mb-9 font-normal text-lg text-body text-center">"Saya sangat berterima kasih kepada Radian yang telah membantu saya dalam persiapan ujian masuk perguruan tinggi negeri hingga saya berhasil lolos masuk UNPAD.”</p>
+                                    <h4 class="mb-6 font-normal text-lg text-body text-center group-hover:text-white">UNPAD - Humas</h4>
+                                    <p class="mb-9 font-normal text-lg text-body text-center group-hover:text-white">"Saya sangat berterima kasih kepada Radian yang telah membantu saya dalam persiapan ujian masuk perguruan tinggi negeri hingga saya berhasil lolos masuk UNPAD.”</p>
                                 </div>
                             </div>
                         </li>
 
                         <li class="mr-3">
-                            <div class="bg-white border border-body rounded-2xl mb-10">
+                            <div class="group bg-white border border-body rounded-2xl mb-10 hover:bg-primary group-hover:text-white hover:border-dark">
                                 <div class="flex items-center justify-center h-auto mt-7">
                                     <div class="rounded-full w-12 h-12 bg-slate-100 flex justify-center items-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary" viewBox="0 0 20 20" fill="currentColor">
@@ -164,14 +166,14 @@
                                 </div>
                                 <div class="py-8 px-6">
                                     <h3 class="mb-1 font-normal text-xl text-black text-center">Ratu</h3>
-                                    <h4 class="mb-6 font-normal text-lg text-body text-center">UNPAD - Perpustakaan dan Sains</h4>
-                                    <p class="mb-9 font-normal text-lg text-body text-center">Belajar di Radian seru banget, materi pelajarannya mudah di mengerti, latihan soalnya banyak dan update jadi saya terlatih untuk mengerjakan berbagai macam soal UTBK”</p>
+                                    <h4 class="mb-6 font-normal text-lg text-body text-center group-hover:text-white">UNPAD - Perpustakaan dan Sains</h4>
+                                    <p class="mb-9 font-normal text-lg text-body text-center group-hover:text-white">Belajar di Radian seru banget, materi pelajarannya mudah di mengerti, latihan soalnya banyak dan update jadi saya terlatih untuk mengerjakan berbagai macam soal UTBK”</p>
                                 </div>
                             </div>
                         </li>
 
                         <li class="mr-3">
-                            <div class="bg-white border border-body rounded-2xl mb-10">
+                            <div class="group bg-white border border-body rounded-2xl mb-10 hover:bg-primary group-hover:text-white hover:border-dark">
                                 <div class="flex items-center justify-center h-auto mt-7">
                                     <div class="rounded-full w-12 h-12 bg-slate-100 flex justify-center items-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary" viewBox="0 0 20 20" fill="currentColor">
@@ -181,14 +183,14 @@
                                 </div>
                                 <div class="py-8 px-6">
                                     <h3 class="mb-1 font-normal text-xl text-black text-center">Putri</h3>
-                                    <h4 class="mb-6 font-normal text-lg text-body text-center">UNPAD - Akuntansi</h4>
-                                    <p class="mb-9 font-normal text-lg text-body text-center">"Guru privat disini sangat efektif dalam membantu saya memahami materi pelajaran untuk persiapan ujian. Terimakasih Radian”</p>
+                                    <h4 class="mb-6 font-normal text-lg text-body text-center group-hover:text-white">UNPAD - Akuntansi</h4>
+                                    <p class="mb-9 font-normal text-lg text-body text-center group-hover:text-white">"Guru privat disini sangat efektif dalam membantu saya memahami materi pelajaran untuk persiapan ujian. Terimakasih Radian”</p>
                                 </div>
                             </div>
                         </li>
 
                         <li class="mr-3">
-                            <div class="bg-white border border-body rounded-2xl mb-10">
+                            <div class="group bg-white border border-body rounded-2xl mb-10 hover:bg-primary group-hover:text-white hover:border-dark">
                                 <div class="flex items-center justify-center h-auto mt-7">
                                     <div class="rounded-full w-12 h-12 bg-slate-100 flex justify-center items-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary" viewBox="0 0 20 20" fill="currentColor">
@@ -198,8 +200,8 @@
                                 </div>
                                 <div class="py-8 px-6">
                                     <h3 class="mb-1 font-normal text-xl text-black text-center">Ikhsan</h3>
-                                    <h4 class="mb-6 font-normal text-lg text-body text-center">UNPAD - HI</h4>
-                                    <p class="mb-9 font-normal text-lg text-body text-center">“Radian sangat membantu saya meningkatkan nilai disekolah. Saya sangat senang dengan system belajar mengajar disini. Terimakasih Radian."</p>
+                                    <h4 class="mb-6 font-normal text-lg text-body text-center group-hover:text-white">UNPAD - HI</h4>
+                                    <p class="mb-9 font-normal text-lg text-body text-center group-hover:text-white">“Radian sangat membantu saya meningkatkan nilai disekolah. Saya sangat senang dengan system belajar mengajar disini. Terimakasih Radian."</p>
                                 </div>
                             </div>
                         </li>
@@ -233,12 +235,18 @@
                     <h1 class="lg:text-4xl text-2xl font-semibold text-black mb-6">Kenapa Harus Di Radian?</h1>
                     <p class="text-lg font-normal text-body mb-14">"Radian memberikan layanan pelanggan yang baik, dengan mengutamakan kepuasan pelanggan dan memastikan siswa mendapatkan pengalaman pembelajaran terbaik."</p>
                     <div class="flex flex-wrap px-3">
-                        <h1 class="text-xl font-semibold text-black mb-1">Super Teacher</h1>
-                        <p class="text-base font-normal text-body mb-9">Guru terbaik, pintar, komunikatif serta sopan sehingga memberikan peningkatan super terhadap siswa. dan bisa tukar guru jika siswa merasa tidak cocok</p>
-                        <h1 class="text-xl font-semibold text-black mb-1">Garansi Uang Kembali</h1>
-                        <p class="text-base font-normal text-body mb-9">Memberikan solusi serta rencana yang mengikuti level siswa sekarang dan ditingkatkan sehingga mencapai target yang diinginkan.</p>
-                        <h1 class="text-xl font-semibold text-black mb-1">Edu Record</h1>
-                        <p class="text-base font-normal text-body mb-9">Kami mengupas tuntas hingga kami mendapatkan gambaran yang lengkap tentang kondisi siswa terbaru agar siswa mencapai targetnya.</p>
+                        <div class="hover:bg-yellow-200 hover:rounded-lg px-4 py-4">
+                            <h1 class="text-xl font-semibold text-black mb-1">Super Teacher</h1>
+                            <p class="text-base font-normal text-body">Guru terbaik, pintar, komunikatif serta sopan sehingga memberikan peningkatan super terhadap siswa. dan bisa tukar guru jika siswa merasa tidak cocok</p>
+                        </div>
+                        <div class="hover:bg-yellow-200 hover:rounded-lg px-4 py-4">
+                            <h1 class="text-xl font-semibold text-black mb-1">Garansi Uang Kembali</h1>
+                            <p class="text-base font-normal text-body">Memberikan solusi serta rencana yang mengikuti level siswa sekarang dan ditingkatkan sehingga mencapai target yang diinginkan.</p>
+                        </div>
+                        <div class="hover:bg-yellow-200 hover:rounded-lg px-4 py-4">
+                            <h1 class="text-xl font-semibold text-black mb-1">Edu Record</h1>
+                            <p class="text-base font-normal text-body">Kami mengupas tuntas hingga kami mendapatkan gambaran yang lengkap tentang kondisi siswa terbaru agar siswa mencapai targetnya.</p>
+                        </div>
                     </div>
                 </div>
                 <div class="w-full px-4 lg:w-1/2">
@@ -254,7 +262,7 @@
     <div class="container">
         <div class="flex flex-wrap">
             <div class="w-full self-center px-4 lg:w-1/2">
-                <h5 class="text-lg font-semibold text-jogja lg:mb-2 mb-0">PROGRAM</h5>
+                <h5 class="text-lg font-semibold text-bandung lg:mb-2 mb-0">PROGRAM</h5>
                 <h1 class="lg:text-5xl text-2xl font-semibold text-black lg:mb-4 mb-2 max-w-[355px]">Program Radian Edu</h1>
                 <p class="text-lg font-normal text-body max-w-xs lg:mb-0 mb-4">Ayo pilih program terbaik sesuai dengan kebutuhanmu.</p>
             </div>
@@ -268,7 +276,7 @@
                                     <div class="h-full w-full rounded-xl object-cover overflow-hidden relative">
                                         <img src="img/supercamp.png" alt="" class="w-full h-[210px] object-cover">
                                         <div class="pt-8 pl-7">
-                                            <button class="bg-jogja rounded-lg px-3 py-2 text-white text-sm font-semibold self-center absolute top-6 z-20 flex flex-wrap">
+                                            <button class="bg-bandung rounded-lg px-3 py-2 text-white text-sm font-semibold self-center absolute top-6 z-20 flex flex-wrap">
                                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-white">
                                                     <path fill-rule="evenodd" d="M14.615 1.595a.75.75 0 01.359.852L12.982 9.75h7.268a.75.75 0 01.548 1.262l-10.5 11.25a.75.75 0 01-1.272-.71l1.992-7.302H3.75a.75.75 0 01-.548-1.262l10.5-11.25a.75.75 0 01.913-.143z" clip-rule="evenodd" />
                                                 </svg>
@@ -291,7 +299,7 @@
                                     <div class="h-full w-full rounded-xl object-cover overflow-hidden relative">
                                         <img src="img/privat-rutin.png" alt="" class="w-full h-[210px] object-cover">
                                         <div class="pt-8 pl-7">
-                                            <button class="bg-jogja rounded-lg px-3 py-2 text-white text-sm font-semibold self-center absolute top-6 z-20 flex flex-wrap">
+                                            <button class="bg-bandung rounded-lg px-3 py-2 text-white text-sm font-semibold self-center absolute top-6 z-20 flex flex-wrap">
                                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-white">
                                                     <path fill-rule="evenodd" d="M14.615 1.595a.75.75 0 01.359.852L12.982 9.75h7.268a.75.75 0 01.548 1.262l-10.5 11.25a.75.75 0 01-1.272-.71l1.992-7.302H3.75a.75.75 0 01-.548-1.262l10.5-11.25a.75.75 0 01.913-.143z" clip-rule="evenodd" />
                                                 </svg>
@@ -314,7 +322,7 @@
                                     <div class="h-full w-full rounded-xl object-cover overflow-hidden relative">
                                         <img src="img/privat-garansi.png" alt="" class="w-full h-[210px] object-cover">
                                         <div class="pt-8 pl-7">
-                                            <button class="bg-jogja rounded-lg px-3 py-2 text-white text-sm font-semibold self-center absolute top-6 z-20 flex flex-wrap">
+                                            <button class="bg-bandung rounded-lg px-3 py-2 text-white text-sm font-semibold self-center absolute top-6 z-20 flex flex-wrap">
                                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-white">
                                                     <path fill-rule="evenodd" d="M14.615 1.595a.75.75 0 01.359.852L12.982 9.75h7.268a.75.75 0 01.548 1.262l-10.5 11.25a.75.75 0 01-1.272-.71l1.992-7.302H3.75a.75.75 0 01-.548-1.262l10.5-11.25a.75.75 0 01.913-.143z" clip-rule="evenodd" />
                                                 </svg>
@@ -337,7 +345,7 @@
                                     <div class="h-full w-full rounded-xl object-cover overflow-hidden relative">
                                         <img src="img/privat-mahasiswa.png" alt="" class="w-full h-[210px] object-cover">
                                         <div class="pt-8 pl-7">
-                                            <button class="bg-jogja rounded-lg px-3 py-2 text-white text-sm font-semibold self-center absolute top-6 z-20 flex flex-wrap">
+                                            <button class="bg-bandung rounded-lg px-3 py-2 text-white text-sm font-semibold self-center absolute top-6 z-20 flex flex-wrap">
                                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-white">
                                                     <path fill-rule="evenodd" d="M14.615 1.595a.75.75 0 01.359.852L12.982 9.75h7.268a.75.75 0 01.548 1.262l-10.5 11.25a.75.75 0 01-1.272-.71l1.992-7.302H3.75a.75.75 0 01-.548-1.262l10.5-11.25a.75.75 0 01.913-.143z" clip-rule="evenodd" />
                                                 </svg>
@@ -360,7 +368,7 @@
                                     <div class="h-full w-full rounded-xl object-cover overflow-hidden relative">
                                         <img src="img/privat-cpns.png" alt="" class="w-full h-[210px] object-cover">
                                         <div class="pt-8 pl-7">
-                                            <button class="bg-jogja rounded-lg px-3 py-2 text-white text-sm font-semibold self-center absolute top-6 z-20 flex flex-wrap">
+                                            <button class="bg-bandung rounded-lg px-3 py-2 text-white text-sm font-semibold self-center absolute top-6 z-20 flex flex-wrap">
                                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-white">
                                                     <path fill-rule="evenodd" d="M14.615 1.595a.75.75 0 01.359.852L12.982 9.75h7.268a.75.75 0 01.548 1.262l-10.5 11.25a.75.75 0 01-1.272-.71l1.992-7.302H3.75a.75.75 0 01-.548-1.262l10.5-11.25a.75.75 0 01.913-.143z" clip-rule="evenodd" />
                                                 </svg>
@@ -383,7 +391,7 @@
                                     <div class="h-full w-full rounded-xl object-cover overflow-hidden relative">
                                         <img src="img/privat-umum.png" alt="" class="w-full h-[210px] object-cover">
                                         <div class="pt-8 pl-7">
-                                            <button class="bg-jogja rounded-lg px-3 py-2 text-white text-sm font-semibold self-center absolute top-6 z-20 flex flex-wrap">
+                                            <button class="bg-bandung rounded-lg px-3 py-2 text-white text-sm font-semibold self-center absolute top-6 z-20 flex flex-wrap">
                                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-white">
                                                     <path fill-rule="evenodd" d="M14.615 1.595a.75.75 0 01.359.852L12.982 9.75h7.268a.75.75 0 01.548 1.262l-10.5 11.25a.75.75 0 01-1.272-.71l1.992-7.302H3.75a.75.75 0 01-.548-1.262l10.5-11.25a.75.75 0 01.913-.143z" clip-rule="evenodd" />
                                                 </svg>
@@ -406,7 +414,7 @@
                                     <div class="h-full w-full rounded-xl object-cover overflow-hidden relative">
                                         <img src="img/intensif.png" alt="" class="w-full h-[210px] object-cover">
                                         <div class="pt-8 pl-7">
-                                            <button class="bg-jogja rounded-lg px-3 py-2 text-white text-sm font-semibold self-center absolute top-6 z-20 flex flex-wrap">
+                                            <button class="bg-bandung rounded-lg px-3 py-2 text-white text-sm font-semibold self-center absolute top-6 z-20 flex flex-wrap">
                                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-white">
                                                     <path fill-rule="evenodd" d="M14.615 1.595a.75.75 0 01.359.852L12.982 9.75h7.268a.75.75 0 01.548 1.262l-10.5 11.25a.75.75 0 01-1.272-.71l1.992-7.302H3.75a.75.75 0 01-.548-1.262l10.5-11.25a.75.75 0 01.913-.143z" clip-rule="evenodd" />
                                                 </svg>
@@ -429,7 +437,7 @@
                                     <div class="h-full w-full rounded-xl object-cover overflow-hidden relative">
                                         <img src="img/exclusif.png" alt="" class="w-full h-[210px] object-cover">
                                         <div class="pt-8 pl-7">
-                                            <button class="bg-jogja rounded-lg px-3 py-2 text-white text-sm font-semibold self-center absolute top-6 z-20 flex flex-wrap">
+                                            <button class="bg-bandung rounded-lg px-3 py-2 text-white text-sm font-semibold self-center absolute top-6 z-20 flex flex-wrap">
                                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-white">
                                                     <path fill-rule="evenodd" d="M14.615 1.595a.75.75 0 01.359.852L12.982 9.75h7.268a.75.75 0 01.548 1.262l-10.5 11.25a.75.75 0 01-1.272-.71l1.992-7.302H3.75a.75.75 0 01-.548-1.262l10.5-11.25a.75.75 0 01.913-.143z" clip-rule="evenodd" />
                                                 </svg>
@@ -452,7 +460,7 @@
                                     <div class="h-full w-full rounded-xl object-cover overflow-hidden relative">
                                         <img src="img/bimbel-online.png" alt="" class="w-full h-[210px] object-cover">
                                         <div class="pt-8 pl-7">
-                                            <button class="bg-jogja rounded-lg px-3 py-2 text-white text-sm font-semibold self-center absolute top-6 z-20 flex flex-wrap">
+                                            <button class="bg-bandung rounded-lg px-3 py-2 text-white text-sm font-semibold self-center absolute top-6 z-20 flex flex-wrap">
                                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-white">
                                                     <path fill-rule="evenodd" d="M14.615 1.595a.75.75 0 01.359.852L12.982 9.75h7.268a.75.75 0 01.548 1.262l-10.5 11.25a.75.75 0 01-1.272-.71l1.992-7.302H3.75a.75.75 0 01-.548-1.262l10.5-11.25a.75.75 0 01.913-.143z" clip-rule="evenodd" />
                                                 </svg>

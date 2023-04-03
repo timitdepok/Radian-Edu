@@ -205,16 +205,16 @@
         <div class="flex">
             <div id="slidercontainer" class="w-full overflow-hidden">
                 <ul id="slider" class="flex w-full">
-                    <li>
+                    <li class="mr-4">
                         <img src="img/Webbanner 1.png" alt="" class="h-auto w-full mr-5">
                     </li>
-                    <li>
+                    <li class="mr-4">
                         <img src="img/Webbanner 2.png" alt="" class="h-auto w-full mr-5">
                     </li>
-                    <li>
+                    <li class="mr-4">
                         <img src="img/Webbanner 1.png" alt="" class="h-auto w-full mr-5">
                     </li>
-                    <li>
+                    <li class="mr-4">
                         <img src="img/Webbanner 2.png" alt="" class="h-auto w-full mr-5">
                     </li>
                 </ul>
