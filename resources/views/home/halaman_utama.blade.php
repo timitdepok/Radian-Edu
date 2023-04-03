@@ -136,7 +136,7 @@
                         <a class="px-4 lg:py-4 py-2 mt-2 text-sm font-semibold text-white md:mt-0 hover:text-gray-900 focus:text-gray-900 focus:outline-none lg:mr-10 lg:self-center" href="#testi">Testimoni</a>
                         <a class="px-4 lg:py-4 py-2 mt-2 text-sm font-semibold text-white md:mt-0 hover:text-gray-900 focus:text-gray-900 focus:outline-none lg:mr-16 lg:self-center" href="/news">News</a>
                         @guest
-                        <div class="lg:self-center lg:ml-56">
+                        <div class="lg:self-center lg:ml-48">
                             <a class="text-white text-sm font-semibold hover:text-gray-900 focus:text-gray-900 focus:outline-none px-4 lg:py-4 py-2 lg:mr-3 lg:self-center lg:text-right lg:right-0" href="/registrasi">Daftar</a>
                             <a class="text-white font-semibold text-sm border border-white lg:px-4 px-4 lg:py-2 py-2 lg:mt-5 mt-2 text-center rounded-lg justify-items-end w-[94px] h-[40px] lg:mr-3 lg:right-0" href="/login">Masuk</a>
                         </div>
