@@ -55,6 +55,7 @@ module.exports = {
         "surabaya": "#F88E27",
         "herosby": "#FEF5ED",
         "border": "#EEF8FF",
+        "dark-blue": "#290f6b",
       },
       screens: {
         'notebook': '930px',

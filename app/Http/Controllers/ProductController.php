@@ -19,4 +19,10 @@ class ProductController extends Controller
             "title" => "PRIVAT BERGARANSI | Radian Edu"
         ]);
     }
+
+    public function cpns(){
+        return view("product.cpns",[
+            "title" => "CPNS | Radian Edu"
+        ]);
+    }
 }
