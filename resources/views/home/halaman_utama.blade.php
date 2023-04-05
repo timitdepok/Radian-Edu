@@ -1,7 +1,7 @@
 @extends('home.layout.template')
 @section('content') 
  
- <!-- navbar section start -->
+    <!-- navbar section start -->
     <header class="fixed z-50 w-full">
         <!-- navbar 1 section -->
         <div class="bg-white left-0 w-full flex justify-between items-center">
@@ -39,7 +39,7 @@
                               </svg>
                         </button>
                     </div>  
-                    <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow hidden pb-4 md:pb-0 md:flex md:justify-start md:ml-14 md:flex-row lg:self-center">
+                    <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow hidden pb-4 md:pb-0 md:flex md:justify-start md:flex-row lg:self-center">
                         <a class="px-4 py-4 lg:text-sm text-xs font-semibold text-white border-b border-white md:mt-0 hover:text-gray-900 focus:text-gray-900 focus:outline-none lg:mr-10 lg:self-center" href="#">Home</a>
                         <div @click.away="open = false" class="relative lg:self-center" x-data="{ open: false }">
                             <button @click="open = !open" class="flex flex-row items-center w-full px-4 lg:py-4 py-2 lg:my-4 mt-2 lg:text-sm text-xs font-semibold text-left bg-transparent rounded-lg md:w-auto md:inline md:ml-4 hover:text-gray-900 focus:text-gray-900 focus:outline-none focus:shadow-outline lg:mr-10 lg:self-center">
@@ -136,7 +136,7 @@
                         <a class="px-4 lg:py-4 py-2 mt-2 text-sm font-semibold text-white md:mt-0 hover:text-gray-900 focus:text-gray-900 focus:outline-none lg:mr-10 lg:self-center" href="#testi">Testimoni</a>
                         <a class="pl-4 lg:py-4 py-2 mt-2 text-sm font-semibold text-white md:mt-0 hover:text-gray-900 focus:text-gray-900 focus:outline-none lg:mr-16 lg:self-center" href="/news">News</a>
                         @guest
-                        <div class="lg:self-center lg:ml-36">
+                        <div class="lg:self-center lg:ml-40">
                             <a class="text-white text-sm font-semibold hover:text-gray-900 focus:text-gray-900 focus:outline-none px-4 lg:py-4 py-2 lg:self-center" href="/registrasi">Daftar</a>
                             <a class="text-white font-semibold text-sm border border-white lg:px-4 px-4 lg:py-2 py-2 lg:mt-5 mt-2 text-center rounded-lg justify-items-end w-[94px] h-[40px]" href="/login">Masuk</a>
                         </div>
@@ -146,9 +146,9 @@
             </div>
         <!-- navbar 2 section end -->
     </header>
-<!-- navbar section end -->
+    <!-- navbar section end -->
 
-<!-- hero section start -->
+    <!-- hero section start -->
     <section id="home" class="pt-20 bg-gradient-to-br from-white via-white to-blue-200">
         <div class="container">
             <div class="flex flex-wrap lg:mt-10">
@@ -177,52 +177,52 @@
     </section>
     <!-- hero section end -->
 
- <!-- promo section start -->
-<section id="promo" class="pt-16 pb-36 bg-slate-100">
-    <div class="container">
-        <div class="flex flex-wrap">
-            <div class="w-full px-4 mb-10 lg:w-1/2">
-                <h4 class="font-bold uppercase text-primary text-lg mb-3">Top Promo</h4>
-                <h2 class="font-bold text-dark text-3xl mb-5 max-w-md">PROMO YANG SEDANG BERLANGSUNG</h2>
-            </div>
-            <div class="w-full px-4 mb-10 lg:w-1/2">
-                <div class="w-full text-right">
-                    <button onclick="next()" class="p-3 rounded-full bg-slate-100 border border-gray-100 shadow-lg mr-5">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-primary">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
-                          </svg>                              
-                    </button>
-
-                    <button onclick="prev()" class="p-3 rounded-full bg-slate-100 border border-gray-100 shadow-lg mr-5">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-primary">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                          </svg>                              
-                    </button>
+    <!-- promo section start -->
+    <section id="promo" class="pt-16 pb-36 bg-slate-100">
+        <div class="container">
+            <div class="flex flex-wrap">
+                <div class="w-full px-4 mb-10 lg:w-1/2">
+                    <h4 class="font-bold uppercase text-primary text-lg mb-3">Top Promo</h4>
+                    <h2 class="font-bold text-dark text-3xl mb-5 max-w-md">PROMO YANG SEDANG BERLANGSUNG</h2>
                 </div>
-               
+                <div class="w-full px-4 mb-10 lg:w-1/2">
+                    <div class="w-full text-right">
+                        <button onclick="next()" class="p-3 rounded-full bg-slate-100 border border-gray-100 shadow-lg mr-5">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-primary">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+                            </svg>                              
+                        </button>
+
+                        <button onclick="prev()" class="p-3 rounded-full bg-slate-100 border border-gray-100 shadow-lg mr-5">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-primary">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                            </svg>                              
+                        </button>
+                    </div>
+                
+                </div>
+            </div>
+            <div class="flex">
+                <div id="slidercontainer" class="w-full overflow-hidden">
+                    <ul id="slider" class="flex w-full">
+                        <li class="mr-4">
+                            <img src="img/Webbanner 1.png" alt="" class="h-auto w-full mr-5">
+                        </li>
+                        <li class="mr-4">
+                            <img src="img/Webbanner 2.png" alt="" class="h-auto w-full mr-5">
+                        </li>
+                        <li class="mr-4">
+                            <img src="img/Webbanner 1.png" alt="" class="h-auto w-full mr-5">
+                        </li>
+                        <li class="mr-4">
+                            <img src="img/Webbanner 2.png" alt="" class="h-auto w-full mr-5">
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
-        <div class="flex">
-            <div id="slidercontainer" class="w-full overflow-hidden">
-                <ul id="slider" class="flex w-full">
-                    <li class="mr-4">
-                        <img src="img/Webbanner 1.png" alt="" class="h-auto w-full mr-5">
-                    </li>
-                    <li class="mr-4">
-                        <img src="img/Webbanner 2.png" alt="" class="h-auto w-full mr-5">
-                    </li>
-                    <li class="mr-4">
-                        <img src="img/Webbanner 1.png" alt="" class="h-auto w-full mr-5">
-                    </li>
-                    <li class="mr-4">
-                        <img src="img/Webbanner 2.png" alt="" class="h-auto w-full mr-5">
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- promo section end -->
+    </section>
+    <!-- promo section end -->
 
     <!--tentang radian section start  -->
     <section id="about" class="pt-16">
