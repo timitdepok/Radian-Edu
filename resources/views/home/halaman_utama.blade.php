@@ -39,7 +39,7 @@
                               </svg>
                         </button>
                     </div>  
-                    <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow hidden pb-4 md:pb-0 md:flex md:justify-end md:flex-row lg:self-center">
+                    <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow hidden pb-4 md:pb-0 md:flex md:justify-start md:ml-14 md:flex-row lg:self-center">
                         <a class="px-4 py-4 lg:text-sm text-xs font-semibold text-white border-b border-white md:mt-0 hover:text-gray-900 focus:text-gray-900 focus:outline-none lg:mr-10 lg:self-center" href="#">Home</a>
                         <div @click.away="open = false" class="relative lg:self-center" x-data="{ open: false }">
                             <button @click="open = !open" class="flex flex-row items-center w-full px-4 lg:py-4 py-2 lg:my-4 mt-2 lg:text-sm text-xs font-semibold text-left bg-transparent rounded-lg md:w-auto md:inline md:ml-4 hover:text-gray-900 focus:text-gray-900 focus:outline-none focus:shadow-outline lg:mr-10 lg:self-center">
@@ -134,11 +134,11 @@
                         </div> 
                         
                         <a class="px-4 lg:py-4 py-2 mt-2 text-sm font-semibold text-white md:mt-0 hover:text-gray-900 focus:text-gray-900 focus:outline-none lg:mr-10 lg:self-center" href="#testi">Testimoni</a>
-                        <a class="px-4 lg:py-4 py-2 mt-2 text-sm font-semibold text-white md:mt-0 hover:text-gray-900 focus:text-gray-900 focus:outline-none lg:mr-16 lg:self-center" href="/news">News</a>
+                        <a class="pl-4 lg:py-4 py-2 mt-2 text-sm font-semibold text-white md:mt-0 hover:text-gray-900 focus:text-gray-900 focus:outline-none lg:mr-16 lg:self-center" href="/news">News</a>
                         @guest
-                        <div class="lg:self-center lg:ml-48">
-                            <a class="text-white text-sm font-semibold hover:text-gray-900 focus:text-gray-900 focus:outline-none px-4 lg:py-4 py-2 lg:mr-3 lg:self-center lg:text-right lg:right-0" href="/registrasi">Daftar</a>
-                            <a class="text-white font-semibold text-sm border border-white lg:px-4 px-4 lg:py-2 py-2 lg:mt-5 mt-2 text-center rounded-lg justify-items-end w-[94px] h-[40px] lg:mr-3 lg:right-0" href="/login">Masuk</a>
+                        <div class="lg:self-center lg:ml-36">
+                            <a class="text-white text-sm font-semibold hover:text-gray-900 focus:text-gray-900 focus:outline-none px-4 lg:py-4 py-2 lg:self-center" href="/registrasi">Daftar</a>
+                            <a class="text-white font-semibold text-sm border border-white lg:px-4 px-4 lg:py-2 py-2 lg:mt-5 mt-2 text-center rounded-lg justify-items-end w-[94px] h-[40px]" href="/login">Masuk</a>
                         </div>
                         @endguest
                     </nav>
@@ -237,21 +237,22 @@
                 <div class="w-full self-center px-4 lg:w-1/2">
                     <h5 class="text-lg font-semibold text-primary md:text-lg mb-2 pt-10">ABOUT</h5>
                     <h1 class="font-bold text-dark text-5xl max-w-xs">Tentang Radian Edu</h1>
-                    <p class="font-normal text-body text-lg pt-6 mb-2">Radian Edu Solution adalah sebuah lembaga yang bergerak dibidang 
+                    <p class="font-normal text-body text-lg pt-4">Radian Edu Solution adalah sebuah lembaga yang bergerak dibidang 
                         solusi pendidikan yang mengembangkan teknologi serta metode terbaru dan ter-efektif untuk memastikan siswa/i 
                         atau lembaga partner bisa mencapai target yang diinginkan. Kami memiliki motto kerjasama "Best Partner For Accelerating
                         Your Growth". Untuk itu Radian menjadi solusi dan pilihan yang terbaik bagi pihak sekolah guna membantu mempercepat sekolah 
                         menjadi lembaga terbaik dan terdepan. 
                     </p>
 
-                    <div class="flex items-center">
-                        <a href="https://www.youtube.com/@radiansolusi7565" target="_blank" class="w-9 h-9 rounded-full flex justify-center items-center border border-dark hover:bg-black">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 hover:text-white">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" />
+                    <div class="flex items-center mt-10">
+                        <a href="https://www.youtube.com/@radiansolusi7565" target="_blank" class="group w-9 h-9 rounded-full flex justify-center items-center border border-dark hover:bg-primary">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 group-hover:text-white">
+                                <path fill-rule="evenodd" d="M4.5 5.653c0-1.426 1.529-2.33 2.779-1.643l11.54 6.348c1.295.712 1.295 2.573 0 3.285L7.28 19.991c-1.25.687-2.779-.217-2.779-1.643V5.653z" clip-rule="evenodd" />
                             </svg>
+                              
                         </a>
                         <a href="https://youtube.com/radiansolusi" target="_blank" class="flex justify-center items-center text-dark pr-4 ml-4">
-                           <u> View Video </u>
+                           View Video
                         </a>
                     </div>
 
