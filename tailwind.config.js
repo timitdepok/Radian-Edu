@@ -58,6 +58,7 @@ module.exports = {
         "txtdokter": "#1C244B",
         "bdydokter": "#324A6D",
         "camp": "#068292",
+        "dark-blue": "#290f6b",
       },
       screens: {
         'notebook': '930px',

@@ -26,4 +26,10 @@ class ProductController extends Controller
             "title" => "SUPERCAMP KEDOKTERAN | Radian Edu"
         ]);
     }
+    
+    public function cpns(){
+        return view("product.cpns",[
+            "title" => "CPNS | Radian Edu"
+        ]);
+    }
 }

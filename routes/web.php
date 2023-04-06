@@ -134,6 +134,8 @@ Route::get("/surabaya", [ArealayananController::class, "surabaya"])->name("surab
 Route::get("/supercamp", [ProductController::class, "supercamp"])->name("supercamp");
 Route::get("/privat", [ProductController::class, "privat"])->name("privat");
 Route::get("/supercampkedokteran", [ProductController::class, "supercampkedokteran"])->name("supercampkedokteran");
+Route::get("/cpns", [ProductController::class, "cpns"])->name("cpns");
+
 
 // TINGKATAN
 Route::get("/sd", [HalamanTingkatanController::class, "tingkatansd"])->name("tingkatansd");
@@ -144,4 +146,5 @@ Route::get("/mahasiswa", [HalamanTingkatanController::class, "tingkatanmhs"])->n
 // NEWS
 Route::get("/news", [NewsController::class, "news"])->name("berita");
 Route::get("/newsdetails", [NewsController::class, "newsdetails"])->name("detail.berita");
+
 
