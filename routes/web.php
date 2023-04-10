@@ -85,7 +85,7 @@ Route::middleware(["auth", "is.profile.complete:yes", "role:admin"])->group(func
     // fungsi yang di gunakan pada dashboard
     Route::get("/dashboard/biodata-guru/{key}", [DashboardController::class, "biodataGuru"])->name("biodata.guru");
     Route::put("/dashboard/edit-tesTulis", [DashboardController::class, "edit_tes_tulis"])->name("edit.tes.tulis");
-    Route::put("/dashboard/edit-topStar", [DashboardController::class, "edit_top_star"])->name("edit.top.star");
+    Route::put("/dashboard/edit-seniorMaster", [DashboardController::class, "edit_senior_master"])->name("edit.senior.master");
     Route::put("/dashboard/edit-harga", [DashboardController::class, "edit_harga"])->name("edit.harga");
     Route::post("/dashboard/get-user", [DashboardController::class, "getUser"])->name("get.user");
     Route::post("/dashboard/remove-user", [DashboardController::class, "remove_user"])->name("remove.user");

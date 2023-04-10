@@ -21,7 +21,7 @@
                             Status
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            Top Star
+                            Senior Master
                         </th>
                         <th scope="col" class="pl-6 py-3">
                             Action
@@ -47,7 +47,7 @@
                                 {{ $row->tes_tulis ? 'Aktif' : 'Tidak Aktif' }}
                             </td>
                             <td class="px-6 py-4">
-                                {{ $row->top_star ? 'Top Star' : '-' }}
+                                {{ $row->top_star ? 'Senior Master' : '-' }}
                             </td>
                             <td class="px-6 py-4">
                                 <div class="w-fit flex flex-row items-center">
@@ -91,14 +91,14 @@
             <p class="text-bodyText">Melakukan Perubahan kategori akan memunculkan harga yg berbeda di halaman awal. Silahkan klik Update untuk merubah kategori guru</p> 
             <div class="mt-4">
                 <input type="hidden" name="user_id" id="user_id">
-                <label for="top_star" class="block mb-2 text-base font-semibold text-gray-900">Top Star</label>
+                <label for="senior_master" class="block mb-2 text-base font-semibold text-gray-900">Senior Master</label>
                 <div class="block relative">
                     <div class="rounded-r-md absolute bg-white border-t border-r border-b border-primaryInp pr-4 flex items-center justify-center right-0 h-full">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
                         </svg>                  
                     </div>
-                    <select name="top_star" id="top_star" class="appearance-none h-12 text-sm px-4 w-full outline-none @error('top_star') border-primarySD @else border-primaryInp @enderror border rounded-md bg-white" required>
+                    <select name="senior_master" id="senior_master" class="appearance-none h-12 text-sm px-4 w-full outline-none @error('senior_master') border-primarySD @else border-primaryInp @enderror border rounded-md bg-white" required>
                     </select>
                 </div>
             </div>
@@ -132,15 +132,15 @@
                         $("#modal-edit-user").removeClass("hidden");
                         $("#user_id").val(user_id);
 
-                        if (response.top_star) {
-                            $("#top_star").html(`
-                                <option selected value="1">Top Star</option>
-                                <option value="0">Non Top Star</option>
+                        if (response.senior_master) {
+                            $("#senior_master").html(`
+                                <option selected value="1">Senior Master</option>
+                                <option value="0">Non Senior Master</option>
                             `);
                         }else{
-                            $("#top_star").html(`
-                                <option value="1">Top Star</option>
-                                <option selected value="0">Non Top Star</option>
+                            $("#senior_master").html(`
+                                <option value="1">Senior Master</option>
+                                <option selected value="0">Non Senior Master</option>
                             `);
                         }
                     }else{
@@ -165,14 +165,14 @@
         $("#btn-update").on("click", function() {
             let parentElement = $(this).closest("#modal-edit-user");
             let user_id = parentElement.find("#user_id").val();
-            let top_star = parentElement.find("#top_star").val();
+            let senior_master = parentElement.find("#senior_master").val();
 
             $.ajax({
-                url : "{{ route('edit.top.star') }}",
+                url : "{{ route('edit.senior.master') }}",
                 type : "PUT",
                 data : {
                     user_id : user_id,
-                    top_star : top_star
+                    senior_master : senior_master
                 },
                 success: function(response) {
                     $('#modal-edit-user').addClass('hidden');

@@ -72,11 +72,24 @@
                 @foreach ($guru as $row)
                 <div class="w-full px-4 mb-10 lg:w-1/4">
                     <div class="bg-white card rounded-2xl overflow-hidden relative group w-[253px] h-[348px]">
-                    @if ($row->top_star)
-                        <div class="px-4 py-2 bg-primary rounded-md absolute top-0 right-0 z-10 mr-2 mt-2">
-                            <span class="text-xs text-white font-medium">Top Star</span>
-                        </div> 
-                    @endif
+                    
+                      {{-- badge --}}
+                      <div class="absolute top-0 right-0 z-10 mr-2 mt-2">
+                        @if ($row->tes_tulis && !$row->top_star)
+                          <div class="px-4 py-2 w-fit bg-primary rounded-md mb-3">
+                              <span class="text-xs text-white font-medium">Recommeded</span>
+                          </div>
+                        @elseif ($row->tes_tulis && $row->top_star)
+                          <div class="px-4 py-2 w-fit bg-primary rounded-md">
+                            <span class="text-xs text-white font-medium">Senior Master</span>
+                          </div> 
+                        @else
+                          <div class="px-4 py-2 -fit bg-primary rounded-md mb-3">
+                              <span class="text-xs text-white font-medium">Baru</span>
+                          </div>
+                        @endif
+
+                      </div>
                      <div class="h-[348px] transition-all transform bg-cover bg-top" style="background-image: url({{ asset('storage/'. $row->foto) }});">
                          <div class="bg-primaryYellow h-[98px] rounded-2xl absolute inset-x-0 bottom-0 text-center">
                              <h1 class="text-xl font-medium text-black mb-2">{{ $row->nama }}</h1>

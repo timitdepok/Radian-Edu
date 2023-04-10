@@ -16,7 +16,7 @@
                 </div>
     
                 <div class="mt-4 8x75:mt-0 w-full 8x75:max-w-[350px]">
-                    <h1 class="text-4xl 8x75:max-w-[350px] overflow-hidden 8x75:max-h-[80px] font-semibold text-black text-center 8x75:text-left 8x75:text-white mt-2">{{ $user->nama }}</h1>
+                    <h1 class="text-4xl 8x75:max-w-[350px] overflow-hidden 8x75:max-h-[80px] font-semibold text-black text-center 8x75:text-left 8x75:text-white mt-2">{{ ucwords(strtolower($user->nama)) }}</h1>
                     <p class="text-base 8x75:max-w-[350px] overflow-hidden 8x75:max-h-[24px] font-medium text-black text-center 8x75:text-left 8x75:text-white mt-2">{{ $user->email }}</p>
                     <p class="text-base 8x75:max-w-[350px] overflow-hidden 8x75:max-h-[24px] font-medium text-black text-center 8x75:text-left 8x75:text-white mt-1">{{ $user->kegiatan_mengajar }}</p>
                 </div>
@@ -73,7 +73,7 @@
         <h1 class="text-[32px] mb-4 font-semibold text-black">Pendidikan</h1>
         <hr class="h-[1px] bg-primaryInp w-full mb-[22px]">
         <div class="flex flex-wrap notebook:flex-nowrap justify-between mb-[90px]">
-            <div class="flex-grow notebook:max-w-[48%] hidden sm:block"></div>
+            <div class="flex-grow notebook:max-w-[48%] hidden notebook:block"></div>
             <div class="flex-grow notebook:max-w-[48%]">
                 <div class="flex flex-row w-full">
                     <div class="mr-0 sm:mr-5">
@@ -104,7 +104,7 @@
         <h1 class="text-[32px] mb-4 font-semibold text-black">Pengalaman</h1>
         <hr class="h-[1px] bg-primaryInp w-full mb-[22px]">
         <div class="flex flex-wrap notebook:flex-nowrap justify-between mb-[90px]">
-            <div class="flex-grow notebook:max-w-[48%] hidden sm:block"></div>
+            <div class="flex-grow notebook:max-w-[48%] hidden notebook:block"></div>
             <div class="flex-grow notebook:max-w-[48%]">
                 @if($user->pengalaman)
                     @foreach ($user->pengalaman as $row)

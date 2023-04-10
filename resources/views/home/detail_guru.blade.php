@@ -1,4 +1,4 @@
-@extends('profile.layout.template')
+@extends('home.layout.template')
 @section('content')
 
 <section class="text-gray-600 body-font font-poppins overflow-hidden bg-white">
@@ -15,7 +15,7 @@
                 {{-- profil guru  --}}
                 <div class="image w-44 h-52 rounded-md mr-4 bg-cover bg-top" style="background-image: url({{ asset('storage/' . $guru->foto) }})"></div>
                 <div class="w-fit flex flex-col h-full">
-                    <h1 class="mt-4 8x75:mt-0 text-4xl 8x75:max-w-[500px] overflow-hidden 8x75:max-h-[80px] font-semibold text-black text-center 8x75:text-left 8x75:text-white mb-3">{{ $guru->nama }}</h1>
+                    <h1 class="mt-4 8x75:mt-0 text-4xl 8x75:max-w-[500px] overflow-hidden 8x75:max-h-[80px] font-semibold text-black text-center 8x75:text-left 8x75:text-white mb-3">{{ ucwords(strtolower($guru->nama)) }}</h1>
                     <p class="font-medium text-xl text-black text-center 8x75:text-left 8x75:text-white mb-3">Tutor Lulusan {{ $guru->jurusan }} {{ $guru->asal_ptn }} </p>
                     <p class="font-medium text-black text-center 8x75:text-left 8x75:text-white mb-3">{{ $guru->kegiatan_mengajar }}</p>
                     
@@ -50,58 +50,174 @@
             </div>
         </div>
 
-        {{-- data minat mengajar dan deskripsi guru  --}}
-        <div class="flex flex-col-reverse notebook:flex-row md:flex-wrap notebook:flex-nowrap justify-between mb-[90px]">
-            <div class="flex-grow notebook:max-w-[48%]">
-                <div class="w-full">
-                    <p class="text-2xl font-medium mb-[22px] text-black">Bersedia Mengajar</p>
-                    <hr class="h-[1px] bg-primaryInp w-full mb-[22px]">
-                    <div class="w-full flex flex-wrap gap-3">
-                        @isset($guru->minat_mengajar)
-                            @foreach ($guru->minat_mengajar as $row)
-                                <div class="block bg-primaryYellow rounded-full py-[10px] w-fit px-6">
-                                    <p class="text-black text-sm">{{ $row->mata_pelajaran->tingkatan->tingkatan }} - {{ $row->mata_pelajaran->mata_pelajaran }}</p>
-                                </div>
-                            @endforeach
-                        @endisset 
+        <div class="w-full mb-9">
+            @if ($guru->tes_tulis && !$guru->top_star)
+                {{-- deskripsi recomended  --}}
+                <div class="item p-6 rounded-md bg-blue-100 border border-blue-500">
+                    <div class="flex flex-row items-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8 mr-2 fill-primary">
+                            <path fill-rule="evenodd" d="M8.603 3.799A4.49 4.49 0 0112 2.25c1.357 0 2.573.6 3.397 1.549a4.49 4.49 0 013.498 1.307 4.491 4.491 0 011.307 3.497A4.49 4.49 0 0121.75 12a4.49 4.49 0 01-1.549 3.397 4.491 4.491 0 01-1.307 3.497 4.491 4.491 0 01-3.497 1.307A4.49 4.49 0 0112 21.75a4.49 4.49 0 01-3.397-1.549 4.49 4.49 0 01-3.498-1.306 4.491 4.491 0 01-1.307-3.498A4.49 4.49 0 012.25 12c0-1.357.6-2.573 1.549-3.397a4.49 4.49 0 011.307-3.497 4.49 4.49 0 013.497-1.307zm7.007 6.387a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd" />
+                        </svg>                              
+                        <span class="text-lg font-semibold text-primary block">Recomended</span>
                     </div>
+                    <p class="text-base">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi consequuntur fugit, similique corporis atque numquam? Distinctio, asperiores dolore inventore accusantium nihil ipsa molestiae et 
+                        corporis fuga odio iure aperiam, eligendi earum a autem suscipit corrupti alias perspiciatis, quibusdam quod. Velit nihil, natus fugiat, sit minus at quos impedit voluptatum consequuntur expedita 
+                        labore voluptates eos dicta aliquid quo optio! Est, a!
+                    </p>
                 </div>
-            </div>
+
+            @elseif ($guru->tes_tulis && $guru->top_star)
+                {{-- deskripsi Senior master --}}
+                <div class="item p-6 rounded-md bg-blue-100 border border-blue-500">
+                    <div class="flex flex-row items-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8 mr-2 fill-primary">
+                            <path fill-rule="evenodd" d="M5.166 2.621v.858c-1.035.148-2.059.33-3.071.543a.75.75 0 00-.584.859 6.753 6.753 0 006.138 5.6 6.73 6.73 0 002.743 1.346A6.707 6.707 0 019.279 15H8.54c-1.036 0-1.875.84-1.875 1.875V19.5h-.75a2.25 2.25 0 00-2.25 2.25c0 .414.336.75.75.75h15a.75.75 0 00.75-.75 2.25 2.25 0 00-2.25-2.25h-.75v-2.625c0-1.036-.84-1.875-1.875-1.875h-.739a6.706 6.706 0 01-1.112-3.173 6.73 6.73 0 002.743-1.347 6.753 6.753 0 006.139-5.6.75.75 0 00-.585-.858 47.077 47.077 0 00-3.07-.543V2.62a.75.75 0 00-.658-.744 49.22 49.22 0 00-6.093-.377c-2.063 0-4.096.128-6.093.377a.75.75 0 00-.657.744zm0 2.629c0 1.196.312 2.32.857 3.294A5.266 5.266 0 013.16 5.337a45.6 45.6 0 012.006-.343v.256zm13.5 0v-.256c.674.1 1.343.214 2.006.343a5.265 5.265 0 01-2.863 3.207 6.72 6.72 0 00.857-3.294z" clip-rule="evenodd" />
+                        </svg>                              
+                        <span class="text-lg font-semibold text-primary block">Senior Master</span>
+                    </div>
+                    <p class="text-base">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi consequuntur fugit, similique corporis atque numquam? Distinctio, asperiores dolore inventore accusantium nihil ipsa molestiae et 
+                        corporis fuga odio iure aperiam, eligendi earum a autem suscipit corrupti alias perspiciatis, quibusdam quod. Velit nihil, natus fugiat, sit minus at quos impedit voluptatum consequuntur expedita 
+                        labore voluptates eos dicta aliquid quo optio! Est, a!
+                    </p>
+                </div>
+            @else
+                {{-- deskripsi baru  --}}
+                <div class="item p-6 rounded-md bg-blue-100 border border-blue-500">
+                    <div class="flex flex-row items-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8 mr-2 fill-primary">
+                            <path fill-rule="evenodd" d="M5.25 2.25a3 3 0 00-3 3v4.318a3 3 0 00.879 2.121l9.58 9.581c.92.92 2.39 1.186 3.548.428a18.849 18.849 0 005.441-5.44c.758-1.16.492-2.629-.428-3.548l-9.58-9.581a3 3 0 00-2.122-.879H5.25zM6.375 7.5a1.125 1.125 0 100-2.25 1.125 1.125 0 000 2.25z" clip-rule="evenodd" />
+                        </svg>                              
+                        <span class="text-lg font-semibold text-primary block">Baru</span>
+                    </div>
+                    <p class="text-base">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi consequuntur fugit, similique corporis atque numquam? Distinctio, asperiores dolore inventore accusantium nihil ipsa molestiae et 
+                        corporis fuga odio iure aperiam, eligendi earum a autem suscipit corrupti alias perspiciatis, quibusdam quod. Velit nihil, natus fugiat, sit minus at quos impedit voluptatum consequuntur expedita 
+                        labore voluptates eos dicta aliquid quo optio! Est, a!
+                    </p>
+                </div>
+            @endif
+        </div>
+
+        {{-- data minat mengajar dan deskripsi guru  --}}
+        <div class="flex flex-wrap notebook:flex-nowrap justify-between mb-[90px]">
             <div class="flex-grow notebook:max-w-[48%]">
-                <p class="text-2xl font-medium mb-[22px] text-black">Deskripsi Guru</p>
-                <hr class="h-[1px] bg-primaryInp w-full mb-[22px]">
+                <p class="text-xl font-medium mb-[22px] text-black">Tentang {{  ucwords(strtolower($guru->nama)) }} </p>
                 <p class="text-base mb-[22px] text-bodyText">
                     {{ $guru->deskripsi_diri }}
                 </p>
             </div>
+            <div class="flex-grow notebook:max-w-[48%]">
+                <p class="text-xl font-medium mb-[22px] text-black">Rules</p>
+                <p class="text-base mb-[22px] text-bodyText">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Est iusto minima iure quisquam, eos quasi hic quod porro, quis eveniet 
+                    odio nulla tenetur quia repellat distinctio ipsum animi eligendi consequatur veniam fugiat quo itaque. Architecto magnam saepe 
+                    soluta delectus nihil, dolor, earum, recusandae provident illo quod facilis? Officia, accusantium dolorum.
+                </p>
+            </div>
         </div>
 
-        {{-- data domisili mengajar dan rules guru  --}}
-        <div class="flex flex-col-reverse notebook:flex-row md:flex-wrap notebook:flex-nowrap justify-between mb-[90px]">
+        {{-- Pendidikan --}}
+        <h1 class="text-[32px] mb-4 font-semibold text-black">Pendidikan</h1>
+        <hr class="h-[1px] bg-primaryInp w-full mb-[22px]">
+        <div class="flex flex-wrap notebook:flex-nowrap justify-between mb-[90px]">
+            <div class="flex-grow max-w-[48%] hidden notebook:block"></div>
             <div class="flex-grow notebook:max-w-[48%]">
-                <div class="w-full">
-                    <p class="text-2xl font-medium mb-[22px] text-black">Avaliable Dari Domisili</p>
-                    <hr class="h-[1px] bg-primaryInp w-full mb-[22px]">
-                    <div class="w-full flex flex-wrap gap-3">
-                    @isset ($guru->domisili_mengajar)
+                <div class="flex flex-row w-full">
+                    <div class="mr-0 sm:mr-5">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-9 h-9 sm:w-12 sm:h-12 fill-black hidden sm:block">
+                            <path d="M12.378 1.602a.75.75 0 00-.756 0L3 6.632l9 5.25 9-5.25-8.622-5.03zM21.75 7.93l-9 5.25v9l8.628-5.032a.75.75 0 00.372-.648V7.93zM11.25 22.18v-9l-9-5.25v8.57a.75.75 0 00.372.648l8.628 5.033z" />
+                        </svg>
+                    </div>
+                    <div class="w-full">
+                        <div class="mb-1 flex flex-row justify-between">
+                            <p class="text-primaryYellow font-semibold text-base">
+                                {{ date("d M Y", strtotime($guru->dari_pendidikan)) }} - {{ date("d M Y", strtotime($guru->sampai_pendidikan)) }}
+                            </p>
+                        </div>
+        
+                        <h1 class="text-[32px] font-bold mb-1 text-black">
+                            {{ $guru->asal_ptn }}
+                        </h1>
+        
+                        <p class="text-base text-bodyText">
+                            {{ $guru->deskripsi_pendidikan }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+      
+        {{-- Pengalaman --}}
+        <h1 class="text-[32px] mb-4 font-semibold text-black">Pengalaman</h1>
+        <hr class="h-[1px] bg-primaryInp w-full mb-[22px]">
+        <div class="flex flex-wrap notebook:flex-nowrap justify-between mb-[90px]">
+            <div class="flex-grow notebook:max-w-[48%] hidden notebook:block"></div>
+            <div class="flex-grow notebook:max-w-[48%]">
+                @if($guru->pengalaman)
+                    @foreach ($guru->pengalaman as $row)
+                        <div class="flex flex-row w-full mb-7">
+                            <div class="mr-0 sm:mr-5">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-9 h-9 sm:w-12 sm:h-12 fill-black hidden sm:block">
+                                    <path d="M12.378 1.602a.75.75 0 00-.756 0L3 6.632l9 5.25 9-5.25-8.622-5.03zM21.75 7.93l-9 5.25v9l8.628-5.032a.75.75 0 00.372-.648V7.93zM11.25 22.18v-9l-9-5.25v8.57a.75.75 0 00.372.648l8.628 5.033z" />
+                                </svg>
+                            </div>
+                            <div class="w-full">
+                                <div class="mb-1 flex flex-row justify-between">
+                                    <p class="text-primaryYellow font-semibold text-base">
+                                        {{ date("d M Y", strtotime($row->dari_pengalaman)) }} - {{ date("d M Y", strtotime($row->sampai_pengalaman)) }}
+                                    </p>
+                                </div>
+                
+                                <h1 class="text-[32px] font-bold mb-1 text-black">
+                                    {{ $row->perusahaan }}
+                                </h1>
+                
+                                <p class="text-base text-bodyText">
+                                    {{ $row->deskripsi_pengalaman }}
+                                </p>
+                            </div>
+                        </div>
+                    @endforeach
+                @endif
+            </div>
+        </div>
+
+        {{-- Minat Mengajar --}}
+        <h1 class="text-[32px] mb-4 font-semibold text-black">Minat Mengajar</h1>
+        <hr class="h-[1px] bg-primaryInp w-full mb-[22px]">
+        <div class="flex flex-wrap notebook:flex-nowrap justify-between mb-[90px]">
+            <div class="flex-grow notebook:max-w-[60%]">
+                <div class="w-full flex flex-wrap gap-3">
+                    @if ($guru->minat_mengajar)
+                        @foreach ($guru->minat_mengajar as $row)
+                            <div class="block bg-primaryYellow rounded-full py-[10px] w-fit px-6">
+                                <p class="text-black text-sm">{{ $row->mata_pelajaran->tingkatan->tingkatan }} - {{ $row->mata_pelajaran->mata_pelajaran }}</p>
+                            </div>
+                        @endforeach
+                    @endif
+                </div>
+            </div>
+            <div class="flex-grow notebook:max-w-[40%]"></div>
+        </div>
+  
+        {{-- Domisili Mengajar --}}
+        <h1 class="text-[32px] mb-4 font-semibold text-black">Domisili Mengajar</h1>
+        <hr class="h-[1px] bg-primaryInp w-full mb-[22px]">
+        <div class="flex flex-wrap notebook:flex-nowrap justify-between mb-[90px]">
+            <div class="flex-grow notebook:max-w-[60%]">
+                <div class="w-full flex flex-wrap gap-3">
+                    @if ($guru->domisili_mengajar)
                         @foreach ($guru->domisili_mengajar as $row)
                             <div class="block bg-primaryYellow rounded-full py-[10px] w-fit px-6">
                                 <p class="text-black text-sm">{{ $row->kecamatan->name }}</p>
                             </div>
                         @endforeach
-                    @endisset
-                    </div>
+                    @endif
                 </div>
             </div>
-            <div class="flex-grow notebook:max-w-[48%]">
-                <p class="text-2xl font-medium mb-[22px] text-black">Rules</p>
-                <hr class="h-[1px] bg-primaryInp w-full mb-[22px]">
-                <p class="text-base mb-[22px] text-bodyText">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Id repudiandae repellat quia error exercitationem 
-                    in porro quos, eligendi impedit nobis esse cum aliquid fuga veniam? Rerum impedit iure magnam neque commodi, 
-                    sequi doloremque voluptatem corrupti consectetur, deleniti nisi odit ullam?
-                </p>
-            </div>
+            <div class="flex-grow notebook:max-w-[40%]"></div>
         </div>
       
         <div id="Pesan-Guru" class="w-full">
@@ -187,4 +303,7 @@
     </div>
 </div>
 </section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="{{ asset('/js/detail_guru.js') }}"></script>
+
 @endsection

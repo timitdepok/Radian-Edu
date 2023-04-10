@@ -131,16 +131,26 @@ class DashboardController extends Controller
                     })->first();
 
             if($user){
-                $user->update([
-                    "tes_tulis" => $request->tes_tulis
-                ]);
-                
+                if($user->top_star == false){
+                    $user->update([
+                        "tes_tulis" => $request->tes_tulis
+                    ]);
+                    
+                    return response()->json([
+                        'success' => true,
+                        'icon' => 'success',
+                        'title' => 'Success',
+                        'message' => 'Data Berhasil diubah!'
+                    ]);
+                }
+
                 return response()->json([
                     'success' => true,
-                    'icon' => 'success',
-                    'title' => 'Success',
-                    'message' => 'Data Berhasil diubah!'
+                    'icon' => 'warning',
+                    'title' => 'Warning',
+                    'message' => 'Status tidak bisa diubah, karena guru sudah mendapatkan peringkat "Senior Master". Ubah peringkat "Senior Master" terlebih dahulu jika tetap ingin mengubahnya.'
                 ]);
+
             }
 
             throw new Exception("Terjadi kesalahan. Data gagal untuk diubah!");
@@ -247,11 +257,11 @@ class DashboardController extends Controller
     }
 
     // untuk edit top star
-    public function edit_top_star(Request $request){
+    public function edit_senior_master(Request $request){
 
         $validate = Validator::make($request->all(),[
             "user_id" => "required|numeric",
-            "top_star" => "required"
+            "senior_master" => "required"
         ]);
 
         if($validate->fails()){
@@ -271,16 +281,26 @@ class DashboardController extends Controller
                     })->first();
 
             if($user){
-                $user->update([
-                    "top_star" => $request->top_star
-                ]);
-                
+                if($user->tes_tulis == true){
+                    $user->update([
+                        "top_star" => $request->senior_master
+                    ]);
+                    
+                    return response()->json([
+                        'success' => true,
+                        'icon' => 'success',
+                        'title' => 'Success',
+                        'message' => 'Data Berhasil diubah!'
+                    ]);
+                }
+
                 return response()->json([
                     'success' => true,
-                    'icon' => 'success',
-                    'title' => 'Success',
-                    'message' => 'Data Berhasil diubah!'
+                    'icon' => 'warning',
+                    'title' => 'Warning',
+                    'message' => 'Guru belum melakukan tes tulis, jadi tidak bisa memberikan peringkat "Senior Master"'
                 ]);
+
             }
 
             throw new Exception("Terjadi kesalahan. Data gagal untuk diubah!");
@@ -318,7 +338,7 @@ class DashboardController extends Controller
             if($user){
                 return response()->json([
                     "tes_tulis" => $user->tes_tulis,
-                    "top_star" => $user->top_star,
+                    "senior_master" => $user->top_star,
                     "harga" => $user->harga,
                     "status" => "success"
                 ]);
